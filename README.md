@@ -56,11 +56,6 @@ LPDMvvmKit/Mvvm 就是LPDMvvmKit主要提供的功能了，因为对前两个Sub
 
 # Learn more
 
-* Read the [Getting Started guide](http://www.componentkit.org/docs/getting-started.html)
-* Get the [sample projects](https://github.com/facebook/componentkit/tree/master/Examples/WildeGuess)
-* Read the [objc.io article](http://www.objc.io/issue-22/facebook.html) by Adam Ernst
-* Watch the [@Scale talk](https://youtu.be/mLSeEoC6GjU?t=24m18s) by Ari Grant
-
 
 
 # License

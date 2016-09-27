@@ -170,7 +170,6 @@
 
 - (void)popViewController:(UIButton *)sender {
   [self.navigation lpd_popViewControllerAnimated:YES];
-  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)popToRootViewController:(UIButton *)sender {
@@ -180,8 +179,7 @@
 - (void)presentViewController:(UIButton *)sender {
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDNavigationViewModel *nvm = [[LPDNavigationViewModel alloc] initWithRootViewModel:vm];
-  LPDNavigationController *nvc = [[LPDNavigationController alloc] initWithViewModel:nvm];
-  [self.navigation lpd_presentViewController:nvc
+  [self.navigation lpd_presentViewController:[[LPDNavigationController alloc] initWithViewModel:nvm]
                                     animated:YES
                                   completion:^{
 

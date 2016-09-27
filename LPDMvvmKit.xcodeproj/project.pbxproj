@@ -734,6 +734,37 @@
 		8E7BD9FC1D9A122D00008400 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8E7BDC5E1D9A75C100008400 /* TableViewModels */,
+				8E7BDC5D1D9A75AB00008400 /* CollectionViewModels */,
+				8E7BDA0E1D9A122D00008400 /* LPDNavigationViewModel.h */,
+				8E7BDA0F1D9A122D00008400 /* LPDNavigationViewModel.m */,
+				8E7BDA101D9A122D00008400 /* LPDNavigationViewModelProtocol.h */,
+				8E7BDA111D9A122D00008400 /* LPDScrollViewModel.h */,
+				8E7BDA121D9A122D00008400 /* LPDScrollViewModel.m */,
+				8E7BDA131D9A122D00008400 /* LPDScrollViewModelProtocol.h */,
+				8E7BDA141D9A122D00008400 /* LPDTabBarViewModel.h */,
+				8E7BDA151D9A122D00008400 /* LPDTabBarViewModel.m */,
+				8E7BDA161D9A122D00008400 /* LPDTabBarViewModelProtocol.h */,
+				8E7BDA261D9A122D00008400 /* LPDViewModel.h */,
+				8E7BDA271D9A122D00008400 /* LPDViewModel.m */,
+				8E7BDA281D9A122D00008400 /* LPDViewModelProtocol.h */,
+				8E7BDA291D9A122D00008400 /* LPDViewModelReactProtocol.h */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8E7BDA2A1D9A122D00008400 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BDC601D9A75E800008400 /* TableViews */,
+				8E7BDC5F1D9A75DB00008400 /* CollectionViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E7BDC5D1D9A75AB00008400 /* CollectionViewModels */ = {
+			isa = PBXGroup;
+			children = (
 				8E7BD9FD1D9A122D00008400 /* LPDCollectionCellViewModel.h */,
 				8E7BD9FE1D9A122D00008400 /* LPDCollectionCellViewModel.m */,
 				8E7BD9FF1D9A122D00008400 /* LPDCollectionCellViewModelProtocol.h */,
@@ -751,15 +782,13 @@
 				8E7BDA0B1D9A122D00008400 /* LPDCollectionViewModel.h */,
 				8E7BDA0C1D9A122D00008400 /* LPDCollectionViewModel.m */,
 				8E7BDA0D1D9A122D00008400 /* LPDCollectionViewModelProtocol.h */,
-				8E7BDA0E1D9A122D00008400 /* LPDNavigationViewModel.h */,
-				8E7BDA0F1D9A122D00008400 /* LPDNavigationViewModel.m */,
-				8E7BDA101D9A122D00008400 /* LPDNavigationViewModelProtocol.h */,
-				8E7BDA111D9A122D00008400 /* LPDScrollViewModel.h */,
-				8E7BDA121D9A122D00008400 /* LPDScrollViewModel.m */,
-				8E7BDA131D9A122D00008400 /* LPDScrollViewModelProtocol.h */,
-				8E7BDA141D9A122D00008400 /* LPDTabBarViewModel.h */,
-				8E7BDA151D9A122D00008400 /* LPDTabBarViewModel.m */,
-				8E7BDA161D9A122D00008400 /* LPDTabBarViewModelProtocol.h */,
+			);
+			name = CollectionViewModels;
+			sourceTree = "<group>";
+		};
+		8E7BDC5E1D9A75C100008400 /* TableViewModels */ = {
+			isa = PBXGroup;
+			children = (
 				8E7BDA171D9A122D00008400 /* LPDTableCellViewModel.h */,
 				8E7BDA181D9A122D00008400 /* LPDTableCellViewModel.m */,
 				8E7BDA191D9A122D00008400 /* LPDTableCellViewModelProtocol.h */,
@@ -775,15 +804,11 @@
 				8E7BDA231D9A122D00008400 /* LPDTableViewModel.h */,
 				8E7BDA241D9A122D00008400 /* LPDTableViewModel.m */,
 				8E7BDA251D9A122D00008400 /* LPDTableViewModelProtocol.h */,
-				8E7BDA261D9A122D00008400 /* LPDViewModel.h */,
-				8E7BDA271D9A122D00008400 /* LPDViewModel.m */,
-				8E7BDA281D9A122D00008400 /* LPDViewModelProtocol.h */,
-				8E7BDA291D9A122D00008400 /* LPDViewModelReactProtocol.h */,
 			);
-			path = ViewModels;
+			name = TableViewModels;
 			sourceTree = "<group>";
 		};
-		8E7BDA2A1D9A122D00008400 /* Views */ = {
+		8E7BDC5F1D9A75DB00008400 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
 				8E7BDA2B1D9A122D00008400 /* LPDCollectionView.h */,
@@ -797,6 +822,13 @@
 				8E7BDA331D9A122D00008400 /* LPDCollectionViewImageCell.h */,
 				8E7BDA341D9A122D00008400 /* LPDCollectionViewImageCell.m */,
 				8E7BDA351D9A122D00008400 /* LPDCollectionViewProtocol.h */,
+			);
+			name = CollectionViews;
+			sourceTree = "<group>";
+		};
+		8E7BDC601D9A75E800008400 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
 				8E7BDA361D9A122D00008400 /* LPDTableView.h */,
 				8E7BDA371D9A122D00008400 /* LPDTableView.m */,
 				8E7BDA381D9A122D00008400 /* LPDTableViewCell.h */,
@@ -807,7 +839,7 @@
 				8E7BDA3D1D9A122D00008400 /* LPDTableViewHeaderFooterProtocol.h */,
 				8E7BDA3E1D9A122D00008400 /* LPDTableViewProtocol.h */,
 			);
-			path = Views;
+			name = TableViews;
 			sourceTree = "<group>";
 		};
 		8ECF40571C52174C009B1CE7 /* Mvvm */ = {

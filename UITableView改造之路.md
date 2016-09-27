@@ -1,6 +1,6 @@
 #UITableView改造之路
 
-cocoa touch framework无疑是一个很好的框架，特别是对动画的支持，在我接触过的框架中可能是最好的（当然我接触的框架可能比较少），但是UITableView确实存在很多吐槽点，从我个人理解的角度做些分析。
+Cocoa Touch Framework无疑是一个很好的框架，特别是对动画的支持，在我接触过的框架中可能是最好的（当然我接触的框架可能比较少），但是UITableView确实存在很多吐槽点，从我个人理解的角度做些分析。
 
 ###UITableView初始化方法之丑
 
@@ -92,7 +92,7 @@ UITableViewCellSeparatorStyle, UITableViewCellSelectionStyle, UITableViewCellFoc
 
 ###UITableView的几个delegate之乱
 
-UITableViewDelegate，UITableViewDataSource，包括刚引入的UITableViewDataSourcePrefetching，这几个delegate的设计好像是缺少了些面向对象的思想，更像是解决问题的套路，整个框架皆如此，那就如此的意思更多点。
+UITableViewDelegate，UITableViewDataSource，包括刚引入的UITableViewDataSourcePrefetching，这几个delegate的设计好像是缺少了些面向对象的思想，更像是解决问题的套路，框架代码中delegate是解决问题不多的可选方案，那就用吧。
 ```objective-c
 // Display customization
 
@@ -185,7 +185,7 @@ UITableViewDelegate，UITableViewDataSource，包括刚引入的UITableViewDataS
 ……
 
 ```
-至于UITableViewDataSourcePrefetching，不再说什么了，前面就有estimatedHeightForXXX，时序啊，开发者严重不友好的存在，从开发者的角度，最简单的做法就是把整个的数据源给到，剩下的就应该是UItableView自身去实现了，数据都有了，想要什么预加载都是框架自身的事情了，减少对开发者的依赖，更是减少api的耦合度，对外暴露的接口越多越不好。
+至于UITableViewDataSourcePrefetching，不再说什么了，前面就有estimatedHeightForXXX，时序啊，开发者严重不友好的存在，从开发者的角度，最简单的做法就是把整个的数据源给到，剩下的就应该是UITableView自身去实现了，数据都有了，想要什么预加载都是框架自身的事情了，减少对开发者的依赖，更是减少api的耦合度，对外暴露的接口越多越不好。
 如果从面向对象的角度，上面这些都应该是每个对象自身去实现就好了，比如cell，header，footer的height的获取。不吐槽了，想想如何做些改造吧。
 
 
@@ -784,3 +784,4 @@ UITableView的几个delegate之乱这个问题的解决才是重点，为了解�
 ```
 
 具体请下载[lpd-mvvm-kit](https://github.com/foxsofter/lpd-mvvm-kit)，看看其中的tableview相关的demo，当然目前只能在lpd-mvvm-kit这个框架下去用。 
+

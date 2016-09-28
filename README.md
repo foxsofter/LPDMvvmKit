@@ -33,7 +33,7 @@ LPDMvvmKit/Mvvm 就是LPDMvvmKit主要提供的功能了，因为对前两个Sub
 
 可以clone并运行，主流程都是有demo可循的。
 
-# view controller和view model解藕
+# view controller和view model解耦
 
 目前在github上能搜到的与MVVM相关的Objective-c库有下面几个：
 

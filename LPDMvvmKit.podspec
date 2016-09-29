@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary      = "mvvm"
 
   s.description  = <<-DESC
-                   Objective-c下采用MVVM的另外一个选择.
+                   a framework of mvvm.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.

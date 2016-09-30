@@ -8,7 +8,7 @@
 
 #import "LPDPopupActionSheet.h"
 #import "LPDPopupView.h"
-#import "SDiPhoneVersion.h"
+#import <SDiPhoneVersion/SDiPhoneVersion.h>
 #import "UIControl+Block.h"
 #import "UIScreen+LPDAccessor.h"
 

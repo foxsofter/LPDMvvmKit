@@ -7,7 +7,7 @@
 //
 
 #import "LPDAlertView.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "NSMutableArray+LPDStack.h"
 #import "UIButton+LPDAddition.h"
 #import "UIColor+LPDAddition.h"

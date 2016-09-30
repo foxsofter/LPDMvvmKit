@@ -12,7 +12,8 @@
 #import "LPDTableViewHeaderFooter.h"
 #import "LPDTableViewModel.h"
 #import "RACSignal+LPDAddition.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @class LPDTableViewModel;
 

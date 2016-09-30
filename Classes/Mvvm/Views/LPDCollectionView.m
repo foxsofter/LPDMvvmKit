@@ -7,7 +7,8 @@
 //
 
 #import "LPDCollectionView.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface LPDCollectionView ()
 

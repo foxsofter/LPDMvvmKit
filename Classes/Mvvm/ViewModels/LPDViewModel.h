@@ -7,7 +7,7 @@
 //
 
 #import "LPDViewModelProtocol.h"
-#import "RVMViewModel.h"
+#import <ReactiveViewModel/ReactiveViewModel.h>
 
 @interface LPDViewModel : RVMViewModel <LPDViewModelProtocol>
 

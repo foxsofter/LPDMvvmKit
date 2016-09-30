@@ -8,7 +8,8 @@
 
 #import "LPDTableCellViewModel.h"
 #import "LPDTableViewCell.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface LPDTableViewCell ()
 

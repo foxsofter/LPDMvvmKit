@@ -6,8 +6,6 @@
 //  Copyright © 2016年 eleme. All rights reserved.
 //
 
-#import "AFNetworking.h"
-#import "AFSecurityPolicy.h"
 #import "LPDApiClient.h"
 #import "LPDModel.h"
 #import "LPDModelProtocol.h"

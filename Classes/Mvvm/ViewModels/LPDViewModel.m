@@ -7,7 +7,8 @@
 //
 
 #import "LPDViewModel.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface LPDViewModel ()
 

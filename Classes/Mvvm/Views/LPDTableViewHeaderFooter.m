@@ -7,7 +7,8 @@
 //
 
 #import "LPDTableViewHeaderFooter.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #import "UITableViewHeaderFooterView+RACSignalSupport.h"
 
 @interface LPDTableViewHeaderFooter ()

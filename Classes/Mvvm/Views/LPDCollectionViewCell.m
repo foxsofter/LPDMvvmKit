@@ -9,7 +9,8 @@
 #import "LPDCollectionCellViewModel.h"
 #import "LPDCollectionCellViewModelProtocol.h"
 #import "LPDCollectionViewCell.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface LPDCollectionViewCell ()
 

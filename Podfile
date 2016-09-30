@@ -9,7 +9,6 @@ target 'LPDMvvmKit' do
   pod 'YYModel'
   pod 'SDiPhoneVersion'
   pod 'MJRefresh'
-  pod 'TurtleBezierPath'
   pod 'UICKeyChainStore'
   pod 'DateTools'
 end

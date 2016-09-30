@@ -9,7 +9,8 @@
 #import "LPDTabBarController.h"
 #import "LPDTabBarViewModel.h"
 #import "LPDViewControllerRouter.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 

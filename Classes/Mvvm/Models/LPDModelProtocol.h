@@ -6,7 +6,7 @@
 //  Copyright © 2016年 eleme. All rights reserved.
 //
 
-#import "YYModel.h"
+#import <YYModel/YYModel.h>
 #import <Foundation/Foundation.h>
 
 @protocol LPDModelProtocol <YYModel, NSCoding, NSCopying>

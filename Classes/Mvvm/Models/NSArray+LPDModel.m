@@ -8,7 +8,7 @@
 
 #import "NSArray+LPDModel.h"
 #import "NSObject+LPDAssociatedObject.h"
-#import "NSObject+YYModel.h"
+#import <YYModel/YYModel.h>
 
 @implementation NSArray (LPDModel)
 

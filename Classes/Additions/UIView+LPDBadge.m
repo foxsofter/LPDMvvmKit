@@ -7,7 +7,8 @@
 //
 
 #import "NSObject+LPDAssociatedObject.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #import "UIColor+LPDAddition.h"
 #import "UIView+LPDBadge.h"
 

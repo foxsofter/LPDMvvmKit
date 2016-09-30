@@ -7,7 +7,8 @@
 //
 
 #import "LPDScrollViewModel.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 

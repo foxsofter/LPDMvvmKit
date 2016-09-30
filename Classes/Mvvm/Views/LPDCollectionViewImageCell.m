@@ -8,8 +8,9 @@
 
 #import "LPDCollectionImageCellViewModel.h"
 #import "LPDCollectionViewImageCell.h"
-#import "Masonry.h"
-#import "ReactiveCocoa.h"
+#import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @implementation LPDCollectionViewImageCell
 

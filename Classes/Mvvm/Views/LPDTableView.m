@@ -7,7 +7,8 @@
 //
 
 #import "LPDTableView.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #import "UIScrollView+LPDAccessor.h"
 
 @interface LPDTableView ()

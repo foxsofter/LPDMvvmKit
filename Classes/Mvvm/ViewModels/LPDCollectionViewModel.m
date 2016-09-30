@@ -11,7 +11,8 @@
 #import "LPDCollectionViewFactory.h"
 #import "LPDCollectionViewHeaderFooter.h"
 #import "LPDCollectionViewModel.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface LPDCollectionViewDelegate : NSObject <UICollectionViewDelegate>
 

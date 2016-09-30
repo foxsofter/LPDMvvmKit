@@ -8,7 +8,7 @@
 
 #import "AFNetworkReachabilityManager.h"
 #import "LPDApiServer.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface LPDApiServer ()
 

@@ -8,7 +8,8 @@
 
 #import "LPDCollectionHeaderFooterViewModel.h"
 #import "LPDCollectionViewHeaderFooter.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #import "UICollectionReusableView+RACSignalSupport.h"
 
 @interface LPDCollectionViewHeaderFooter ()

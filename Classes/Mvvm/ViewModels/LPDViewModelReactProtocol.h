@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 typedef NS_ENUM(NSUInteger, LPDViewReactState) {
   LPDViewReactStateNoData,

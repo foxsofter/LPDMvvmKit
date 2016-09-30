@@ -29,7 +29,6 @@ PODS:
   - ReactiveViewModel (0.3):
     - ReactiveCocoa (~> 2.4)
   - SDiPhoneVersion (1.1.2)
-  - TurtleBezierPath (1.0)
   - UICKeyChainStore (2.1.0)
   - YYModel (1.0.4)
 
@@ -43,7 +42,6 @@ DEPENDENCIES:
   - ReactiveCocoa (= 2.5)
   - ReactiveViewModel
   - SDiPhoneVersion
-  - TurtleBezierPath
   - UICKeyChainStore
   - YYModel
 
@@ -57,10 +55,9 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   SDiPhoneVersion: c52245ccaab8142701e2e7fb8f0391ba3f255b76
-  TurtleBezierPath: 680f51b8ed5a27c652974f1b89782c8e2146116b
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: df2be504b0f2f19a8a6c87db90c2544abbd84dce
+PODFILE CHECKSUM: 070cdf2672afe6118c8d4095b6e1723b5eff4ff2
 
 COCOAPODS: 1.1.0.rc.2

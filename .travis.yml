@@ -1,3 +1,8 @@
 language: objective-c
 
-script: xctool -sdk iphonesimulator -workspace LPDMvvmKit.xcworkspace -scheme LPDMvvmKit build test
+before_install:
+- brew update
+- brew outdated xctool || brew upgrade xctool
+
+script: 
+- xctool -sdk iphonesimulator -workspace LPDMvvmKit.xcworkspace -scheme LPDMvvmKit clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

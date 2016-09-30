@@ -9,7 +9,6 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "LPDScrollViewController.h"
 #import "LPDScrollViewModel.h"
-#import "LPDScrollViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

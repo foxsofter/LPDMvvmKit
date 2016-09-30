@@ -9,13 +9,13 @@
 #import "LPDAlertView.h"
 #import "Masonry.h"
 #import "NSMutableArray+LPDStack.h"
-#import "RACEXTScope.h"
 #import "UIButton+LPDAddition.h"
 #import "UIColor+LPDAddition.h"
 #import "UIControl+Block.h"
 #import "UIScreen+LPDAccessor.h"
 #import "UIView+LPDAccessor.h"
 #import "UIView+LPDBorders.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation LPDAlertAction
 

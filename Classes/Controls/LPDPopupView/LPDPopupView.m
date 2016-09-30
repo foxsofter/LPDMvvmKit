@@ -7,7 +7,7 @@
 //
 
 #import "LPDPopupView.h"
-#import "RACEXTScope.h"
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "UIColor+LPDAddition.h"
 #import "UIView+LPDAccessor.h"
 

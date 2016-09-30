@@ -12,7 +12,7 @@
 
 #import "AFImageDownloader.h"
 #import "NSObject+LPDAssociatedObject.h"
-#import "RACEXTScope.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "UIColor+LPDAddition.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+LPDAddition.h"

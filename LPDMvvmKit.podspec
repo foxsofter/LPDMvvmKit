@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Additions' do |ss|
     ss.ios.deployment_target = '7.0'
-    ss.source_files = 'LPDMvvmKit/Classes/Additions/*.{h,m}'
+    ss.source_files = 'Classes/Additions/*.{h,m}'
     ss.dependency 'AFNetworking'
     ss.dependency 'ReactiveCocoa', '2.5'
     ss.dependency 'DateTools'
@@ -45,18 +45,17 @@ Pod::Spec.new do |s|
     ss.dependency 'SDiPhoneVersion'
     ss.dependency 'Masonry'
     ss.dependency 'TurtleBezierPath'
-    ss.source_files = 'LPDMvvmKit/Classes/Controls/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDPopupView/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDRating/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDSegmented/*.{h,m}','LPDMvvmKit/Classes/Controls/KxMenu/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDKeyboardView/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDPlusCrossBarButtonItem/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDAlertView/*.{h,m}','LPDMvvmKit/Classes/Controls/LPDToastView/*.{h,m}'
+    ss.source_files = 'Classes/Controls/*.{h,m}','Classes/Controls/LPDPopupView/*.{h,m}','Classes/Controls/LPDRating/*.{h,m}','Classes/Controls/LPDSegmented/*.{h,m}','Classes/Controls/KxMenu/*.{h,m}','Classes/Controls/LPDKeyboardView/*.{h,m}','Classes/Controls/LPDPlusCrossBarButtonItem/*.{h,m}','Classes/Controls/LPDAlertView/*.{h,m}','Classes/Controls/LPDToastView/*.{h,m}'
   end
   s.subspec 'Mvvm' do |ss|
     ss.ios.deployment_target = '7.0'
     ss.dependency 'LPDMvvmKit/Additions'
     ss.dependency 'LPDMvvmKit/Controls'
     ss.dependency 'AFNetworking'
-    ss.dependency 'CocoaSecurity'
     ss.dependency 'ReactiveCocoa', '2.5'
     ss.dependency 'ReactiveViewModel'
     ss.dependency 'UICKeyChainStore'
     ss.dependency 'YYModel'
-    ss.source_files = 'LPDMvvmKit/Classes/Mvvm/*.{h,m}','LPDMvvmKit/Classes/Mvvm/Services/*.{h,m}','LPDMvvmKit/Classes/Mvvm/Services/LKUserDefaults/*.{h,m}','LPDMvvmKit/Classes/Mvvm/Models/*.{h,m}','LPDMvvmKit/Classes/Mvvm/Models/LKUserDefaults/*.{h,m}','LPDMvvmKit/Classes/Mvvm/ViewControllers/*.{h,m}','LPDMvvmKit/Classes/Mvvm/ViewModels/*.{h,m}','LPDMvvmKit/Classes/Mvvm/Views/*.{h,m}'
+    ss.source_files = 'Classes/Mvvm/*.{h,m}','Classes/Mvvm/Services/*.{h,m}','Classes/Mvvm/Services/LKUserDefaults/*.{h,m}','Classes/Mvvm/Models/*.{h,m}','Classes/Mvvm/Models/LKUserDefaults/*.{h,m}','Classes/Mvvm/ViewControllers/*.{h,m}','Classes/Mvvm/ViewModels/*.{h,m}','Classes/Mvvm/Views/*.{h,m}'
   end
 end

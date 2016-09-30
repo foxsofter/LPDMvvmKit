@@ -7,7 +7,7 @@
 //
 
 #import "LPDPlusCrossBarButtonItem.h"
-#import "RACEXTScope.h"
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface LPDPlusCrossBarButtonItem ()
 

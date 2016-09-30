@@ -1,3 +1,34 @@
 language: objective-c
 xcode_workspace: LPDMvvmKit.xcworkspace
 xcode_scheme: LPDMvvmKit
+osx_image: xcode7.1
+sudo: false
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - FASTLANE_LANE=ci_commit
+matrix:
+  include:
+    - osx_image: xcode7.3
+      env: FASTLANE_LANE=code_coverage FASTLANE_ENV=default
+    - osx_image: xcode7.3
+      env: FASTLANE_ENV=ios83
+    - osx_image: xcode7.3
+      env: FASTLANE_ENV=ios84
+    - osx_image: xcode7.3
+      env: FASTLANE_ENV=tvos91	  
+    - osx_image: xcode7.3
+      env: FASTLANE_ENV=osx
+    - osx_image: xcode7.3
+      env: FASTLANE_ENV=ios93
+    - osx_image: xcode7.2
+      env: FASTLANE_ENV=ios92_xcode72	  
+    - osx_image: xcode7.1
+      env: FASTLANE_ENV=ios91_xcode71	  
+    - osx_image: xcode7.1
+      env: FASTLANE_ENV=tvos90_xcode71
+    - osx_image: xcode7
+      env: FASTLANE_ENV=ios81_xcode7	  
+    - osx_image: xcode7
+      env: FASTLANE_ENV=ios90_xcode7	  

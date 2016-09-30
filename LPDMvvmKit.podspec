@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
-  s.version      = "0.3.8"
+  s.version      = "0.3.9"
   s.summary      = "mvvm"
 
   s.description  = <<-DESC
@@ -55,6 +55,6 @@ Pod::Spec.new do |s|
     ss.dependency 'ReactiveViewModel'
     ss.dependency 'UICKeyChainStore'
     ss.dependency 'YYModel'
-    ss.source_files = 'Classes/Mvvm/*.{h,m}','Classes/Mvvm/Services/*.{h,m}','Classes/Mvvm/Services/LKUserDefaults/*.{h,m}','Classes/Mvvm/Models/*.{h,m}','Classes/Mvvm/Models/LKUserDefaults/*.{h,m}','Classes/Mvvm/ViewControllers/*.{h,m}','Classes/Mvvm/ViewModels/*.{h,m}','Classes/Mvvm/Views/*.{h,m}'
+    ss.source_files = 'Classes/Mvvm/*.{h,m}','Classes/Mvvm/Services/*.{h,m}','Classes/Mvvm/Services/LKUserDefaults/*.{h,m}','Classes/Mvvm/Models/*.{h,m}','Classes/Mvvm/ViewControllers/*.{h,m}','Classes/Mvvm/ViewModels/*.{h,m}','Classes/Mvvm/Views/*.{h,m}'
   end
 end

@@ -6,10 +6,9 @@
 //  Copyright © 2015年 eleme. All rights reserved.
 //
 
+#import <MJRefresh/MJRefresh.h>
 #import "LPDScrollViewControllerProtocol.h"
 #import "LPDViewController.h"
-
-#import <MJRefresh/MJRefresh.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

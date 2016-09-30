@@ -1,0 +1,3 @@
+language: objective-c
+xcode_workspace: LPDMvvmKit.xcworkspace
+xcode_scheme: LPDMvvmKit

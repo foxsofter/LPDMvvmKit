@@ -991,7 +991,7 @@
 				TargetAttributes = {
 					8E14663F1C2A4DFF00A93A12 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = J3TA3RL75G;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1365,6 +1365,7 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LPDMvvmKit/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LPDMvvmKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1383,6 +1384,7 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LPDMvvmKit/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LPDMvvmKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <MJRefresh/MJRefresh.h>
-#import "LPDScrollViewControllerProtocol.h"
 #import "LPDViewController.h"
+#import "LPDScrollViewControllerProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

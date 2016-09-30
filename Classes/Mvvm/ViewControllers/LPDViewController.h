@@ -66,12 +66,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addChildViewController:(UIViewController *)childController NS_UNAVAILABLE;
 - (void)removeFromParentViewController NS_UNAVAILABLE;
 
-/**
- *  @brief  需要提交表单，锁定当前视图，并出现提交进度控件
- *          当赋值为YES，可以出现提交进度控件，为NO时不可出现，默认为NO
- */
-@property (nonatomic, assign) BOOL needSubmitting;
-
 @end
 
 NS_ASSUME_NONNULL_END

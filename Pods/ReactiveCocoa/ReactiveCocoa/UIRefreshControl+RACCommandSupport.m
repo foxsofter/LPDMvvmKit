@@ -7,7 +7,7 @@
 //
 
 #import "UIRefreshControl+RACCommandSupport.h"
-#import "RACEXTKeyPathCoding.h"
+#import "EXTKeyPathCoding.h"
 #import "RACCommand.h"
 #import "RACCompoundDisposable.h"
 #import "RACDisposable.h"

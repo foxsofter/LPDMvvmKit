@@ -7,7 +7,7 @@
 //
 
 #import "UIStepper+RACSignalSupport.h"
-#import "RACEXTKeyPathCoding.h"
+#import "EXTKeyPathCoding.h"
 #import "UIControl+RACSignalSupportPrivate.h"
 
 @implementation UIStepper (RACSignalSupport)

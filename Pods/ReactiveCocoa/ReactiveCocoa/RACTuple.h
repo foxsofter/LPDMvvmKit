@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RACmetamacros.h"
+#import "metamacros.h"
 
 @class RACSequence;
 

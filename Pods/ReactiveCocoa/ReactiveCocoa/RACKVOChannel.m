@@ -7,7 +7,7 @@
 //
 
 #import "RACKVOChannel.h"
-#import "RACEXTScope.h"
+#import "EXTScope.h"
 #import "NSObject+RACDeallocating.h"
 #import "NSObject+RACKVOWrapper.h"
 #import "NSString+RACKeyPathUtilities.h"

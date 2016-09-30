@@ -8,7 +8,7 @@
 
 #import "RVMViewModel.h"
 #import <libkern/OSAtomic.h>
-#import <ReactiveCocoa/RACEXTScope.h>
+#import <ReactiveCocoa/EXTScope.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 // The number of seconds by which signal events are throttled when using

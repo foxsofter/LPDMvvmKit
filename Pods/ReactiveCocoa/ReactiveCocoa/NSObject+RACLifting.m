@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+RACLifting.h"
-#import "RACEXTScope.h"
+#import "EXTScope.h"
 #import "NSInvocation+RACTypeParsing.h"
 #import "NSObject+RACDeallocating.h"
 #import "NSObject+RACDescription.h"

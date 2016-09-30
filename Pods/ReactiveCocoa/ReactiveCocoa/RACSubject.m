@@ -7,7 +7,7 @@
 //
 
 #import "RACSubject.h"
-#import "RACEXTScope.h"
+#import "EXTScope.h"
 #import "RACCompoundDisposable.h"
 #import "RACPassthroughSubscriber.h"
 

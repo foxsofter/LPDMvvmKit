@@ -7,7 +7,7 @@
 //
 
 #import "RACCommand.h"
-#import "RACEXTScope.h"
+#import "EXTScope.h"
 #import "NSArray+RACSequenceAdditions.h"
 #import "NSObject+RACDeallocating.h"
 #import "NSObject+RACDescription.h"

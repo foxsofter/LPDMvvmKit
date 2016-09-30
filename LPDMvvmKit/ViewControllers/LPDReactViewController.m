@@ -57,7 +57,7 @@
 
 - (void)test {
   
-  RACSignal *signal = [[[[[[RACSignal return:@1] doNext:^(id x) {
+  [[[[[[RACSignal return:@1] doNext:^(id x) {
     NSLog(@"doNext 1");
   }] doNext:^(id x) {
     NSLog(@"doNext 2");

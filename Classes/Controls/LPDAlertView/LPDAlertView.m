@@ -127,10 +127,6 @@
   _contentView.transform = CGAffineTransformMakeScale(0.1, 0.1);
   [_backgroundView addSubview:_contentView];
   _contentView.layer.cornerRadius = 3;
-  //  contentView.layer.masksToBounds = NO;
-  //  contentView.layer.shadowOffset = CGSizeMake(1, 1);
-  //  contentView.layer.shadowRadius = 3;
-  //  contentView.layer.shadowOpacity = 0.5;
 
   [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.equalTo(@(UIScreen.width * 0.14));

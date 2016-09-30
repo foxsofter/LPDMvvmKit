@@ -49,19 +49,10 @@
 		8E7BDA5A1D9A122D00008400 /* UIView+LPDBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7D81D9A122B00008400 /* UIView+LPDBadge.m */; };
 		8E7BDA5B1D9A122D00008400 /* UIView+LPDBorders.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7DA1D9A122B00008400 /* UIView+LPDBorders.m */; };
 		8E7BDA5C1D9A122D00008400 /* UIView+LPDFindSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7DC1D9A122B00008400 /* UIView+LPDFindSubView.m */; };
-		8E7BDA5D1D9A122D00008400 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7E01D9A122B00008400 /* KxMenu.m */; };
 		8E7BDA5E1D9A122D00008400 /* LPDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7E31D9A122B00008400 /* LPDAlertView.m */; };
-		8E7BDA5F1D9A122D00008400 /* LPDKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7E71D9A122B00008400 /* LPDKeyboardView.m */; };
-		8E7BDA601D9A122D00008400 /* LPDKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7E91D9A122B00008400 /* LPDKeyButton.m */; };
-		8E7BDA611D9A122D00008400 /* LPDKeyButtonHolderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7EB1D9A122B00008400 /* LPDKeyButtonHolderView.m */; };
-		8E7BDA621D9A122D00008400 /* LPDKeyButtonPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7ED1D9A122B00008400 /* LPDKeyButtonPopupView.m */; };
-		8E7BDA631D9A122D00008400 /* UIButton+LPDKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7EF1D9A122B00008400 /* UIButton+LPDKeyboardView.m */; };
-		8E7BDA641D9A122D00008400 /* LPDPlusCrossBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7F21D9A122B00008400 /* LPDPlusCrossBarButtonItem.m */; };
 		8E7BDA651D9A122D00008400 /* LPDPopupActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7F51D9A122B00008400 /* LPDPopupActionSheet.m */; };
 		8E7BDA661D9A122D00008400 /* LPDPopupPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7F71D9A122B00008400 /* LPDPopupPickerView.m */; };
 		8E7BDA671D9A122D00008400 /* LPDPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7F91D9A122B00008400 /* LPDPopupView.m */; };
-		8E7BDA681D9A122D00008400 /* LPDRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7FC1D9A122B00008400 /* LPDRating.m */; };
-		8E7BDA691D9A122D00008400 /* LPDSegmented.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD7FF1D9A122B00008400 /* LPDSegmented.m */; };
 		8E7BDA6A1D9A122D00008400 /* LPDToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD8021D9A122B00008400 /* LPDToastView.m */; };
 		8E7BDC381D9A122E00008400 /* LPDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD9D61D9A122D00008400 /* LPDModel.m */; };
 		8E7BDC391D9A122E00008400 /* LPDUserDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BD9D91D9A122D00008400 /* LPDUserDefaultModel.m */; };
@@ -215,33 +206,14 @@
 		8E7BD7DA1D9A122B00008400 /* UIView+LPDBorders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LPDBorders.m"; sourceTree = "<group>"; };
 		8E7BD7DB1D9A122B00008400 /* UIView+LPDFindSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LPDFindSubView.h"; sourceTree = "<group>"; };
 		8E7BD7DC1D9A122B00008400 /* UIView+LPDFindSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LPDFindSubView.m"; sourceTree = "<group>"; };
-		8E7BD7DF1D9A122B00008400 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
-		8E7BD7E01D9A122B00008400 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		8E7BD7E21D9A122B00008400 /* LPDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDAlertView.h; sourceTree = "<group>"; };
 		8E7BD7E31D9A122B00008400 /* LPDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDAlertView.m; sourceTree = "<group>"; };
-		8E7BD7E41D9A122B00008400 /* LPDControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDControls.h; sourceTree = "<group>"; };
-		8E7BD7E61D9A122B00008400 /* LPDKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDKeyboardView.h; sourceTree = "<group>"; };
-		8E7BD7E71D9A122B00008400 /* LPDKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDKeyboardView.m; sourceTree = "<group>"; };
-		8E7BD7E81D9A122B00008400 /* LPDKeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDKeyButton.h; sourceTree = "<group>"; };
-		8E7BD7E91D9A122B00008400 /* LPDKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDKeyButton.m; sourceTree = "<group>"; };
-		8E7BD7EA1D9A122B00008400 /* LPDKeyButtonHolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDKeyButtonHolderView.h; sourceTree = "<group>"; };
-		8E7BD7EB1D9A122B00008400 /* LPDKeyButtonHolderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDKeyButtonHolderView.m; sourceTree = "<group>"; };
-		8E7BD7EC1D9A122B00008400 /* LPDKeyButtonPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDKeyButtonPopupView.h; sourceTree = "<group>"; };
-		8E7BD7ED1D9A122B00008400 /* LPDKeyButtonPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDKeyButtonPopupView.m; sourceTree = "<group>"; };
-		8E7BD7EE1D9A122B00008400 /* UIButton+LPDKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LPDKeyboardView.h"; sourceTree = "<group>"; };
-		8E7BD7EF1D9A122B00008400 /* UIButton+LPDKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LPDKeyboardView.m"; sourceTree = "<group>"; };
-		8E7BD7F11D9A122B00008400 /* LPDPlusCrossBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDPlusCrossBarButtonItem.h; sourceTree = "<group>"; };
-		8E7BD7F21D9A122B00008400 /* LPDPlusCrossBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDPlusCrossBarButtonItem.m; sourceTree = "<group>"; };
 		8E7BD7F41D9A122B00008400 /* LPDPopupActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDPopupActionSheet.h; sourceTree = "<group>"; };
 		8E7BD7F51D9A122B00008400 /* LPDPopupActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDPopupActionSheet.m; sourceTree = "<group>"; };
 		8E7BD7F61D9A122B00008400 /* LPDPopupPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDPopupPickerView.h; sourceTree = "<group>"; };
 		8E7BD7F71D9A122B00008400 /* LPDPopupPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDPopupPickerView.m; sourceTree = "<group>"; };
 		8E7BD7F81D9A122B00008400 /* LPDPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDPopupView.h; sourceTree = "<group>"; };
 		8E7BD7F91D9A122B00008400 /* LPDPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDPopupView.m; sourceTree = "<group>"; };
-		8E7BD7FB1D9A122B00008400 /* LPDRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDRating.h; sourceTree = "<group>"; };
-		8E7BD7FC1D9A122B00008400 /* LPDRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDRating.m; sourceTree = "<group>"; };
-		8E7BD7FE1D9A122B00008400 /* LPDSegmented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDSegmented.h; sourceTree = "<group>"; };
-		8E7BD7FF1D9A122B00008400 /* LPDSegmented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDSegmented.m; sourceTree = "<group>"; };
 		8E7BD8011D9A122B00008400 /* LPDToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDToastView.h; sourceTree = "<group>"; };
 		8E7BD8021D9A122B00008400 /* LPDToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDToastView.m; sourceTree = "<group>"; };
 		8E7BD9D31D9A122D00008400 /* LPDMvvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDMvvm.h; sourceTree = "<group>"; };
@@ -556,26 +528,11 @@
 		8E7BD7DD1D9A122B00008400 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				8E7BD7E41D9A122B00008400 /* LPDControls.h */,
-				8E7BD7DE1D9A122B00008400 /* KxMenu */,
 				8E7BD7E11D9A122B00008400 /* LPDAlertView */,
-				8E7BD7E51D9A122B00008400 /* LPDKeyboardView */,
-				8E7BD7F01D9A122B00008400 /* LPDPlusCrossBarButtonItem */,
 				8E7BD7F31D9A122B00008400 /* LPDPopupView */,
-				8E7BD7FA1D9A122B00008400 /* LPDRating */,
-				8E7BD7FD1D9A122B00008400 /* LPDSegmented */,
 				8E7BD8001D9A122B00008400 /* LPDToastView */,
 			);
 			path = Controls;
-			sourceTree = "<group>";
-		};
-		8E7BD7DE1D9A122B00008400 /* KxMenu */ = {
-			isa = PBXGroup;
-			children = (
-				8E7BD7DF1D9A122B00008400 /* KxMenu.h */,
-				8E7BD7E01D9A122B00008400 /* KxMenu.m */,
-			);
-			path = KxMenu;
 			sourceTree = "<group>";
 		};
 		8E7BD7E11D9A122B00008400 /* LPDAlertView */ = {
@@ -585,32 +542,6 @@
 				8E7BD7E31D9A122B00008400 /* LPDAlertView.m */,
 			);
 			path = LPDAlertView;
-			sourceTree = "<group>";
-		};
-		8E7BD7E51D9A122B00008400 /* LPDKeyboardView */ = {
-			isa = PBXGroup;
-			children = (
-				8E7BD7E61D9A122B00008400 /* LPDKeyboardView.h */,
-				8E7BD7E71D9A122B00008400 /* LPDKeyboardView.m */,
-				8E7BD7E81D9A122B00008400 /* LPDKeyButton.h */,
-				8E7BD7E91D9A122B00008400 /* LPDKeyButton.m */,
-				8E7BD7EA1D9A122B00008400 /* LPDKeyButtonHolderView.h */,
-				8E7BD7EB1D9A122B00008400 /* LPDKeyButtonHolderView.m */,
-				8E7BD7EC1D9A122B00008400 /* LPDKeyButtonPopupView.h */,
-				8E7BD7ED1D9A122B00008400 /* LPDKeyButtonPopupView.m */,
-				8E7BD7EE1D9A122B00008400 /* UIButton+LPDKeyboardView.h */,
-				8E7BD7EF1D9A122B00008400 /* UIButton+LPDKeyboardView.m */,
-			);
-			path = LPDKeyboardView;
-			sourceTree = "<group>";
-		};
-		8E7BD7F01D9A122B00008400 /* LPDPlusCrossBarButtonItem */ = {
-			isa = PBXGroup;
-			children = (
-				8E7BD7F11D9A122B00008400 /* LPDPlusCrossBarButtonItem.h */,
-				8E7BD7F21D9A122B00008400 /* LPDPlusCrossBarButtonItem.m */,
-			);
-			path = LPDPlusCrossBarButtonItem;
 			sourceTree = "<group>";
 		};
 		8E7BD7F31D9A122B00008400 /* LPDPopupView */ = {
@@ -624,24 +555,6 @@
 				8E7BD7F91D9A122B00008400 /* LPDPopupView.m */,
 			);
 			path = LPDPopupView;
-			sourceTree = "<group>";
-		};
-		8E7BD7FA1D9A122B00008400 /* LPDRating */ = {
-			isa = PBXGroup;
-			children = (
-				8E7BD7FB1D9A122B00008400 /* LPDRating.h */,
-				8E7BD7FC1D9A122B00008400 /* LPDRating.m */,
-			);
-			path = LPDRating;
-			sourceTree = "<group>";
-		};
-		8E7BD7FD1D9A122B00008400 /* LPDSegmented */ = {
-			isa = PBXGroup;
-			children = (
-				8E7BD7FE1D9A122B00008400 /* LPDSegmented.h */,
-				8E7BD7FF1D9A122B00008400 /* LPDSegmented.m */,
-			);
-			path = LPDSegmented;
 			sourceTree = "<group>";
 		};
 		8E7BD8001D9A122B00008400 /* LPDToastView */ = {
@@ -1159,7 +1072,6 @@
 				8E7BDA6A1D9A122D00008400 /* LPDToastView.m in Sources */,
 				8E7BDC411D9A122E00008400 /* LPDUserDefaultsManager.m in Sources */,
 				8ECF3F5D1C4CBD6600CE2A17 /* LPDExamTableViewModel.m in Sources */,
-				8E7BDA691D9A122D00008400 /* LPDSegmented.m in Sources */,
 				8E7BDA491D9A122D00008400 /* NSObject+LPDSwizzling.m in Sources */,
 				8E7BDC5C1D9A122E00008400 /* LPDTableViewHeaderFooter.m in Sources */,
 				8E7BDC571D9A122E00008400 /* LPDCollectionViewCell.m in Sources */,
@@ -1168,7 +1080,6 @@
 				8E7BDA401D9A122D00008400 /* LPDLocalNotificationCenter.m in Sources */,
 				8E7BDA511D9A122D00008400 /* UIControl+Block.m in Sources */,
 				8E7BDC581D9A122E00008400 /* LPDCollectionViewHeaderFooter.m in Sources */,
-				8E7BDA681D9A122D00008400 /* LPDRating.m in Sources */,
 				8E7BDA4A1D9A122D00008400 /* NSObject+LPDThread.m in Sources */,
 				8E7BDC461D9A122E00008400 /* LPDViewControllerRouter.m in Sources */,
 				8E7BDC561D9A122E00008400 /* LPDCollectionView.m in Sources */,
@@ -1177,24 +1088,20 @@
 				8E7BDA4C1D9A122D00008400 /* RACSignal+LPDAddition.m in Sources */,
 				8E7BDC541D9A122E00008400 /* LPDTableViewModel.m in Sources */,
 				8E7BDC501D9A122E00008400 /* LPDTableCellViewModel.m in Sources */,
-				8E7BDA5D1D9A122D00008400 /* KxMenu.m in Sources */,
 				8E7BDC551D9A122E00008400 /* LPDViewModel.m in Sources */,
 				8E7BDA5C1D9A122D00008400 /* UIView+LPDFindSubView.m in Sources */,
 				8E7BDA5A1D9A122D00008400 /* UIView+LPDBadge.m in Sources */,
-				8E7BDA5F1D9A122D00008400 /* LPDKeyboardView.m in Sources */,
 				8E7BDC451D9A122E00008400 /* LPDViewController.m in Sources */,
 				8E7BDC491D9A122E00008400 /* LPDCollectionImageCellViewModel.m in Sources */,
 				8E7BDC431D9A122E00008400 /* LPDScrollViewController.m in Sources */,
 				8E7BDC4C1D9A122E00008400 /* LPDCollectionViewModel.m in Sources */,
 				8E7BDA3F1D9A122D00008400 /* LPDLabel.m in Sources */,
 				8ECF3F5E1C4CBD6600CE2A17 /* LPDHomeViewModel.m in Sources */,
-				8E7BDA641D9A122D00008400 /* LPDPlusCrossBarButtonItem.m in Sources */,
 				8E7BDC521D9A122E00008400 /* LPDTableSectionViewModel.m in Sources */,
 				8E7BDC5A1D9A122E00008400 /* LPDTableView.m in Sources */,
 				8E7BDA4E1D9A122D00008400 /* UIButton+LPDAddition.m in Sources */,
 				8E7BDA4D1D9A122D00008400 /* RSA.m in Sources */,
 				8E7BDC5B1D9A122E00008400 /* LPDTableViewCell.m in Sources */,
-				8E7BDA601D9A122D00008400 /* LPDKeyButton.m in Sources */,
 				8ECF3F541C4CBD5A00CE2A17 /* LPDExamTableViewController.m in Sources */,
 				8E7BDA5E1D9A122D00008400 /* LPDAlertView.m in Sources */,
 				8E7BDA461D9A122D00008400 /* NSNull+NSNullSafe.m in Sources */,
@@ -1203,7 +1110,6 @@
 				8E7BDC4B1D9A122E00008400 /* LPDCollectionViewFactory.m in Sources */,
 				8E7BD7941D93A80E00008400 /* LPDPhotoModel.m in Sources */,
 				8E7BDC3C1D9A122E00008400 /* LKPropertyHook.m in Sources */,
-				8E7BDA631D9A122D00008400 /* UIButton+LPDKeyboardView.m in Sources */,
 				8E7BD79A1D93B2DE00008400 /* LPDCollectionViewPhotoCell.m in Sources */,
 				8E7BD7841D927DF800008400 /* LPDPostModel.m in Sources */,
 				8E7BDA411D9A122D00008400 /* NSArray+LPDRandom.m in Sources */,
@@ -1223,7 +1129,6 @@
 				8E7BDA471D9A122D00008400 /* NSNumber+LPDMoneyAddition.m in Sources */,
 				8E7BDA441D9A122D00008400 /* NSMutableArray+LPDQueue.m in Sources */,
 				8E7BDC481D9A122E00008400 /* LPDCollectionHeaderFooterViewModel.m in Sources */,
-				8E7BDA621D9A122D00008400 /* LPDKeyButtonPopupView.m in Sources */,
 				8E7BDA591D9A122D00008400 /* UIView+LPDAccessor.m in Sources */,
 				8E7BDC381D9A122E00008400 /* LPDModel.m in Sources */,
 				8EDA13A11C4CB8C500CF8F6F /* AppDelegate.m in Sources */,
@@ -1238,7 +1143,6 @@
 				8E7BDA671D9A122D00008400 /* LPDPopupView.m in Sources */,
 				8E7BDC471D9A122E00008400 /* LPDCollectionCellViewModel.m in Sources */,
 				8E7BDC3B1D9A122E00008400 /* LKKeyValueStore.m in Sources */,
-				8E7BDA611D9A122D00008400 /* LPDKeyButtonHolderView.m in Sources */,
 				8E7BDA481D9A122D00008400 /* NSObject+LPDAssociatedObject.m in Sources */,
 				8E7BDA431D9A122D00008400 /* NSDate+LPDNSDateRFC1123.m in Sources */,
 			);

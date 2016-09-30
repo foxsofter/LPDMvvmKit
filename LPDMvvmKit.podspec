@@ -44,8 +44,7 @@ Pod::Spec.new do |s|
     ss.dependency 'LPDMvvmKit/Additions'
     ss.dependency 'SDiPhoneVersion'
     ss.dependency 'Masonry'
-    ss.dependency 'TurtleBezierPath'
-    ss.source_files = 'Classes/Controls/*.{h,m}','Classes/Controls/LPDPopupView/*.{h,m}','Classes/Controls/LPDRating/*.{h,m}','Classes/Controls/LPDSegmented/*.{h,m}','Classes/Controls/KxMenu/*.{h,m}','Classes/Controls/LPDKeyboardView/*.{h,m}','Classes/Controls/LPDPlusCrossBarButtonItem/*.{h,m}','Classes/Controls/LPDAlertView/*.{h,m}','Classes/Controls/LPDToastView/*.{h,m}'
+    ss.source_files = 'Classes/Controls/LPDPopupView/*.{h,m}','Classes/Controls/LPDAlertView/*.{h,m}','Classes/Controls/LPDToastView/*.{h,m}'
   end
   s.subspec 'Mvvm' do |ss|
     ss.ios.deployment_target = '7.0'

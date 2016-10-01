@@ -54,6 +54,7 @@ Pod::Spec.new do |s|
     ss.dependency 'ReactiveCocoa', '2.5'
     ss.dependency 'ReactiveViewModel'
     ss.dependency 'UICKeyChainStore'
+    ss.dependency 'MJRefresh'
     ss.dependency 'YYModel'
     ss.source_files = 'Classes/Mvvm/*.{h,m}','Classes/Mvvm/Services/*.{h,m}','Classes/Mvvm/Services/LKUserDefaults/*.{h,m}','Classes/Mvvm/Models/*.{h,m}','Classes/Mvvm/ViewControllers/*.{h,m}','Classes/Mvvm/ViewModels/*.{h,m}','Classes/Mvvm/Views/*.{h,m}'
   end

@@ -38,8 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
     _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
 
     _sessionManager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
-
-//    [_sessionManager setSecurityPolicy:[self customSecurityPolicy]];
   }
   return self;
 }
@@ -217,45 +215,6 @@ NS_ASSUME_NONNULL_BEGIN
   _sessionManager.responseSerializer = responseSerializer;
 }
 
-#pragma mark - private methods
-
-- (AFSecurityPolicy *)customSecurityPolicy {
-  NSLog(@"security policy");
-
-  /* 配置1：验证锁定的证书，需要在项目中导入eleme.cer根证书*/
-  // /先导入证书
-  NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"eleme" ofType:@"cer"]; //证书的路径
-  // NSLog(@"certPath  % @",cerPath);
-  NSData *certData = [NSData dataWithContentsOfFile:cerPath];
-  // NSLog(@"certData %@",certData);
-
-  // AFSSLPinningModeCertificate 使用证书验证模式
-  AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-
-  // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
-  // 如果是需要验证自建证书，需要设置为YES
-  securityPolicy.allowInvalidCertificates = YES;
-
-  // validatesDomainName 是否需要验证域名，默认为YES；
-  //假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。
-  //置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
-  //如置为NO，建议自己添加对应域名的校验逻辑。
-  securityPolicy.validatesDomainName = YES;
-
-  securityPolicy.pinnedCertificates = [NSSet setWithObject:certData];
-  /*配置1结束*/
-
-  /* 配置2：一般的验证证书，允许信任（包括系统自带的和个人安装的）的证书库中证书签名的任何证书
-   * 下面的配置可以验证HTTPS的证书。不过如果在iOS设备上安装了自建证书，那也会验证通过。
-   * 如把抓包工具的证书安装在iOS设备上，仍然可以抓到HTTPS的数据包
-   AFSecurityPolicy *securityPolicy = [[AFSecurityPolicy alloc] init];
-   securityPolicy.allowInvalidCertificates = NO;
-   securityPolicy.validatesDomainName = YES;
-   mgr.securityPolicy = securityPolicy;
-   配置2结束*/
-
-  return securityPolicy;
-}
 
 @end
 

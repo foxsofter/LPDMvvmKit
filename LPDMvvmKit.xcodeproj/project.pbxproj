@@ -774,6 +774,11 @@
 		8EDA13111C4CB8C500CF8F6F /* LPDMvvmKit */ = {
 			isa = PBXGroup;
 			children = (
+				8EDA137F1C4CB8C500CF8F6F /* ViewControllers */,
+				8EDA13861C4CB8C500CF8F6F /* ViewModels */,
+				8EDA138D1C4CB8C500CF8F6F /* Views */,
+				8E7BD7871D9281A700008400 /* Services */,
+				8EDA13411C4CB8C500CF8F6F /* Models */,
 				8EE1E9001C55C99A000550E1 /* LPDMvvmKit.podspec */,
 				8EDA137E1C4CB8C500CF8F6F /* PrefixHeader.pch */,
 				8EDA133A1C4CB8C500CF8F6F /* AppDelegate.h */,
@@ -782,11 +787,6 @@
 				8EDA133D1C4CB8C500CF8F6F /* LaunchScreen.storyboard */,
 				8EDA133F1C4CB8C500CF8F6F /* Info.plist */,
 				8EDA13401C4CB8C500CF8F6F /* main.m */,
-				8EDA137F1C4CB8C500CF8F6F /* ViewControllers */,
-				8EDA13861C4CB8C500CF8F6F /* ViewModels */,
-				8EDA138D1C4CB8C500CF8F6F /* Views */,
-				8E7BD7871D9281A700008400 /* Services */,
-				8EDA13411C4CB8C500CF8F6F /* Models */,
 			);
 			path = LPDMvvmKit;
 			sourceTree = "<group>";

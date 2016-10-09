@@ -26,7 +26,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
   LPDHomeViewModel *homeVM = [[LPDHomeViewModel alloc] init];
   LPDNavigationViewModel *homeNVM = [[LPDNavigationViewModel alloc] initWithRootViewModel:homeVM];
 

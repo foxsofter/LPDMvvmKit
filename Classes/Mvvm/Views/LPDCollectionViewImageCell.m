@@ -17,7 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
-    [self initialize];
+    [self loadSubviews];
   }
   return self;
 }
@@ -25,10 +25,10 @@
 - (void)awakeFromNib {
   [super awakeFromNib];
   
-  [self initialize];
+  [self loadSubviews];
 }
 
-- (void)initialize {
+- (void)loadSubviews {
   self.backgroundColor = [UIColor clearColor];
   _imageView = [[UIImageView alloc] init];
   [self.contentView addSubview:_imageView];

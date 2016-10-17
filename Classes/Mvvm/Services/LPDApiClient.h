@@ -26,14 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSObject<LPDApiServerProtocol> *server;
 
 /**
- *  @brief requeset serializer
+ *  @brief AFHTTPSessionManager
  */
-@property (nonatomic, strong) AFHTTPRequestSerializer<AFURLRequestSerialization> *requestSerializer;
-
-/**
- *  @brief response serializer
- */
-@property (nonatomic, strong) AFHTTPResponseSerializer<AFURLResponseSerialization> *responseSerializer;
+@property (nonatomic, strong, readonly) AFHTTPSessionManager *sessionManager;
 
 /**
  *  @brief A convenience around -GET:parameters:success:failure: that returns a cold

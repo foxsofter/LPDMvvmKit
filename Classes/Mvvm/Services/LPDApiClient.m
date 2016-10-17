@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDApiClient ()
 
-@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+@property (nonatomic, strong, readwrite) AFHTTPSessionManager *sessionManager;
 
 @property (nonatomic, strong) NSMutableURLRequest *request;
 
@@ -195,24 +195,6 @@ NS_ASSUME_NONNULL_BEGIN
     }
   }
   return responseModel;
-}
-
-#pragma mark - properties
-
-- (AFHTTPRequestSerializer *)requestSerializer {
-  return _sessionManager.requestSerializer;
-}
-
-- (void)setRequestSerializer:(AFHTTPRequestSerializer<AFURLRequestSerialization> *)requestSerializer {
-  _sessionManager.requestSerializer = requestSerializer;
-}
-
-- (AFHTTPResponseSerializer *)responseSerializer {
-  return _sessionManager.responseSerializer;
-}
-
-- (void)setResponseSerializer:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer {
-  _sessionManager.responseSerializer = responseSerializer;
 }
 
 

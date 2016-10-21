@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+RACCommandSupport.h"
-#import "EXTKeyPathCoding.h"
+#import "RACEXTKeyPathCoding.h"
 #import "RACCommand.h"
 #import "RACDisposable.h"
 #import "RACSignal+Operations.h"

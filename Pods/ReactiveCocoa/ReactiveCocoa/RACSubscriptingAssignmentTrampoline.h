@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EXTKeyPathCoding.h"
+#import "RACEXTKeyPathCoding.h"
 
 @class RACSignal;
 

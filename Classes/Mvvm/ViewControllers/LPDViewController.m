@@ -100,7 +100,7 @@ static UIView * (^initSubmittingBlock)();
       contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
 
       UIActivityIndicatorView *submittingView =
-        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
       submittingView.tintColor = [UIColor whiteColor];
       [contentView addSubview:submittingView];
       submittingView.center = CGPointMake(50, 50);

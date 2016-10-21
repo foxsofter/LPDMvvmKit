@@ -7,7 +7,7 @@
 //
 
 #import "RACDynamicSignal.h"
-#import "EXTScope.h"
+#import "RACEXTScope.h"
 #import "RACCompoundDisposable.h"
 #import "RACPassthroughSubscriber.h"
 #import "RACScheduler+Private.h"

@@ -19,6 +19,8 @@
 
 @property (nonatomic, copy) NSString *detail;
 
+@property (nonatomic) UITableViewCellAccessoryType accessoryType;
+
 @end
 
 @interface LPDTableDefaultCellViewModel : LPDTableCellViewModel

@@ -32,6 +32,7 @@
   self.textLabel.text = self.selfViewModel.text;
   self.detailTextLabel.text = self.selfViewModel.detail;
   self.imageView.image = self.selfViewModel.image;
+  self.accessoryType = self.selfViewModel.accessoryType;
 }
 
 - (LPDTableCellViewModel *)selfViewModel {

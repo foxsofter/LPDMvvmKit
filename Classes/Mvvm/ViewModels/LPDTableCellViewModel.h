@@ -21,6 +21,7 @@
 
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
+@property (nonatomic) UITableViewCellSelectionStyle   selectionStyle;
 @end
 
 @interface LPDTableDefaultCellViewModel : LPDTableCellViewModel

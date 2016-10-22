@@ -236,6 +236,10 @@ static UIView * (^initSubmittingBlock)();
   [[[[[self.viewModel.errorSubject takeUntil:[self rac_willDeallocSignal]]
     deliverOnMainThread] map:^id(NSString *message) {
     NSLog(@"subscribeErrorSubject pre:%@", message);
+    
+    if ([message containsString:@"未能读取数据"]) {
+      message = @"程序员GG正在抢修...";
+    }
 
     return [[[message stringByReplacingOccurrencesOfString:@"Request failed: internal server error"
                                                 withString:@"系统异常"] stringByRemovingWithPattern:@"\\([^)]*\\)"]

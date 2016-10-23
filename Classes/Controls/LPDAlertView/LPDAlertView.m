@@ -231,6 +231,10 @@
   }
 }
 
++ (void)hideWith:(NSString *)caption {
+  [self hideWith:caption animated:YES];
+}
+
 + (void)hideWith:(NSString *)caption animated:(BOOL)animated {
   for (NSInteger i = self.alertViews.count - 1; i >= 0; i--) {
     LPDAlertView *alertView = self.alertViews[i];

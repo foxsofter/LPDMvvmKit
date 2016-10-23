@@ -231,12 +231,16 @@
   }
 }
 
-+ (void)hideWith:(NSString *)caption {
++ (void)hideWith:(NSString *)caption animated:(BOOL)animated {
   for (NSInteger i = self.alertViews.count - 1; i >= 0; i--) {
     LPDAlertView *alertView = self.alertViews[i];
     if ([alertView.caption isEqualToString:caption]) {
       [self.alertViews removeObjectAtIndex:i];
-      [alertView hide:nil];
+      if (animated) {
+        [alertView hide:nil];
+      } else {
+        [alertView remove:nil];
+      }
     }
   }
 }
@@ -284,17 +288,21 @@
       self.backgroundView.backgroundColor = [UIColor clearColor];
     }
     completion:^(BOOL finished) {
-      [self.backgroundView removeFromSuperview];
-      self.backgroundView = nil;
-      [[self.class alertViews] removeObject:self];
-      LPDAlertView *alertView = [[self.class alertViews] peekObject];
-      if (alertView) {
-        [alertView show];
-      }
-      if (completion) {
-        completion();
-      }
+      [self remove:completion];
     }];
+}
+
+- (void)remove:(void (^)(void))completion {
+  [self.backgroundView removeFromSuperview];
+  self.backgroundView = nil;
+  [[self.class alertViews] removeObject:self];
+  LPDAlertView *alertView = [[self.class alertViews] peekObject];
+  if (alertView) {
+    [alertView show];
+  }
+  if (completion) {
+    completion();
+  }
 }
 
 - (void)hide {

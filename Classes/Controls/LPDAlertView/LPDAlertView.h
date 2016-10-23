@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, LPDAlertActionType) {
 
 + (void)hideAll;
 
-+ (void)hideWith:(NSString *)caption;
++ (void)hideWith:(NSString *)caption animated:(BOOL)animated;
 
 + (BOOL)existWith:(NSString *)caption;
 

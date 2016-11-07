@@ -22,6 +22,9 @@
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
 @property (nonatomic) UITableViewCellSelectionStyle   selectionStyle;
+
+@property (nonatomic, strong) NSMutableAttributedString *attributedText;
+
 @end
 
 @interface LPDTableDefaultCellViewModel : LPDTableCellViewModel

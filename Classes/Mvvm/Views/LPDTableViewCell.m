@@ -34,6 +34,9 @@
   self.imageView.image = self.selfViewModel.image;
   self.accessoryType = self.selfViewModel.accessoryType;
   self.selectionStyle = self.selfViewModel.selectionStyle;
+  if (self.selfViewModel.attributedText) {
+    self.textLabel.attributedText = self.selfViewModel.attributedText;
+  }
 }
 
 - (LPDTableCellViewModel *)selfViewModel {

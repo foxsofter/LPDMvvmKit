@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  WisdomAir
+//
+//  Created by fox softer on 15/5/2.
+//  Copyright (c) 2015年 XD. All rights reserved.
+//
+
+#ifndef WisdomAir_PrefixHeader_pch
+#define WisdomAir_PrefixHeader_pch
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+  // Include any system framework and library headers here that should be included in all compilation units.
+  // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Foundation/Foundation.h"
+
+//#import "LPDAdditions.h"
+//#import "LPDMvvm.h"
+//#import "Masonry.h"
+//#import "ReactiveCocoa.h"
+
+#endif
+
+
+#endif

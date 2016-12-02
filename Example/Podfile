@@ -1,4 +1,4 @@
-use_frameworks!
+#use_frameworks!
 
 target 'LPDMvvmKit_Example' do
   pod 'LPDMvvmKit', :path => '../'
@@ -6,6 +6,6 @@ target 'LPDMvvmKit_Example' do
   target 'LPDMvvmKit_Tests' do
     inherit! :search_paths
 
-    pod 'Kiwi'
+    #pod 'Kiwi'
   end
 end

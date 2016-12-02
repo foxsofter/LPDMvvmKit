@@ -1,0 +1,1 @@
+../../../LPDAdditionsKit/LPDAdditionsKit/Classes/UINavigationItem+LPDAddition.h

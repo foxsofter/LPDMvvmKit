@@ -1,0 +1,1 @@
+../../../../../LPDMvvmKit/Classes/ViewModels/LPDCollectionSectionViewModel+Private.h

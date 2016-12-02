@@ -1,0 +1,1 @@
+../../../LPDNetworkingKit/LPDNetworkingKit/Classes/Models/LPDModelProtocol.h

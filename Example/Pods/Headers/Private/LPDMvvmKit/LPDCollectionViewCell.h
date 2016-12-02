@@ -1,0 +1,1 @@
+../../../../../LPDMvvmKit/Classes/Views/LPDCollectionViewCell.h

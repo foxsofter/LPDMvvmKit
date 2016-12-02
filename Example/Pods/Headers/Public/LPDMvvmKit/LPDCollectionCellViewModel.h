@@ -1,0 +1,1 @@
+../../../../../LPDMvvmKit/Classes/ViewModels/LPDCollectionCellViewModel.h

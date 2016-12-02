@@ -1,0 +1,73 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - LPDAdditionsKit (0.1.1)
+  - LPDControlsKit (0.1.0):
+    - LPDAdditionsKit
+    - Masonry
+    - SDVersion
+  - LPDMvvmKit (0.6.0):
+    - LPDAdditionsKit
+    - LPDControlsKit
+    - LPDNetworkingKit
+    - MJRefresh
+    - ReactiveViewModel
+    - UICKeyChainStore
+  - LPDNetworkingKit (0.1.1):
+    - AFNetworking
+    - LPDAdditionsKit
+    - LPDControlsKit
+    - ReactiveCocoa (= 2.5)
+    - YYModel
+  - Masonry (1.0.2)
+  - MJRefresh (3.1.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - SDVersion (3.6)
+  - UICKeyChainStore (2.1.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - LPDMvvmKit (from `../`)
+
+EXTERNAL SOURCES:
+  LPDMvvmKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  LPDAdditionsKit: e029eefb9ec795bd4205a7f81e7678f654e9728f
+  LPDControlsKit: 80b5c98834f3290243555436ccd53110f86ab172
+  LPDMvvmKit: 0c5e0bcd86f1bf78eba5b0d876b08a7d75bd30e2
+  LPDNetworkingKit: aeeb154ef96f3095607ca616e07a442722337963
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  SDVersion: 43383b6ac05462c973c3fd92d9748c74e360aba5
+  UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 87e2bbe03584d8e125eb0983c3358bf375d124e3
+
+COCOAPODS: 1.1.1

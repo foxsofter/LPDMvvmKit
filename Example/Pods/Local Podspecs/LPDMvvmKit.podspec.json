@@ -1,6 +1,6 @@
 {
   "name": "LPDMvvmKit",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "summary": "mvvm",
   "description": "a framework of mvvm.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
   "homepage": "https://github.com/foxsofter/lpd-mvvm-kit",
@@ -16,15 +16,11 @@
   },
   "source": {
     "git": "https://github.com/foxsofter/lpd-mvvm-kit.git",
-    "tag": "0.6.0",
+    "tag": "0.6.2",
     "submodules": true
   },
   "requires_arc": true,
   "source_files": "LPDMvvmKit/Classes/**/*",
-  "private_header_files": [
-    "Pod/Classes/ViewModels/LPDSubviewModelReactProtocol.h",
-    "Pod/Classes/ViewModels/LPDSubviewModelReactProtocol+Extension.h"
-  ],
   "frameworks": "UIKit",
   "dependencies": {
     "LPDAdditionsKit": [

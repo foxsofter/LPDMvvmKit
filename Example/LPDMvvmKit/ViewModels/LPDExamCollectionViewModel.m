@@ -20,7 +20,7 @@
 @property (nonatomic, strong, readwrite) RACCommand *removeCellCommand;
 @property (nonatomic, strong, readwrite) RACCommand *removeCellsCommand;
 
-@property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, copy) NSArray *datas;
 
 @end
 
@@ -33,13 +33,13 @@
     self.tabBarItemImage = @"YuetTabItemNormalIcon";
     self.tabBarItemSelectedImage = @"YuetTabItemIcon";
 
-    self.collectionViewModel = [[LPDCollectionViewModel alloc] initWithScrollViewModel:self];
+    self.collectionViewModel = [[LPDCollectionViewModel alloc] init];
+    self.collectionViewModel.viewModel = self;
 
     @weakify(self);
     self.loadingSignal = [[[LPDAppApiClient sharedInstance] rac_GET:kLPDApiEndpointPhotos parameters:nil] doNext:^(RACTuple *tuple){
       @strongify(self);
-      self.datas = [NSMutableArray arrayWithArray:tuple.first];
-      [self.datas removeObjectsInRange:NSMakeRange(200, self.datas.count - 200)];
+      self.datas = [[NSMutableArray arrayWithArray:tuple.first] subarrayWithRange:NSMakeRange(0, 3)];
       [self reloadCollection];
     }];
     [[self.viewDidLayoutSubviewsSignal take:1] subscribeNext:^(id x) {

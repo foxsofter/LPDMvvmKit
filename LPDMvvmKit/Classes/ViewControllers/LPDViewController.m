@@ -7,7 +7,7 @@
 //
 
 #import "LPDViewController.h"
-#import "LPDViewControllerRouter.h"
+#import "LPDViewControllerFactory.h"
 #import "LPDViewModel.h"
 #import "LPDViewModelProtocol.h"
 #import "NSString+LPDAddition.h"
@@ -265,7 +265,7 @@ static UIView * (^initSubmittingBlock)();
     subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
       @strongify(self);
       id<LPDViewControllerProtocol> childViewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerRouter viewControllerForViewModel:childViewModel];
+        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
       [self lpd_addChildViewController:childViewController];
     }];
 }
@@ -283,7 +283,7 @@ static UIView * (^initSubmittingBlock)();
   if (childViewModels && childViewModels.count > 0) {
     for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
       id<LPDViewControllerProtocol> childViewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerRouter viewControllerForViewModel:childViewModel];
+        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
       [self lpd_addChildViewController:childViewController];
     }
   }

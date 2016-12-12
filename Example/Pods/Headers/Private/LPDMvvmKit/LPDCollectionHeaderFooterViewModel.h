@@ -1,1 +1,0 @@
-../../../../../LPDMvvmKit/Classes/ViewModels/LPDCollectionHeaderFooterViewModel.h

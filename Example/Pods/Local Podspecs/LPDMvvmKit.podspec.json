@@ -21,6 +21,10 @@
   },
   "requires_arc": true,
   "source_files": "LPDMvvmKit/Classes/**/*",
+  "private_header_files": [
+    "Pod/Classes/ViewModels/LPDSubviewModelReactProtocol.h",
+    "Pod/Classes/ViewModels/LPDSubviewModelReactProtocol+Extension.h"
+  ],
   "frameworks": "UIKit",
   "dependencies": {
     "LPDAdditionsKit": [
@@ -32,6 +36,12 @@
     "LPDNetworkingKit": [
 
     ],
+    "LPDTableViewKit": [
+
+    ],
+    "LPDCollectionViewKit": [
+
+    ],
     "ReactiveViewModel": [
 
     ],
@@ -39,6 +49,9 @@
 
     ],
     "MJRefresh": [
+
+    ],
+    "ProtocolKit": [
 
     ]
   }

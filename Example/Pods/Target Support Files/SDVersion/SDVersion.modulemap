@@ -1,0 +1,6 @@
+framework module SDVersion {
+  umbrella header "SDVersion-umbrella.h"
+
+  export *
+  module * { export * }
+}

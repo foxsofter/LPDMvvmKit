@@ -1,1 +1,0 @@
-../../../../../LPDMvvmKit/Classes/Views/LPDCollectionViewHeaderFooterProtocol.h

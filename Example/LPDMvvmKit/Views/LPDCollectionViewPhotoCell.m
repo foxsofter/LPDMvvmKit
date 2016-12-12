@@ -10,6 +10,7 @@
 
 #import "LPDCollectionViewPhotoCell.h"
 #import "LPDPhotoModel.h"
+#import "LPDCollectionPhotoCellViewModel.h"
 
 @implementation LPDCollectionViewPhotoCell
 
@@ -31,10 +32,10 @@
   self.imageView.frame = CGRectMake(4, 4, self.width - 8, self.height - 8);
 }
 
--(void)bindingTo:(__kindof id<LPDCollectionCellViewModelProtocol>)viewModel {
+-(void)bindingTo:(__kindof id<LPDCollectionItemViewModelProtocol>)viewModel {
   [super bindingTo:viewModel];
-  
-  [self.imageView setImageUrl:((LPDPhotoModel*)viewModel.model).thumbnailUrl];
+  LPDCollectionPhotoCellViewModel *cellViewModel = viewModel;
+  [self.imageView setImageUrl:cellViewModel.model.thumbnailUrl];
 }
 
 @end

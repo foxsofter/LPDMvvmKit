@@ -6,6 +6,7 @@
 //  Copyright © 2015年 eleme. All rights reserved.
 //
 
+#import <LPDMvvmKit/LPDMvvmKit.h>
 #import "LPDExamTableViewModel.h"
 #import "LPDAppApiClient.h"
 #import "LPDPostModel.h"
@@ -31,7 +32,8 @@
     self.tabBarItemSelectedImage = @"YuetTabItemIcon";
     self.tabBarItemImage = @"YuetTabItemNormalIcon";
 
-    self.tableViewModel = [[LPDTableViewModel alloc] initWithScrollViewModel:self];
+    self.tableViewModel = [[LPDTableViewModel alloc] init];
+    self.tableViewModel.viewModel = self;
     @weakify(self);
     self.loadingSignal = [[[LPDAppApiClient sharedInstance] rac_GET:kLPDApiEndpointPosts parameters:nil] doNext:^(RACTuple *tuple){
       @strongify(self);

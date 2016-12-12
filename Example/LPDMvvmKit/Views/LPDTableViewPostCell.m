@@ -8,6 +8,7 @@
 
 #import "LPDTableViewPostCell.h"
 #import "Masonry.h"
+#import "LPDTablePostCellViewModel.h"
 #import "LPDPostModel.h"
 
 @interface LPDTableViewPostCell ()
@@ -60,11 +61,12 @@
   }];
 }
 
--(void)bindingTo:(__kindof id<LPDTableCellViewModelProtocol>)viewModel {
+-(void)bindingTo:(__kindof id<LPDTableItemViewModelProtocol>)viewModel {
   [super bindingTo:viewModel];
   
-  self.titleLabel.text = ((LPDPostModel*)viewModel.model).title;
-  self.bodyLabel.text = ((LPDPostModel*)viewModel.model).body;
+  LPDTablePostCellViewModel *cellViewModel = viewModel;
+  self.titleLabel.text = cellViewModel.model.title;
+  self.bodyLabel.text = cellViewModel.model.body;
   
   self.viewModel.height = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
 }

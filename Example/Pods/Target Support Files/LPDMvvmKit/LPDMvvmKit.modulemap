@@ -1,0 +1,6 @@
+framework module LPDMvvmKit {
+  umbrella header "LPDMvvmKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

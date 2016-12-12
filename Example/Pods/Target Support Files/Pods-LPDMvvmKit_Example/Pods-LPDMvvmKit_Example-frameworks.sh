@@ -82,3 +82,38 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDMvvmKit/LPDMvvmKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDNetworkingKit/LPDNetworkingKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDTableViewKit/LPDTableViewKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ProtocolKit/ProtocolKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveViewModel/ReactiveViewModel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDVersion/SDVersion.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICKeyChainStore/UICKeyChainStore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDMvvmKit/LPDMvvmKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDNetworkingKit/LPDNetworkingKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LPDTableViewKit/LPDTableViewKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ProtocolKit/ProtocolKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveViewModel/ReactiveViewModel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDVersion/SDVersion.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICKeyChainStore/UICKeyChainStore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"
+fi

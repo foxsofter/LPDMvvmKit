@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)load {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    [LPDViewControllerRouter setViewController:NSStringFromClass(LPDNavigationController.class)
+    [LPDViewControllerFactory setViewController:NSStringFromClass(LPDNavigationController.class)
                                   forViewModel:NSStringFromClass(LPDNavigationViewModel.class)];
   });
 }
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
   if (self) {
     self.viewModel = viewModel;
 
-    LPDViewController *rootViewController = [LPDViewControllerRouter viewControllerForViewModel:viewModel.topViewModel];
+    LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:viewModel.topViewModel];
     [self setViewControllers:@[rootViewController] animated:NO];
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
@@ -126,7 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
       id<LPDViewControllerProtocol> viewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerRouter viewControllerForViewModel:tuple.first];
+        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:tuple.first];
       [self lpd_pushViewController:viewController animated:[tuple.second boolValue]];
     }];
 
@@ -160,7 +160,7 @@ NS_ASSUME_NONNULL_BEGIN
     @strongify(self);
     NSParameterAssert(tuple.first);
     id<LPDNavigationControllerProtocol> viewController =
-      [LPDViewControllerRouter viewControllerForViewModel:tuple.first];
+      [LPDViewControllerFactory viewControllerForViewModel:tuple.first];
 
     [self lpd_presentViewController:viewController animated:[tuple.second boolValue] completion:tuple.third];
   }];

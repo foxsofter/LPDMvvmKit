@@ -1,0 +1,6 @@
+framework module LPDCollectionViewKit {
+  umbrella header "LPDCollectionViewKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

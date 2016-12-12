@@ -16,7 +16,7 @@
 + (void)load {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    [LPDViewControllerRouter
+    [LPDViewControllerFactory
         setViewController:NSStringFromClass(LPDRootTabBarController.class)
              forViewModel:NSStringFromClass(LPDRootTabBarViewModel.class)];
   });

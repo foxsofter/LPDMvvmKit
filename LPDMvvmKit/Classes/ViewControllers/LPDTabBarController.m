@@ -8,7 +8,7 @@
 
 #import "LPDTabBarController.h"
 #import "LPDTabBarViewModel.h"
-#import "LPDViewControllerRouter.h"
+#import "LPDViewControllerFactory.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)load {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    [LPDViewControllerRouter setViewController:NSStringFromClass(LPDTabBarController.class)
+    [LPDViewControllerFactory setViewController:NSStringFromClass(LPDTabBarController.class)
                                   forViewModel:NSStringFromClass(LPDTabBarViewModel.class)];
   });
 }
@@ -41,9 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
     for (id<LPDViewModelProtocol> childViewModel in self.viewModel.viewModels) {
       UIViewController *viewController = nil;
       if (childViewModel.navigation) {
-        viewController = [LPDViewControllerRouter viewControllerForViewModel:childViewModel.navigation];
+        viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel.navigation];
       } else {
-        viewController = [LPDViewControllerRouter viewControllerForViewModel:childViewModel];
+        viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
       }
       [viewControllers addObject:viewController];
     }

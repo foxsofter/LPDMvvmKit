@@ -6,9 +6,9 @@
 //  Copyright © 2016年 eleme. All rights reserved.
 //
 
-#import "LPDTableHeaderFooterViewModel.h"
+#import "LPDTableHeaderViewModel.h"
 
-@interface LPDCustomTableHeaderViewModel : LPDTableHeaderFooterViewModel
+@interface LPDCustomTableHeaderViewModel : LPDTableHeaderViewModel
 
 @property (nonatomic, copy) NSString *myText;
 

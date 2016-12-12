@@ -7,7 +7,7 @@
 //
 
 #import "LPDNavigationControllerProtocol.h"
-#import "LPDViewControllerRouter.h"
+#import "LPDViewControllerFactory.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

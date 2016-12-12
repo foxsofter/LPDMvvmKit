@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
-  s.version      = "0.6.1"
+  s.version      = "0.6.2"
   s.summary      = "mvvm"
 
   s.description  = <<-DESC
@@ -33,7 +33,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'LPDMvvmKit/Classes/**/*'
-  s.private_header_files = 'Pod/Classes/ViewModels/LPDSubviewModelReactProtocol.h','Pod/Classes/ViewModels/LPDSubviewModelReactProtocol+Extension.h'
 
   # s.resource_bundles = {
   #   'LPDControlsKit' => ['LPDControlsKit/Assets/*.png']

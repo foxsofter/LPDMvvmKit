@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
+  # s.frameworks = 'UIKit'
   s.dependency 'LPDAdditionsKit'
   s.dependency 'LPDControlsKit'
   s.dependency 'LPDNetworkingKit'

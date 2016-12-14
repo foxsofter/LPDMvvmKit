@@ -1,6 +1,6 @@
 # LPDCollectionViewKit
 
-[![CI Status](http://img.shields.io/travis/foxsofter/LPDCollectionViewKit.svg?style=flat)](https://travis-ci.org/foxsofter/LPDCollectionViewKit)
+[![CI Status](https://travis-ci.org/LPD-iOS/lpd-collectionview-kit.svg?branch=master)](https://travis-ci.org/LPD-iOS/lpd-collectionview-kit)
 [![Version](https://img.shields.io/cocoapods/v/LPDCollectionViewKit.svg?style=flat)](http://cocoapods.org/pods/LPDCollectionViewKit)
 [![License](https://img.shields.io/cocoapods/l/LPDCollectionViewKit.svg?style=flat)](http://cocoapods.org/pods/LPDCollectionViewKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDCollectionViewKit.svg?style=flat)](http://cocoapods.org/pods/LPDCollectionViewKit)

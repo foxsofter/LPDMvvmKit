@@ -25,7 +25,7 @@
 
 /**
  *  @brief  获取ViewController，如果未通过setViewController::
- *          设置映射关系，默认映射关系未XXXViewModel => XXXViewController
+ *          设置映射关系，默认映射关系为XXXModel => XXXController
  *
  *  @param viewModel viewModel
  *

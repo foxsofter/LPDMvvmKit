@@ -1,6 +1,0 @@
-framework module ProtocolKit {
-  umbrella header "ProtocolKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

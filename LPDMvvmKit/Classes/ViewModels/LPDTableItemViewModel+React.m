@@ -8,15 +8,37 @@
 
 #import <objc/runtime.h>
 #import "LPDTableItemViewModel+React.h"
+#import "LPDTableViewModel+React.h"
 
 @implementation LPDTableCellViewModel (React)
 
-- (__kindof LPDTableViewModel *)viewModel {
-  return objc_getAssociatedObject(self, @selector(setViewModel:));
+- (LPDViewReactState)reactState {
+  return [self.viewModel reactState];
 }
 
-- (void)setViewModel:(__kindof LPDTableViewModel * _Nullable)viewModel {
-  objc_setAssociatedObject(self, @selector(setViewModel:), viewModel, OBJC_ASSOCIATION_ASSIGN);
+- (void)setReactState:(LPDViewReactState)reactState {
+  [self.viewModel setReactState:reactState];
 }
+
+- (BOOL)isSubmitting {
+  return [self.viewModel isSubmitting];
+}
+
+- (void)setSubmitting:(BOOL)submitting {
+  ((id<LPDViewModelReactProtocol>)self.viewModel).submitting = submitting;
+}
+
+- (void)setSubmittingWithMessage:(NSString *)message {
+  [self.viewModel setSubmittingWithMessage:message];
+}
+
+- (RACSubject *)successSubject {
+  return [self.viewModel successSubject];
+}
+
+- (RACSubject *)errorSubject {
+  return [self.viewModel errorSubject];
+}
+
 
 @end

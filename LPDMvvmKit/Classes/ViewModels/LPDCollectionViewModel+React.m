@@ -19,4 +19,32 @@
   objc_setAssociatedObject(self, @selector(setViewModel:), viewModel, OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (LPDViewReactState)reactState {
+  return self.viewModel.reactState;
+}
+
+- (void)setReactState:(LPDViewReactState)reactState {
+  [self.viewModel setReactState:reactState];
+}
+
+- (BOOL)isSubmitting {
+  return self.viewModel.isSubmitting;
+}
+
+- (void)setSubmitting:(BOOL)submitting {
+  self.viewModel.submitting = submitting;
+}
+
+- (void)setSubmittingWithMessage:(NSString *)message {
+  [self.viewModel setSubmittingWithMessage:message];
+}
+
+- (RACSubject *)successSubject {
+  return self.viewModel.successSubject;
+}
+
+- (RACSubject *)errorSubject {
+  return self.viewModel.errorSubject;
+}
+
 @end

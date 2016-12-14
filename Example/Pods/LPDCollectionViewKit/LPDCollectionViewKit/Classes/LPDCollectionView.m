@@ -59,11 +59,11 @@
         }];
 
       [[[collectionViewModel.replaceSectionsSignal takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]]
-        deliverOnMainThread] subscribeNext:^(NSIndexSet *indexSet) {
+        deliverOnMainThread] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
           @strongify(self);
         [self performBatchUpdates:^{
-          [self deleteItemsAtIndexPaths:indexSet];
-          [self insertItemsAtIndexPaths:indexSet];
+          [self deleteItemsAtIndexPaths:indexPaths];
+          [self insertItemsAtIndexPaths:indexPaths];
         } completion:nil];
         }];
 

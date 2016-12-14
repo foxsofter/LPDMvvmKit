@@ -43,7 +43,7 @@ FOUNDATION_EXPORT const unsigned char LPDMvvmKitVersionString[];
 #import "LPDViewModel.h"
 #import "LPDViewModelProtocol.h"
 
-#import "LPDTableItemViewModel+React.h"
 #import "LPDTableViewModel+React.h"
 #import "LPDCollectionItemViewModel+React.h"
+#import "LPDTableItemViewModel+React.h"
 #import "LPDCollectionViewModel+React.h"

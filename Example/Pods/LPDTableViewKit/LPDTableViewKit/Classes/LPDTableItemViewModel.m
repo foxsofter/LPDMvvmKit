@@ -10,10 +10,10 @@
 #import "LPDTableViewModelProtocol.h"
 
 @implementation LPDTableItemViewModel {
-  __weak __kindof id<LPDTableViewModelProtocol> _viewModel;
   NSString *_reuseIdentifier;
   NSString *_reuseViewClass;
 }
+@synthesize viewModel = _viewModel;
 
 #pragma mark - LPDTableItemViewModelProtocol
 

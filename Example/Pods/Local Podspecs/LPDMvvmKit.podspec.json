@@ -21,7 +21,10 @@
   },
   "requires_arc": true,
   "source_files": "LPDMvvmKit/Classes/**/*",
-  "frameworks": "UIKit",
+  "private_header_files": [
+    "LPDMvvmKit/Classes/LPDProtocolExtension.h",
+    "LPDTableViewKit/Classes/LPDViewControllerFactory.h"
+  ],
   "dependencies": {
     "LPDAdditionsKit": [
 
@@ -45,9 +48,6 @@
 
     ],
     "MJRefresh": [
-
-    ],
-    "ProtocolKit": [
 
     ]
   }

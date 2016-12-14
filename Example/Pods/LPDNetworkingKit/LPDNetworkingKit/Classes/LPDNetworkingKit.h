@@ -1,13 +1,22 @@
 //
 //  LPDNetworkingKit.h
-//  Pods
+//  LPDNetworkingKit
 //
-//  Created by foxsofter on 16/12/2.
-//
+//  Created by foxsofter on 15/12/13.
+//  Copyright © 2015年 eleme. All rights reserved.
 //
 
-#ifndef LPDNetworkingKit_h
-#define LPDNetworkingKit_h
+#import <UIKit/UIKit.h>
+
+//! Project version number for LPDNetworkingKit.
+FOUNDATION_EXPORT double LPDNetworkingKitVersionNumber;
+
+//! Project version string for LPDNetworkingKit.
+FOUNDATION_EXPORT const unsigned char LPDNetworkingKitVersionString[];
+
+// In this header, you should import all the public headers of your framework
+// using statements like #import <LPDNetworkingKit/PublicHeader.h>
+
 
 #import "LPDApiClient.h"
 #import "LPDApiServer.h"
@@ -18,4 +27,3 @@
 #import "LPDUserDefaultsManager.h"
 #import "NSArray+LPDModel.h"
 
-#endif /* LPDNetworkingKit_h */

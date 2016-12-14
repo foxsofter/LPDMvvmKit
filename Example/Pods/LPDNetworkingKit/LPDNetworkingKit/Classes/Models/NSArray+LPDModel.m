@@ -7,25 +7,24 @@
 //
 
 #import "NSArray+LPDModel.h"
-#import "NSObject+LPDAssociatedObject.h"
 #import <YYModel/YYModel.h>
 
 @implementation NSArray (LPDModel)
 
 - (NSString *)errorCode {
-  return [self object:@selector(setErrorCode:)];
+  return objc_getAssociatedObject(self, @selector(setErrorCode:));
 }
 
 - (void)setErrorCode:(NSString *)errorCode {
-  [self setCopyNonatomicObject:errorCode withKey:@selector(setErrorCode:)];
+  objc_setAssociatedObject(self, @selector(setErrorCode:), errorCode, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (NSString *)errorMessage {
-  return [self object:@selector(setErrorMessage:)];
+  return objc_getAssociatedObject(self, @selector(setErrorMessage:));
 }
 
 - (void)setErrorMessage:(NSString *)errorMessage {
-  [self setCopyNonatomicObject:errorMessage withKey:@selector(setErrorMessage:)];
+  objc_setAssociatedObject(self, @selector(setErrorMessage:), errorMessage, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 + (NSArray *)modelArrayWithClass:(Class)cls json:(id)json {

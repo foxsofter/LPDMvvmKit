@@ -10,10 +10,10 @@
 #import "LPDCollectionViewModelProtocol.h"
 
 @implementation LPDCollectionItemViewModel {
-  __weak __kindof id<LPDCollectionViewModelProtocol> _viewModel;
   NSString *_reuseIdentifier;
   NSString *_reuseViewClass;
 }
+@synthesize viewModel = _viewModel;
 
 #pragma mark - LPDCollectionItemViewModelProtocol
 

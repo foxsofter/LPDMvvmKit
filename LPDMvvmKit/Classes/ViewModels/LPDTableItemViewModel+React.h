@@ -7,8 +7,8 @@
 //
 
 #import <LPDTableViewKit/LPDTableViewKit.h>
-#import "LPDTableItemViewModelReactProtocol.h"
+#import "LPDViewModelReactProtocol.h"
 
-@interface LPDTableItemViewModel (React) <LPDTableItemViewModelReactProtocol>
+@interface LPDTableItemViewModel (React)<LPDViewModelReactProtocol>
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright © 2016年 eleme. All rights reserved.
 //
 
-#import "LPDCollectionItemViewModelProtocol.h"
+#import "LPDCollectionViewItemProtocol.h"
 #import <UIKit/UIKit.h>
 
-@interface LPDCollectionViewFooter : UICollectionReusableView <LPDCollectionItemViewModelProtocol>
+@interface LPDCollectionViewFooter : UICollectionReusableView <LPDCollectionViewItemProtocol>
 
 + (instancetype) new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

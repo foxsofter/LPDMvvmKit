@@ -7,11 +7,14 @@
 //
 
 #import <LPDTableViewKit/LPDTableViewKit.h>
-#import "LPDSubviewModelReactProtocol.h"
+#import "LPDViewModelReactProtocol.h"
+#import "LPDViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LPDTableViewModel(React) <LPDSubviewModelReactProtocol>
+@interface LPDTableViewModel(React)<LPDViewModelReactProtocol>
+
+@property (nullable, nonatomic, weak) __kindof id<LPDViewModelProtocol> viewModel;
 
 @end
 

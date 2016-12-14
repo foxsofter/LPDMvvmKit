@@ -8,15 +8,36 @@
 
 #import <objc/runtime.h>
 #import "LPDCollectionItemViewModel+React.h"
+#import "LPDCollectionViewModel+React.h"
 
 @implementation LPDCollectionItemViewModel (React)
 
-- (__kindof LPDCollectionViewModel *)viewModel {
-  return objc_getAssociatedObject(self, @selector(setViewModel:));
+- (LPDViewReactState)reactState {
+  return [self.viewModel reactState];
 }
 
-- (void)setViewModel:(__kindof LPDCollectionViewModel * _Nullable)viewModel {
-  objc_setAssociatedObject(self, @selector(setViewModel:), viewModel, OBJC_ASSOCIATION_ASSIGN);
+- (void)setReactState:(LPDViewReactState)reactState {
+  [self.viewModel setReactState:reactState];
+}
+
+- (BOOL)isSubmitting {
+  return [self.viewModel isSubmitting];
+}
+
+- (void)setSubmitting:(BOOL)submitting {
+  [self.viewModel setSubmitting:submitting];
+}
+
+- (void)setSubmittingWithMessage:(NSString *)message {
+  [self.viewModel setSubmittingWithMessage:message];
+}
+
+- (RACSubject *)successSubject {
+  return [self.viewModel successSubject];
+}
+
+- (RACSubject *)errorSubject {
+  return [self.viewModel errorSubject];
 }
 
 @end

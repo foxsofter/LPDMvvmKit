@@ -11,4 +11,4 @@ language: objective-c
 # - pod install --project-directory=Example
 script:
 - xctool -workspace Example/LPDMvvmKit.xcworkspace -scheme LPDMvvmKit-Example -sdk iphonesimulator
-- pod lib lint --allow-warnings
+#- pod lib lint --allow-warnings

@@ -33,10 +33,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'LPDMvvmKit/Classes/**/*'
-  s.private_header_files = 'LPDMvvmKit/Classes/LPDProtocolExtension.h', 'LPDTableViewKit/Classes/LPDViewControllerFactory.h'
+  s.private_header_files = 'LPDMvvmKit/Classes/LPDProtocolExtension.h', 'LPDMvvmKit/Classes/LPDViewControllerFactory.h'
 
   # s.resource_bundles = {
-  #   'LPDControlsKit' => ['LPDControlsKit/Assets/*.png']
+  #   'LPDMvvmKit' => ['LPDMvvmKit/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
@@ -49,5 +49,4 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveViewModel'
   s.dependency 'UICKeyChainStore'
   s.dependency 'MJRefresh'
-#s.dependency 'ProtocolKit'
 end

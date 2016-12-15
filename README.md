@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run.
 
 ## Requirements
 
+iOS 8.0 or later
+
 ## Installation
 
 LPDMvvmKit is available through [CocoaPods](http://cocoapods.org). To install
@@ -31,21 +33,6 @@ LPDMvvmKit is available under the MIT license. See the LICENSE file for more inf
 # Goal
 
 LPDMvvmKit提供了一些常用的工具类，还有一些很轻巧的控件，以及最主要的是提供了MVVM开发框架，一直比较喜欢采用MVVM的框架来开发前端产品，所以会希望在iOS下也能找到类似的框架可以采用，但是一直没有找到合适的，所以就自己造了个轮子，代码未充分测试，欢迎各种issue。
-
-
-LPDMvvmKit/Controls 目前提供一些控件，LPDToastView，LPDAlertView可以了解下
-
-```ruby
-	pod 'LPDMvvmKit/Controls'
-```
-
-LPDMvvmKit/Mvvm 就是LPDMvvmKit主要提供的功能了，因为对前两个Subspecs都有依赖，所以使用直接添加以下行就好了
-
-```ruby
-	pod 'LPDMvvmKit'
-```
-
-可以clone并运行，主流程都是有demo可循的。
 
 # view controller和view model解耦
 

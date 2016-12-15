@@ -7,7 +7,7 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run.
 
 ## Requirements
 
@@ -32,21 +32,6 @@ LPDMvvmKit is available under the MIT license. See the LICENSE file for more inf
 
 LPDMvvmKit提供了一些常用的工具类，还有一些很轻巧的控件，以及最主要的是提供了MVVM开发框架，一直比较喜欢采用MVVM的框架来开发前端产品，所以会希望在iOS下也能找到类似的框架可以采用，但是一直没有找到合适的，所以就自己造了个轮子，代码未充分测试，欢迎各种issue。
 
-# How to use？
-
-LPDMvvmKit支持 [CocoaPods](http://cocoapods.org)，在 [Podfile](https://guides.cocoapods.org/using/the-podfile.html)文件中添加如下行
-
-```ruby
-	pod 'LPDMvvmKit'
-```
-
-分为三个Subspecs
-
-LPDMvvmKit/Additions 主要提供一些常用的工具类的代码
-
-```ruby
-	pod 'LPDMvvmKit/Additions'
-```
 
 LPDMvvmKit/Controls 目前提供一些控件，LPDToastView，LPDAlertView可以了解下
 

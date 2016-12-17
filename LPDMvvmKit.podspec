@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'LPDMvvmKit/Classes/**/*'
-  s.private_header_files = 'LPDMvvmKit/Classes/LPDProtocolExtension.h', 'LPDMvvmKit/Classes/LPDViewControllerFactory.h'
+  s.private_header_files = 'LPDMvvmKit/Classes/LPDViewControllerFactory.h'
 
   # s.resource_bundles = {
   #   'LPDMvvmKit' => ['LPDMvvmKit/Assets/*.png']

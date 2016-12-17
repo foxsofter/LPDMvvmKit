@@ -29,8 +29,8 @@
   self = [super init];
   if (self) {
     self.title = @"tableview";
-    self.tabBarItemSelectedImage = @"YuetTabItemIcon";
-    self.tabBarItemImage = @"YuetTabItemNormalIcon";
+    self.tabBarItemImage = @"table";
+    self.tabBarItemTitle = @"table";
 
     self.tableViewModel = [[LPDTableViewModel alloc] init];
     self.tableViewModel.viewModel = self;

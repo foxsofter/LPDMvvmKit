@@ -30,8 +30,8 @@
   self = [super init];
   if (self) {
     self.title = @"collectionview";
-    self.tabBarItemImage = @"YuetTabItemNormalIcon";
-    self.tabBarItemSelectedImage = @"YuetTabItemIcon";
+    self.tabBarItemImage = @"collection";
+    self.tabBarItemTitle = @"collection";
 
     self.collectionViewModel = [[LPDCollectionViewModel alloc] init];
     self.collectionViewModel.viewModel = self;

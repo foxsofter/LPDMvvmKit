@@ -20,13 +20,11 @@
 - (instancetype)initWithViewModel:(id<LPDViewModelProtocol>)viewModel {
   self = [super initWithViewModel:viewModel];
   if (self) {
-    if (self.selfViewModel.tabBarItemImage) {
+    LPDReactViewModel *selfViewModel = viewModel;
+    if (selfViewModel.tabBarItemImage) {
       self.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:nil
-                                      image:[[UIImage imageNamed:self.selfViewModel.tabBarItemImage]
-                                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:self.selfViewModel.tabBarItemSelectedImage]
-                                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+      [[UITabBarItem alloc] initWithTitle:nil
+                                    image:[UIImage imageNamed:selfViewModel.tabBarItemImage] tag:0];
     }
   }
   return self;
@@ -35,14 +33,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  LPDReactViewModel *selfViewModel = self.viewModel;
   UIBarButtonItem *saveBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStylePlain target:nil action:nil];
-  saveBarButtonItem.rac_command = self.selfViewModel.insertCellCommand;
+  saveBarButtonItem.rac_command = selfViewModel.insertCellCommand;
   UIBarButtonItem *retrieveBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"retrieve"
                                                                           style:UIBarButtonItemStylePlain
                                                                          target:nil
                                                                          action:nil];
-  retrieveBarButtonItem.rac_command = self.selfViewModel.removeCellCommand;
+  retrieveBarButtonItem.rac_command = selfViewModel.removeCellCommand;
   UIBarButtonItem *testBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
 
@@ -69,11 +68,5 @@
   }];
 }
 
-
-#pragma mark - properties
-
-- (LPDReactViewModel *)selfViewModel {
-  return self.viewModel;
-}
 
 @end

@@ -26,12 +26,11 @@
   self = [super initWithViewModel:viewModel];
   if (self) {
     LPDExamCollectionViewModel *selfViewModel = (LPDExamCollectionViewModel *)viewModel;
-    self.tabBarItem =
-      [[UITabBarItem alloc] initWithTitle:nil
-                                    image:[[UIImage imageNamed:selfViewModel.tabBarItemImage]
-                                            imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                            selectedImage:[[UIImage imageNamed:selfViewModel.tabBarItemSelectedImage]
-                                            imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    if (selfViewModel.tabBarItemImage) {
+      self.tabBarItem =
+      [[UITabBarItem alloc] initWithTitle:selfViewModel.tabBarItemTitle
+                                    image:[UIImage imageNamed:selfViewModel.tabBarItemImage] tag:0];
+    }
   }
   return self;
 }

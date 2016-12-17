@@ -25,8 +25,8 @@
   self = [super init];
   if (self) {
     self.title = @"navigation";
-    self.tabBarItemSelectedImage = @"WoolaTabItemIcon";
-    self.tabBarItemImage = @"WoolaTabItemNormalIcon";
+    self.tabBarItemImage = @"navigation";
+    self.tabBarItemTitle = @"navigation";
   }
   return self;
 }

@@ -11,6 +11,7 @@
 
 @interface LPDExamTableViewModel : LPDScrollViewModel
 
+@property (nonatomic, copy) NSString *tabBarItemTitle;
 @property (nonatomic, copy) NSString *tabBarItemImage;
 @property (nonatomic, copy) NSString *tabBarItemSelectedImage;
 

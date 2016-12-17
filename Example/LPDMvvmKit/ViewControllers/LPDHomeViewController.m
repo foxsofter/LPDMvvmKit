@@ -26,14 +26,11 @@
 - (instancetype)initWithViewModel:(id<LPDViewModelProtocol>)viewModel {
   self = [super initWithViewModel:viewModel];
   if (self) {
-    LPDHomeViewModel *moduleVM = viewModel;
-    if (moduleVM.tabBarItemImage) {
+    LPDHomeViewModel *selfViewModel = viewModel;
+    if (selfViewModel.tabBarItemImage) {
       self.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:nil
-                                      image:[[UIImage imageNamed:moduleVM.tabBarItemImage]
-                                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:moduleVM.tabBarItemSelectedImage]
-                                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:selfViewModel.tabBarItemTitle
+                                      image:[UIImage imageNamed:selfViewModel.tabBarItemImage] tag:0];
     }
   }
   return self;

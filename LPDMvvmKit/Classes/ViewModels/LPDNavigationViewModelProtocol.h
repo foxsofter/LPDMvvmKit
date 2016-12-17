@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDViewModelProtocol;
+@protocol LPDTabBarViewModelProtocol;
 
 @protocol LPDNavigationViewModelProtocol <NSObject>
 
@@ -27,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) __kindof id<LPDNavigationViewModelProtocol> presentingViewModel;
 
 @property (nonatomic, strong, readonly) NSArray<__kindof id<LPDViewModelProtocol>> *viewModels;
+
+@property (nullable, nonatomic, strong) __kindof id<LPDTabBarViewModelProtocol> tabBar;
+
 
 @optional
 

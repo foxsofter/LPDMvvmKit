@@ -32,7 +32,6 @@
 @synthesize submitting = _submitting;
 @synthesize networkState = _networkState;
 @synthesize navigation = _navigation;
-@synthesize tabBar = _tabBar;
 @synthesize viewDidLoadSignal = _viewDidLoadSignal;
 @synthesize viewDidLayoutSubviewsSignal = _viewDidLayoutSubviewsSignal;
 

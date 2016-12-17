@@ -11,9 +11,8 @@
 #import "LPDViewModel.h"
 #import "LPDViewModelProtocol.h"
 #import "NSString+LPDAddition.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-
 #import "UIScreen+LPDAccessor.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -66,6 +65,22 @@ static UIView * (^initSubmittingBlock)();
 @synthesize navigation = _navigation;
 
 #pragma mark - life cycle
+
+- (void)loadView {
+  NSString *xibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (xibPath && xibPath.length > 0) {
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    if (views && views.count > 0) {
+      self.view = views.lastObject;
+      self.view.frame = UIScreen.bounds;
+    } else {
+      xibPath = nil;
+    }
+  }
+  if (!xibPath) {
+    [super loadView];
+  }
+}
 
 - (instancetype)initWithViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
   self = [super init];
@@ -129,15 +144,6 @@ static UIView * (^initSubmittingBlock)();
   [_submittingOverlay removeFromSuperview];
 }
 
-/**
- *  @brief  load default view
- */
-- (void)loadView {
-  UIView *rootView = [[UIView alloc] initWithFrame:UIScreen.bounds];
-  rootView.backgroundColor = [UIColor colorWithRed:0.9373 green:0.9373 blue:0.9569 alpha:1.0];
-
-  self.view = rootView;
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];

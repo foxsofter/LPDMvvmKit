@@ -48,10 +48,10 @@
 
 - (RACCommand *)removeCellCommand {
   if (!_removeCellCommand) {
-    @weakify(self);
+//    @weakify(self);
     _removeCellCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
+//        @strongify(self);
 
 //        LPDTestModel *testModel =
 //          (LPDTestModel *)[[LPDUserDefaultsManager sharedInstance] retrieveModelFromKey:@"sssssss"];

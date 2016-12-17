@@ -6,7 +6,7 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
-#import "LPDViewModelProtocol.h"
+#import "LPDNavigationViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels;
+- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDNavigationViewModelProtocol>> *)viewModels;
 
-@property (nonatomic, readonly, strong) __kindof id<LPDViewModelProtocol> selectedViewModel;
+@property (nonatomic, readonly, strong) __kindof id<LPDNavigationViewModelProtocol> selectedViewModel;
 
 @property (nonatomic) NSUInteger selectedIndex;
 
-@property (nonatomic, readonly, strong) NSMutableArray<__kindof id<LPDViewModelProtocol>> *viewModels;
+@property (nonatomic, readonly, strong) NSMutableArray<__kindof id<LPDNavigationViewModelProtocol>> *viewModels;
 
 @end
 

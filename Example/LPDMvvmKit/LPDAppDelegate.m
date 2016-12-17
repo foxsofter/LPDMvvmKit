@@ -6,8 +6,6 @@
 //  Copyright © 2015年 eleme. All rights reserved.
 //
 
-#import <LPDMvvmKit/LPDMvvmKit.h>
-
 #import "LPDAppDelegate.h"
 #import "LPDExamCollectionViewController.h"
 #import "LPDExamCollectionViewModel.h"
@@ -19,6 +17,7 @@
 #import "LPDReactViewModel.h"
 #import "LPDRootTabBarController.h"
 #import "LPDRootTabBarViewModel.h"
+#import <LPDMvvmKit/LPDMvvmKit.h>
 
 @interface LPDAppDelegate ()
 
@@ -28,19 +27,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   LPDHomeViewModel *homeVM = [[LPDHomeViewModel alloc] init];
-  LPDNavigationViewModel *homeNVM = [[LPDNavigationViewModel alloc] initWithRootViewModel:homeVM];
-  
   LPDExamTableViewModel *tableVM = [[LPDExamTableViewModel alloc] init];
-  LPDNavigationViewModel *tableNVM = [[LPDNavigationViewModel alloc] initWithRootViewModel:tableVM];
-  
   LPDExamCollectionViewModel *collectionVM = [[LPDExamCollectionViewModel alloc] init];
-  LPDNavigationViewModel *collectionNVM = [[LPDNavigationViewModel alloc] initWithRootViewModel:collectionVM];
-  
   LPDReactViewModel *modelVM = [[LPDReactViewModel alloc] init];
-  LPDNavigationViewModel *modelNVM = [[LPDNavigationViewModel alloc] initWithRootViewModel:modelVM];
-  
+
   LPDRootTabBarViewModel *rootTabBarVM =
-  [[LPDRootTabBarViewModel alloc] initWithViewModels:@[homeVM, tableVM, collectionVM, modelVM]];
+  [[LPDRootTabBarViewModel alloc] initWithViewModels:@[ [[LPDNavigationViewModel alloc] initWithRootViewModel:homeVM], [[LPDNavigationViewModel alloc] initWithRootViewModel:tableVM], [[LPDNavigationViewModel alloc] initWithRootViewModel:collectionVM], [[LPDNavigationViewModel alloc] initWithRootViewModel:modelVM]]];
+  
   LPDRootTabBarController *rootTabBarVC = [[LPDRootTabBarController alloc] initWithViewModel:rootTabBarVM];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

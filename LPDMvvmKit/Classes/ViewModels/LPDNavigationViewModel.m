@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @synthesize presentedViewModel = _presentedViewModel;
 @synthesize presentingViewModel = _presentingViewModel;
+@synthesize tabBar = _tabBar;
 
 #pragma mark - life cycle
 

@@ -10,7 +10,7 @@
 
 @interface LPDTabBarViewModel ()
 
-@property (nullable, nonatomic, strong, readwrite) NSMutableArray<__kindof id<LPDViewModelProtocol>> *viewModels;
+@property (nullable, nonatomic, strong, readwrite) NSMutableArray<__kindof id<LPDNavigationViewModelProtocol>> *viewModels;
 
 @end
 
@@ -20,11 +20,11 @@
 
 #pragma mark - life cycle
 
-- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels {
+- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDNavigationViewModelProtocol>> *)viewModels {
   self = [super init];
   if (self) {
     self.viewModels = [NSMutableArray arrayWithArray:viewModels];
-    for (id<LPDViewModelProtocol> viewModel in viewModels) {
+    for (id<LPDNavigationViewModelProtocol> viewModel in viewModels) {
       viewModel.tabBar = self;
     }
     _selectedIndex = 0;
@@ -34,7 +34,7 @@
 
 #pragma mark - properties
 
-- (__kindof id<LPDViewModelProtocol>)selectedViewModel {
+- (__kindof id<LPDNavigationViewModelProtocol>)selectedViewModel {
   return [_viewModels objectAtIndex:_selectedIndex];
 }
 

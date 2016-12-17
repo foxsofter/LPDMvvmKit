@@ -55,13 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nullable, nonatomic, strong) __kindof id<LPDNavigationViewModelProtocol> navigation;
 
-@optional
-
-/**
- *  @brief tabBar view model
- */
-@property (nullable, nonatomic, strong) __kindof id<LPDTabBarViewModelProtocol> tabBar;
-
 @end
 
 NS_ASSUME_NONNULL_END

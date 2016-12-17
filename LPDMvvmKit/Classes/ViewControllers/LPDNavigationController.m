@@ -12,9 +12,8 @@
 #import "LPDViewController.h"
 #import "LPDViewModelProtocol.h"
 #import "NSObject+LPDThread.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-
 #import "UIScreen+LPDAccessor.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +36,22 @@ NS_ASSUME_NONNULL_BEGIN
     [LPDViewControllerFactory setViewController:NSStringFromClass(LPDNavigationController.class)
                                   forViewModel:NSStringFromClass(LPDNavigationViewModel.class)];
   });
+}
+
+- (void)loadView {
+  NSString *xibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (xibPath && xibPath.length > 0) {
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    if (views && views.count > 0) {
+      self.view = views.lastObject;
+      self.view.frame = UIScreen.bounds;
+    } else {
+      xibPath = nil;
+    }
+  }
+  if (!xibPath) {
+    [super loadView];
+  }
 }
 
 - (instancetype)initWithViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel {

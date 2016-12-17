@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) LPDCollectionView *collectionView;
 
-@property (nonatomic, strong, readonly) LPDExamCollectionViewModel *selfViewModel;
-
 @end
 
 @implementation LPDExamCollectionViewController
@@ -27,11 +25,12 @@
 - (instancetype)initWithViewModel:(id<LPDViewModelProtocol>)viewModel {
   self = [super initWithViewModel:viewModel];
   if (self) {
+    LPDExamCollectionViewModel *selfViewModel = (LPDExamCollectionViewModel *)viewModel;
     self.tabBarItem =
       [[UITabBarItem alloc] initWithTitle:nil
-                                    image:[[UIImage imageNamed:self.selfViewModel.tabBarItemImage]
+                                    image:[[UIImage imageNamed:selfViewModel.tabBarItemImage]
                                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                            selectedImage:[[UIImage imageNamed:self.selfViewModel.tabBarItemSelectedImage]
+                            selectedImage:[[UIImage imageNamed:selfViewModel.tabBarItemSelectedImage]
                                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
   }
   return self;
@@ -49,24 +48,29 @@
 
   self.collectionView =
     [[LPDCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:collectionViewFlowLayout];
+  LPDExamCollectionViewModel *selfViewModel = self.viewModel;
   self.collectionView.backgroundColor = [UIColor whiteColor];
-  [self.collectionView bindingTo:self.selfViewModel.collectionViewModel];
+  [self.collectionView bindingTo:selfViewModel.collectionViewModel];
   [self.view addSubview:self.collectionView];
+  [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.edges.mas_equalTo(UIEdgeInsetsZero);
+  }];
+  
   self.scrollView = self.collectionView;
   self.needLoading = YES;
 
   UIBarButtonItem *insertCellBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellBarButtonItem.rac_command = self.selfViewModel.insertCellCommand;
+  insertCellBarButtonItem.rac_command = selfViewModel.insertCellCommand;
   UIBarButtonItem *insertCellsBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"批量添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellsBarButtonItem.rac_command = self.selfViewModel.insertCellsCommand;
+  insertCellsBarButtonItem.rac_command = selfViewModel.insertCellsCommand;
   UIBarButtonItem *removeCellBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellBarButtonItem.rac_command = self.selfViewModel.removeCellCommand;
+  removeCellBarButtonItem.rac_command = selfViewModel.removeCellCommand;
   UIBarButtonItem *removeCellsBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellsBarButtonItem.rac_command = self.selfViewModel.removeCellsCommand;
+  removeCellsBarButtonItem.rac_command = selfViewModel.removeCellsCommand;
   self.navigationController.toolbarHidden = NO;
   [self setToolbarItems:@[
     insertCellBarButtonItem,
@@ -76,19 +80,5 @@
   ] animated:YES];
 }
 
-- (void)viewDidLayoutSubviews {
-  [super viewDidLayoutSubviews];
-
-  [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.edges.mas_equalTo(UIEdgeInsetsZero);
-  }];
-  [self.view layoutIfNeeded];
-}
-
-#pragma mark - properties
-
-- (LPDExamCollectionViewModel *)selfViewModel {
-  return self.viewModel;
-}
 
 @end

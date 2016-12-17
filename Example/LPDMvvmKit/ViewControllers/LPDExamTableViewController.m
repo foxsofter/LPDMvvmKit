@@ -18,8 +18,6 @@
 
 @property (nonatomic, strong) LPDTableView *tableView;
 
-@property (nonatomic, strong, readonly) LPDExamTableViewModel *selfViewModel;
-
 @end
 
 @implementation LPDExamTableViewController
@@ -84,11 +82,12 @@
 - (instancetype)initWithViewModel:(id<LPDViewModelProtocol>)viewModel {
   self = [super initWithViewModel:viewModel];
   if (self) {
+    LPDExamTableViewModel *selfViewModel = (LPDExamTableViewModel*)viewModel;
     self.tabBarItem =
       [[UITabBarItem alloc] initWithTitle:nil
-                                    image:[[UIImage imageNamed:self.selfViewModel.tabBarItemImage]
+                                    image:[[UIImage imageNamed:selfViewModel.tabBarItemImage]
                                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                            selectedImage:[[UIImage imageNamed:self.selfViewModel.tabBarItemSelectedImage]
+                            selectedImage:[[UIImage imageNamed:selfViewModel.tabBarItemSelectedImage]
                                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
   }
   return self;
@@ -98,53 +97,37 @@
   [super viewDidLoad];
 
   self.tableView = [[LPDTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-  [self.tableView bindingTo:self.selfViewModel.tableViewModel];
+  LPDExamTableViewModel *selfViewModel = (LPDExamTableViewModel*)self.viewModel;
+  [self.tableView bindingTo:selfViewModel.tableViewModel];
   [self.view addSubview:self.tableView];
+  [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.bottom.equalTo(@0);
+    make.top.equalTo(@(0));
+  }];
+
   self.scrollView = self.tableView;
   self.needLoading = YES;
 
   UIBarButtonItem *insertCellBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellBarButtonItem.rac_command = self.selfViewModel.insertCellCommand;
+  insertCellBarButtonItem.rac_command = selfViewModel.insertCellCommand;
   UIBarButtonItem *insertCellsBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"批量添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellsBarButtonItem.rac_command = self.selfViewModel.insertCellsCommand;
+  insertCellsBarButtonItem.rac_command = selfViewModel.insertCellsCommand;
   UIBarButtonItem *removeCellBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellBarButtonItem.rac_command = self.selfViewModel.removeCellCommand;
+  removeCellBarButtonItem.rac_command = selfViewModel.removeCellCommand;
   UIBarButtonItem *removeCellsBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellsBarButtonItem.rac_command = self.selfViewModel.removeCellsCommand;
+  removeCellsBarButtonItem.rac_command = selfViewModel.removeCellsCommand;
   self.navigationController.toolbarHidden = NO;
   [self setToolbarItems:@[
     insertCellBarButtonItem,
     insertCellsBarButtonItem,
     removeCellBarButtonItem,
     removeCellsBarButtonItem,
-  ]
-               animated:YES];
+  ] animated:YES];
 }
 
-- (void)viewDidLayoutSubviews {
-  [super viewDidLayoutSubviews];
-
-  [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.right.bottom.equalTo(@0);
-    make.top.equalTo(@(0));
-  }];
-
-  [self.view layoutIfNeeded];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - properties
-
-- (LPDExamTableViewModel *)selfViewModel {
-  return self.viewModel;
-}
 
 @end

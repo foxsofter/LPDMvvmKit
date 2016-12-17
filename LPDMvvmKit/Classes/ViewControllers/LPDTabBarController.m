@@ -9,8 +9,8 @@
 #import "LPDTabBarController.h"
 #import "LPDTabBarViewModel.h"
 #import "LPDViewControllerFactory.h"
+#import "UIScreen+LPDAccessor.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,19 +32,31 @@ NS_ASSUME_NONNULL_BEGIN
   });
 }
 
+- (void)loadView {
+  NSString *xibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (xibPath && xibPath.length > 0) {
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    if (views && views.count > 0) {
+      self.view = views.lastObject;
+      self.view.frame = UIScreen.bounds;
+    } else {
+      xibPath = nil;
+    }
+  }
+  if (!xibPath) {
+    [super loadView];
+  }
+}
+
+
 - (instancetype)initWithViewModel:(__kindof id<LPDTabBarViewModelProtocol>)viewModel {
   self = [super init];
   if (self) {
     self.viewModel = viewModel;
 
     NSMutableArray *viewControllers = [NSMutableArray array];
-    for (id<LPDViewModelProtocol> childViewModel in self.viewModel.viewModels) {
-      UIViewController *viewController = nil;
-      if (childViewModel.navigation) {
-        viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel.navigation];
-      } else {
-        viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      }
+    for (id<LPDNavigationViewModelProtocol> childViewModel in self.viewModel.viewModels) {
+      UIViewController *viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
       [viewControllers addObject:viewController];
     }
     self.viewControllers = viewControllers;

@@ -29,7 +29,6 @@
 		8E3F2F081DF157B8009E2496 /* LPDRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EE11DF157B8009E2496 /* LPDRootTabBarController.m */; };
 		8E3F2F091DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EE41DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m */; };
 		8E3F2F0A1DF157B8009E2496 /* LPDCustomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EE61DF157B8009E2496 /* LPDCustomCellModel.m */; };
-		8E3F2F0B1DF157B8009E2496 /* LPDCustomTableHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EE81DF157B8009E2496 /* LPDCustomTableHeaderViewModel.m */; };
 		8E3F2F0C1DF157B8009E2496 /* LPDExamCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EEA1DF157B8009E2496 /* LPDExamCollectionViewModel.m */; };
 		8E3F2F0D1DF157B8009E2496 /* LPDExamTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EEC1DF157B8009E2496 /* LPDExamTableViewModel.m */; };
 		8E3F2F0E1DF157B8009E2496 /* LPDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EEE1DF157B8009E2496 /* LPDHomeViewModel.m */; };
@@ -93,8 +92,6 @@
 		8E3F2EE41DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDCollectionPhotoCellViewModel.m; sourceTree = "<group>"; };
 		8E3F2EE51DF157B8009E2496 /* LPDCustomCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDCustomCellModel.h; sourceTree = "<group>"; };
 		8E3F2EE61DF157B8009E2496 /* LPDCustomCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDCustomCellModel.m; sourceTree = "<group>"; };
-		8E3F2EE71DF157B8009E2496 /* LPDCustomTableHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDCustomTableHeaderViewModel.h; sourceTree = "<group>"; };
-		8E3F2EE81DF157B8009E2496 /* LPDCustomTableHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDCustomTableHeaderViewModel.m; sourceTree = "<group>"; };
 		8E3F2EE91DF157B8009E2496 /* LPDExamCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDExamCollectionViewModel.h; sourceTree = "<group>"; };
 		8E3F2EEA1DF157B8009E2496 /* LPDExamCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDExamCollectionViewModel.m; sourceTree = "<group>"; };
 		8E3F2EEB1DF157B8009E2496 /* LPDExamTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDExamTableViewModel.h; sourceTree = "<group>"; };
@@ -278,16 +275,16 @@
 		8E3F2ED51DF157B8009E2496 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E3F2ED61DF157B8009E2496 /* LPDExamCollectionViewController.h */,
-				8E3F2ED71DF157B8009E2496 /* LPDExamCollectionViewController.m */,
-				8E3F2ED81DF157B8009E2496 /* LPDExamTableViewController.h */,
-				8E3F2ED91DF157B8009E2496 /* LPDExamTableViewController.m */,
-				8E3F2EDA1DF157B8009E2496 /* LPDHomeViewController.h */,
-				8E3F2EDB1DF157B8009E2496 /* LPDHomeViewController.m */,
-				8E3F2EDE1DF157B8009E2496 /* LPDReactViewController.h */,
-				8E3F2EDF1DF157B8009E2496 /* LPDReactViewController.m */,
 				8E3F2EE01DF157B8009E2496 /* LPDRootTabBarController.h */,
 				8E3F2EE11DF157B8009E2496 /* LPDRootTabBarController.m */,
+				8E3F2EDA1DF157B8009E2496 /* LPDHomeViewController.h */,
+				8E3F2EDB1DF157B8009E2496 /* LPDHomeViewController.m */,
+				8E3F2ED81DF157B8009E2496 /* LPDExamTableViewController.h */,
+				8E3F2ED91DF157B8009E2496 /* LPDExamTableViewController.m */,
+				8E3F2ED61DF157B8009E2496 /* LPDExamCollectionViewController.h */,
+				8E3F2ED71DF157B8009E2496 /* LPDExamCollectionViewController.m */,
+				8E3F2EDE1DF157B8009E2496 /* LPDReactViewController.h */,
+				8E3F2EDF1DF157B8009E2496 /* LPDReactViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,24 +292,17 @@
 		8E3F2EE21DF157B8009E2496 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8E3F2EE31DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.h */,
-				8E3F2EE41DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m */,
-				8E3F2EE51DF157B8009E2496 /* LPDCustomCellModel.h */,
-				8E3F2EE61DF157B8009E2496 /* LPDCustomCellModel.m */,
-				8E3F2EE71DF157B8009E2496 /* LPDCustomTableHeaderViewModel.h */,
-				8E3F2EE81DF157B8009E2496 /* LPDCustomTableHeaderViewModel.m */,
-				8E3F2EE91DF157B8009E2496 /* LPDExamCollectionViewModel.h */,
-				8E3F2EEA1DF157B8009E2496 /* LPDExamCollectionViewModel.m */,
-				8E3F2EEB1DF157B8009E2496 /* LPDExamTableViewModel.h */,
-				8E3F2EEC1DF157B8009E2496 /* LPDExamTableViewModel.m */,
+				8EE10F0D1E0408DE00702463 /* CellViewModels */,
 				8E3F2EED1DF157B8009E2496 /* LPDHomeViewModel.h */,
 				8E3F2EEE1DF157B8009E2496 /* LPDHomeViewModel.m */,
+				8E3F2EEB1DF157B8009E2496 /* LPDExamTableViewModel.h */,
+				8E3F2EEC1DF157B8009E2496 /* LPDExamTableViewModel.m */,
+				8E3F2EE91DF157B8009E2496 /* LPDExamCollectionViewModel.h */,
+				8E3F2EEA1DF157B8009E2496 /* LPDExamCollectionViewModel.m */,
 				8E3F2EF11DF157B8009E2496 /* LPDReactViewModel.h */,
 				8E3F2EF21DF157B8009E2496 /* LPDReactViewModel.m */,
 				8E3F2EF31DF157B8009E2496 /* LPDRootTabBarViewModel.h */,
 				8E3F2EF41DF157B8009E2496 /* LPDRootTabBarViewModel.m */,
-				8E3F2EF51DF157B8009E2496 /* LPDTablePostCellViewModel.h */,
-				8E3F2EF61DF157B8009E2496 /* LPDTablePostCellViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -326,6 +316,19 @@
 				8E3F2EFB1DF157B8009E2496 /* LPDTableViewPostCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8EE10F0D1E0408DE00702463 /* CellViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E3F2EF51DF157B8009E2496 /* LPDTablePostCellViewModel.h */,
+				8E3F2EF61DF157B8009E2496 /* LPDTablePostCellViewModel.m */,
+				8E3F2EE31DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.h */,
+				8E3F2EE41DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m */,
+				8E3F2EE51DF157B8009E2496 /* LPDCustomCellModel.h */,
+				8E3F2EE61DF157B8009E2496 /* LPDCustomCellModel.m */,
+			);
+			name = CellViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,7 +382,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LPD;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = foxsofter;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
@@ -542,7 +545,6 @@
 				8E3F2F111DF157B8009E2496 /* LPDRootTabBarViewModel.m in Sources */,
 				8E3F2F031DF157B8009E2496 /* LPDExamCollectionViewController.m in Sources */,
 				8E3F2F141DF157B8009E2496 /* LPDTableViewPostCell.m in Sources */,
-				8E3F2F0B1DF157B8009E2496 /* LPDCustomTableHeaderViewModel.m in Sources */,
 				8E3F2F021DF157B8009E2496 /* LPDAppApiClient.m in Sources */,
 				6003F59E195388D20070C39A /* LPDAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -602,14 +604,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -642,13 +649,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

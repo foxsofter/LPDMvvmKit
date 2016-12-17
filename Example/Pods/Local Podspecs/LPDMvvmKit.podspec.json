@@ -3,7 +3,7 @@
   "version": "0.7.1",
   "summary": "mvvm",
   "description": "a framework of mvvm.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
-  "homepage": "https://github.com/foxsofter/lpd-mvvm-kit",
+  "homepage": "https://github.com/LPD-iOS/lpd-mvvm-kit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -15,16 +15,12 @@
     "ios": "8.0"
   },
   "source": {
-    "git": "https://github.com/foxsofter/lpd-mvvm-kit.git",
+    "git": "https://github.com/LPD-iOS/lpd-mvvm-kit.git",
     "tag": "0.7.1",
     "submodules": true
   },
   "requires_arc": true,
   "source_files": "LPDMvvmKit/Classes/**/*",
-  "private_header_files": [
-    "LPDMvvmKit/Classes/LPDProtocolExtension.h",
-    "LPDMvvmKit/Classes/LPDViewControllerFactory.h"
-  ],
   "dependencies": {
     "LPDAdditionsKit": [
 
@@ -42,9 +38,6 @@
 
     ],
     "ReactiveViewModel": [
-
-    ],
-    "UICKeyChainStore": [
 
     ],
     "MJRefresh": [

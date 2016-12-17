@@ -29,7 +29,6 @@ PODS:
     - LPDTableViewKit
     - MJRefresh
     - ReactiveViewModel
-    - UICKeyChainStore
   - LPDNetworkingKit (0.2.0):
     - AFNetworking
     - ReactiveCocoa (= 2.5)
@@ -48,7 +47,6 @@ PODS:
   - ReactiveViewModel (0.3):
     - ReactiveCocoa (~> 2.4)
   - SDVersion (3.6)
-  - UICKeyChainStore (2.1.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -63,7 +61,7 @@ SPEC CHECKSUMS:
   LPDAdditionsKit: e029eefb9ec795bd4205a7f81e7678f654e9728f
   LPDCollectionViewKit: 0f1ea9f22e7740e9297e49581e7a28fc1a4ec0b2
   LPDControlsKit: 80b5c98834f3290243555436ccd53110f86ab172
-  LPDMvvmKit: 321e52743d23c9d2084b9a5aec035f8fe359efc2
+  LPDMvvmKit: 75ef3db636bff6bc145055cb06612ad397361fc6
   LPDNetworkingKit: bc1364fc6abd60bfa250de9b13bf7d3372518995
   LPDTableViewKit: 779597c45f6ceb014b130bb5dfe6175c614b26a2
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -71,7 +69,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   SDVersion: 43383b6ac05462c973c3fd92d9748c74e360aba5
-  UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 3b480ebd1169d509227657f6e017ec4b3d7dc628

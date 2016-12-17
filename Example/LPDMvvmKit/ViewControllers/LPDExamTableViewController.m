@@ -96,13 +96,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.tableView = [[LPDTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+  self.tableView = [[LPDTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
   LPDExamTableViewModel *selfViewModel = (LPDExamTableViewModel*)self.viewModel;
   [self.tableView bindingTo:selfViewModel.tableViewModel];
   [self.view addSubview:self.tableView];
+//  self.tableView.contentInsetTop -= 33;
   [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.right.bottom.equalTo(@0);
-    make.top.equalTo(@(0));
+    make.left.right.equalTo(@0);
+    make.top.equalTo(self.mas_topLayoutGuideBottom);
+    make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
   }];
 
   self.scrollView = self.tableView;

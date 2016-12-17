@@ -79,6 +79,7 @@ static UIView * (^initSubmittingBlock)();
   }
   if (!xibPath) {
     [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
   }
 }
 

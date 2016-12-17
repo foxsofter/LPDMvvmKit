@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   * Finally, don't worry about the indent, CocoaPods strips it!
   DESC
 
-  s.homepage     = "https://github.com/foxsofter/lpd-mvvm-kit"
+  s.homepage     = "https://github.com/LPD-iOS/lpd-mvvm-kit"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author       = { "foxsofter" => "foxsofter@gmail.com" }
@@ -28,12 +28,11 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.source = { :git => "https://github.com/foxsofter/lpd-mvvm-kit.git", :tag => s.version.to_s, :submodules => true }
+  s.source = { :git => "https://github.com/LPD-iOS/lpd-mvvm-kit.git", :tag => s.version.to_s, :submodules => true }
 
   s.requires_arc = true
 
   s.source_files = 'LPDMvvmKit/Classes/**/*'
-  s.private_header_files = 'LPDMvvmKit/Classes/LPDViewControllerFactory.h'
 
   # s.resource_bundles = {
   #   'LPDMvvmKit' => ['LPDMvvmKit/Assets/*.png']
@@ -47,6 +46,5 @@ Pod::Spec.new do |s|
   s.dependency 'LPDTableViewKit'
   s.dependency 'LPDCollectionViewKit'
   s.dependency 'ReactiveViewModel'
-  s.dependency 'UICKeyChainStore'
   s.dependency 'MJRefresh'
 end

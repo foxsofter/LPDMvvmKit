@@ -27,7 +27,6 @@
   
   self.tabBar.barTintColor = [UIColor blackColor];
   self.tabBar.tintColor = [UIColor colorWithHexString:@"2E937B"];
-  self.tabBar.unselectedItemTintColor = [UIColor whiteColor];
 }
 
 @end

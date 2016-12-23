@@ -19,6 +19,22 @@
   objc_setAssociatedObject(self, @selector(setViewModel:), viewModel, OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (RACSignal *)viewDidLoadSignal {
+  return [self.viewModel viewDidLoadSignal];
+}
+
+- (RACSignal *)viewDidLayoutSubviewsSignal {
+  return [self.viewModel viewDidLayoutSubviewsSignal];
+}
+
+- (RACSignal *)didBecomeActiveSignal {
+  return [self.viewModel didBecomeActiveSignal];
+}
+
+- (RACSignal *)didBecomeInactiveSignal {
+  return [self.viewModel didBecomeInactiveSignal];
+}
+
 - (LPDViewReactState)reactState {
   return self.viewModel.reactState;
 }

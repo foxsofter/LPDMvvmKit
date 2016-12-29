@@ -31,11 +31,13 @@
 
 @implementation LPDAlertView
 
-+ (void)show:(NSString *)message title:(NSString *)title action:(void (^)(void))action {
++ (void)show:(NSString *)message
+       title:(NSString *)title
+      action:(void (^)(void))action {
   LPDAlertAction *alertAction = [[LPDAlertAction alloc] init];
   alertAction.title = title;
   alertAction.action = action;
-  [self show:nil message:message actions:@[alertAction]];
+  [self show:nil caption:nil message:message actions:@[alertAction]];
 }
 
 + (void)show:(NSString *)message
@@ -49,22 +51,28 @@
   LPDAlertAction *alertAction2 = [[LPDAlertAction alloc] init];
   alertAction2.title = title2;
   alertAction2.action = action2;
-  [self show:nil message:message actions:@[alertAction1, alertAction2]];
+  [self show:nil caption:nil message:message actions:@[alertAction1, alertAction2]];
 }
 
-+ (void)show:(NSString *)message action:(LPDAlertAction *)action {
-  [self show:nil message:message actions:@[action]];
++ (void)show:(NSString *)message
+      action:(LPDAlertAction *)action {
+  [self show:nil caption:nil message:message actions:@[action]];
 }
 
-+ (void)show:(NSString *)message action1:(LPDAlertAction *)action1 action2:(LPDAlertAction *)action2 {
-  [self show:nil message:message actions:@[action1, action2]];
++ (void)show:(NSString *)message
+     action1:(LPDAlertAction *)action1
+     action2:(LPDAlertAction *)action2 {
+  [self show:nil caption:nil message:message actions:@[action1, action2]];
 }
 
-+ (void)show:(NSString *)caption message:(NSString *)message title:(NSString *)title action:(void (^)(void))action {
++ (void)show:(NSString *)caption
+     message:(NSString *)message
+       title:(NSString *)title
+      action:(void (^)(void))action {
   LPDAlertAction *alertAction = [[LPDAlertAction alloc] init];
   alertAction.title = title;
   alertAction.action = action;
-  [self show:caption message:message actions:@[alertAction]];
+  [self show:nil caption:caption message:message actions:@[alertAction]];
 }
 
 + (void)show:(NSString *)caption
@@ -79,18 +87,35 @@
   LPDAlertAction *alertAction2 = [[LPDAlertAction alloc] init];
   alertAction2.title = title2;
   alertAction2.action = action2;
-  [self show:caption message:message actions:@[alertAction1, alertAction2]];
+  [self show:nil caption:caption message:message actions:@[alertAction1, alertAction2]];
 }
 
-+ (void)show:(NSString *)caption message:(NSString *)message action:(LPDAlertAction *)action {
-  [self show:caption message:message actions:@[action]];
++ (void)show:(NSString *)caption
+     message:(NSString *)message
+      action:(LPDAlertAction *)action {
+  [self show:nil caption:caption message:message actions:@[action]];
 }
 
 + (void)show:(NSString *)caption
      message:(NSString *)message
      action1:(LPDAlertAction *)action1
      action2:(LPDAlertAction *)action2 {
-  [self show:caption message:message actions:@[action1, action2]];
+  [self show:nil caption:caption message:message actions:@[action1, action2]];
+}
+
++ (void)show:(UIImage*)image
+     caption:(NSString *)caption
+     message:(NSString *)message
+      action:(LPDAlertAction *)action{
+  [self show:image caption:caption message:message actions:@[action]];
+}
+
++ (void)show:(UIImage*)image
+     caption:(NSString *)caption
+     message:(NSString *)message
+     action1:(LPDAlertAction *)action1
+     action2:(LPDAlertAction *)action2{
+  [self show:image caption:caption message:message actions:@[action1, action2]];
 }
 
 #pragma mark - private methods
@@ -104,28 +129,35 @@
   return alerts;
 }
 
-+ (void)show:(NSString *)caption message:(NSString *)message actions:(NSArray *)actions {
++ (void)show:(UIImage*)image
+     caption:(NSString *)caption
+     message:(NSString *)message
+     actions:(NSArray *)actions {
   @synchronized(self) {
     LPDAlertView *alertView = [[self alertViews] peekObject];
     if (alertView) {
       [alertView hide];
     }
     alertView = [[LPDAlertView alloc] init];
-    [alertView show:caption message:message actions:actions];
+    [alertView show:image caption:caption message:message actions:actions];
     [[self alertViews] pushObject:alertView];
   }
 }
 
-- (void)show:(NSString *)caption message:(NSString *)message actions:(NSArray *)actions {
+- (void)show:(UIImage*)image
+     caption:(NSString *)caption
+     message:(NSString *)message
+     actions:(NSArray *)actions {
   self.actions = actions;
   self.caption = caption;
+  
   _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.width, UIScreen.height)];
 
   _contentView = [[UIView alloc] init];
   _contentView.backgroundColor = [UIColor whiteColor];
   _contentView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-  [_backgroundView addSubview:_contentView];
   _contentView.layer.cornerRadius = 3;
+  [_backgroundView addSubview:_contentView];
 
   [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.equalTo(@(UIScreen.width * 0.14));
@@ -133,6 +165,19 @@
     make.center.equalTo(self.backgroundView);
     make.height.greaterThanOrEqualTo(@80);
   }];
+  
+  UIImageView *imageView = nil;
+  if (image) {
+    imageView = [[UIImageView alloc] init];
+    imageView.image = image;
+    [_contentView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+      make.width.equalTo(@202);
+      make.height.equalTo(@160);
+      make.centerX.equalTo(self.contentView.mas_centerX);
+      make.top.equalTo(@28);
+    }];
+  }
 
   UILabel *captionLabel = nil;
   if (caption && caption.length > 0) {
@@ -140,9 +185,16 @@
     captionLabel.text = caption;
     captionLabel.textColor = [UIColor colorWithHexString:@"#030303"];
     captionLabel.font = [UIFont systemFontOfSize:17];
+    if (image) {
+      captionLabel.textAlignment = NSTextAlignmentCenter;
+    }
     [_contentView addSubview:captionLabel];
     [captionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-      make.top.equalTo(@20);
+      if (image) {
+        make.top.equalTo(imageView.mas_bottom).with.offset(7);
+      } else {
+        make.top.equalTo(@20);
+      }
       make.left.equalTo(@27);
       make.right.equalTo(@(-27));
     }];
@@ -155,18 +207,23 @@
     messageLabel.textColor = [UIColor colorWithHexString:@"#797979"];
     messageLabel.font = [UIFont systemFontOfSize:13];
     messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = NSTextAlignmentLeft;
+    if (image) {
+      messageLabel.textAlignment = NSTextAlignmentCenter;
+    }
     [_contentView addSubview:messageLabel];
     [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
       make.left.equalTo(@27);
       make.right.equalTo(@(-27));
-      if (captionLabel) {
+      if (caption) {
         make.top.equalTo(captionLabel.mas_bottom).with.offset(7);
-      } else {
+      }else if (image){
+        make.top.equalTo(imageView.mas_bottom).with.offset(7);
+      }else {
         make.top.equalTo(@20);
       }
     }];
   }
+  
   UIButton *button = nil;
   CGFloat buttonWidth = UIScreen.width * 0.73 / actions.count;
   CGFloat left = 0;
@@ -177,15 +234,17 @@
     [button setTitle:action.title forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     button.contentMode = UIViewContentModeCenter;
-
     [_contentView addSubview:button];
+    
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
       make.left.equalTo(@(left));
       make.bottom.equalTo(@0);
       make.width.equalTo(@(buttonWidth));
       make.height.equalTo(@44);
     }];
+    
     left += buttonWidth;
+    
     if (action.actionType == LPDAlertActionTypeDefault) {
       [button setTitleColor:[UIColor colorWithHexString:@"#008AF1"] forState:UIControlStateNormal];
       button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
@@ -194,6 +253,7 @@
     } else {
       [button setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
     }
+    
     if (i == 0) {
       [button setBorder:0.5
             borderColor:[[UIColor blackColor] colorWithAlphaComponent:0.25]
@@ -204,13 +264,14 @@
          borderPosition:LPDUIViewBorderPositionTop | LPDUIViewBorderPositionLeft];
     }
 
-    __weak typeof(self) weakSelf = self;
+    __weak typeof (self) weakSelf = self;
     [button touchUpInside:^{
-      __strong typeof(self) strongSelf= weakSelf;
+      __strong typeof (self) strongSelf = weakSelf;
       if (strongSelf) {
         [self hide:action.action];
       }
     }];
+    
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
       if (messageLabel) {
         make.top.equalTo(messageLabel.mas_bottom).with.offset(20).priority(MASLayoutPriorityFittingSizeLevel);

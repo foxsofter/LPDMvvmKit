@@ -4,7 +4,6 @@
 
 #import "LPDAdditionsKit.h"
 #import "LPDLabel.h"
-#import "LPDLocalNotificationCenter.h"
 #import "NSArray+LPDRandom.h"
 #import "NSCharacterSet+LPDAddition.h"
 #import "NSDate+LPDNSDateRFC1123.h"

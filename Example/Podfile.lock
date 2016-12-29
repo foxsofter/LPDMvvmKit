@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - LPDAdditionsKit (0.1.1)
-  - LPDCollectionViewKit (0.1.1):
+  - LPDAdditionsKit (0.1.2)
+  - LPDCollectionViewKit (0.1.2):
     - ReactiveCocoa (= 2.5)
-  - LPDControlsKit (0.1.0):
+  - LPDControlsKit (0.1.2):
     - LPDAdditionsKit
     - Masonry
     - SDVersion
-  - LPDMvvmKit (0.7.2):
+  - LPDMvvmKit (0.7.4):
     - LPDAdditionsKit
     - LPDCollectionViewKit
     - LPDControlsKit
@@ -29,11 +29,11 @@ PODS:
     - LPDTableViewKit
     - MJRefresh
     - ReactiveViewModel
-  - LPDNetworkingKit (0.2.0):
+  - LPDNetworkingKit (0.2.1):
     - AFNetworking
     - ReactiveCocoa (= 2.5)
     - YYModel
-  - LPDTableViewKit (0.1.6):
+  - LPDTableViewKit (0.2.2):
     - ReactiveCocoa (= 2.5)
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
@@ -54,16 +54,16 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   LPDMvvmKit:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  LPDAdditionsKit: e029eefb9ec795bd4205a7f81e7678f654e9728f
-  LPDCollectionViewKit: 0f1ea9f22e7740e9297e49581e7a28fc1a4ec0b2
-  LPDControlsKit: 80b5c98834f3290243555436ccd53110f86ab172
-  LPDMvvmKit: ceec5fa645cc047d0161ca9d56ca8d6dfa84d430
-  LPDNetworkingKit: bc1364fc6abd60bfa250de9b13bf7d3372518995
-  LPDTableViewKit: 779597c45f6ceb014b130bb5dfe6175c614b26a2
+  LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
+  LPDCollectionViewKit: 08996d12b0c7a2307918867c91f1ffb812851ba5
+  LPDControlsKit: bd4b49b4f12cb700dcf0c931b739f679a6ce5c1f
+  LPDMvvmKit: 164e23d5800f3e84e371d66edf88c96deaaa2c42
+  LPDNetworkingKit: fb7781781e419fa3d87660f8d2d293ec553491bf
+  LPDTableViewKit: 89926e340ddaee8c4479396e21c480883fb527f5
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a

@@ -10,4 +10,6 @@
 
 @implementation LPDTableHeaderViewModel
 
+@synthesize height;
+
 @end

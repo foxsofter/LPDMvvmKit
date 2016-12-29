@@ -75,6 +75,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)rac_DELETE:(NSString *)path parameters:(nullable id)parameters;
 
 /**
+ *  @brief get container of model class.
+ *
+ *  @return container of model class
+ */
++ (NSMutableDictionary<NSString *, Class> *)dictionaryOfEndpointClasses;
+
+/**
  *  @brief get response model class by endpoint.
  *
  *  @param endpoint endpoint

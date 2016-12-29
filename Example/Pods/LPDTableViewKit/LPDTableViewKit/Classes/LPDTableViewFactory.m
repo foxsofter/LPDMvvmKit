@@ -53,6 +53,12 @@
   return nil;
 }
 
+- (__kindof id<LPDTableItemViewModelProtocol>)headerWithViewModel:(__kindof id<LPDTableItemViewModelProtocol>)viewModel
+                                                        tableView:(UITableView *)tableView {
+  return [self hfWithViewModel:viewModel tableView:tableView];
+}
+
+
 - (__kindof id<LPDTableViewItemProtocol>)tableViewModel:(__kindof id<LPDTableViewModelProtocol>)tableViewModel
                                         footerForTableView:(UITableView *)tableView
                                                  atSection:(NSInteger)sectionIndex {
@@ -63,6 +69,12 @@
   }
   return nil;
 }
+
+- (__kindof id<LPDTableItemViewModelProtocol>)footerWithViewModel:(__kindof id<LPDTableItemViewModelProtocol>)viewModel
+                                                        tableView:(UITableView *)tableView {
+  return [self hfWithViewModel:viewModel tableView:tableView];
+}
+
 
 - (__kindof id<LPDTableViewItemProtocol>)hfWithViewModel:(__kindof id<LPDTableItemViewModelProtocol>)viewModel
                                                   tableView:(UITableView *)tableView {

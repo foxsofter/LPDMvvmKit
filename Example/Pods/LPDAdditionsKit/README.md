@@ -1,6 +1,6 @@
 # LPDAdditionsKit
 
-[![CI Status](http://img.shields.io/travis/foxsofter/LPDAdditionsKit.svg?style=flat)](https://travis-ci.org/foxsofter/LPDAdditionsKit)
+[![Build Status](https://travis-ci.org/LPD-iOS/lpd-additions-kit.svg?branch=master)](https://travis-ci.org/LPD-iOS/lpd-additions-kit)
 [![Version](https://img.shields.io/cocoapods/v/LPDAdditionsKit.svg?style=flat)](http://cocoapods.org/pods/LPDAdditionsKit)
 [![License](https://img.shields.io/cocoapods/l/LPDAdditionsKit.svg?style=flat)](http://cocoapods.org/pods/LPDAdditionsKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDAdditionsKit.svg?style=flat)](http://cocoapods.org/pods/LPDAdditionsKit)

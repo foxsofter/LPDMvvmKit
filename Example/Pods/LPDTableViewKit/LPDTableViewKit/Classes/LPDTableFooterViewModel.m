@@ -10,4 +10,6 @@
 
 @implementation LPDTableFooterViewModel
 
+@synthesize height;
+
 @end

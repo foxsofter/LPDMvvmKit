@@ -1051,11 +1051,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   return UITableViewAutomaticDimension;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
-  return 1.f;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  if (self.viewModel.sections.count < 1) {
+    return .1f;
+  }
   id<LPDTableSectionViewModelProtocol> sectionViewModel = self.viewModel.sections[section];
   if ([sectionViewModel respondsToSelector:@selector(headerViewModel)]) {
     return sectionViewModel.headerViewModel.height;
@@ -1065,11 +1064,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   return .1f;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-  return 1.f;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+  if (self.viewModel.sections.count < 1) {
+    return .1f;
+  }
   id<LPDTableSectionViewModelProtocol> sectionViewModel = self.viewModel.sections[section];
   if ([sectionViewModel respondsToSelector:@selector(footerViewModel)]) {
     return sectionViewModel.footerViewModel.height;

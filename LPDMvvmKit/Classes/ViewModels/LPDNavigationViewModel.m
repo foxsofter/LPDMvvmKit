@@ -48,12 +48,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)popToRootViewModelAnimated:(BOOL)animated {
 }
 
-- (void)presentViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
-                animated:(BOOL)animated
-              completion:(nullable void (^)())completion {
+- (void)presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
+                          animated:(BOOL)animated
+                        completion:(nullable void (^)())completion {
 }
 
-- (void)dismissViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion {
+- (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion {
 }
 
 #pragma mark - properties
@@ -96,12 +96,12 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
-- (void)_presentViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel {
+- (void)_presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel {
   _presentedViewModel = viewModel;
   _presentedViewModel.presentingViewModel = self;
 }
 
-- (void)_dismissViewModel {
+- (void)_dismissNavigationViewModel {
   if (_presentedViewModel) {
     [_presentedViewModel
       dismissViewModelAnimated:NO

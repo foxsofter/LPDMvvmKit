@@ -14,15 +14,33 @@
 #import "NSObject+LPDThread.h"
 #import "UIScreen+LPDAccessor.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <LPDAdditionsKit/LPDAdditionsKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LPDNavigationController ()
+@interface UINavigationController ()
 
-@property (nonatomic, strong, readwrite) id<LPDNavigationViewModelProtocol> viewModel;
+@property (nullable, nonatomic, strong, readwrite) id<LPDNavigationViewModelProtocol> viewModel;
 
-@property (nullable, nonatomic, weak, readwrite) __kindof id<LPDNavigationControllerProtocol>
-  lpd_presentedViewController;
+@end
+
+@implementation UINavigationController (LPDMvvm)
+
+- (nullable __kindof id<LPDNavigationViewModelProtocol>)viewModel {
+  return [self object:@selector(setViewModel:)];
+}
+
+- (void)setViewModel:(nullable __kindof id<LPDNavigationViewModelProtocol>)viewModel {
+  [self setRetainNonatomicObject:viewModel withKey:@selector(setViewModel:)];
+}
+
+- (void)presentNavigationController:(UINavigationController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion {
+  [self presentViewController:viewControllerToPresent animated:flag completion:completion];
+}
+
+- (void)dismissNavigationControllerAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion {
+  [self dismissViewControllerAnimated:flag completion:completion];
+}
 
 @end
 
@@ -60,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.viewModel = viewModel;
 
     LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:viewModel.topViewModel];
-    [self setViewControllers:@[rootViewController] animated:NO];
+    [self setViewControllers:@[ rootViewController ] animated:NO];
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
       @strongify(self);
@@ -84,118 +102,90 @@ NS_ASSUME_NONNULL_BEGIN
   return super.topViewController.preferredStatusBarStyle;
 }
 
-#pragma mark - navigation methods
+#pragma mark - private methods
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-
-- (void)lpd_pushViewController:(__kindof id<LPDViewControllerProtocol>)viewControllerToPush animated:(BOOL)animated {
-  if (self.childViewControllers.count > 0) {
-    ((UIViewController *)viewControllerToPush).hidesBottomBarWhenPushed = YES;
-  }
-  [(UINavigationController *)self pushViewController:viewControllerToPush animated:animated];
-}
-
-- (nullable __kindof id<LPDViewControllerProtocol>)lpd_popViewControllerAnimated:(BOOL)animated {
-  return (id<LPDViewControllerProtocol>)[(UINavigationController *)self popViewControllerAnimated:animated];
-}
-
-- (nullable NSArray<__kindof id<LPDViewControllerProtocol>> *)lpd_popToRootViewControllerAnimated:(BOOL)animated {
-  return [(UINavigationController *)self popToRootViewControllerAnimated:animated];
-}
-
-- (void)lpd_presentViewController:(__kindof id<LPDNavigationControllerProtocol>)viewControllerToPresent
-                         animated:(BOOL)flag
-                       completion:(void (^__nullable)(void))completion {
-  self.lpd_presentedViewController = viewControllerToPresent;
-  [(NSObject *)self.viewModel performSelector:@selector(_presentViewModel:)
-                                   withObject:self.lpd_presentedViewController.viewModel];
-  [super presentViewController:viewControllerToPresent animated:flag completion:completion];
-}
-
-- (void)lpd_dismissViewControllerAnimated:(BOOL)flag completion:(void (^__nullable)(void))completion {
-  [(NSObject *)self.viewModel performSelector:@selector(_dismissViewModel)];
-  self.lpd_presentedViewController = nil;
-  [super dismissViewControllerAnimated:flag completion:completion];
-}
-
-#pragma clang diagnostic pop
-
-#pragma mark - private methods
 
 /**
  *  @brief  设置同步ViewModel的导航到ViewController的导航的信号
  */
 - (void)synchronizeNavigationSignals {
   @weakify(self);
-  [[[self rac_signalForSelector:@selector(pushViewController:animated:)]
-    deliverOnMainThread] subscribeNext:^(RACTuple *tuple) {
+  [[self rac_signalForSelector:@selector(pushViewController:animated:)]
+    subscribeNext:^(RACTuple *tuple) {
     @strongify(self);
     __kindof id<LPDViewControllerProtocol> viewControllerToPush = tuple.first;
     if ([viewControllerToPush respondsToSelector:@selector(viewModel)] &&
         [self.viewModel respondsToSelector:@selector(_pushViewModel:)]) {
-      [(NSObject *)self.viewModel performSelector:@selector(_pushViewModel:) withObject:viewControllerToPush.viewModel];
+      [self.viewModel performSelector:@selector(_pushViewModel:) withObject:viewControllerToPush.viewModel];
     }
   }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(pushViewModel:animated:)] deliverOnMainThread]
+  [[[self.viewModel rac_signalForSelector:@selector(pushViewModel:animated:)] deliverOnMainThread]
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
       id<LPDViewControllerProtocol> viewController =
         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:tuple.first];
-      [self lpd_pushViewController:viewController animated:[tuple.second boolValue]];
+      [self pushViewController:viewController animated:[tuple.second boolValue]];
     }];
 
-  [[[self rac_signalForSelector:@selector(popViewControllerAnimated:)] deliverOnMainThread] subscribeNext:^(id x) {
+  [[self rac_signalForSelector:@selector(popViewControllerAnimated:)] subscribeNext:^(id x) {
     @strongify(self);
     if ([self.viewModel respondsToSelector:@selector(_popViewModel)]) {
-      [(NSObject *)self.viewModel performSelector:@selector(_popViewModel)];
+      [self.viewModel performSelector:@selector(_popViewModel)];
     }
   }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(popViewModelAnimated:)] deliverOnMainThread]
+  [[[self.viewModel rac_signalForSelector:@selector(popViewModelAnimated:)] deliverOnMainThread]
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
-      [self lpd_popViewControllerAnimated:[tuple.first boolValue]];
+      [self popViewControllerAnimated:[tuple.first boolValue]];
     }];
 
-  [[[self rac_signalForSelector:@selector(popToRootViewControllerAnimated:)] deliverOnMainThread]
+  [[self rac_signalForSelector:@selector(popToRootViewControllerAnimated:)]
     subscribeNext:^(id x) {
       @strongify(self);
       if ([self.viewModel respondsToSelector:@selector(_popToRootViewModel)]) {
-        [(NSObject *)self.viewModel performSelector:@selector(_popToRootViewModel)];
+        [self.viewModel performSelector:@selector(_popToRootViewModel)];
       }
     }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(popToRootViewModelAnimated:)] deliverOnMainThread]
+  [[[self.viewModel rac_signalForSelector:@selector(popToRootViewModelAnimated:)] deliverOnMainThread]
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
-      [self lpd_popToRootViewControllerAnimated:[tuple.first boolValue]];
+      [self popToRootViewControllerAnimated:[tuple.first boolValue]];
     }];
 
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(presentViewModel:animated:completion:)]
+  [[self rac_signalForSelector:@selector(presentNavigationController:animated:completion:)]
+   subscribeNext:^(id x) {
+     @strongify(self);
+     if ([self.viewModel respondsToSelector:@selector(_presentNavigationViewModel:)]) {
+       [self.viewModel performSelector:@selector(_presentNavigationViewModel:) withObject:self.presentedViewController.viewModel];
+     }
+   }];
+  [[[self.viewModel rac_signalForSelector:@selector(presentNavigationViewModel:animated:completion:)]
     deliverOnMainThread] subscribeNext:^(RACTuple *tuple) {
     @strongify(self);
     NSParameterAssert(tuple.first);
     id<LPDNavigationControllerProtocol> viewController =
       [LPDViewControllerFactory viewControllerForViewModel:tuple.first];
 
-    [self lpd_presentViewController:viewController animated:[tuple.second boolValue] completion:tuple.third];
+    [self presentNavigationController:viewController animated:[tuple.second boolValue] completion:tuple.third];
   }];
 
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(dismissViewModelAnimated:completion:)]
+  [[self rac_signalForSelector:@selector(dismissNavigationControllerAnimated:completion:)]
+   subscribeNext:^(id x) {
+     @strongify(self);
+     if ([self.viewModel respondsToSelector:@selector(_dismissNavigationViewModel)]) {
+       [self.viewModel performSelector:@selector(_dismissNavigationViewModel)];
+     }
+   }];
+  [[[self.viewModel rac_signalForSelector:@selector(dismissNavigationViewModelAnimated:completion:)]
     deliverOnMainThread] subscribeNext:^(RACTuple *tuple) {
     @strongify(self);
-    [self lpd_dismissViewControllerAnimated:[tuple.first boolValue] completion:tuple.second];
+    [self dismissNavigationControllerAnimated:[tuple.first boolValue] completion:tuple.second];
   }];
 }
 
-#pragma mark - properties
-
-- (nullable __kindof id<LPDViewControllerProtocol>)lpd_topViewController {
-  return (id<LPDViewControllerProtocol>)super.topViewController;
-}
-
-- (nullable __kindof id<LPDViewControllerProtocol>)lpd_visibleViewController {
-  return self.lpd_presentedViewController ?: self.lpd_topViewController;
-}
+#pragma clang diagnostic pop
 
 @end
 

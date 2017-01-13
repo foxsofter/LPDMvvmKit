@@ -12,6 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UINavigationController (LPDMvvm)<LPDNavigationControllerProtocol>
+
+@end
+
 @interface LPDNavigationController : UINavigationController <LPDNavigationControllerProtocol>
 
 /**
@@ -25,15 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil
                          bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController NS_UNAVAILABLE;
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion NS_UNAVAILABLE;
+- (void)dismissViewControllerAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion NS_UNAVAILABLE;
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated NS_UNAVAILABLE;
-- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated NS_UNAVAILABLE;
-- (nullable NSArray<__kindof UIViewController *> *)popToViewController:(UIViewController *)viewController
-                                                              animated:(BOOL)animated NS_UNAVAILABLE;
-- (nullable NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated NS_UNAVAILABLE;
-- (void)presentViewController:(UIViewController *)viewControllerToPresent
-                     animated:(BOOL)flag
-                   completion:(void (^__nullable)(void))completion NS_UNAVAILABLE;
+- (instancetype)initWithViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel;
 
 @end
 

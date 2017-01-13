@@ -13,8 +13,27 @@
 #import "NSString+LPDAddition.h"
 #import "UIScreen+LPDAccessor.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <LPDAdditionsKit/LPDAdditionsKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+@interface UIViewController ()
+
+@property (nullable, nonatomic, strong, readwrite) __kindof id<LPDViewModelProtocol> viewModel;
+
+@end
+
+@implementation UIViewController (LPDMvvm)
+
+- (nullable __kindof id<LPDViewModelProtocol>)viewModel {
+  return [self object:@selector(setViewModel:)];
+}
+
+- (void)setViewModel:(nullable __kindof id<LPDViewModelProtocol>)viewModel {
+  [self setRetainNonatomicObject:viewModel withKey:@selector(setViewModel:)];
+}
+
+@end
 
 @interface LPDViewController ()
 
@@ -61,8 +80,6 @@ static UIView * (^initSubmittingBlock)();
 + (void)initSubmittingBlock:(UIView * (^)())block {
   initSubmittingBlock = block;
 }
-
-@synthesize navigation = _navigation;
 
 #pragma mark - life cycle
 

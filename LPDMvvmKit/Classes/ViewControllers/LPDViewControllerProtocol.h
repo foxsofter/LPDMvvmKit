@@ -11,21 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDViewModelProtocol;
-@protocol LPDNavigationControllerProtocol;
 
 @protocol LPDViewControllerProtocol <NSObject>
 
 @required
 
-- (instancetype)initWithViewModel:(__kindof id<LPDViewModelProtocol>)viewModel;
+@property (nullable, nonatomic, strong, readonly) __kindof id<LPDViewModelProtocol> viewModel;
 
-@property (nonatomic, strong, readonly) __kindof id<LPDViewModelProtocol> viewModel;
+@property(nullable, nonatomic,readonly,strong) UINavigationController *navigationController;
 
-@property (nullable, nonatomic, strong) __kindof id<LPDNavigationControllerProtocol> navigation;
+@property(nonatomic,readonly) NSArray<__kindof UIViewController *> *childViewControllers NS_AVAILABLE_IOS(5_0);
 
-- (void)lpd_addChildViewController:(id<LPDViewControllerProtocol>)childViewController;
+- (void)addChildViewController:(UIViewController *)childController NS_AVAILABLE_IOS(5_0);
 
-- (void)lpd_removeFromParentViewController;
+- (void)removeFromParentViewController NS_AVAILABLE_IOS(5_0);
 
 @end
 

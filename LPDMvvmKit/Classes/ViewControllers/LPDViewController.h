@@ -11,7 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UIViewController (LPDMvvm) <LPDViewControllerProtocol>
+
+@end
+
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
+
++ (instancetype) new NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
 
 /**
  *  @brief 设置有网络时的block

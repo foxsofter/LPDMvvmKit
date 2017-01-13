@@ -43,14 +43,14 @@ static void (^reactStateNetworkLatencyBlock)(UIScrollView *scrollView, NSString 
   reactStateNetworkLatencyBlock = block;
 }
 
-static void (^beginLodingBlock)(UIView *view);
-+ (void)beginLodingBlock:(void (^)(UIView *view))block {
-  beginLodingBlock = block;
+static void (^beginLoadingBlock)(UIView *view);
++ (void)beginLoadingBlock:(void (^)(UIView *view))block {
+  beginLoadingBlock = block;
 }
 
-static void (^endLodingBlock)(UIView *view);
-+ (void)endLodingBlock:(void (^)(UIView *view))block {
-  endLodingBlock = block;
+static void (^endLoadingBlock)(UIView *view);
++ (void)endLoadingBlock:(void (^)(UIView *view))block {
+  endLoadingBlock = block;
 }
 
 static MJRefreshHeader * (^initHeaderBlock)(MJRefreshComponentRefreshingBlock refreshingBlock);
@@ -115,8 +115,8 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
     if (self.needLoading) {
       if ([x boolValue]) {
         if (!self.loadingProgress.isRefreshing) {
-          if (beginLodingBlock) {
-            beginLodingBlock(self.view);
+          if (beginLoadingBlock) {
+            beginLoadingBlock(self.view);
           }
         }
         self.viewModel.reactState = LPDViewReactStateNormal;
@@ -124,19 +124,19 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
         if (self.loadingProgress.isRefreshing) {
           [self.loadingProgress endRefreshing];
         } else {
-          if (endLodingBlock) {
-            endLodingBlock(self.view);
+          if (endLoadingBlock) {
+            endLoadingBlock(self.view);
           }
         }
       }
     } else {
       if ([x boolValue]) {
-        if (beginLodingBlock) {
-          beginLodingBlock(self.view);
+        if (beginLoadingBlock) {
+          beginLoadingBlock(self.view);
         }
       } else {
-        if (endLodingBlock) {
-          endLodingBlock(self.view);
+        if (endLoadingBlock) {
+          endLoadingBlock(self.view);
         }
       }
     }

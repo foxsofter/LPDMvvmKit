@@ -33,12 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief 设置非下拉加载开始的block，设置此block后，如果不是手动下拉触发则调用此block的加载动画
  */
-+ (void)beginLodingBlock:(void (^)(UIView *view))block;
++ (void)beginLoadingBlock:(void (^)(UIView *view))block;
 
 /**
  *  @brief 设置非下拉加载结束的block
  */
-+ (void)endLodingBlock:(void (^)(UIView *view))block;
++ (void)endLoadingBlock:(void (^)(UIView *view))block;
 
 /**
  *  @brief 设置下拉刷新Header的block

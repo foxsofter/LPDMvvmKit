@@ -27,7 +27,7 @@
 +(void)load {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    [self beginLodingBlock:^(UIView *_Nonnull view) {
+    [self beginLoadingBlock:^(UIView *_Nonnull view) {
       UIView *contentView = [view viewWithTag:777777];
       if (contentView) {
         return;
@@ -63,7 +63,7 @@
       }
       [imageView startAnimating];
     }];
-    [self endLodingBlock:^(UIView *_Nonnull view) {
+    [self endLoadingBlock:^(UIView *_Nonnull view) {
       UIView *contentView = [view viewWithTag:777777];
       if (contentView) {
         [contentView removeFromSuperview];

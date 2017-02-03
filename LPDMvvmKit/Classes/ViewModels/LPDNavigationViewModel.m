@@ -7,12 +7,13 @@
 //
 
 #import "LPDNavigationViewModel.h"
+#import "LPDWeakMutableArray.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDNavigationViewModel ()
 
-@property (nonatomic, strong, readwrite) NSMutableArray<__kindof id<LPDViewModelProtocol>> *viewModels;
+@property (nonatomic, strong, readwrite) LPDWeakMutableArray<__kindof id<LPDViewModelProtocol>> *viewModels;
 
 //@property (nonatomic, strong, readwrite) __kindof id<LPDNavigationViewModelProtocol> presentedViewModel;
 //@property (nonatomic, strong, readwrite) __kindof id<LPDNavigationViewModelProtocol> presentingViewModel;
@@ -30,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithRootViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
   self = [super init];
   if (self) {
-    _viewModels = [NSMutableArray array];
+    _viewModels = [LPDWeakMutableArray array];
     [_viewModels addObject:viewModel];
     viewModel.navigation = self;
   }
@@ -92,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_popToRootViewModel {
   if (_viewModels.count > 1) {
-    _viewModels = [NSMutableArray arrayWithObject:_viewModels.firstObject];
+    [_viewModels removeObjectsInRange:NSMakeRange(1, _viewModels.count - 1)];
   }
 }
 

@@ -6,9 +6,9 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
-#import "LPDViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-
+#import "LPDViewModel.h"
+#import "LPDWeakMutableArray.h"
 
 @interface LPDViewModel ()
 
@@ -18,11 +18,11 @@
 
 @property (nonatomic, weak, readwrite) id<LPDViewModelProtocol> parentViewModel;
 
-@property (nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
+@property (nonatomic, strong) LPDWeakMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
 
-@property (nonatomic, assign) BOOL viewDidLoad;
+@property (nonatomic, assign) BOOL didLoadView;
 
-@property (nonatomic, assign) BOOL viewDidLayout;
+@property (nonatomic, assign) BOOL didLayoutSubviews;
 
 @end
 
@@ -32,35 +32,35 @@
 @synthesize submitting = _submitting;
 @synthesize networkState = _networkState;
 @synthesize navigation = _navigation;
-@synthesize viewDidLoadSignal = _viewDidLoadSignal;
-@synthesize viewDidLayoutSubviewsSignal = _viewDidLayoutSubviewsSignal;
+@synthesize didLoadViewSignal = _didLoadViewSignal;
+@synthesize didLayoutSubviewsSignal = _didLayoutSubviewsSignal;
 
 #pragma mark - public methods
 
-- (RACSignal *)viewDidLoadSignal {
-  if (_viewDidLoadSignal == nil) {
+- (RACSignal *)didLoadViewSignal {
+  if (_didLoadViewSignal == nil) {
     @weakify(self);
-    _viewDidLoadSignal = [[[RACObserve(self, viewDidLoad) filter:^(NSNumber *viewDidLoad) {
-      return viewDidLoad.boolValue;
+    _didLoadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
+      return didLoadView.boolValue;
     }] map:^(id _) {
       @strongify(self);
       return self;
-    }] setNameWithFormat:@"%@ -viewDidLoadSignal", self];
+    }] setNameWithFormat:@"%@ -didLoadViewSignal", self];
   }
-  return _viewDidLoadSignal;
+  return _didLoadViewSignal;
 }
 
-- (RACSignal *)viewDidLayoutSubviewsSignal {
-  if (nil == _viewDidLayoutSubviewsSignal) {
+- (RACSignal *)didLayoutSubviewsSignal {
+  if (nil == _didLayoutSubviewsSignal) {
     @weakify(self);
-    _viewDidLayoutSubviewsSignal = [[[RACObserve(self, viewDidLayout) filter:^(NSNumber *viewDidLayout) {
-      return viewDidLayout.boolValue;
+    _didLayoutSubviewsSignal = [[[RACObserve(self, didLayoutSubviews) filter:^(NSNumber *didLayoutSubviews) {
+      return didLayoutSubviews.boolValue;
     }] map:^(id _) {
       @strongify(self);
       return self;
-    }] setNameWithFormat:@"%@ -viewDidLayoutSubviewsSignal", self];
+    }] setNameWithFormat:@"%@ -didLayoutSubviewsSignal", self];
   }
-  return _viewDidLayoutSubviewsSignal;
+  return _didLayoutSubviewsSignal;
 }
 
 - (void)addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
@@ -95,7 +95,7 @@
 
 - (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
   if (!self.mutableChildViewModels) {
-    self.mutableChildViewModels = [NSMutableArray array];
+    self.mutableChildViewModels = [LPDWeakMutableArray array];
   }
   if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
     ((LPDViewModel *)childViewModel).parentViewModel = self;
@@ -106,6 +106,11 @@
 - (void)_removeFromParentViewModel {
   [((LPDViewModel *)self.parentViewModel).mutableChildViewModels removeObject:self];
   self.parentViewModel = nil;
+}
+
+- (void)dealloc {
+  [_errorSubject sendCompleted];
+  [_successSubject sendCompleted];
 }
 
 @end

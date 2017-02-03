@@ -40,7 +40,7 @@
       self.datas = [NSMutableArray arrayWithArray:tuple.first];
       [self reloadTable];
     }];
-    [[self.viewDidLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
+    [[self.didLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
       @strongify(self);
       self.loading = YES;
     }];

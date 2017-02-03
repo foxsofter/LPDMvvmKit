@@ -37,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDViewController ()
 
-@property (nonatomic, strong, readwrite) __kindof id<LPDViewModelProtocol> viewModel;
-
 @property (nonatomic, strong) UIView *submittingOverlay;
 @property (nonatomic, strong) UIActivityIndicatorView *submittingIndicator;
 

@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* Example for LPDMvvmKit */,
+				6003F593195388D20070C39A /* Example */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -187,7 +187,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* Example for LPDMvvmKit */ = {
+		6003F593195388D20070C39A /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				8E3F2ECA1DF157B8009E2496 /* Base.lproj */,
@@ -201,7 +201,7 @@
 				6003F59D195388D20070C39A /* LPDAppDelegate.m */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
-			name = "Example for LPDMvvmKit";
+			name = Example;
 			path = LPDMvvmKit;
 			sourceTree = "<group>";
 		};

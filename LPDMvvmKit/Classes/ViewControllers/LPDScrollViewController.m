@@ -119,7 +119,7 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
             beginLodingBlock(self.view);
           }
         }
-        self.viewModel.reactState = LPDViewReactStateNormal;
+        self.viewModel.scrollingState = LPDScrollingStateNormal;
       } else {
         if (self.loadingProgress.isRefreshing) {
           [self.loadingProgress endRefreshing];
@@ -194,32 +194,32 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
   @weakify(self);
   [[RACObserve(self.viewModel, reactState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
     @strongify(self);
-    LPDViewReactState reactState = [value integerValue];
+    LPDScrollingState reactState = [value integerValue];
     [self showReactState:reactState withMessage:nil];
   }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(setReactState:withMessage:)
+  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(setScrollingtState:withMessage:)
                                          fromProtocol:@protocol(LPDViewModelReactProtocol)] deliverOnMainThread]
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
-      LPDViewReactState reactState = [tuple.first integerValue];
+      LPDScrollingState reactState = [tuple.first integerValue];
       NSString *message = tuple.second;
       [self showReactState:reactState withMessage:message];
     }];
 }
 
-- (void)showReactState:(LPDViewReactState)reactState withMessage:(nullable NSString *)message {
+- (void)showReactState:(LPDScrollingState)reactState withMessage:(nullable NSString *)message {
   switch (reactState) {
-    case LPDViewReactStateNormal: {
+    case LPDScrollingStateNormal: {
       if (reactStateNormalBlock) {
         reactStateNormalBlock(self.scrollView);
       }
     } break;
-    case LPDViewReactStateNoData: {
+    case LPDScrollingStateNoData: {
       if (reactStateNoDataBlock) {
         reactStateNoDataBlock(self.scrollView, message);
       }
     } break;
-    case LPDViewReactStateNetworkLatency: {
+    case LPDScrollingStateNetworkLatency: {
       if (reactStateNetworkLatencyBlock) {
         reactStateNetworkLatencyBlock(self.scrollView, message);
       }

@@ -6,12 +6,13 @@
 //  Copyright © 2015年 eleme. All rights reserved.
 //
 
-#import "LPDViewModelProtocol.h"
 #import <Foundation/Foundation.h>
+#import "LPDViewModelProtocol.h"
+#import "LPDViewModelScrollingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LPDScrollViewModelProtocol <LPDViewModelProtocol>
+@protocol LPDScrollViewModelProtocol <LPDViewModelProtocol, LPDViewModelScrollingProtocol>
 
 @required
 

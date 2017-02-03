@@ -9,14 +9,19 @@
 #import <Foundation/Foundation.h>
 
 #import "LPDViewModelReactProtocol.h"
-#import "RACSignal.h"
+#import "LPDViewModelToastProtocol.h"
+#import "LPDViewModelSubmittingProtocol.h"
+#import "LPDViewModelNetworkStatusProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDNavigationViewModelProtocol;
 @protocol LPDTabBarViewModelProtocol;
 
-@protocol LPDViewModelProtocol <LPDViewModelReactProtocol>
+@protocol LPDViewModelProtocol <LPDViewModelReactProtocol,
+                                LPDViewModelToastProtocol,
+                                LPDViewModelSubmittingProtocol,
+                                LPDViewModelNetworkStatusProtocol>
 
 @required
 

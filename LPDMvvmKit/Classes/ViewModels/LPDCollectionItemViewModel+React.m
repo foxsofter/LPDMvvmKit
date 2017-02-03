@@ -12,12 +12,12 @@
 
 @implementation LPDCollectionItemViewModel (React)
 
-- (RACSignal *)viewDidLoadSignal {
-  return [self.viewModel viewDidLoadSignal];
+- (RACSignal *)didLoadViewSignal {
+  return [self.viewModel didLoadViewSignal];
 }
 
-- (RACSignal *)viewDidLayoutSubviewsSignal {
-  return [self.viewModel viewDidLayoutSubviewsSignal];
+- (RACSignal *)didLayoutSubviewsSignal {
+  return [self.viewModel didLayoutSubviewsSignal];
 }
 
 - (RACSignal *)didBecomeActiveSignal {
@@ -28,12 +28,12 @@
   return [self.viewModel didBecomeInactiveSignal];
 }
 
-- (LPDViewReactState)reactState {
-  return [self.viewModel reactState];
+- (LPDScrollingState)scrollingtState {
+  return [self.viewModel scrollingtState];
 }
 
-- (void)setReactState:(LPDViewReactState)reactState {
-  [self.viewModel setReactState:reactState];
+- (void)setScrollingtState:(LPDScrollingState)scrollingtState {
+  [self.viewModel setScrollingtState:scrollingtState];
 }
 
 - (BOOL)isSubmitting {

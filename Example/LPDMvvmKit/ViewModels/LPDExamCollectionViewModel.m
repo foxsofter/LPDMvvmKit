@@ -42,7 +42,7 @@
       self.datas = [[NSMutableArray arrayWithArray:tuple.first] subarrayWithRange:NSMakeRange(0, 3)];
       [self reloadCollection];
     }];
-    [[self.viewDidLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
+    [[self.didLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
       @strongify(self);
       self.loading = YES;
     }];

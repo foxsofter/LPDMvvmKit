@@ -7,8 +7,8 @@
 //
 
 #import <LPDCollectionViewKit/LPDCollectionViewKit.h>
-#import "LPDViewModelReactProtocol.h"
+#import "LPDScrollViewModelProtocol.h"
 
-@interface LPDCollectionItemViewModel(React)<LPDViewModelReactProtocol>
+@interface LPDCollectionItemViewModel(React)<LPDScrollViewModelProtocol>
 
 @end

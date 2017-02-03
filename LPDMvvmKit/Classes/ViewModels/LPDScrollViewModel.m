@@ -22,12 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 @synthesize loadingSignal = _loadingSignal;
 @synthesize loadingMore = _loadingMore;
 @synthesize loadingMoreSignal = _loadingMoreSignal;
-@synthesize reactState = _reactState;
+@synthesize scrollingState = _scrollingState;
 
 #pragma mark - methods
 
-- (void)setReactState:(LPDViewReactState)reactState withMessage:(nonnull NSString *)message {
-  _reactState = reactState;
+- (void)setScrollingtState:(LPDScrollingState)scrollingState withMessage:(NSString *)message {
+  _scrollingState = scrollingState;
 }
 
 #pragma mark - properties
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
       @strongify(self);
       self.loading = NO;
       if (error.code == -1001 || error.code == -1004) {
-        self.reactState = LPDViewReactStateNetworkLatency;
+        self.scrollingState = LPDScrollingStateRetry;
       } else {
         [self.errorSubject sendNext:error.localizedDescription];
       }

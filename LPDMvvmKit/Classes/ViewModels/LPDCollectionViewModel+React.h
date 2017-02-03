@@ -7,12 +7,12 @@
 //
 
 #import <LPDCollectionViewKit/LPDCollectionViewKit.h>
-#import "LPDViewModelReactProtocol.h"
+#import "LPDScrollViewModelProtocol.h"
 #import "LPDViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LPDCollectionViewModel (React)<LPDViewModelReactProtocol>
+@interface LPDCollectionViewModel (React)<LPDScrollViewModelProtocol>
 
 @property (nullable, nonatomic, weak) __kindof id<LPDViewModelProtocol> viewModel;
 

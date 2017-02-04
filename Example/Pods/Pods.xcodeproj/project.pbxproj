@@ -330,12 +330,15 @@
 		8DE74EFCA9F74CCCA6940770A5F756B4 /* LPDTableItemViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA75D496F3DD32D61981074231960F32 /* LPDTableItemViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E1020672EB8179F9DCE1A94A79DFC1C /* RACSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B65383EE9FD7EA7C456FA92647A6A8 /* RACSequence.m */; };
 		8E1A777F1E4458AF0005159C /* LPDViewModelSubmittingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A777D1E4458AF0005159C /* LPDViewModelSubmittingProtocol.h */; };
-		8E1A77831E44597A0005159C /* LPDViewModelScrollingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77811E44597A0005159C /* LPDViewModelScrollingProtocol.h */; };
+		8E1A77831E44597A0005159C /* LPDViewModelDisplayingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77811E44597A0005159C /* LPDViewModelDisplayingProtocol.h */; };
 		8E1A77861E445C400005159C /* LPDViewModelToastProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77851E445C400005159C /* LPDViewModelToastProtocol.h */; };
 		8E1A77881E445E990005159C /* LPDViewModelNetworkStatusProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77871E445E990005159C /* LPDViewModelNetworkStatusProtocol.h */; };
 		8E1A778B1E445F670005159C /* LPDWeakMutableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77891E445F670005159C /* LPDWeakMutableArray.h */; };
 		8E1A778C1E445F670005159C /* LPDWeakMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A778A1E445F670005159C /* LPDWeakMutableArray.m */; };
 		8E1A77901E447DCB0005159C /* LPDViewSubmittingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A778F1E447DCB0005159C /* LPDViewSubmittingProtocol.h */; };
+		8E1A77921E457F650005159C /* LPDViewDisplayingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77911E457F650005159C /* LPDViewDisplayingProtocol.h */; };
+		8E1A77941E4584EA0005159C /* LPDViewToastProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77931E4584EA0005159C /* LPDViewToastProtocol.h */; };
+		8E1A77961E4589A10005159C /* LPDViewNetworkStatusProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1A77951E4589A10005159C /* LPDViewNetworkStatusProtocol.h */; };
 		8E39571966E8E20A05005D1B5398E323 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 16013595485A7B975CE0BEB7C8EC425D /* MJRefreshConst.m */; };
 		8EDD7E067260A97EEF129253D3BF6E29 /* UIImagePickerController+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F636E084E21A7DF4434142FFF3D0B /* UIImagePickerController+RACSignalSupport.m */; };
 		90E7C5959ECB3E75A036034C236D4D12 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30F41C58DDB9F319F24D3CADFE14C6 /* RACTestScheduler.m */; };
@@ -1173,12 +1176,15 @@
 		8D1E228F979964A4CC14E71DABF69757 /* NSObject+RACPropertySubscribing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RACPropertySubscribing.m"; path = "ReactiveCocoa/NSObject+RACPropertySubscribing.m"; sourceTree = "<group>"; };
 		8D4B096CF1388EC947BB1CB3A582EE24 /* RSA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSA.h; path = LPDAdditionsKit/Classes/RSA.h; sourceTree = "<group>"; };
 		8E1A777D1E4458AF0005159C /* LPDViewModelSubmittingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewModelSubmittingProtocol.h; sourceTree = "<group>"; };
-		8E1A77811E44597A0005159C /* LPDViewModelScrollingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewModelScrollingProtocol.h; sourceTree = "<group>"; };
+		8E1A77811E44597A0005159C /* LPDViewModelDisplayingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewModelDisplayingProtocol.h; sourceTree = "<group>"; };
 		8E1A77851E445C400005159C /* LPDViewModelToastProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewModelToastProtocol.h; sourceTree = "<group>"; };
 		8E1A77871E445E990005159C /* LPDViewModelNetworkStatusProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewModelNetworkStatusProtocol.h; sourceTree = "<group>"; };
 		8E1A77891E445F670005159C /* LPDWeakMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDWeakMutableArray.h; sourceTree = "<group>"; };
 		8E1A778A1E445F670005159C /* LPDWeakMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDWeakMutableArray.m; sourceTree = "<group>"; };
 		8E1A778F1E447DCB0005159C /* LPDViewSubmittingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewSubmittingProtocol.h; sourceTree = "<group>"; };
+		8E1A77911E457F650005159C /* LPDViewDisplayingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewDisplayingProtocol.h; sourceTree = "<group>"; };
+		8E1A77931E4584EA0005159C /* LPDViewToastProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewToastProtocol.h; sourceTree = "<group>"; };
+		8E1A77951E4589A10005159C /* LPDViewNetworkStatusProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDViewNetworkStatusProtocol.h; sourceTree = "<group>"; };
 		8E55C32CD2BF9865CCD8C615E6083CFC /* RACObjCRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACObjCRuntime.h; path = ReactiveCocoa/RACObjCRuntime.h; sourceTree = "<group>"; };
 		8E8695D1F12AE91CF05634E6E99A9452 /* LPDTableItemViewModel+React.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LPDTableItemViewModel+React.m"; sourceTree = "<group>"; };
 		8E910CF6CF776A5F34010CF6E003EBEC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -2184,6 +2190,9 @@
 				42D396E30A6513B72AE9331BEDAD991B /* LPDViewController.m */,
 				C941BEFBAE076801DA9658BA6B660A83 /* LPDViewControllerProtocol.h */,
 				8E1A778F1E447DCB0005159C /* LPDViewSubmittingProtocol.h */,
+				8E1A77911E457F650005159C /* LPDViewDisplayingProtocol.h */,
+				8E1A77931E4584EA0005159C /* LPDViewToastProtocol.h */,
+				8E1A77951E4589A10005159C /* LPDViewNetworkStatusProtocol.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2620,7 +2629,7 @@
 				A685F2BC56C82ED204CC536FAF872B17 /* LPDViewModelProtocol.h */,
 				98816F45FF2DD379313F5065FD2FFE0B /* LPDViewModelReactProtocol.h */,
 				8E1A777D1E4458AF0005159C /* LPDViewModelSubmittingProtocol.h */,
-				8E1A77811E44597A0005159C /* LPDViewModelScrollingProtocol.h */,
+				8E1A77811E44597A0005159C /* LPDViewModelDisplayingProtocol.h */,
 				8E1A77851E445C400005159C /* LPDViewModelToastProtocol.h */,
 				8E1A77871E445E990005159C /* LPDViewModelNetworkStatusProtocol.h */,
 			);
@@ -2700,18 +2709,21 @@
 				5D4FA219E261449E11F950289CF809B5 /* LPDScrollViewControllerProtocol.h in Headers */,
 				A12B825B9FBDBF124BFEDCAE49362454 /* LPDScrollViewModel.h in Headers */,
 				F689E804B85ACA228351C448908522E3 /* LPDScrollViewModelProtocol.h in Headers */,
+				8E1A77961E4589A10005159C /* LPDViewNetworkStatusProtocol.h in Headers */,
 				962344A9C9289BDB426D8DD52C669361 /* LPDTabBarController.h in Headers */,
 				AA9690AC910247519A027D27416E22C4 /* LPDTabBarControllerProtocol.h in Headers */,
 				D42207ADA62FAEBCC7BEB4B960D4EEC8 /* LPDTabBarViewModel.h in Headers */,
 				1D08BD75FFCF9CEF7E75AC86FA87631C /* LPDTabBarViewModelProtocol.h in Headers */,
 				54658A15E9D2C5FB1B2BF6474867AA0C /* LPDTableItemViewModel+React.h in Headers */,
+				8E1A77941E4584EA0005159C /* LPDViewToastProtocol.h in Headers */,
 				A66C68B42C418E7B533E7DAFB051A5DD /* LPDTableViewModel+React.h in Headers */,
 				226A8434F25BD2473AF4540A5990097C /* LPDViewController.h in Headers */,
 				0A080C8CEBFC00017350628BAA727234 /* LPDViewControllerFactory.h in Headers */,
 				8E1A77901E447DCB0005159C /* LPDViewSubmittingProtocol.h in Headers */,
+				8E1A77921E457F650005159C /* LPDViewDisplayingProtocol.h in Headers */,
 				774D113CB1D6E4207642CE4E1B71A66D /* LPDViewControllerProtocol.h in Headers */,
 				967746120459C577112CCA4203C5B7CE /* LPDViewModel.h in Headers */,
-				8E1A77831E44597A0005159C /* LPDViewModelScrollingProtocol.h in Headers */,
+				8E1A77831E44597A0005159C /* LPDViewModelDisplayingProtocol.h in Headers */,
 				5F1126E1C9909DD20FB74CE11F93E5B8 /* LPDViewModelProtocol.h in Headers */,
 				8E1A77861E445C400005159C /* LPDViewModelToastProtocol.h in Headers */,
 				43BB22722359BE4621DBE91CF2F4727F /* LPDViewModelReactProtocol.h in Headers */,

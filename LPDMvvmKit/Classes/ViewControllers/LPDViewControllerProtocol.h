@@ -7,14 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LPDViewSubmittingProtocol.h"
+#import "LPDViewToastProtocol.h"
+#import "LPDViewNetworkStatusProtocol.h"
+#import "LPDViewDisplayingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDViewModelProtocol;
 
-@protocol LPDViewControllerProtocol <NSObject>
+@protocol LPDViewControllerProtocol <LPDViewSubmittingProtocol,
+                                     LPDViewToastProtocol,
+                                     LPDViewNetworkStatusProtocol,
+                                     LPDViewDisplayingProtocol>
 
 @required
+
+- (instancetype)initWithViewModel:(__kindof id<LPDViewModelProtocol>)viewModel;
 
 @property (nullable, nonatomic, strong, readonly) __kindof id<LPDViewModelProtocol> viewModel;
 

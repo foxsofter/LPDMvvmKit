@@ -6,14 +6,13 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <objc/runtime.h>
+#import <LPDAdditionsKit/LPDAdditionsKit.h>
 #import "LPDViewController.h"
 #import "LPDViewControllerFactory.h"
 #import "LPDViewModel.h"
 #import "LPDViewModelProtocol.h"
-#import "NSString+LPDAddition.h"
-#import "UIScreen+LPDAccessor.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-#import <LPDAdditionsKit/LPDAdditionsKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,41 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation LPDViewController
 
-static void (^networkStateNormalBlock)();
-+ (void)networkStateNormalBlock:(void (^)())block {
-  networkStateNormalBlock = block;
-}
-
-static void (^networkStateDisableBlock)();
-+ (void)networkStateDisableBlock:(void (^)())block {
-  networkStateDisableBlock = block;
-}
-
-static void (^showSubmittingBlock)(NSString *_Nullable status);
-+ (void)showSubmittingBlock:(void (^)(NSString *_Nullable status))block {
-  showSubmittingBlock = block;
-}
-
-static void (^hideSubmittingBlock)();
-+ (void)hideSubmittingBlock:(void (^)())block {
-  hideSubmittingBlock = block;
-}
-
-static void (^showSuccessBlock)(NSString *_Nullable status);
-+ (void)showSuccessBlock:(void (^)(NSString *_Nullable status))block {
-  showSuccessBlock = block;
-}
-
-static void (^showErrorBlock)(NSString *_Nullable status);
-+ (void)showErrorBlock:(void (^)(NSString *_Nullable status))block {
-  showErrorBlock = block;
-}
-
-static UIView * (^initSubmittingBlock)();
-+ (void)initSubmittingBlock:(UIView * (^)())block {
-  initSubmittingBlock = block;
-}
-
 #pragma mark - life cycle
 
 - (void)loadView {
@@ -103,109 +67,28 @@ static UIView * (^initSubmittingBlock)();
   if (self) {
     self.viewModel = viewModel;
 
-    @weakify(self);
-    [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
-      @strongify(self);
-      [(NSObject *)self.viewModel setValue:@YES forKey:@"viewDidLoad"];
-    }];
-    [[self rac_signalForSelector:@selector(viewDidLayoutSubviews)] subscribeNext:^(id x) {
-      @strongify(self);
-      [(NSObject *)self.viewModel setValue:@YES forKey:@"viewDidLayout"];
-    }];
+    [self subscribeActiveSignal];
+    [self subscribeDidLoadViewSignal];
+    [self subscribeDidLayoutSubviewsSignal];
+    [self subscribeSubmittingSignal];
+    [self subscribeSuccessSubject];
+    [self subscribeErrorSubject];
+    [self subscribeNetworkStateSignal];
+    [self subscribeDisplayingSignal];
 
     RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
   }
   return self;
 }
 
-- (void)showSubmitting {
-  if (!_submittingOverlay) {
-    _submittingOverlay = [[UIView alloc] initWithFrame:UIScreen.bounds];
-    _submittingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
-    UIView *contentView = nil;
-    if (initSubmittingBlock) {
-      contentView = initSubmittingBlock();
-    } else {
-      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-      contentView.layer.cornerRadius = 10;
-      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-
-      UIActivityIndicatorView *submittingView =
-        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
-      submittingView.tintColor = [UIColor whiteColor];
-      [contentView addSubview:submittingView];
-      submittingView.center = CGPointMake(50, 50);
-      // 添加自启动的动画
-      @weakify(submittingView);
-      [[RACSignal merge:@[
-        [submittingView rac_signalForSelector:@selector(didMoveToWindow)],
-        [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
-      ]] subscribeNext:^(id x) {
-        @strongify(submittingView);
-        [submittingView startAnimating];
-      }];
-    }
-    [_submittingOverlay addSubview:contentView];
-    contentView.center = _submittingOverlay.center;
-  }
-  if (!_submittingOverlay.superview) {
-    [[UIApplication sharedApplication].keyWindow addSubview:_submittingOverlay];
-  }
-}
-
-- (void)hideSubmitting {
-  if (!_submittingOverlay || !_submittingOverlay.superview) {
-    return;
-  }
-  [_submittingOverlay removeFromSuperview];
-}
-
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.edgesForExtendedLayout = UIRectEdgeNone;
   self.automaticallyAdjustsScrollViewInsets = NO;
 
-  [self subscribeActiveSignal];
-  [self subscribeSubmittingSignal];
-  [self subscribeSuccessSubject];
-  [self subscribeErrorSubject];
-  [self subscribeNetworkStateSignal];
-
-  [self subscribeAddChildViewModelSignal];
   [self loadChildViewControllers];
+  [self subscribeAddChildViewModelSignal];
   [self subscribeRemoveFromParentViewModelSignal];
-}
-
-#pragma mark - public methods
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-
-- (void)lpd_addChildViewController:(id<LPDViewControllerProtocol>)childViewController {
-  childViewController.viewModel.navigation = self.viewModel.navigation;
-  [self.viewModel performSelector:@selector(_addChildViewModel:) withObject:childViewController.viewModel];
-  [super addChildViewController:(UIViewController *)childViewController];
-}
-
-- (void)lpd_removeFromParentViewController {
-  self.viewModel.navigation = nil;
-  [self.viewModel performSelector:@selector(_removeFromParentViewModel)];
-  [super removeFromParentViewController];
-}
-
-#pragma clang diagnostic pop
-
-#pragma mark - properties
-
-- (nullable __kindof id<LPDNavigationControllerProtocol>)navigation {
-  if (_navigation) {
-    return _navigation;
-  }
-  if ([self.navigationController conformsToProtocol:@protocol(LPDNavigationControllerProtocol)]) {
-    return (id<LPDNavigationControllerProtocol>)self.navigationController;
-  }
-  return nil;
 }
 
 #pragma mark - private methods
@@ -223,22 +106,30 @@ static UIView * (^initSubmittingBlock)();
   }];
 }
 
+- (void)subscribeDidLoadViewSignal {
+  @weakify(self);
+  [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
+    @strongify(self);
+    self.viewModel.didLoadView = YES;
+  }];
+}
+
+- (void)subscribeDidLayoutSubviewsSignal {
+  @weakify(self);
+  [[self rac_signalForSelector:@selector(viewDidLayoutSubviews)] subscribeNext:^(id x) {
+    @strongify(self);
+    self.viewModel.didLayoutSubviews = YES;
+  }];
+}
+
 - (void)subscribeSubmittingSignal {
   @weakify(self);
   [[RACObserve(self.viewModel, submitting) deliverOnMainThread] subscribeNext:^(NSNumber *submitting) {
     @strongify(self);
     if ([submitting boolValue]) {
-      if (showSubmittingBlock) {
-        showSubmittingBlock(nil);
-      } else {
-        [self showSubmitting];
-      }
+      [self showSubmitting];
     } else {
-      if (hideSubmittingBlock) {
-        hideSubmittingBlock();
-      } else {
-        [self hideSubmitting];
-      }
+      [self hideSubmitting];
     }
   }];
 }
@@ -248,8 +139,8 @@ static UIView * (^initSubmittingBlock)();
     map:^id(NSString *message) {
       return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
     }] subscribeNext:^(NSString *status) {
-    if (showSuccessBlock) {
-      showSuccessBlock(status);
+    if (class_respondsToSelector(self.class, @selector(showSuccess:))) {
+      [self.class showSuccess:status];
     }
   }];
 }
@@ -274,8 +165,8 @@ static UIView * (^initSubmittingBlock)();
   }] subscribeNext:^(NSString *message) {
     if (message && message.length > 0) {
       NSLog(@"subscribeErrorSubject post:%@", message);
-      if (showErrorBlock) {
-        showErrorBlock(message);
+      if (class_respondsToSelector(self.class, @selector(showError:))) {
+        [self.class showError:message];
       }
     }
   }];
@@ -288,7 +179,7 @@ static UIView * (^initSubmittingBlock)();
       @strongify(self);
       id<LPDViewControllerProtocol> childViewController =
         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self lpd_addChildViewController:childViewController];
+      [self addChildViewController:childViewController];
     }];
 }
 
@@ -296,7 +187,7 @@ static UIView * (^initSubmittingBlock)();
   @weakify(self);
   [[(NSObject *)self.viewModel rac_signalForSelector:@selector(removeFromParentViewModel)] subscribeNext:^(id x) {
     @strongify(self);
-    [self lpd_removeFromParentViewController];
+    [self removeFromParentViewController];
   }];
 }
 
@@ -306,7 +197,7 @@ static UIView * (^initSubmittingBlock)();
     for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
       id<LPDViewControllerProtocol> childViewController =
         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self lpd_addChildViewController:childViewController];
+      [self addChildViewController:childViewController];
     }
   }
 }
@@ -332,8 +223,89 @@ static UIView * (^initSubmittingBlock)();
     }];
 }
 
+- (void)subscribeDisplayingSignal {
+  @weakify(self);
+  [[RACObserve(((id<LPDViewModelDisplayingProtocol>)self.viewModel), viewDisplayingState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
+    @strongify(self);
+    LPDViewDisplayingState viewDisplayingState = [value integerValue];
+    [self displayDisplayingState:viewDisplayingState withMessage:nil];
+  }];
+  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(setViewDisplayingState:withMessage:)
+                                         fromProtocol:@protocol(LPDViewModelReactProtocol)] deliverOnMainThread]
+   subscribeNext:^(RACTuple *tuple) {
+     @strongify(self);
+     LPDViewDisplayingState viewDisplayingState = [tuple.first integerValue];
+     NSString *message = tuple.second;
+     [self displayDisplayingState:viewDisplayingState withMessage:message];
+   }];
+}
+
+#pragma mark - private methods
+
+- (void)showSubmitting {
+  if (!_submittingOverlay) {
+    _submittingOverlay = [[UIView alloc] initWithFrame:UIScreen.bounds];
+    _submittingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+    UIView *contentView = nil;
+    if (class_respondsToSelector(self.class, @selector(initSubmittingView))) {
+      contentView = [self.class initSubmittingView];
+    } else {
+      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+      contentView.layer.cornerRadius = 10;
+      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+      
+      UIActivityIndicatorView *submittingView =
+      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+      submittingView.tintColor = [UIColor whiteColor];
+      [contentView addSubview:submittingView];
+      submittingView.center = CGPointMake(50, 50);
+      // 添加自启动的动画
+      @weakify(submittingView);
+      [[RACSignal merge:@[
+                          [submittingView rac_signalForSelector:@selector(didMoveToWindow)],
+                          [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
+                          ]] subscribeNext:^(id x) {
+        @strongify(submittingView);
+        [submittingView startAnimating];
+      }];
+    }
+    [_submittingOverlay addSubview:contentView];
+    contentView.center = _submittingOverlay.center;
+  }
+  if (!_submittingOverlay.superview) {
+    [[UIApplication sharedApplication].keyWindow addSubview:_submittingOverlay];
+  }
+}
+
+- (void)hideSubmitting {
+  if (!_submittingOverlay || !_submittingOverlay.superview) {
+    return;
+  }
+  [_submittingOverlay removeFromSuperview];
+}
+
+- (void)displayDisplayingState:(LPDViewDisplayingState)viewDisplayingState withMessage:(nullable NSString *)message {
+  switch (viewDisplayingState) {
+    case LPDViewDisplayingStateNormal: {
+      if (class_respondsToSelector(self.class, @selector(displayNormalView:))) {
+        [self.class displayNormalView:self.scrollView];
+      }
+    } break;
+    case LPDViewDisplayingStateNoData: {
+      if (class_respondsToSelector(self.class, @selector(displayNoDataView:withDescription:))) {
+        [self.class displayNoDataView:self.scrollView withDescription:message];
+      }
+    } break;
+    case LPDViewDisplayingStateRetry: {
+      if (class_respondsToSelector(self.class, @selector(displayRetryView:withDescription:))) {
+        [self.class displayRetryView:self.scrollView withDescription:message];
+      }
+    } break;
+  }
+}
+
 - (void)checkNetworkState {
-  if (self.viewModel.networkState == LPDViewNetworkStateNormal) {
+  if (self.viewModel.networkState == LPDNetworkStateNormal) {
     if (networkStateNormalBlock) {
       networkStateNormalBlock();
     }

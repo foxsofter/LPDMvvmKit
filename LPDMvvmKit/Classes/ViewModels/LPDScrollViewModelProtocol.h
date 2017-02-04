@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "LPDViewModelProtocol.h"
-#import "LPDViewModelScrollingProtocol.h"
+#import "LPDViewModelDisplayingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LPDScrollViewModelProtocol <LPDViewModelProtocol, LPDViewModelScrollingProtocol>
+typedef NS_ENUM(NSUInteger, LPDLoadingMoreState) {
+  LPDLoadingMoreStateEnd,
+  LPDLoadingMoreStateBegin,
+  LPDLoadingMoreStateNoMore,
+};
+
+@protocol LPDScrollViewModelProtocol <LPDViewModelProtocol, LPDViewModelDisplayingProtocol>
 
 @required
 
@@ -31,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief  列表中上滑加载更多数据
  */
-@property (nonatomic, assign, getter=isLoadingMore) BOOL loadingMore;
+@property (nonatomic, assign) LPDLoadingMoreState loadingMoreState;
 
 /**
  *  @brief  上滑加载的信号，需由子类赋值，当设为nil时表示没有更多数据需要加载了

@@ -20,15 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @synthesize loading = _loading;
 @synthesize loadingSignal = _loadingSignal;
-@synthesize loadingMore = _loadingMore;
+@synthesize loadingMoreState = _loadingMoreState;
 @synthesize loadingMoreSignal = _loadingMoreSignal;
-@synthesize scrollingState = _scrollingState;
-
-#pragma mark - methods
-
-- (void)setScrollingtState:(LPDScrollingState)scrollingState withMessage:(NSString *)message {
-  _scrollingState = scrollingState;
-}
 
 #pragma mark - properties
 
@@ -57,8 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
     }] doError:^(NSError *error) {
       @strongify(self);
       self.loading = NO;
-      if (error.code == -1001 || error.code == -1004) {
-        self.scrollingState = LPDScrollingStateRetry;
+      if (error.code == -1001 || error.code == -1004) { // 超时重试
+        self.viewDisplayingState = LPDViewDisplayingStateRetry;
       } else {
         [self.errorSubject sendNext:error.localizedDescription];
       }
@@ -68,12 +61,12 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
-- (void)setLoadingMore:(BOOL)loadingMore {
-  if (_loadingMore == loadingMore) {
+- (void)setLoadingMoreState:(LPDLoadingMoreState)loadingMoreState {
+  if (_loadingMoreState == loadingMoreState) {
     return;
   }
-  _loadingMore = loadingMore;
-  if (loadingMore && _loadingMoreSignal) {
+  _loadingMoreState = loadingMoreState;
+  if (_loadingMoreState && _loadingMoreSignal) {
     [[_loadingMoreSignal deliverOnMainThread] subscribeNext:^(id x){
     }];
   }
@@ -87,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
   if (loadingMoreSignal) {
     _loadingMoreSignal = [[loadingMoreSignal doCompleted:^{
       @strongify(self);
-      self.loadingMore = NO;
+      self.loadingMoreState = LPDLoadingMoreStateEnd;
     }] doError:^(NSError *error) {
       @strongify(self);
       [self.errorSubject sendNext:error.localizedDescription];

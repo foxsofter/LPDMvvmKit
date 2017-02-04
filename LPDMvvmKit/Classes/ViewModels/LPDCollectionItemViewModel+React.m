@@ -28,12 +28,12 @@
   return [self.viewModel didBecomeInactiveSignal];
 }
 
-- (LPDScrollingState)scrollingtState {
-  return [self.viewModel scrollingtState];
+- (LPDViewDisplayingState)viewDisplayingState {
+  return [self.viewModel viewDisplayingState];
 }
 
-- (void)setScrollingtState:(LPDScrollingState)scrollingtState {
-  [self.viewModel setScrollingtState:scrollingtState];
+- (void)setViewDisplayingState:(LPDViewDisplayingState)viewDisplayingState {
+  [self.viewModel setViewDisplayingState:viewDisplayingState];
 }
 
 - (BOOL)isSubmitting {

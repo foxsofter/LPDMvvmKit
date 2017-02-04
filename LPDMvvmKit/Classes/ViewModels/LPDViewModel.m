@@ -20,10 +20,6 @@
 
 @property (nonatomic, strong) LPDWeakMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
 
-@property (nonatomic, assign) BOOL didLoadView;
-
-@property (nonatomic, assign) BOOL didLayoutSubviews;
-
 @end
 
 @implementation LPDViewModel
@@ -31,6 +27,7 @@
 @synthesize title = _title;
 @synthesize submitting = _submitting;
 @synthesize networkState = _networkState;
+@synthesize viewDisplayingState = _viewDisplayingState;
 @synthesize navigation = _navigation;
 @synthesize didLoadViewSignal = _didLoadViewSignal;
 @synthesize didLayoutSubviewsSignal = _didLayoutSubviewsSignal;
@@ -75,6 +72,10 @@
  */
 - (void)setSubmittingWithMessage:(NSString *)message {
   _submitting = YES;
+}
+
+- (void)setViewDisplayingState:(LPDViewDisplayingState)viewDisplayingState withMessage:(NSString *)message {
+  _viewDisplayingState = viewDisplayingState;
 }
 
 #pragma mark - properties

@@ -7,6 +7,8 @@
 //
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <objc/runtime.h>
+#import <MJRefresh/MJRefresh.h>
 #import "LPDScrollViewController.h"
 #import "LPDScrollViewModel.h"
 
@@ -15,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LPDScrollViewController ()
 
 @property (nullable, nonatomic, weak) MJRefreshHeader *loadingProgress;
-
 @property (nullable, nonatomic, weak) MJRefreshFooter *loadingMoreProgress;
+
+@property (nonatomic, strong) UIView *loadingOverlay;
+@property (nonatomic, strong) UIActivityIndicatorView *loadingIndicator;
 
 @end
 
@@ -25,43 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 @synthesize needLoading = _needLoading;
 @synthesize needLoadingMore = _needLoadingMore;
 @synthesize scrollView = _scrollView;
-
-#pragma mark - react state block
-
-static void (^reactStateNormalBlock)(UIScrollView *scrollView);
-+ (void)reactStateNormalBlock:(void (^)(UIScrollView *scrollView))block {
-  reactStateNormalBlock = block;
-}
-
-static void (^reactStateNoDataBlock)(UIScrollView *scrollView, NSString *);
-+ (void)reactStateNoDataBlock:(void (^)(UIScrollView *scrollView, NSString *_Nullable))block {
-  reactStateNoDataBlock = block;
-}
-
-static void (^reactStateNetworkLatencyBlock)(UIScrollView *scrollView, NSString *);
-+ (void)reactStateNetworkLatencyBlock:(void (^)(UIScrollView *scrollView, NSString *_Nullable))block {
-  reactStateNetworkLatencyBlock = block;
-}
-
-static void (^beginLodingBlock)(UIView *view);
-+ (void)beginLodingBlock:(void (^)(UIView *view))block {
-  beginLodingBlock = block;
-}
-
-static void (^endLodingBlock)(UIView *view);
-+ (void)endLodingBlock:(void (^)(UIView *view))block {
-  endLodingBlock = block;
-}
-
-static MJRefreshHeader * (^initHeaderBlock)(MJRefreshComponentRefreshingBlock refreshingBlock);
-+ (void)initHeaderBlock:(MJRefreshHeader * (^)(MJRefreshComponentRefreshingBlock refreshingBlock))block {
-  initHeaderBlock = block;
-}
-
-static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock refreshingBlock);
-+ (void)initFooterBlock:(MJRefreshFooter * (^)(MJRefreshComponentRefreshingBlock refreshingBlock))block {
-  initFooterBlock = block;
-}
 
 #pragma mark - life cycle
 
@@ -72,7 +39,6 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
 
     [self subscribeLoadingSignal];
     [self subscribeLoadingMoreSignal];
-    [self subscribeReactStateSignal];
   }
   return self;
 }
@@ -93,10 +59,10 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
           if (!self.scrollView.mj_footer && self.loadingMoreProgress) {
             self.scrollView.mj_footer = self.loadingMoreProgress;
           }
-          ((LPDScrollViewModel *)self.viewModel).loading = YES;
+          [self.viewModel setLoading:YES];
         };
-        if (initHeaderBlock) {
-          self.loadingProgress = initHeaderBlock(refreshingBlock);
+        if (class_respondsToSelector(self.class, @selector(initLoadingHeader:))) {
+          self.loadingProgress = [self.class initLoadingHeader:refreshingBlock];
         } else {
           self.loadingProgress = [MJRefreshNormalHeader headerWithRefreshingBlock:refreshingBlock];
         }
@@ -114,30 +80,22 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
     @strongify(self);
     if (self.needLoading) {
       if ([x boolValue]) {
-        if (!self.loadingProgress.isRefreshing) {
-          if (beginLodingBlock) {
-            beginLodingBlock(self.view);
-          }
+        if (!self.loadingProgress.isRefreshing) { // 非下拉刷新触发
+          [self showLoading];
         }
-        self.viewModel.scrollingState = LPDScrollingStateNormal;
+        [self.viewModel setViewDisplayingState:LPDViewDisplayingStateNormal];
       } else {
         if (self.loadingProgress.isRefreshing) {
           [self.loadingProgress endRefreshing];
         } else {
-          if (endLodingBlock) {
-            endLodingBlock(self.view);
-          }
+          [self hideSubmitting];
         }
       }
     } else {
       if ([x boolValue]) {
-        if (beginLodingBlock) {
-          beginLodingBlock(self.view);
-        }
+        [self showLoading];
       } else {
-        if (endLodingBlock) {
-          endLodingBlock(self.view);
-        }
+        [self hideSubmitting];
       }
     }
   }];
@@ -154,10 +112,10 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
       if (nil == self.loadingMoreProgress) {
         MJRefreshComponentRefreshingBlock refreshingBlock = ^{
           @strongify(self);
-          ((LPDScrollViewModel *)self.viewModel).loadingMore = YES;
+          [self.viewModel setLoadingMoreState:LPDLoadingMoreStateBegin];
         };
-        if (initFooterBlock) {
-          self.loadingMoreProgress = initFooterBlock(refreshingBlock);
+        if (class_respondsToSelector(self.class, @selector(initLoadingFooter:))) {
+          self.loadingMoreProgress = [self.class initLoadingFooter:refreshingBlock];
         } else {
           self.loadingMoreProgress = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:refreshingBlock];
         }
@@ -168,64 +126,65 @@ static MJRefreshFooter * (^initFooterBlock)(MJRefreshComponentRefreshingBlock re
       self.loadingMoreProgress = nil;
     }
   }];
-  [[RACObserve(((id<LPDScrollViewModelProtocol>)self.viewModel), loadingMore) filter:^BOOL(id value) {
+  [[RACObserve(((id<LPDScrollViewModelProtocol>)self.viewModel), loadingMoreState) filter:^BOOL(id value) {
     @strongify(self);
     return value && self.scrollView && self.needLoadingMore;
-  }] subscribeNext:^(id x) {
+  }] subscribeNext:^(NSNumber *value) {
     @strongify(self);
-    if ([x boolValue]) {
+    LPDLoadingMoreState loadingMoreState = [value integerValue];
+    if (loadingMoreState == LPDLoadingMoreStateBegin) {
       [self.loadingMoreProgress beginRefreshing];
-    } else {
+    } else if (loadingMoreState == LPDLoadingMoreStateEnd){
       [self.loadingMoreProgress endRefreshing];
-    }
-  }];
-
-  [[RACObserve(((id<LPDScrollViewModelProtocol>)self.viewModel), loadingMoreSignal) skip:1] subscribeNext:^(id x) {
-    @strongify(self);
-    if (!x) {
-      self.scrollView.mj_footer = nil;
     } else {
-      [self.loadingMoreProgress resetNoMoreData];
+      [self.loadingMoreProgress  noticeNoMoreData];
     }
   }];
 }
 
-- (void)subscribeReactStateSignal {
-  @weakify(self);
-  [[RACObserve(self.viewModel, reactState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
-    @strongify(self);
-    LPDScrollingState reactState = [value integerValue];
-    [self showReactState:reactState withMessage:nil];
-  }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(setScrollingtState:withMessage:)
-                                         fromProtocol:@protocol(LPDViewModelReactProtocol)] deliverOnMainThread]
-    subscribeNext:^(RACTuple *tuple) {
-      @strongify(self);
-      LPDScrollingState reactState = [tuple.first integerValue];
-      NSString *message = tuple.second;
-      [self showReactState:reactState withMessage:message];
-    }];
-}
+#pragma mark - private methods
 
-- (void)showReactState:(LPDScrollingState)reactState withMessage:(nullable NSString *)message {
-  switch (reactState) {
-    case LPDScrollingStateNormal: {
-      if (reactStateNormalBlock) {
-        reactStateNormalBlock(self.scrollView);
-      }
-    } break;
-    case LPDScrollingStateNoData: {
-      if (reactStateNoDataBlock) {
-        reactStateNoDataBlock(self.scrollView, message);
-      }
-    } break;
-    case LPDScrollingStateNetworkLatency: {
-      if (reactStateNetworkLatencyBlock) {
-        reactStateNetworkLatencyBlock(self.scrollView, message);
-      }
-    } break;
+- (void)showLoading {
+  if (!_loadingOverlay) {
+    _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
+    _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+    UIView *contentView = nil;
+    if (class_respondsToSelector(self.class, @selector(initLoadingView))) {
+      contentView = [self.class initLoadingView];
+    } else {
+      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+      contentView.layer.cornerRadius = 10;
+      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+      
+      UIActivityIndicatorView *loadingView =
+      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+      loadingView.tintColor = [UIColor whiteColor];
+      [contentView addSubview:loadingView];
+      loadingView.center = CGPointMake(50, 50);
+      // 添加自启动的动画
+      @weakify(loadingView);
+      [[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
+                          [_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
+       takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
+        @strongify(loadingView);
+        [loadingView startAnimating];
+      }];
+    }
+    [_loadingOverlay addSubview:contentView];
+    contentView.center = _loadingOverlay.center;
+  }
+  if (!_loadingOverlay.superview) {
+    [self.view addSubview:_loadingOverlay];
   }
 }
+
+- (void)hideSubmitting {
+  if (!_loadingOverlay || !_loadingOverlay.superview) {
+    return;
+  }
+  [_loadingOverlay removeFromSuperview];
+}
+
 
 @end
 

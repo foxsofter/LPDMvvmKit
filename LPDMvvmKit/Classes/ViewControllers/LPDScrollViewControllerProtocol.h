@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LPDViewControllerProtocol.h"
 
-@protocol LPDViewControllerProtocol;
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDScrollViewControllerProtocol <LPDViewControllerProtocol>
 
 /**
  *  @brief  设置下拉刷新当前页面上的数据，生效当且仅当scrollView被有效赋值
- *          当赋值为YES，可以出现下拉刷新控件，为NO时不能出现，默认为NO
+ *          当赋值为YES，可以出现下拉刷新控件，为NO时不出现，默认为NO
  */
 @property (nonatomic, assign) BOOL needLoading;
 
@@ -31,4 +32,27 @@
  */
 @property (nullable, nonatomic, weak) __kindof UIScrollView *scrollView;
 
+@optional
+
+/**
+ *  @brief 设置loading的contentView，会被居中显示，需设定为以下信号触发时启动动画
+ ＊  [RACSignal merge:@[
+ ＊    [submittingView rac_signalForSelector:@selector(didMoveToWindow)],
+ ＊    [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
+ ＊  ]]
+ */
++ (UIView *)initLoadingView;
+
+/**
+ *  @brief 初始化下拉刷新Header
+ */
++ (MJRefreshHeader *)initLoadingHeader:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+
+/**
+ *  @brief 初始化上拉加载Footer
+ */
++ (MJRefreshFooter *)initLoadingFooter:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+
 @end
+
+NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 #import "LPDViewModelReactProtocol.h"
 #import "LPDViewModelToastProtocol.h"
 #import "LPDViewModelSubmittingProtocol.h"
+#import "LPDViewModelDisplayingProtocol.h"
 #import "LPDViewModelNetworkStatusProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LPDViewModelProtocol <LPDViewModelReactProtocol,
                                 LPDViewModelToastProtocol,
                                 LPDViewModelSubmittingProtocol,
+                                LPDViewModelDisplayingProtocol,
                                 LPDViewModelNetworkStatusProtocol>
 
 @required
@@ -34,6 +36,16 @@ NS_ASSUME_NONNULL_BEGIN
  *  @brief 是否激活
  */
 @property (nonatomic, assign, getter=isActive) BOOL active;
+
+/**
+ *  @brief 是否调用完viewDidLoad
+ */
+@property (nonatomic, assign, getter=isDidLoadView) BOOL didLoadView;
+
+/**
+ *  @brief 是否调用完viewDidLayoutSubviews
+ */
+@property (nonatomic, assign, getter=isDidLayoutSubviews) BOOL didLayoutSubviews;
 
 /**
  *  @brief 添加childViewModel，如果此viewModel对应的viewController还没有加载，

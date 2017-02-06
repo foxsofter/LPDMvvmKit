@@ -37,7 +37,7 @@ static NSMutableDictionary *dictionaryOfMappings;
   [dictionaryOfMappings setObject:viewControllerClass forKey:viewModelClass];
 }
 
-+ (id)viewControllerForViewModel:(id)viewModel {
++ (UIViewController *)viewControllerForViewModel:(id<LPDViewModelProtocol>)viewModel {
   NSString *viewModelName = NSStringFromClass(((NSObject *)viewModel).class);
   NSString *viewControllerName = [dictionaryOfMappings valueForKey:viewModelName];
 

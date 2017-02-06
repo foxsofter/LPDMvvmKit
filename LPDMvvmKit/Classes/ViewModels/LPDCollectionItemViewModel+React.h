@@ -7,8 +7,24 @@
 //
 
 #import <LPDCollectionViewKit/LPDCollectionViewKit.h>
-#import "LPDScrollViewModelProtocol.h"
+#import "LPDViewModelBecomeActiveProtocol.h"
+#import "LPDViewModelDidLoadViewProtocol.h"
+#import "LPDViewModelDidLayoutSubviewsProtocol.h"
+#import "LPDViewModelSubmittingProtocol.h"
+#import "LPDViewModelLoadingProtocol.h"
+#import "LPDViewModelLoadingMoreProtocol.h"
+#import "LPDViewModelToastProtocol.h"
+#import "LPDViewModelEmptyProtocol.h"
+#import "LPDViewModelNetworkStatusProtocol.h"
 
-@interface LPDCollectionItemViewModel(React)<LPDScrollViewModelProtocol>
+@interface LPDCollectionItemViewModel(React)<LPDViewModelBecomeActiveProtocol,
+                                             LPDViewModelDidLoadViewProtocol,
+                                             LPDViewModelDidLayoutSubviewsProtocol,
+                                             LPDViewModelSubmittingProtocol,
+                                             LPDViewModelLoadingProtocol,
+                                             LPDViewModelLoadingMoreProtocol,
+                                             LPDViewModelToastProtocol,
+                                             LPDViewModelEmptyProtocol,
+                                             LPDViewModelNetworkStatusProtocol>
 
 @end

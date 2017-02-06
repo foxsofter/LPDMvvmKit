@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LPDViewModelProtocol;
+
 /**
  *  @author foxsofter, 15-10-13 16:10:36
  *
@@ -31,6 +33,6 @@
  *
  *  @return ViewController
  */
-+ (id)viewControllerForViewModel:(id)viewModel;
++ (UIViewController *)viewControllerForViewModel:(id<LPDViewModelProtocol>)viewModel;
 
 @end

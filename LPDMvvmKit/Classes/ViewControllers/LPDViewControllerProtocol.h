@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LPDViewSubmittingProtocol.h"
 #import "LPDViewToastProtocol.h"
+#import "LPDViewSubmittingProtocol.h"
+#import "LPDViewLoadingProtocol.h"
+#import "LPDViewLoadingMoreProtocol.h"
 #import "LPDViewNetworkStatusProtocol.h"
-#import "LPDViewDisplayingProtocol.h"
+#import "LPDViewEmptyProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LPDViewControllerProtocol <LPDViewSubmittingProtocol,
                                      LPDViewToastProtocol,
                                      LPDViewNetworkStatusProtocol,
-                                     LPDViewDisplayingProtocol>
+                                     LPDViewLoadingProtocol,
+                                     LPDViewLoadingMoreProtocol,
+                                     LPDViewEmptyProtocol>
 
 @required
 

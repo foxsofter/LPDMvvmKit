@@ -7,12 +7,20 @@
 //
 
 #import <LPDTableViewKit/LPDTableViewKit.h>
-#import "LPDScrollViewModelProtocol.h"
+#import "LPDViewModelLoadingMoreProtocol.h"
 #import "LPDViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LPDTableViewModel(React)<LPDScrollViewModelProtocol>
+@interface LPDTableViewModel(React)<LPDViewModelBecomeActiveProtocol,
+                                    LPDViewModelDidLoadViewProtocol,
+                                    LPDViewModelDidLayoutSubviewsProtocol,
+                                    LPDViewModelSubmittingProtocol,
+                                    LPDViewModelLoadingProtocol,
+                                    LPDViewModelLoadingMoreProtocol,
+                                    LPDViewModelToastProtocol,
+                                    LPDViewModelEmptyProtocol,
+                                    LPDViewModelNetworkStatusProtocol>
 
 @property (nullable, nonatomic, weak) __kindof id<LPDViewModelProtocol> viewModel;
 

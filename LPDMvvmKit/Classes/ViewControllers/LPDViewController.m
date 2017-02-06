@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *submittingOverlay;
 @property (nonatomic, strong) UIActivityIndicatorView *submittingIndicator;
 
+@property (nonatomic, strong) UIView *loadingOverlay;
+@property (nonatomic, strong) UIActivityIndicatorView *loadingIndicator;
+
 @end
 
 @implementation LPDViewController
@@ -69,12 +72,16 @@ NS_ASSUME_NONNULL_BEGIN
 
     [self subscribeActiveSignal];
     [self subscribeDidLoadViewSignal];
+    [self subscribeDidUnloadViewSignal];
     [self subscribeDidLayoutSubviewsSignal];
     [self subscribeSubmittingSignal];
+    [self subscribeLoadingSignal];
     [self subscribeSuccessSubject];
     [self subscribeErrorSubject];
     [self subscribeNetworkStateSignal];
     [self subscribeDisplayingSignal];
+    [self subscribeAddChildViewModelSignal];
+    [self subscribeRemoveFromParentViewModelSignal];
 
     RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
   }
@@ -87,11 +94,9 @@ NS_ASSUME_NONNULL_BEGIN
   self.automaticallyAdjustsScrollViewInsets = NO;
 
   [self loadChildViewControllers];
-  [self subscribeAddChildViewModelSignal];
-  [self subscribeRemoveFromParentViewModelSignal];
 }
 
-#pragma mark - private methods
+#pragma mark - subscribe active signal
 
 - (void)subscribeActiveSignal {
   @weakify(self);
@@ -106,6 +111,8 @@ NS_ASSUME_NONNULL_BEGIN
   }];
 }
 
+#pragma mark - subscribe didLoadView signal
+
 - (void)subscribeDidLoadViewSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
@@ -114,6 +121,15 @@ NS_ASSUME_NONNULL_BEGIN
   }];
 }
 
+- (void)subscribeDidUnloadViewSignal {
+  @weakify(self);
+  [[self rac_signalForSelector:@selector(viewDidUnload)] subscribeNext:^(id x) {
+    @strongify(self);
+    self.viewModel.didLoadView = NO;
+  }];
+}
+#pragma mark - subscribe didLayoutSubviews signal
+
 - (void)subscribeDidLayoutSubviewsSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewDidLayoutSubviews)] subscribeNext:^(id x) {
@@ -121,6 +137,8 @@ NS_ASSUME_NONNULL_BEGIN
     self.viewModel.didLayoutSubviews = YES;
   }];
 }
+
+#pragma mark - subscribe submitting signal
 
 - (void)subscribeSubmittingSignal {
   @weakify(self);
@@ -133,114 +151,6 @@ NS_ASSUME_NONNULL_BEGIN
     }
   }];
 }
-
-- (void)subscribeSuccessSubject {
-  [[[[self.viewModel.successSubject takeUntil:[self rac_willDeallocSignal]] deliverOnMainThread]
-    map:^id(NSString *message) {
-      return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
-    }] subscribeNext:^(NSString *status) {
-    if (class_respondsToSelector(self.class, @selector(showSuccess:))) {
-      [self.class showSuccess:status];
-    }
-  }];
-}
-
-- (void)subscribeErrorSubject {
-  [[[[[self.viewModel.errorSubject takeUntil:[self rac_willDeallocSignal]]
-    deliverOnMainThread] map:^id(NSString *message) {
-    NSLog(@"subscribeErrorSubject pre:%@", message);
-    
-    if ([message containsString:@"未能读取数据"]) {
-      message = @"程序员GG正在抢修...";
-    }
-
-    return [[[message stringByReplacingOccurrencesOfString:@"Request failed: internal server error"
-                                                withString:@"系统异常"] stringByRemovingWithPattern:@"\\([^)]*\\)"]
-      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
-  }] map:^id(NSString *message) {
-    if ([message containsString:@"has no available provider"]) {
-      return @"系统异常";
-    }
-    return message;
-  }] subscribeNext:^(NSString *message) {
-    if (message && message.length > 0) {
-      NSLog(@"subscribeErrorSubject post:%@", message);
-      if (class_respondsToSelector(self.class, @selector(showError:))) {
-        [self.class showError:message];
-      }
-    }
-  }];
-}
-
-- (void)subscribeAddChildViewModelSignal {
-  @weakify(self);
-  [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
-    subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
-      @strongify(self);
-      id<LPDViewControllerProtocol> childViewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self addChildViewController:childViewController];
-    }];
-}
-
-- (void)subscribeRemoveFromParentViewModelSignal {
-  @weakify(self);
-  [[(NSObject *)self.viewModel rac_signalForSelector:@selector(removeFromParentViewModel)] subscribeNext:^(id x) {
-    @strongify(self);
-    [self removeFromParentViewController];
-  }];
-}
-
-- (void)loadChildViewControllers {
-  NSArray<id<LPDViewModelProtocol>> *childViewModels = self.viewModel.childViewModels;
-  if (childViewModels && childViewModels.count > 0) {
-    for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
-      id<LPDViewControllerProtocol> childViewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self addChildViewController:childViewController];
-    }
-  }
-}
-
-- (void)subscribeNetworkStateSignal {
-  @weakify(self);
-  [[RACObserve(self.viewModel, networkState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
-    @strongify(self);
-    [self checkNetworkState];
-  }];
-
-  [self.viewModel.didBecomeActiveSignal subscribeNext:^(id x) {
-    @strongify(self);
-    [self checkNetworkState];
-  }];
-
-  [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil]
-    subscribeNext:^(id x) {
-      @strongify(self);
-      if (self.viewModel.isActive) {
-        [self checkNetworkState];
-      }
-    }];
-}
-
-- (void)subscribeDisplayingSignal {
-  @weakify(self);
-  [[RACObserve(((id<LPDViewModelDisplayingProtocol>)self.viewModel), viewDisplayingState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
-    @strongify(self);
-    LPDViewDisplayingState viewDisplayingState = [value integerValue];
-    [self displayDisplayingState:viewDisplayingState withMessage:nil];
-  }];
-  [[[(NSObject *)self.viewModel rac_signalForSelector:@selector(setViewDisplayingState:withMessage:)
-                                         fromProtocol:@protocol(LPDViewModelReactProtocol)] deliverOnMainThread]
-   subscribeNext:^(RACTuple *tuple) {
-     @strongify(self);
-     LPDViewDisplayingState viewDisplayingState = [tuple.first integerValue];
-     NSString *message = tuple.second;
-     [self displayDisplayingState:viewDisplayingState withMessage:message];
-   }];
-}
-
-#pragma mark - private methods
 
 - (void)showSubmitting {
   if (!_submittingOverlay) {
@@ -284,34 +194,198 @@ NS_ASSUME_NONNULL_BEGIN
   [_submittingOverlay removeFromSuperview];
 }
 
-- (void)displayDisplayingState:(LPDViewDisplayingState)viewDisplayingState withMessage:(nullable NSString *)message {
-  switch (viewDisplayingState) {
-    case LPDViewDisplayingStateNormal: {
-      if (class_respondsToSelector(self.class, @selector(displayNormalView:))) {
-        [self.class displayNormalView:self.scrollView];
+#pragma mark - subscribe loading signal
+
+- (void)subscribeLoadingSignal {
+  @weakify(self);
+  [[RACObserve(self.viewModel, loading) skip:1] subscribeNext:^(id x) {
+    @strongify(self);
+      if ([x boolValue]) {
+        [self showLoading];
+      } else {
+        [self hideLoading];
       }
-    } break;
-    case LPDViewDisplayingStateNoData: {
-      if (class_respondsToSelector(self.class, @selector(displayNoDataView:withDescription:))) {
-        [self.class displayNoDataView:self.scrollView withDescription:message];
-      }
-    } break;
-    case LPDViewDisplayingStateRetry: {
-      if (class_respondsToSelector(self.class, @selector(displayRetryView:withDescription:))) {
-        [self.class displayRetryView:self.scrollView withDescription:message];
-      }
-    } break;
+  }];
+}
+
+- (void)showLoading {
+  if (!_loadingOverlay) {
+    _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
+    _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+    UIView *contentView = nil;
+    if (class_respondsToSelector(self.class, @selector(initLoadingView))) {
+      contentView = [self.class initLoadingView];
+    } else {
+      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+      contentView.layer.cornerRadius = 10;
+      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+      
+      UIActivityIndicatorView *loadingView =
+      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+      loadingView.tintColor = [UIColor whiteColor];
+      [contentView addSubview:loadingView];
+      loadingView.center = CGPointMake(50, 50);
+      // 添加自启动的动画
+      @weakify(loadingView);
+      [[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
+                           [_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
+        takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
+        @strongify(loadingView);
+        [loadingView startAnimating];
+      }];
+    }
+    [_loadingOverlay addSubview:contentView];
+    contentView.center = _loadingOverlay.center;
   }
+  if (!_loadingOverlay.superview) {
+    [self.view addSubview:_loadingOverlay];
+  }
+}
+
+- (void)hideLoading {
+  if (!_loadingOverlay || !_loadingOverlay.superview) {
+    return;
+  }
+  [_loadingOverlay removeFromSuperview];
+}
+
+#pragma mark - subscribe toast signal
+
+- (void)subscribeSuccessSubject {
+  [[[[self.viewModel.successSubject takeUntil:[self rac_willDeallocSignal]] deliverOnMainThread]
+    map:^id(NSString *message) {
+      return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
+    }] subscribeNext:^(NSString *status) {
+    if (class_respondsToSelector(self.class, @selector(showSuccess:))) {
+      [self.class showSuccess:status];
+    }
+  }];
+}
+
+- (void)subscribeErrorSubject {
+  [[[[[self.viewModel.errorSubject takeUntil:[self rac_willDeallocSignal]]
+    deliverOnMainThread] map:^id(NSString *message) {
+    NSLog(@"subscribeErrorSubject pre:%@", message);
+    
+    if ([message containsString:@"未能读取数据"]) {
+      message = @"程序员GG正在抢修...";
+    }
+
+    return [[[message stringByReplacingOccurrencesOfString:@"Request failed: internal server error"
+                                                withString:@"系统异常"] stringByRemovingWithPattern:@"\\([^)]*\\)"]
+      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
+  }] map:^id(NSString *message) {
+    if ([message containsString:@"has no available provider"]) {
+      return @"系统异常";
+    }
+    return message;
+  }] subscribeNext:^(NSString *message) {
+    if (message && message.length > 0) {
+      NSLog(@"subscribeErrorSubject post:%@", message);
+      if (class_respondsToSelector(self.class, @selector(showError:))) {
+        [self.class showError:message];
+      }
+    }
+  }];
+}
+
+
+#pragma mark - subscribe network state signal
+
+- (void)subscribeNetworkStateSignal {
+  @weakify(self);
+  [[RACObserve(self.viewModel, networkState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
+    @strongify(self);
+    [self checkNetworkState];
+  }];
+  
+  [self.viewModel.didBecomeActiveSignal subscribeNext:^(id x) {
+    @strongify(self);
+    [self checkNetworkState];
+  }];
+  
+  [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil]
+   subscribeNext:^(id x) {
+     @strongify(self);
+     if (self.viewModel.isActive) {
+       [self checkNetworkState];
+     }
+   }];
 }
 
 - (void)checkNetworkState {
   if (self.viewModel.networkState == LPDNetworkStateNormal) {
-    if (networkStateNormalBlock) {
-      networkStateNormalBlock();
+    if (class_respondsToSelector(self.class, @selector(showNetworkNormal))) {
+      [self.class showNetworkNormal];
     }
   } else {
-    if (networkStateDisableBlock) {
-      networkStateDisableBlock();
+    if (class_respondsToSelector(self.class, @selector(showNetworkDisable))) {
+      [self.class showNetworkDisable];
+    }
+  }
+}
+
+#pragma mark - subscribe view empty signal
+
+- (void)subscribeEmptySignal {
+  @weakify(self);
+  [[RACObserve(self.viewModel, empty) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
+    @strongify(self);
+    BOOL empty = [value integerValue];
+    [self showEmpty:empty withDescription:nil];
+  }];
+  [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
+                                         fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
+   subscribeNext:^(NSString *description) {
+     @strongify(self);
+     [self showEmpty:YES withDescription:description];
+   }];
+}
+
+- (void)showEmpty:(BOOL)empty withDescription:(nullable NSString *)description {
+  UIView *rootView = self.view;
+  if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
+    rootView = [self valueForKey:@"scrollView"];
+  }
+  if (empty) {
+    if (class_respondsToSelector(self.class, @selector(showEmptyView:withDescription:))) {
+      [self.class showEmptyView:self.view withDescription:description];
+    }
+  } else {
+    if (class_respondsToSelector(self.class, @selector(hideEmptyView:))) {
+      [self.class hideEmptyView:self.view];
+    }
+  }
+}
+
+#pragma mark - subscribe child ViewModel signal
+
+- (void)subscribeAddChildViewModelSignal {
+  @weakify(self);
+  [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
+    subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
+      @strongify(self);
+      id<LPDViewControllerProtocol> childViewController =
+        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+      [self addChildViewController:childViewController];
+    }];
+}
+
+- (void)subscribeRemoveFromParentViewModelSignal {
+  @weakify(self);
+  [[(NSObject *)self.viewModel rac_signalForSelector:@selector(removeFromParentViewModel)] subscribeNext:^(id x) {
+    @strongify(self);
+    [self removeFromParentViewController];
+  }];
+}
+
+- (void)loadChildViewControllers {
+  NSArray<id<LPDViewModelProtocol>> *childViewModels = self.viewModel.childViewModels;
+  if (childViewModels && childViewModels.count > 0) {
+    for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
+      id<LPDViewControllerProtocol> childViewController =
+        [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+      [self addChildViewController:childViewController];
     }
   }
 }

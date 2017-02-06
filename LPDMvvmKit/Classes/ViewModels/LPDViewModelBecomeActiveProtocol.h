@@ -1,5 +1,5 @@
 //
-//  LPDViewModelReactProtocol.h
+//  LPDViewModelBecomeActiveProtocol.h
 //  LPDMvvmKit
 //
 //  Created by foxsofter on 16/3/17.
@@ -9,16 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LPDViewModelReactProtocol <NSObject>
+@protocol LPDViewModelBecomeActiveProtocol <NSObject>
 
-@optional
-
-@property (nonatomic, strong, readonly) RACSignal *didLoadViewSignal;
-
-@property (nonatomic, strong, readonly) RACSignal *didLayoutSubviewsSignal;
+@property (nonatomic, assign, getter=isActive) BOOL active;
 
 @property (nonatomic, strong, readonly) RACSignal *didBecomeActiveSignal;
 

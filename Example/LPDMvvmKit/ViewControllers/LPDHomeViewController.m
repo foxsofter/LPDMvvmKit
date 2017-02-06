@@ -160,21 +160,21 @@
 - (void)pushViewController:(UIButton *)sender {
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDHomeViewController *vc = [[LPDHomeViewController alloc] initWithViewModel:vm];
-  [self.navigation lpd_pushViewController:vc animated:YES];
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)popViewController:(UIButton *)sender {
-  [self.navigation lpd_popViewControllerAnimated:YES];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)popToRootViewController:(UIButton *)sender {
-  [self.navigation lpd_popToRootViewControllerAnimated:YES];
+  [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)presentViewController:(UIButton *)sender {
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDNavigationViewModel *nvm = [[LPDNavigationViewModel alloc] initWithRootViewModel:vm];
-  [self.navigation lpd_presentViewController:[[LPDNavigationController alloc] initWithViewModel:nvm]
+  [self.navigationController presentNavigationController:[[LPDNavigationController alloc] initWithViewModel:nvm]
                                     animated:YES
                                   completion:^{
 
@@ -182,7 +182,7 @@
 }
 
 - (void)dismissViewController:(UIButton *)sender {
-  [self.navigation lpd_dismissViewControllerAnimated:YES
+  [self.navigationController dismissNavigationControllerAnimated:YES
                                           completion:^{
 
                                           }];

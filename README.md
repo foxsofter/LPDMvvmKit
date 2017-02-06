@@ -74,20 +74,20 @@ LPDMvvmKit对各层的定义
 ```Objective-c
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDHomeViewController *vc = [[LPDHomeViewController alloc] initWithViewModel:vm];
-  [self.navigation lpd_pushViewController:vc animated:YES];
+  [self.navigation pushViewController:vc animated:YES];
 
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   [self.navigation pushViewModel:vm animated:YES];
 ```
 
 ```Objective-c
-  [self.navigation lpd_popViewControllerAnimated:YES];
+  [self.navigation popViewControllerAnimated:YES];
 
   [self.navigation popViewModelAnimated:YES];
 ```
 
 ```Objective-c
-  [self.navigation lpd_popToRootViewControllerAnimated];
+  [self.navigation popToRootViewControllerAnimated];
 
   [self.navigation popToRootViewModelAnimated:YES];
 ```
@@ -95,7 +95,7 @@ LPDMvvmKit对各层的定义
 ```Objective-c
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDNavigationViewModel *nvm = [[LPDNavigationViewModel alloc] initWithRootViewModel:vm];
-  [self.navigation lpd_presentViewController:[[LPDNavigationController alloc] initWithViewModel:nvm] animated:YES completion:nil];
+  [self.navigation presentViewController:[[LPDNavigationController alloc] initWithViewModel:nvm] animated:YES completion:nil];
 
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   [self.navigation presentViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm] animated:YES completion:nil];
@@ -103,7 +103,7 @@ LPDMvvmKit对各层的定义
 ```
 
 ```Objective-c
-  [self.navigation lpd_dismissViewControllerAnimated:YES completion:nil];
+  [self.navigation dismissViewControllerAnimated:YES completion:nil];
   
   [self.navigation dismissViewModelAnimated:YES completion:nil];
 ```

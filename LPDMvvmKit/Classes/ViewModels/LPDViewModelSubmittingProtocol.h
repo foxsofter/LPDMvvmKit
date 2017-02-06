@@ -10,14 +10,8 @@
 
 @protocol LPDViewModelSubmittingProtocol<NSObject>
 
-/**
- *  @brief  正在提交表单
- */
 @property (nonatomic, assign, getter=isSubmitting) BOOL submitting;
 
-/**
- *  @brief 设置正在提交表单
- */
 - (void)setSubmittingWithMessage:(NSString *)message;
 
 @end

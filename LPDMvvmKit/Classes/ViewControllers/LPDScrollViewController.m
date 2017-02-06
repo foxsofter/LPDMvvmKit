@@ -19,9 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, weak) MJRefreshHeader *loadingProgress;
 @property (nullable, nonatomic, weak) MJRefreshFooter *loadingMoreProgress;
 
-@property (nonatomic, strong) UIView *loadingOverlay;
-@property (nonatomic, strong) UIActivityIndicatorView *loadingIndicator;
-
 @end
 
 @implementation LPDScrollViewController
@@ -37,7 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
   if (self) {
     NSParameterAssert([viewModel conformsToProtocol:@protocol(LPDScrollViewModelProtocol)]);
 
+    [self subscribeNeedLoadingSignal];
     [self subscribeLoadingSignal];
+    [self subscribeNeedLoadingMoreSignal];
     [self subscribeLoadingMoreSignal];
   }
   return self;
@@ -45,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - private methods
 
-- (void)subscribeLoadingSignal {
+- (void)subscribeNeedLoadingSignal {
   @weakify(self);
   [[RACObserve(self, needLoading) filter:^BOOL(id value) {
     @strongify(self);
@@ -73,6 +72,10 @@ NS_ASSUME_NONNULL_BEGIN
       self.loadingProgress = nil;
     }
   }];
+}
+
+- (void)subscribeLoadingSignal {
+  @weakify(self);
   [[[RACObserve(((id<LPDScrollViewModelProtocol>)self.viewModel), loading) skip:1] filter:^BOOL(id value) {
     @strongify(self);
     return nil != self.scrollView;
@@ -88,7 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
         if (self.loadingProgress.isRefreshing) {
           [self.loadingProgress endRefreshing];
         } else {
-          [self hideSubmitting];
+          [self hide];
         }
       }
     } else {
@@ -101,7 +104,7 @@ NS_ASSUME_NONNULL_BEGIN
   }];
 }
 
-- (void)subscribeLoadingMoreSignal {
+- (void)subscribeNeedLoadingMoreSignal {
   @weakify(self);
   [[RACObserve(self, needLoadingMore) filter:^BOOL(id value) {
     @strongify(self);
@@ -126,6 +129,10 @@ NS_ASSUME_NONNULL_BEGIN
       self.loadingMoreProgress = nil;
     }
   }];
+}
+
+- (void)subscribeLoadingMoreSignal {
+  @weakify(self);
   [[RACObserve(((id<LPDScrollViewModelProtocol>)self.viewModel), loadingMoreState) filter:^BOOL(id value) {
     @strongify(self);
     return value && self.scrollView && self.needLoadingMore;
@@ -140,49 +147,6 @@ NS_ASSUME_NONNULL_BEGIN
       [self.loadingMoreProgress  noticeNoMoreData];
     }
   }];
-}
-
-#pragma mark - private methods
-
-- (void)showLoading {
-  if (!_loadingOverlay) {
-    _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
-    _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
-    UIView *contentView = nil;
-    if (class_respondsToSelector(self.class, @selector(initLoadingView))) {
-      contentView = [self.class initLoadingView];
-    } else {
-      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-      contentView.layer.cornerRadius = 10;
-      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-      
-      UIActivityIndicatorView *loadingView =
-      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
-      loadingView.tintColor = [UIColor whiteColor];
-      [contentView addSubview:loadingView];
-      loadingView.center = CGPointMake(50, 50);
-      // 添加自启动的动画
-      @weakify(loadingView);
-      [[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
-                          [_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
-       takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
-        @strongify(loadingView);
-        [loadingView startAnimating];
-      }];
-    }
-    [_loadingOverlay addSubview:contentView];
-    contentView.center = _loadingOverlay.center;
-  }
-  if (!_loadingOverlay.superview) {
-    [self.view addSubview:_loadingOverlay];
-  }
-}
-
-- (void)hideSubmitting {
-  if (!_loadingOverlay || !_loadingOverlay.superview) {
-    return;
-  }
-  [_loadingOverlay removeFromSuperview];
 }
 
 

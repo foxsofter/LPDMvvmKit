@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import "LPDViewModelReactProtocol.h"
-#import "LPDViewModelToastProtocol.h"
+#import "LPDViewModelBecomeActiveProtocol.h"
+#import "LPDViewModelDidLoadViewProtocol.h"
+#import "LPDViewModelDidLayoutSubviewsProtocol.h"
+#import "LPDViewModelLoadingProtocol.h"
 #import "LPDViewModelSubmittingProtocol.h"
-#import "LPDViewModelDisplayingProtocol.h"
+#import "LPDViewModelToastProtocol.h"
+#import "LPDViewModelEmptyProtocol.h"
 #import "LPDViewModelNetworkStatusProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,10 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LPDNavigationViewModelProtocol;
 @protocol LPDTabBarViewModelProtocol;
 
-@protocol LPDViewModelProtocol <LPDViewModelReactProtocol,
-                                LPDViewModelToastProtocol,
+@protocol LPDViewModelProtocol <LPDViewModelBecomeActiveProtocol,
+                                LPDViewModelDidLoadViewProtocol,
+                                LPDViewModelDidLayoutSubviewsProtocol,
+                                LPDViewModelLoadingProtocol,
                                 LPDViewModelSubmittingProtocol,
-                                LPDViewModelDisplayingProtocol,
+                                LPDViewModelToastProtocol,
+                                LPDViewModelEmptyProtocol,
                                 LPDViewModelNetworkStatusProtocol>
 
 @required
@@ -31,21 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @brief navigation bar title
  */
 @property (nullable, nonatomic, copy) NSString *title;
-
-/**
- *  @brief 是否激活
- */
-@property (nonatomic, assign, getter=isActive) BOOL active;
-
-/**
- *  @brief 是否调用完viewDidLoad
- */
-@property (nonatomic, assign, getter=isDidLoadView) BOOL didLoadView;
-
-/**
- *  @brief 是否调用完viewDidLayoutSubviews
- */
-@property (nonatomic, assign, getter=isDidLayoutSubviews) BOOL didLayoutSubviews;
 
 /**
  *  @brief 添加childViewModel，如果此viewModel对应的viewController还没有加载，
@@ -60,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeFromParentViewModel;
 
 /**
- *  @brief childViewModels，从对应viewController中的lpd_addChildViewController方法可以添加
+ *  @brief childViewModels，从对应viewController中的addChildViewController方法可以添加
  *  或者通过viewModel的addChildViewModel方法添加
  */
 @property (nonatomic, copy, readonly) NSArray<id<LPDViewModelProtocol>> *childViewModels;

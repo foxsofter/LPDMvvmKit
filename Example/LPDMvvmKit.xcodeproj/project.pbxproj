@@ -18,6 +18,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		8B51C2359444BCD0FA3DF9B2 /* Pods_LPDMvvmKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFC833C95EB3A2DA9E71547 /* Pods_LPDMvvmKit_Example.framework */; };
+		8E1A779B1E4825AC0005159C /* LPDViewController+LPDExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A779A1E4825AC0005159C /* LPDViewController+LPDExam.m */; };
+		8E1A779E1E48272D0005159C /* LPDScrollViewController+LPDExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A779D1E48272D0005159C /* LPDScrollViewController+LPDExam.m */; };
 		8E3F2EFF1DF157B8009E2496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F2ECB1DF157B8009E2496 /* LaunchScreen.storyboard */; };
 		8E3F2F001DF157B8009E2496 /* LPDPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2ECF1DF157B8009E2496 /* LPDPhotoModel.m */; };
 		8E3F2F011DF157B8009E2496 /* LPDPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2ED11DF157B8009E2496 /* LPDPostModel.m */; };
@@ -71,6 +73,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		66120129850928AA3192EE58 /* Pods-LPDMvvmKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDMvvmKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPDMvvmKit_Example/Pods-LPDMvvmKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		838E5FB0FAB1171F32DA7AB8 /* Pods-LPDMvvmKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDMvvmKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E1A77991E4825AC0005159C /* LPDViewController+LPDExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPDViewController+LPDExam.h"; sourceTree = "<group>"; };
+		8E1A779A1E4825AC0005159C /* LPDViewController+LPDExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPDViewController+LPDExam.m"; sourceTree = "<group>"; };
+		8E1A779C1E48272D0005159C /* LPDScrollViewController+LPDExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPDScrollViewController+LPDExam.h"; sourceTree = "<group>"; };
+		8E1A779D1E48272D0005159C /* LPDScrollViewController+LPDExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPDScrollViewController+LPDExam.m"; sourceTree = "<group>"; };
 		8E3F2ECC1DF157B8009E2496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E3F2ECE1DF157B8009E2496 /* LPDPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDPhotoModel.h; sourceTree = "<group>"; };
 		8E3F2ECF1DF157B8009E2496 /* LPDPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDPhotoModel.m; sourceTree = "<group>"; };
@@ -285,6 +291,10 @@
 				8E3F2ED71DF157B8009E2496 /* LPDExamCollectionViewController.m */,
 				8E3F2EDE1DF157B8009E2496 /* LPDReactViewController.h */,
 				8E3F2EDF1DF157B8009E2496 /* LPDReactViewController.m */,
+				8E1A77991E4825AC0005159C /* LPDViewController+LPDExam.h */,
+				8E1A779A1E4825AC0005159C /* LPDViewController+LPDExam.m */,
+				8E1A779C1E48272D0005159C /* LPDScrollViewController+LPDExam.h */,
+				8E1A779D1E48272D0005159C /* LPDScrollViewController+LPDExam.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -546,6 +556,8 @@
 				8E3F2F031DF157B8009E2496 /* LPDExamCollectionViewController.m in Sources */,
 				8E3F2F141DF157B8009E2496 /* LPDTableViewPostCell.m in Sources */,
 				8E3F2F021DF157B8009E2496 /* LPDAppApiClient.m in Sources */,
+				8E1A779E1E48272D0005159C /* LPDScrollViewController+LPDExam.m in Sources */,
+				8E1A779B1E4825AC0005159C /* LPDViewController+LPDExam.m in Sources */,
 				6003F59E195388D20070C39A /* LPDAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				8E3F2F091DF157B8009E2496 /* LPDCollectionPhotoCellViewModel.m in Sources */,

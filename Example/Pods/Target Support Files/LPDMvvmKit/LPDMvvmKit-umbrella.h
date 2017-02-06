@@ -2,6 +2,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
+#import "LPDWeakMutableArray.h"
 #import "RACSignal+LPDAddition.h"
 #import "UIImageView+LPDAddition.h"
 #import "UITextField+LPDRACSignal.h"
@@ -14,6 +15,10 @@
 #import "LPDTabBarControllerProtocol.h"
 #import "LPDViewController.h"
 #import "LPDViewControllerProtocol.h"
+#import "LPDViewDisplayingProtocol.h"
+#import "LPDViewNetworkStatusProtocol.h"
+#import "LPDViewSubmittingProtocol.h"
+#import "LPDViewToastProtocol.h"
 #import "LPDCollectionItemViewModel+React.h"
 #import "LPDCollectionViewModel+React.h"
 #import "LPDNavigationViewModel.h"
@@ -26,8 +31,15 @@
 #import "LPDTableViewModel+React.h"
 #import "LPDViewControllerFactory.h"
 #import "LPDViewModel.h"
+#import "LPDViewModelBecomeActiveProtocol.h"
+#import "LPDViewModelDidLayoutSubviewsProtocol.h"
+#import "LPDViewModelDidLoadViewProtocol.h"
+#import "LPDViewModelEmptyProtocol.h"
+#import "LPDViewModelLoadingProtocol.h"
+#import "LPDViewModelNetworkStatusProtocol.h"
 #import "LPDViewModelProtocol.h"
-#import "LPDViewModelReactProtocol.h"
+#import "LPDViewModelSubmittingProtocol.h"
+#import "LPDViewModelToastProtocol.h"
 
 FOUNDATION_EXPORT double LPDMvvmKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char LPDMvvmKitVersionString[];

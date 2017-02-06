@@ -15,9 +15,6 @@ typedef NS_ENUM(NSUInteger, LPDNetworkState) {
 
 @protocol LPDViewModelNetworkStatusProtocol <NSObject>
 
-/**
- *  @brief 设置网络状态
- */
 @property (nonatomic, assign) LPDNetworkState networkState;
 
 @end

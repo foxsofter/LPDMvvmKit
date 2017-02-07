@@ -187,6 +187,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma clang diagnostic pop
 
+- (nullable NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated {
+  return [super popToRootViewControllerAnimated:YES];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END

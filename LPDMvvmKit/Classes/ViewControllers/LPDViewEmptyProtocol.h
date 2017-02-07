@@ -12,8 +12,8 @@
 
 @optional
 
-+ (void)hideEmptyView:(UIView *)view;
+- (void)hideEmptyView;
 
-+ (void)showEmptyView:(UIView *)view withDescription:(NSString *_Nullable)description;
+- (void)showEmptyViewWithDescription:(NSString *_Nullable)description;
 
 @end

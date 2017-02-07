@@ -87,7 +87,7 @@
       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
-        [self.navigation presentViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm]
+        [self.navigation presentNavigationViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm]
                                  animated:YES
                                completion:nil];
         [subscriber sendNext:nil];
@@ -105,7 +105,7 @@
     _dismissViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
-        [self.navigation dismissViewModelAnimated:YES
+        [self.navigation dismissNavigationViewModelAnimated:YES
                                        completion:^{
 
                                        }];

@@ -22,16 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
  ＊    [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
  ＊  ]]
  */
-+ (UIView *)initLoadingView;
+- (UIView *)customLoadingView;
 
-+ (void)hideRetryView:(UIView *)view;
+- (void)hideRetryView;
 
-+ (void)showRetryView:(UIView *)view withRetryBlock:(void (^)())retryBlock;
-
-/**
- *  @brief 初始化下拉刷新Header
- */
-+ (MJRefreshHeader *)initLoadingHeader:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+- (void)showRetryView;
 
 @end
 

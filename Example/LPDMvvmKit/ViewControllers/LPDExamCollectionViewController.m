@@ -56,7 +56,7 @@
   }];
   
   self.scrollView = self.collectionView;
-  self.needLoading = YES;
+  self.needLoadingHeader = YES;
 
   UIBarButtonItem *insertCellBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];

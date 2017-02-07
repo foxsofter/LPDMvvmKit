@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "LPDWeakMutableArray.h"
+#import "LPDWeakArray.h"
 #import "RACSignal+LPDAddition.h"
 #import "UIImageView+LPDAddition.h"
 #import "UITextField+LPDRACSignal.h"
@@ -15,7 +15,8 @@
 #import "LPDTabBarControllerProtocol.h"
 #import "LPDViewController.h"
 #import "LPDViewControllerProtocol.h"
-#import "LPDViewDisplayingProtocol.h"
+#import "LPDViewEmptyProtocol.h"
+#import "LPDViewLoadingProtocol.h"
 #import "LPDViewNetworkStatusProtocol.h"
 #import "LPDViewSubmittingProtocol.h"
 #import "LPDViewToastProtocol.h"
@@ -35,6 +36,7 @@
 #import "LPDViewModelDidLayoutSubviewsProtocol.h"
 #import "LPDViewModelDidLoadViewProtocol.h"
 #import "LPDViewModelEmptyProtocol.h"
+#import "LPDViewModelLoadingMoreProtocol.h"
 #import "LPDViewModelLoadingProtocol.h"
 #import "LPDViewModelNetworkStatusProtocol.h"
 #import "LPDViewModelProtocol.h"

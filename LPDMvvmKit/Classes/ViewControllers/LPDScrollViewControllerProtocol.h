@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LPDViewControllerProtocol.h"
-#import "LPDViewLoadingMoreProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LPDScrollViewControllerProtocol <LPDViewControllerProtocol, LPDViewLoadingMoreProtocol>
+@protocol LPDScrollViewControllerProtocol <LPDViewControllerProtocol>
 
 /**
  *  @brief  设置下拉刷新当前页面上的数据，生效当且仅当scrollView被有效赋值
@@ -32,6 +31,17 @@ NS_ASSUME_NONNULL_BEGIN
  *          loadingView赋值后，可以设置needLoading和needLoadingMore
  */
 @property (nullable, nonatomic, weak) __kindof UIScrollView *scrollView;
+
+@optional
+/**
+ *  @brief 初始化下拉刷新Header
+ */
+- (MJRefreshHeader *)customLoadingHeader:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+
+/**
+ *  @brief 初始化上拉加载Footer
+ */
+- (MJRefreshFooter *)customLoadingFooter:(MJRefreshComponentRefreshingBlock)refreshingBlock;
 
 @end
 

@@ -56,11 +56,11 @@
       }];
 
     [[[collectionViewModel.replaceSectionsSignal takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]]
-      deliverOnMainThread] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
+      deliverOnMainThread] subscribeNext:^(NSIndexSet *indexSet) {
         @strongify(self);
       [self performBatchUpdates:^{
-        [self deleteItemsAtIndexPaths:indexPaths];
-        [self insertItemsAtIndexPaths:indexPaths];
+        [self deleteSections:indexSet];
+        [self insertSections:indexSet];
       } completion:nil];
       }];
 
@@ -90,26 +90,26 @@
         [self deleteItemsAtIndexPaths:indexPaths];
       }];
 
-    [[[collectionViewModel.replaceItemsAtIndexPathsSignal
-      takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]] deliverOnMainThread] subscribeNext:^(RACTuple *tuple) {
-      @strongify(self);
-      [self performBatchUpdates:^{
-        if (tuple.third) {
-          [self insertSections:tuple.third];
-          [self insertItemsAtIndexPaths:tuple.second];
-        } else {
-          [self deleteItemsAtIndexPaths:tuple.first];
-          [self insertItemsAtIndexPaths:tuple.second];
-        }
-      } completion:nil];
-    }];
+  [[[collectionViewModel.reloadItemsAtIndexPathsSignal
+     takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]]
+    deliverOnMainThread] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
+    @strongify(self);
+    [self reloadItemsAtIndexPaths:indexPaths];
+  }];
 
-    [[[collectionViewModel.reloadItemsAtIndexPathsSignal
-      takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]]
-      deliverOnMainThread] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
-        @strongify(self);
-        [self reloadItemsAtIndexPaths:indexPaths];
-      }];
+  [[[collectionViewModel.replaceItemsAtIndexPathsSignal
+    takeUntil:[self rac_signalForSelector:@selector(removeFromSuperview)]] deliverOnMainThread] subscribeNext:^(RACTuple *tuple) {
+    @strongify(self);
+    [self performBatchUpdates:^{
+      if (tuple.third) {
+        [self insertSections:tuple.third];
+        [self insertItemsAtIndexPaths:tuple.second];
+      } else {
+        [self deleteItemsAtIndexPaths:tuple.first];
+        [self insertItemsAtIndexPaths:tuple.second];
+      }
+    } completion:nil];
+  }];
 }
 
 @end

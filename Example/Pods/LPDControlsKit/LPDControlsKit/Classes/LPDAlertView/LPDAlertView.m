@@ -330,21 +330,14 @@
       break;
     }
   }
-  self.contentView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+  self.contentView.transform = CGAffineTransformMakeScale(0.01, 0.01);
   self.backgroundView.backgroundColor = [UIColor clearColor];
   [UIView animateWithDuration:0.2
     animations:^{
       self.backgroundView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
       self.contentView.transform = CGAffineTransformMakeScale(1, 1);
     }
-    completion:^(BOOL finished) {
-      if (finished) {
-        [UIView animateWithDuration:0.2
-                         animations:^{
-                           self.backgroundView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-                         }];
-      }
-    }];
+    completion:nil];
 }
 
 - (void)hide:(void (^)(void))completion {

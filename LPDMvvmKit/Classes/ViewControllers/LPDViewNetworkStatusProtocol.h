@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief 网络恢复正常
  */
-+ (void)showNetworkNormal;
+- (void)showNetworkNormal;
 
 /**
  *  @brief 网络被断开
  */
-+ (void)showNetworkDisable;
+- (void)showNetworkDisable;
 
 @end
 

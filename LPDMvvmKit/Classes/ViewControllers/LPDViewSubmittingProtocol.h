@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  ＊    [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
  ＊  ]]
  */
-+ (UIView *)initSubmittingView;
+- (UIView *)customSubmittingView;
 
 @end
 

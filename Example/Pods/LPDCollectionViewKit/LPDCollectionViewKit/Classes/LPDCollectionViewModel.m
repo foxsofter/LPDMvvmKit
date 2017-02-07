@@ -360,18 +360,27 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
     return;
   }
   LPDCollectionSectionViewModel *section = self.sections[sectionIndex];
-  if (index >= section.mutableItems.count) {
+  if (index > section.mutableItems.count) {
+    if (needInsertSection) {
+      [self.sections removeLastObject];
+    }
     return;
   }
 
   NSMutableSet *testRepeatSet = [[NSMutableSet alloc] initWithArray:cellViewModels];
   if (testRepeatSet.count != cellViewModels.count) {
+    if (needInsertSection) {
+      [self.sections removeLastObject];
+    }
     return;
   }
 
   for (LPDCollectionSectionViewModel *section in self.sections) {
     for (id<LPDCollectionItemViewModelProtocol> currentCellViewModel in section.mutableItems) {
       if ([cellViewModels containsObject:currentCellViewModel]) {
+        if (needInsertSection) {
+          [self.sections removeLastObject];
+        }
         return;
       }
     }
@@ -495,12 +504,18 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
 
     NSMutableSet *testRepeatSet = [[NSMutableSet alloc] initWithArray:cellViewModels];
     if (testRepeatSet.count != cellViewModels.count) {
+      if (needInsertSection) {
+        [self.sections removeLastObject];
+      }
       return;
     }
 
     for (LPDCollectionSectionViewModel *section in self.sections) {
       for (id<LPDCollectionItemViewModelProtocol> currentCellViewModel in section.mutableItems) {
         if ([cellViewModels containsObject:currentCellViewModel]) {
+          if (needInsertSection) {
+            [self.sections removeLastObject];
+          }
           return;
         }
       }
@@ -516,6 +531,10 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
       [self.insertSectionsSubject sendNext:indexSet];
     } else {
       [self.replaceSectionsSubject sendNext:indexSet];
+    }
+  } else {
+    if (needInsertSection) {
+      [self.sections removeLastObject];
     }
   }
 }

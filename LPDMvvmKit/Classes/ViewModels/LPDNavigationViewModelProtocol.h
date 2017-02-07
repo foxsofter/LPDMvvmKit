@@ -40,11 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)popToRootViewModelAnimated:(BOOL)animated;
 
-- (void)presentViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
-                animated:(BOOL)animated
-              completion:(nullable void (^)())completion;
+- (void)presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
+                          animated:(BOOL)animated
+                        completion:(nullable void (^)())completion;
 
-- (void)dismissViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion;
+- (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion;
 
 @end
 

@@ -8,13 +8,13 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "LPDViewModel.h"
-#import "LPDWeakMutableArray.h"
+#import "LPDWeakArray.h"
 
 @interface LPDViewModel ()
 
 @property (nonatomic, weak, readwrite) id<LPDViewModelProtocol> parentViewModel;
 
-@property (nonatomic, strong) LPDWeakMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
+@property (nonatomic, strong) LPDWeakArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
 
 @end
 
@@ -55,7 +55,7 @@
   if (_didUnloadViewSignal == nil) {
     @weakify(self);
     _didUnloadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
-      return !didLoadView.boolValue;
+      return (BOOL)(didLoadView.boolValue == NO);
     }] map:^(id _) {
       @strongify(self);
       return self;
@@ -156,7 +156,7 @@
 
 - (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
   if (!self.mutableChildViewModels) {
-    self.mutableChildViewModels = [LPDWeakMutableArray array];
+    self.mutableChildViewModels = [LPDWeakArray array];
   }
   if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
     ((LPDViewModel *)childViewModel).parentViewModel = self;

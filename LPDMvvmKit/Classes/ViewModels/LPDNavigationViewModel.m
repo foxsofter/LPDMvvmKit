@@ -7,16 +7,13 @@
 //
 
 #import "LPDNavigationViewModel.h"
-#import "LPDWeakMutableArray.h"
+#import "LPDWeakArray.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDNavigationViewModel ()
 
-@property (nonatomic, strong, readwrite) LPDWeakMutableArray<__kindof id<LPDViewModelProtocol>> *viewModels;
-
-//@property (nonatomic, strong, readwrite) __kindof id<LPDNavigationViewModelProtocol> presentedViewModel;
-//@property (nonatomic, strong, readwrite) __kindof id<LPDNavigationViewModelProtocol> presentingViewModel;
+@property (nullable, nonatomic, strong) LPDWeakArray<id<LPDViewModelProtocol>> *weakViewModels;
 
 @end
 
@@ -31,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithRootViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
   self = [super init];
   if (self) {
-    _viewModels = [LPDWeakMutableArray array];
-    [_viewModels addObject:viewModel];
+    _weakViewModels = [LPDWeakArray array];
+    [_weakViewModels addObject:viewModel];
     viewModel.navigation = self;
   }
   return self;
@@ -60,40 +57,40 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - properties
 
 - (_Nullable __kindof id<LPDViewModelProtocol>)topViewModel {
-  return [_viewModels lastObject];
+  return [_weakViewModels lastObject];
 }
 
 - (_Nullable __kindof id<LPDViewModelProtocol>)visibleViewModel {
   if (_presentedViewModel) {
     return _presentedViewModel;
   }
-  return [_viewModels lastObject];
-}
-
-- (NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels {
-  return [_viewModels copy];
+  return [_weakViewModels lastObject];
 }
 
 - (void)setPresentedViewModel:(__kindof id<LPDNavigationViewModelProtocol> _Nullable)presentedViewModel {
   _presentedViewModel = presentedViewModel;
 }
 
+- (NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels {
+  return [_weakViewModels toArray];
+}
+
 #pragma mark - reactive navigation methods
 
 - (void)_pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  [_viewModels addObject:viewModel];
+  [_weakViewModels addObject:viewModel];
   viewModel.navigation = self;
 }
 
 - (void)_popViewModel {
-  if (_viewModels.count > 1) {
-    [_viewModels removeLastObject];
+  if (_weakViewModels.count > 1) {
+    [_weakViewModels removeLastObject];
   }
 }
 
 - (void)_popToRootViewModel {
-  if (_viewModels.count > 1) {
-    [_viewModels removeObjectsInRange:NSMakeRange(1, _viewModels.count - 1)];
+  if (_weakViewModels.count > 1) {
+    [_weakViewModels removeObjectsInRange:NSMakeRange(1, _weakViewModels.count - 1)];
   }
 }
 
@@ -105,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)_dismissNavigationViewModel {
   if (_presentedViewModel) {
     [_presentedViewModel
-      dismissViewModelAnimated:NO
+      dismissNavigationViewModelAnimated:NO
                     completion:^{
                       [((NSObject *)self.presentingViewModel) setNilValueForKey:@"presentedViewModel"];
                     }];

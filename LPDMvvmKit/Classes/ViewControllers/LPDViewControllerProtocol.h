@@ -10,7 +10,6 @@
 #import "LPDViewToastProtocol.h"
 #import "LPDViewSubmittingProtocol.h"
 #import "LPDViewLoadingProtocol.h"
-#import "LPDViewLoadingMoreProtocol.h"
 #import "LPDViewNetworkStatusProtocol.h"
 #import "LPDViewEmptyProtocol.h"
 
@@ -22,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
                                      LPDViewToastProtocol,
                                      LPDViewNetworkStatusProtocol,
                                      LPDViewLoadingProtocol,
-                                     LPDViewLoadingMoreProtocol,
                                      LPDViewEmptyProtocol>
 
 @required

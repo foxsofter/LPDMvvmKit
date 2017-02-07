@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief 设置成功提示
  */
-+ (void)showSuccess:(NSString *_Nullable)status;
+- (void)showSuccess:(NSString *_Nullable)status;
 
 /**
  *  @brief 设置错误提示
  */
-+ (void)showError:(NSString *_Nullable)status;
+- (void)showError:(NSString *_Nullable)status;
 
 @end
 

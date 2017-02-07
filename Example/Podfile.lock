@@ -15,9 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - LPDAdditionsKit (0.1.2)
-  - LPDCollectionViewKit (0.1.2):
+  - LPDCollectionViewKit (0.1.3):
     - ReactiveCocoa (= 2.5)
-  - LPDControlsKit (0.1.2):
+  - LPDControlsKit (0.1.3):
     - LPDAdditionsKit
     - Masonry
     - SDVersion
@@ -59,8 +59,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
-  LPDCollectionViewKit: 08996d12b0c7a2307918867c91f1ffb812851ba5
-  LPDControlsKit: bd4b49b4f12cb700dcf0c931b739f679a6ce5c1f
+  LPDCollectionViewKit: 4198dad5df04a2a172ca8afdcbaac3a77291ad13
+  LPDControlsKit: be6f2b6c14054a6e8e8ad80fbd990710e0a85876
   LPDMvvmKit: 164e23d5800f3e84e371d66edf88c96deaaa2c42
   LPDNetworkingKit: fb7781781e419fa3d87660f8d2d293ec553491bf
   LPDTableViewKit: 89926e340ddaee8c4479396e21c480883fb527f5

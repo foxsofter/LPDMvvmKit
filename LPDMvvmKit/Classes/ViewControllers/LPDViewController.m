@@ -79,7 +79,6 @@ NS_ASSUME_NONNULL_BEGIN
     [self subscribeSuccessSubject];
     [self subscribeErrorSubject];
     [self subscribeNetworkStateSignal];
-    [self subscribeDisplayingSignal];
     [self subscribeAddChildViewModelSignal];
     [self subscribeRemoveFromParentViewModelSignal];
 
@@ -157,26 +156,26 @@ NS_ASSUME_NONNULL_BEGIN
     _submittingOverlay = [[UIView alloc] initWithFrame:UIScreen.bounds];
     _submittingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
     UIView *contentView = nil;
-    if (class_respondsToSelector(self.class, @selector(initSubmittingView))) {
-      contentView = [self.class initSubmittingView];
+    if ([self respondsToSelector:@selector(customSubmittingView)]) {
+      contentView = [self customSubmittingView];
     } else {
       contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
       contentView.layer.cornerRadius = 10;
       contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
       
-      UIActivityIndicatorView *submittingView =
+      UIActivityIndicatorView *indicatorView =
       [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
-      submittingView.tintColor = [UIColor whiteColor];
-      [contentView addSubview:submittingView];
-      submittingView.center = CGPointMake(50, 50);
+      indicatorView.tintColor = [UIColor whiteColor];
+      [contentView addSubview:indicatorView];
+      indicatorView.center = CGPointMake(50, 50);
       // 添加自启动的动画
-      @weakify(submittingView);
+      @weakify(indicatorView);
       [[RACSignal merge:@[
-                          [submittingView rac_signalForSelector:@selector(didMoveToWindow)],
-                          [submittingView rac_signalForSelector:@selector(didMoveToSuperview)]
+                          [indicatorView rac_signalForSelector:@selector(didMoveToWindow)],
+                          [indicatorView rac_signalForSelector:@selector(didMoveToSuperview)]
                           ]] subscribeNext:^(id x) {
-        @strongify(submittingView);
-        [submittingView startAnimating];
+        @strongify(indicatorView);
+        [indicatorView startAnimating];
       }];
     }
     [_submittingOverlay addSubview:contentView];
@@ -213,8 +212,8 @@ NS_ASSUME_NONNULL_BEGIN
     _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
     _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
     UIView *contentView = nil;
-    if (class_respondsToSelector(self.class, @selector(initLoadingView))) {
-      contentView = [self.class initLoadingView];
+    if ([self respondsToSelector:@selector(customLoadingView)]) {
+      contentView = [self customLoadingView];
     } else {
       contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
       contentView.layer.cornerRadius = 10;
@@ -256,8 +255,8 @@ NS_ASSUME_NONNULL_BEGIN
     map:^id(NSString *message) {
       return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
     }] subscribeNext:^(NSString *status) {
-    if (class_respondsToSelector(self.class, @selector(showSuccess:))) {
-      [self.class showSuccess:status];
+    if ([self respondsToSelector:@selector(showSuccess:)]) {
+      [self showSuccess:status];
     }
   }];
 }
@@ -282,8 +281,8 @@ NS_ASSUME_NONNULL_BEGIN
   }] subscribeNext:^(NSString *message) {
     if (message && message.length > 0) {
       NSLog(@"subscribeErrorSubject post:%@", message);
-      if (class_respondsToSelector(self.class, @selector(showError:))) {
-        [self.class showError:message];
+      if ([self respondsToSelector:@selector(showError:)]) {
+        [self showError:message];
       }
     }
   }];
@@ -315,12 +314,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)checkNetworkState {
   if (self.viewModel.networkState == LPDNetworkStateNormal) {
-    if (class_respondsToSelector(self.class, @selector(showNetworkNormal))) {
-      [self.class showNetworkNormal];
+    if ([self respondsToSelector:@selector(showNetworkNormal)]) {
+      [self showNetworkNormal];
     }
   } else {
-    if (class_respondsToSelector(self.class, @selector(showNetworkDisable))) {
-      [self.class showNetworkDisable];
+    if ([self respondsToSelector:@selector(showNetworkDisable)]) {
+      [self showNetworkDisable];
     }
   }
 }
@@ -348,12 +347,12 @@ NS_ASSUME_NONNULL_BEGIN
     rootView = [self valueForKey:@"scrollView"];
   }
   if (empty) {
-    if (class_respondsToSelector(self.class, @selector(showEmptyView:withDescription:))) {
-      [self.class showEmptyView:self.view withDescription:description];
+    if ([self respondsToSelector:@selector(showEmptyViewWithDescription:)]) {
+      [self showEmptyViewWithDescription:description];
     }
   } else {
-    if (class_respondsToSelector(self.class, @selector(hideEmptyView:))) {
-      [self.class hideEmptyView:self.view];
+    if ([self respondsToSelector:@selector(hideEmptyView)]) {
+      [self hideEmptyView];
     }
   }
 }

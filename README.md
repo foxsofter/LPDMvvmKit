@@ -132,10 +132,10 @@ LPDMvvmKit对各层的定义
 ```
 
 ###加载的进度条的例子
-需要设置beginLodingBlock和endLodingBlock来实现显示和取消加载进度条，然后不需要做其它事情了，剩下的交给框架来实现就好了，后面会说到tableview和collectionview加载的实现
+需要设置beginLoadingBlock和endLoadingBlock来实现显示和取消加载进度条，然后不需要做其它事情了，剩下的交给框架来实现就好了，后面会说到tableview和collectionview加载的实现
 
 ```Objective-c
-    [self beginLodingBlock:^(UIView *_Nonnull view) {
+    [self beginLoadingBlock:^(UIView *_Nonnull view) {
       UIView *contentView = [view viewWithTag:777777];
       if (contentView) {
         return;
@@ -172,7 +172,7 @@ LPDMvvmKit对各层的定义
       }
       [imageView startAnimating];
     }];
-    [self endLodingBlock:^(UIView *_Nonnull view) {
+    [self endLoadingBlock:^(UIView *_Nonnull view) {
       UIView *contentView = [view viewWithTag:777777];
       if (contentView) {
         [contentView removeFromSuperview];

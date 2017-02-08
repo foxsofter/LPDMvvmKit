@@ -168,8 +168,10 @@
 }
 
 - (void)popToRootViewController:(UIButton *)sender {
-  [self.navigationController popToRootViewControllerAnimated:YES];
+  UINavigationController *navigation = self.navigationController;
+  [navigation popToRootViewControllerAnimated:YES];
 }
+
 
 - (void)presentViewController:(UIButton *)sender {
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];

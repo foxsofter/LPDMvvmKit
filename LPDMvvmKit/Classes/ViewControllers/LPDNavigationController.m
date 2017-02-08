@@ -140,6 +140,19 @@ NS_ASSUME_NONNULL_BEGIN
       @strongify(self);
       [self popViewControllerAnimated:[tuple.first boolValue]];
     }];
+  
+  [[self rac_signalForSelector:@selector(popToViewController:animated:)] subscribeNext:^(RACTuple *tuple) {
+    @strongify(self);
+    if ([self.viewModel respondsToSelector:@selector(_popToViewModel:)]) {
+      id<LPDViewControllerProtocol> viewController = tuple.first;
+      [self.viewModel performSelector:@selector(_popToViewModel:) withObject:viewController.viewModel];
+    }
+  }];
+  [[[self.viewModel rac_signalForSelector:@selector(popViewModelAnimated:)] deliverOnMainThread]
+   subscribeNext:^(RACTuple *tuple) {
+     @strongify(self);
+     [self popViewControllerAnimated:[tuple.first boolValue]];
+   }];
 
   [[self rac_signalForSelector:@selector(popToRootViewControllerAnimated:)]
     subscribeNext:^(id x) {
@@ -152,6 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
     subscribeNext:^(RACTuple *tuple) {
       @strongify(self);
       [self popToRootViewControllerAnimated:[tuple.first boolValue]];
+      NSLog(@"%@",self.navigationController.viewControllers);
     }];
 
   [[self rac_signalForSelector:@selector(presentNavigationController:animated:completion:)]
@@ -187,9 +201,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma clang diagnostic pop
 
-- (nullable NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated {
-  return [super popToRootViewControllerAnimated:YES];
-}
 
 @end
 

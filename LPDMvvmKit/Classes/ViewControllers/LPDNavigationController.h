@@ -32,8 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion NS_UNAVAILABLE;
 - (void)dismissViewControllerAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion NS_UNAVAILABLE;
 
-- (instancetype)initWithViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel;
-
 @end
 
 NS_ASSUME_NONNULL_END

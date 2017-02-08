@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
+- (instancetype)initWithViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel;
+
 @property (nullable, nonatomic, strong, readonly) __kindof id<LPDNavigationViewModelProtocol> viewModel;
 
 - (void)presentNavigationController:(UINavigationController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation UIViewController (LPDMvvm)
+@implementation UIViewController (LPDViewController)
 
 - (nullable __kindof id<LPDViewModelProtocol>)viewModel {
   return [self object:@selector(setViewModel:)];

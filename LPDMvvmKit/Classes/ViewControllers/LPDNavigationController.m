@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation UINavigationController (LPDMvvm)
+@implementation UINavigationController (LPDNavigationController)
 
 - (nullable __kindof id<LPDNavigationViewModelProtocol>)viewModel {
   return [self object:@selector(setViewModel:)];

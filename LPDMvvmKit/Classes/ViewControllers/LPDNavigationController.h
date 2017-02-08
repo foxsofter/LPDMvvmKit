@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UINavigationController (LPDMvvm)<LPDNavigationControllerProtocol>
+@interface UINavigationController (LPDNavigationController)<LPDNavigationControllerProtocol>
 
 @end
 

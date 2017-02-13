@@ -92,6 +92,20 @@
   return _insertCellCommand;
 }
 
+- (void)insertCell {
+  LPDPhotoModel *model = [[LPDPhotoModel alloc]init];
+  model.albumId = 111;
+  model.identifier = 131;
+  model.title = @"officia porro iure quia iusto qui ipsa ut modi";
+  model.thumbnailUrl = @"http://placehold.it/150/1941e9";
+  model.url = @"http://placehold.it/600/24f355";
+  
+  LPDCollectionPhotoCellViewModel *cellViewModel =
+  [[LPDCollectionPhotoCellViewModel alloc] initWithViewModel:self.collectionViewModel];
+  cellViewModel.model = model;
+  [self.collectionViewModel insertCellViewModel:cellViewModel atIndex:0];
+}
+
 - (RACCommand *)insertCellsCommand {
   if (!_insertCellsCommand) {
     @weakify(self);
@@ -125,6 +139,24 @@
   return _insertCellsCommand;
 }
 
+- (void)insertCells {
+  NSMutableArray *cellViewModels = [NSMutableArray array];
+  for (NSInteger i = 0; i < 3; i++) {
+    LPDPhotoModel *model = [[LPDPhotoModel alloc]init];
+    model.albumId = 111111;
+    model.identifier = 1003131;
+    model.title = @"officia porro iure quia iusto qui ipsa ut modi";
+    model.thumbnailUrl = @"http://placehold.it/150/1941e9";
+    model.url = @"http://placehold.it/600/24f355";
+    
+    LPDCollectionPhotoCellViewModel *cellViewModel =
+    [[LPDCollectionPhotoCellViewModel alloc] initWithViewModel:self.collectionViewModel];
+    cellViewModel.model = model;
+    [cellViewModels addObject:cellViewModel];
+  }
+  [self.collectionViewModel insertCellViewModels:cellViewModels atIndex:0];
+}
+
 - (RACCommand *)removeCellCommand {
   if (!_removeCellCommand) {
     @weakify(self);
@@ -143,6 +175,10 @@
   return _removeCellCommand;
 }
 
+- (void)removeCell {
+  [self.collectionViewModel removeCellViewModelAtIndex:0];
+}
+
 - (RACCommand *)removeCellsCommand {
   if (!_removeCellsCommand) {
     @weakify(self);
@@ -159,6 +195,10 @@
     }];
   }
   return _removeCellsCommand;
+}
+
+- (void)removeCells {
+  [self.collectionViewModel removeSectionAtIndex:0];
 }
 
 @end

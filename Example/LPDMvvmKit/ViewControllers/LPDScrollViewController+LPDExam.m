@@ -13,7 +13,7 @@
 
 #pragma mark - LPDScrollViewControllerProtocol
 
-+ (MJRefreshHeader *)initLoadingHeader:(MJRefreshComponentRefreshingBlock)refreshingBlock {
+- (MJRefreshHeader *)customLoadingHeader:(MJRefreshComponentRefreshingBlock)refreshingBlock {
   MJRefreshLPDHeader *header = [MJRefreshLPDHeader headerWithRefreshingBlock:refreshingBlock];
   NSMutableArray<UIImage *> *images = [NSMutableArray array];
   for (NSInteger i = 1; i <= 10; i++) {
@@ -27,7 +27,7 @@
   return header;
 }
 
-+ (MJRefreshFooter *)initLoadingFooter:(MJRefreshComponentRefreshingBlock)refreshingBlock {
+- (MJRefreshFooter *)customLoadingFooter:(MJRefreshComponentRefreshingBlock)refreshingBlock {
   MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:refreshingBlock];
   footer.triggerAutomaticallyRefreshPercent = 0.1f;
   

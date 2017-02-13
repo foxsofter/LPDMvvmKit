@@ -88,6 +88,17 @@
   return _insertCellCommand;
 }
 
+- (void)insertCell {
+  LPDPostModel *model = [[LPDPostModel alloc]init];
+  model.userId = 111111;
+  model.identifier = 1003131;
+  model.title = @"First Chapter";
+  model.body = @"GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.";
+  LPDTablePostCellViewModel *cellViewModel = [[LPDTablePostCellViewModel alloc]initWithViewModel:self.tableViewModel];
+  cellViewModel.model = model;
+  [self.tableViewModel insertCellViewModel:cellViewModel atIndex:0 withRowAnimation:UITableViewRowAnimationLeft];
+}
+
 - (RACCommand *)insertCellsCommand {
   if (!_insertCellsCommand) {
     @weakify(self);
@@ -131,6 +142,35 @@
   return _insertCellsCommand;
 }
 
+- (void)insertCells {
+  NSMutableArray *cellViewModels = [NSMutableArray array];
+  LPDTableDefaultCellViewModel *cellViewModel1 =
+  [[LPDTableDefaultCellViewModel alloc] initWithViewModel:self.tableViewModel];
+  cellViewModel1.text = @"芬兰无法";
+  cellViewModel1.detail = @"蜂王浆发了";
+  cellViewModel1.image = [UIImage imageNamed:@"01"];
+  [cellViewModels addObject:cellViewModel1];
+  LPDTableValue1CellViewModel *cellViewModel2 =
+  [[LPDTableValue1CellViewModel alloc] initWithViewModel:self.tableViewModel];
+  cellViewModel2.text = @"芬兰无法";
+  cellViewModel2.detail = @"蜂王浆发了";
+  cellViewModel2.image = [UIImage imageNamed:@"02"];
+  [cellViewModels addObject:cellViewModel2];
+  LPDTableValue2CellViewModel *cellViewModel3 =
+  [[LPDTableValue2CellViewModel alloc] initWithViewModel:self.tableViewModel];
+  cellViewModel3.text = @"芬兰无法";
+  cellViewModel3.detail = @"蜂王浆发了";
+  [cellViewModels addObject:cellViewModel3];
+  LPDTableSubtitleCellViewModel *cellViewModel4 =
+  [[LPDTableSubtitleCellViewModel alloc] initWithViewModel:self.tableViewModel];
+  cellViewModel4.text = @"芬兰无法";
+  cellViewModel4.detail = @"蜂王浆发了";
+  cellViewModel4.image = [UIImage imageNamed:@"03"];
+  [cellViewModels addObject:cellViewModel4];
+  
+  [self.tableViewModel insertCellViewModels:cellViewModels atIndex:0 withRowAnimation:UITableViewRowAnimationLeft];
+}
+
 - (RACCommand *)removeCellCommand {
   if (!_removeCellCommand) {
     @weakify(self);
@@ -149,6 +189,10 @@
   return _removeCellCommand;
 }
 
+- (void)removeCell {
+  [self.tableViewModel removeCellViewModelAtIndex:0 withRowAnimation:UITableViewRowAnimationRight];
+}
+
 - (RACCommand *)removeCellsCommand {
   if (!_removeCellsCommand) {
     @weakify(self);
@@ -165,6 +209,10 @@
     }];
   }
   return _removeCellsCommand;
+}
+
+- (void)removeCells {
+  [self.tableViewModel removeSectionAtIndex:0 withRowAnimation:UITableViewRowAnimationRight];
 }
 
 @end

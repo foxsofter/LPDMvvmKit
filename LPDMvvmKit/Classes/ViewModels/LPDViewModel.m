@@ -6,15 +6,15 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "LPDViewModel.h"
-#import "LPDWeakArray.h"
+#import "NSMutableArray+LPDWeak.h"
 
 @interface LPDViewModel ()
 
 @property (nonatomic, weak, readwrite) id<LPDViewModelProtocol> parentViewModel;
 
-@property (nonatomic, strong) LPDWeakArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
+@property (nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
 
 @end
 
@@ -156,7 +156,7 @@
 
 - (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
   if (!self.mutableChildViewModels) {
-    self.mutableChildViewModels = [LPDWeakArray array];
+    self.mutableChildViewModels = [NSMutableArray mutableArrayUsingWeakReferences];
   }
   if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
     ((LPDViewModel *)childViewModel).parentViewModel = self;

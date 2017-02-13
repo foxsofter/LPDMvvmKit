@@ -7,13 +7,13 @@
 //
 
 #import "LPDNavigationViewModel.h"
-#import "LPDWeakArray.h"
+#import "NSMutableArray+LPDWeak.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDNavigationViewModel ()
 
-@property (nullable, nonatomic, strong) LPDWeakArray<id<LPDViewModelProtocol>> *weakViewModels;
+@property (nullable, nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol>> *weakViewModels;
 
 @end
 
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithRootViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
   self = [super init];
   if (self) {
-    _weakViewModels = [LPDWeakArray array];
+    _weakViewModels = [NSMutableArray mutableArrayUsingWeakReferences];
     [_weakViewModels addObject:viewModel];
     viewModel.navigation = self;
   }
@@ -75,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels {
-  return [_weakViewModels toArray];
+  return [_weakViewModels copy];
 }
 
 #pragma mark - reactive navigation methods

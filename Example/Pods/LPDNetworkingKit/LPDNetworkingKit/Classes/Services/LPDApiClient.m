@@ -184,7 +184,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSObject *)resolveResponse:(NSHTTPURLResponse *)response
                               endpoint:(NSString *)endpoint
                         responseObject:(id)responseObject {
-  id responseModel = nil;
+  id responseModel = responseObject;
   Class responseClass = [self.class getResponseClass:endpoint];
   if (responseClass) {
     if ([responseObject isKindOfClass:NSArray.class]) {

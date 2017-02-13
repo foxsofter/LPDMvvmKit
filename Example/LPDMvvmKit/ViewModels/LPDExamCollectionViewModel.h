@@ -22,4 +22,9 @@
 @property (nonatomic, strong, readonly) RACCommand *removeCellCommand;
 @property (nonatomic, strong, readonly) RACCommand *removeCellsCommand;
 
+- (void)insertCell;
+- (void)insertCells;
+- (void)removeCell;
+- (void)removeCells;
+
 @end

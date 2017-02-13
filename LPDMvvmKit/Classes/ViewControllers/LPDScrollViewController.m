@@ -6,7 +6,7 @@
 //  Copyright © 2015年 eleme. All rights reserved.
 //
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import <objc/runtime.h>
 #import <MJRefresh/MJRefresh.h>
 #import "LPDScrollViewController.h"

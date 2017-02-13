@@ -10,7 +10,7 @@
 #import "LPDTabBarViewModel.h"
 #import "LPDViewControllerFactory.h"
 #import "UIScreen+LPDAccessor.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

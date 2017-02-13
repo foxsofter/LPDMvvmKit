@@ -6,7 +6,7 @@
 //  Copyright © 2016年 eleme. All rights reserved.
 //
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "LPDCollectionHeaderViewModel.h"
 #import "LPDCollectionViewHeader.h"
 

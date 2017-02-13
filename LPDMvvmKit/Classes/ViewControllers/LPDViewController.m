@@ -6,7 +6,7 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import <objc/runtime.h>
 #import <LPDAdditionsKit/LPDAdditionsKit.h>
 #import "LPDViewController.h"

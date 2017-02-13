@@ -13,7 +13,7 @@
 #import "LPDViewModelProtocol.h"
 #import "NSObject+LPDThread.h"
 #import "UIScreen+LPDAccessor.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import <LPDAdditionsKit/LPDAdditionsKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

@@ -1,6 +1,6 @@
 # LPDNetworkingKit
 
-[![CI Status](http://img.shields.io/travis/foxsofter/LPDNetworkingKit.svg?style=flat)](https://travis-ci.org/foxsofter/LPDNetworkingKit)
+[![CI Status](http://img.shields.io/travis/LPD-iOS/LPDNetworkingKit.svg?style=flat)](https://travis-ci.org/LPD-iOS/LPDNetworkingKit)
 [![Version](https://img.shields.io/cocoapods/v/LPDNetworkingKit.svg?style=flat)](http://cocoapods.org/pods/LPDNetworkingKit)
 [![License](https://img.shields.io/cocoapods/l/LPDNetworkingKit.svg?style=flat)](http://cocoapods.org/pods/LPDNetworkingKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDNetworkingKit.svg?style=flat)](http://cocoapods.org/pods/LPDNetworkingKit)

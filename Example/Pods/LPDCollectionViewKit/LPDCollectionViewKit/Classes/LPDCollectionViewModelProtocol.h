@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "LPDCollectionItemViewModelProtocol.h"
 #import "LPDCollectionSectionViewModelProtocol.h"
 

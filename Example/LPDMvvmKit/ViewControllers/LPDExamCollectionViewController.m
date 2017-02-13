@@ -58,19 +58,34 @@
   self.scrollView = self.collectionView;
   self.needLoadingHeader = YES;
 
+//  UIBarButtonItem *insertCellBarButtonItem =
+//    [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];
+//  insertCellBarButtonItem.rac_command = selfViewModel.insertCellCommand;
+//  UIBarButtonItem *insertCellsBarButtonItem =
+//    [[UIBarButtonItem alloc] initWithTitle:@"批量添加" style:UIBarButtonItemStylePlain target:nil action:nil];
+//  insertCellsBarButtonItem.rac_command = selfViewModel.insertCellsCommand;
+//  UIBarButtonItem *removeCellBarButtonItem =
+//    [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:nil action:nil];
+//  removeCellBarButtonItem.rac_command = selfViewModel.removeCellCommand;
+//  UIBarButtonItem *removeCellsBarButtonItem =
+//    [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:nil action:nil];
+//  removeCellsBarButtonItem.rac_command = selfViewModel.removeCellsCommand;
+//  self.navigationController.toolbarHidden = NO;
+  
   UIBarButtonItem *insertCellBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellBarButtonItem.rac_command = selfViewModel.insertCellCommand;
+  [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:selfViewModel action:@selector(insertCell)];
+
   UIBarButtonItem *insertCellsBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"批量添加" style:UIBarButtonItemStylePlain target:nil action:nil];
-  insertCellsBarButtonItem.rac_command = selfViewModel.insertCellsCommand;
+  [[UIBarButtonItem alloc] initWithTitle:@"批量添加" style:UIBarButtonItemStylePlain target:selfViewModel action:@selector(insertCells)];
+
   UIBarButtonItem *removeCellBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellBarButtonItem.rac_command = selfViewModel.removeCellCommand;
+  [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:selfViewModel action:@selector(removeCell)];
+
   UIBarButtonItem *removeCellsBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:nil action:nil];
-  removeCellsBarButtonItem.rac_command = selfViewModel.removeCellsCommand;
+  [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:selfViewModel action:@selector(removeCells)];
+
   self.navigationController.toolbarHidden = NO;
+
   [self setToolbarItems:@[
     insertCellBarButtonItem,
     insertCellsBarButtonItem,

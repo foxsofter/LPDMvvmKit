@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
-  s.version      = "0.7.6"
+  s.version      = "0.7.7"
   s.summary      = "mvvm"
 
   s.description  = <<-DESC
@@ -45,6 +45,6 @@ Pod::Spec.new do |s|
   s.dependency 'LPDNetworkingKit'
   s.dependency 'LPDTableViewKit'
   s.dependency 'LPDCollectionViewKit'
-  s.dependency 'ReactiveViewModel'
+  s.dependency 'ReactiveObjC'
   s.dependency 'MJRefresh'
 end

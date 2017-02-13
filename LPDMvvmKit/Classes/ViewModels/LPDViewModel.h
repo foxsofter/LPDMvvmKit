@@ -6,7 +6,7 @@
 //  Copyright © 2015年 foxsofter. All rights reserved.
 //
 
-#import <ReactiveViewModel/ReactiveViewModel.h>
+#import "RVMViewModel.h"
 #import "LPDViewModelProtocol.h"
 
 @interface LPDViewModel : RVMViewModel <LPDViewModelProtocol>

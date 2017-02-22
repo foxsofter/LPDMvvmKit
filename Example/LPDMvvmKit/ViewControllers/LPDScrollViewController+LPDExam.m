@@ -28,7 +28,7 @@
 }
 
 - (MJRefreshFooter *)customLoadingFooter:(MJRefreshComponentRefreshingBlock)refreshingBlock {
-  MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:refreshingBlock];
+  MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:refreshingBlock];
   footer.triggerAutomaticallyRefreshPercent = 0.1f;
   
   return footer;

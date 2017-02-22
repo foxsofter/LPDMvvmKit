@@ -15,11 +15,6 @@
 
 @interface LPDExamCollectionViewModel ()
 
-@property (nonatomic, strong, readwrite) RACCommand *insertCellCommand;
-@property (nonatomic, strong, readwrite) RACCommand *insertCellsCommand;
-@property (nonatomic, strong, readwrite) RACCommand *removeCellCommand;
-@property (nonatomic, strong, readwrite) RACCommand *removeCellsCommand;
-
 @property (nonatomic, copy) NSArray *datas;
 
 @end
@@ -64,34 +59,6 @@
   }
 }
 
-- (RACCommand *)insertCellCommand {
-  if (!_insertCellCommand) {
-    @weakify(self);
-    _insertCellCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        LPDPhotoModel *model = [[LPDPhotoModel alloc]init];
-        model.albumId = 111;
-        model.identifier = 131;
-        model.title = @"officia porro iure quia iusto qui ipsa ut modi";
-        model.thumbnailUrl = @"http://placehold.it/150/1941e9";
-        model.url = @"http://placehold.it/600/24f355";
-
-        LPDCollectionPhotoCellViewModel *cellViewModel =
-          [[LPDCollectionPhotoCellViewModel alloc] initWithViewModel:self.collectionViewModel];
-        cellViewModel.model = model;
-        [self.collectionViewModel insertCellViewModel:cellViewModel atIndex:0];
-        
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return [RACDisposable disposableWithBlock:^{
-        }];
-      }];
-    }];
-  }
-  return _insertCellCommand;
-}
-
 - (void)insertCell {
   LPDPhotoModel *model = [[LPDPhotoModel alloc]init];
   model.albumId = 111;
@@ -104,39 +71,6 @@
   [[LPDCollectionPhotoCellViewModel alloc] initWithViewModel:self.collectionViewModel];
   cellViewModel.model = model;
   [self.collectionViewModel insertCellViewModel:cellViewModel atIndex:0];
-}
-
-- (RACCommand *)insertCellsCommand {
-  if (!_insertCellsCommand) {
-    @weakify(self);
-    _insertCellsCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        NSMutableArray *cellViewModels = [NSMutableArray array];
-        for (NSInteger i = 0; i < 3; i++) {
-          LPDPhotoModel *model = [[LPDPhotoModel alloc]init];
-          model.albumId = 111111;
-          model.identifier = 1003131;
-          model.title = @"officia porro iure quia iusto qui ipsa ut modi";
-          model.thumbnailUrl = @"http://placehold.it/150/1941e9";
-          model.url = @"http://placehold.it/600/24f355";
-
-          LPDCollectionPhotoCellViewModel *cellViewModel =
-            [[LPDCollectionPhotoCellViewModel alloc] initWithViewModel:self.collectionViewModel];
-          cellViewModel.model = model;
-          [cellViewModels addObject:cellViewModel];
-        }
-        [self.collectionViewModel insertCellViewModels:cellViewModels atIndex:0];
-        
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return [RACDisposable disposableWithBlock:^{
-
-        }];
-      }];
-    }];
-  }
-  return _insertCellsCommand;
 }
 
 - (void)insertCells {
@@ -157,44 +91,8 @@
   [self.collectionViewModel insertCellViewModels:cellViewModels atIndex:0];
 }
 
-- (RACCommand *)removeCellCommand {
-  if (!_removeCellCommand) {
-    @weakify(self);
-    _removeCellCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        [self.collectionViewModel removeCellViewModelAtIndex:0];
-
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return [RACDisposable disposableWithBlock:^{
-        }];
-      }];
-    }];
-  }
-  return _removeCellCommand;
-}
-
 - (void)removeCell {
   [self.collectionViewModel removeCellViewModelAtIndex:0];
-}
-
-- (RACCommand *)removeCellsCommand {
-  if (!_removeCellsCommand) {
-    @weakify(self);
-    _removeCellsCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        [self.collectionViewModel removeSectionAtIndex:0];
-        
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return [RACDisposable disposableWithBlock:^{
-        }];
-      }];
-    }];
-  }
-  return _removeCellsCommand;
 }
 
 - (void)removeCells {

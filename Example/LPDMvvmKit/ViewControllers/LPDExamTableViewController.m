@@ -53,6 +53,7 @@
 
   self.scrollView = self.tableView;
   self.needLoadingHeader = YES;
+  self.needLoadingFooter = YES;
 
 //  UIBarButtonItem *insertCellBarButtonItem =
 //    [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:nil action:nil];

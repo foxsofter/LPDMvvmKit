@@ -17,11 +17,6 @@
 
 @property (nonatomic, strong) LPDTableViewModel *tableViewModel;
 
-@property (nonatomic, strong, readonly) RACCommand *insertCellCommand;
-@property (nonatomic, strong, readonly) RACCommand *insertCellsCommand;
-@property (nonatomic, strong, readonly) RACCommand *removeCellCommand;
-@property (nonatomic, strong, readonly) RACCommand *removeCellsCommand;
-
 - (void)insertCell;
 - (void)insertCells;
 - (void)removeCell;

@@ -116,7 +116,8 @@ NS_ASSUME_NONNULL_BEGIN
     subscribeNext:^(RACTuple *tuple) {
     @strongify(self);
     __kindof id<LPDViewControllerProtocol> viewControllerToPush = tuple.first;
-    if ([viewControllerToPush respondsToSelector:@selector(viewModel)] &&
+    if ([viewControllerToPush isKindOfClass:LPDViewController.class] &&
+        [viewControllerToPush respondsToSelector:@selector(viewModel)] &&
         [self.viewModel respondsToSelector:@selector(_pushViewModel:)]) {
       [self.viewModel performSelector:@selector(_pushViewModel:) withObject:viewControllerToPush.viewModel];
     }
@@ -131,7 +132,8 @@ NS_ASSUME_NONNULL_BEGIN
 
   [[self rac_signalForSelector:@selector(popViewControllerAnimated:)] subscribeNext:^(id x) {
     @strongify(self);
-    if ([self.viewModel respondsToSelector:@selector(_popViewModel)]) {
+    if (self.viewControllers.count == [self.viewModel viewModels].count - 1 &&
+        [self.viewModel respondsToSelector:@selector(_popViewModel)]) {
       [self.viewModel performSelector:@selector(_popViewModel)];
     }
   }];
@@ -145,7 +147,10 @@ NS_ASSUME_NONNULL_BEGIN
     @strongify(self);
     if ([self.viewModel respondsToSelector:@selector(_popToViewModel:)]) {
       id<LPDViewControllerProtocol> viewController = tuple.first;
-      [self.viewModel performSelector:@selector(_popToViewModel:) withObject:viewController.viewModel];
+      if ([viewController isKindOfClass:LPDViewController.class] &&
+          [viewController respondsToSelector:@selector(viewModel)]) {
+        [self.viewModel performSelector:@selector(_popToViewModel:) withObject:viewController.viewModel];
+      }
     }
   }];
   [[[self.viewModel rac_signalForSelector:@selector(popViewModelAnimated:)] deliverOnMainThread]

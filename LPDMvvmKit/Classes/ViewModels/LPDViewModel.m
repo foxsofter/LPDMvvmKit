@@ -156,7 +156,7 @@
 
 - (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
   if (!self.mutableChildViewModels) {
-    self.mutableChildViewModels = [NSMutableArray mutableArrayUsingWeakReferences];
+    self.mutableChildViewModels = [NSMutableArray array];
   }
   if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
     ((LPDViewModel *)childViewModel).parentViewModel = self;

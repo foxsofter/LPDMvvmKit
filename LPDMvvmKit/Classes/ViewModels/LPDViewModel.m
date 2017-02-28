@@ -160,6 +160,9 @@
   }
   if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
     ((LPDViewModel *)childViewModel).parentViewModel = self;
+    if (self.navigation) {
+      ((LPDViewModel *)childViewModel).navigation = self.navigation;
+    }
     [self.mutableChildViewModels addObject:childViewModel];
   }
 }
@@ -167,6 +170,7 @@
 - (void)_removeFromParentViewModel {
   [((LPDViewModel *)self.parentViewModel).mutableChildViewModels removeObject:self];
   self.parentViewModel = nil;
+  self.navigation = nil;
 }
 
 - (void)dealloc {

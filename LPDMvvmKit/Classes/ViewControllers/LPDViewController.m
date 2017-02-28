@@ -336,9 +336,9 @@ NS_ASSUME_NONNULL_BEGIN
   }];
   [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
                                          fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
-   subscribeNext:^(NSString *description) {
+   subscribeNext:^(RACTuple *tuple) {
      @strongify(self);
-     [self showEmpty:YES withDescription:description];
+     [self showEmpty:YES withDescription:tuple.first];
    }];
 }
 

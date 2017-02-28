@@ -83,6 +83,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)_pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
   [_weakViewModels addObject:viewModel];
   viewModel.navigation = self;
+  for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
+    childViewModel.navigation = self;
+  }
 }
 
 - (void)_popViewModel {

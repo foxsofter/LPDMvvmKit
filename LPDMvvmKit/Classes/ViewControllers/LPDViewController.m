@@ -78,6 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self subscribeLoadingSignal];
     [self subscribeSuccessSubject];
     [self subscribeErrorSubject];
+    [self subscribeEmptySignal];
     [self subscribeNetworkStateSignal];
     [self subscribeAddChildViewModelSignal];
     [self subscribeRemoveFromParentViewModelSignal];

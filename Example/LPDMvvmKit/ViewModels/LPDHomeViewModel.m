@@ -8,16 +8,7 @@
 
 #import "LPDHomeViewModel.h"
 #import <LPDMvvmKit/LPDMvvmKit.h>
-
-@interface LPDHomeViewModel ()
-
-@property (nonatomic, strong, readwrite) RACCommand *pushViewModelCommand;
-@property (nonatomic, strong, readwrite) RACCommand *popViewModelCommand;
-@property (nonatomic, strong, readwrite) RACCommand *popToRootViewModelCommand;
-@property (nonatomic, strong, readwrite) RACCommand *presentViewModelCommand;
-@property (nonatomic, strong, readwrite) RACCommand *dismissViewModelCommand;
-
-@end
+#import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 
 @implementation LPDHomeViewModel
 
@@ -31,91 +22,35 @@
   return self;
 }
 
-- (RACCommand *)pushViewModelCommand {
-  if (!_pushViewModelCommand) {
-    @weakify(self);
-    _pushViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
-        [self.navigation pushViewModel:vm animated:YES];
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return nil;
-      }];
-    }];
-  }
-  return _pushViewModelCommand;
+- (void)pushViewModel {
+  LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
+  [self.navigation pushViewModel:vm animated:YES];
 }
 
-- (RACCommand *)popViewModelCommand {
-  if (!_popViewModelCommand) {
-    @weakify(self);
-    _popViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        [self.navigation popViewModelAnimated:YES];
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return nil;
-      }];
-    }];
-  }
-  return _popViewModelCommand;
+- (void)popViewModel {
+  [self.navigation popViewModelAnimated:YES];
 }
 
-- (RACCommand *)popToRootViewModelCommand {
-  if (!_popToRootViewModelCommand) {
-    @weakify(self);
-    _popToRootViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        [self.navigation popToRootViewModelAnimated:YES];
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return nil;
-      }];
-    }];
-  }
-  return _popToRootViewModelCommand;
+- (void)popToRootViewModel {
+  [self.navigation popToRootViewModelAnimated:YES];
 }
 
-- (RACCommand *)presentViewModelCommand {
-  if (!_presentViewModelCommand) {
-    @weakify(self);
-    _presentViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
-        [self.navigation presentNavigationViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm]
-                                 animated:YES
-                               completion:nil];
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return nil;
-      }];
-    }];
-  }
-  return _presentViewModelCommand;
+- (void)presentViewModel {
+  LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
+  [self.navigation presentNavigationViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm]
+                                     animated:YES
+                                   completion:nil];
 }
 
-- (RACCommand *)dismissViewModelCommand {
-  if (!_dismissViewModelCommand) {
-    @weakify(self);
-    _dismissViewModelCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        [self.navigation dismissNavigationViewModelAnimated:YES
-                                       completion:^{
+- (void)dismissViewModel {
+  [self.navigation dismissNavigationViewModelAnimated:YES
+                                           completion:^{
+                                             
+                                           }];
+}
 
-                                       }];
-        [subscriber sendNext:nil];
-        [subscriber sendCompleted];
-        return nil;
-      }];
-    }];
-  }
-  return _dismissViewModelCommand;
+- (void)dealloc {
+  NSLog(@"fwfwfw");
 }
 
 @end

@@ -18,25 +18,33 @@
 #import "LPDRootTabBarController.h"
 #import "LPDRootTabBarViewModel.h"
 #import <LPDMvvmKit/LPDMvvmKit.h>
+#import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import "CacheCleanerPlugin.h"
+#import "RetainCycleLoggerPlugin.h"
 
 @interface LPDAppDelegate ()
 
 @end
 
-@implementation LPDAppDelegate
+@implementation LPDAppDelegate {
+  FBMemoryProfiler *_memoryProfiler;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
   LPDHomeViewModel *homeVM = [[LPDHomeViewModel alloc] init];
   LPDExamTableViewModel *tableVM = [[LPDExamTableViewModel alloc] init];
   LPDExamCollectionViewModel *collectionVM = [[LPDExamCollectionViewModel alloc] init];
-  LPDReactViewModel *reactVM = [[LPDReactViewModel alloc] init];
+//  LPDReactViewModel *reactVM = [[LPDReactViewModel alloc] init];
 
   LPDRootTabBarViewModel *rootTabBarVM =
   [[LPDRootTabBarViewModel alloc] initWithViewModels:@[
         [[LPDNavigationViewModel alloc] initWithRootViewModel:homeVM],
         [[LPDNavigationViewModel alloc] initWithRootViewModel:tableVM],
         [[LPDNavigationViewModel alloc] initWithRootViewModel:collectionVM],
-        [[LPDNavigationViewModel alloc] initWithRootViewModel:reactVM],]];
+//        [[LPDNavigationViewModel alloc] initWithRootViewModel:reactVM],
+        ]];
   
   LPDRootTabBarController *rootTabBarVC = [[LPDRootTabBarController alloc] initWithViewModel:rootTabBarVM];
 //  LPDNavigationController *rootVC = [[LPDNavigationController alloc] initWithViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:collectionVM]];
@@ -46,6 +54,11 @@
   self.window.rootViewController = rootTabBarVC;
   [self.window makeKeyAndVisible];
   
+  _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+                                                                [RetainCycleLoggerPlugin new]]
+                             retainCycleDetectorConfiguration:nil];
+  [_memoryProfiler enable];
+
   return YES;
 }
 

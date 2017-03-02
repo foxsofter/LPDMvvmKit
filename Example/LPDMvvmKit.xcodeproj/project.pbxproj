@@ -40,6 +40,8 @@
 		8E3F2F131DF157B8009E2496 /* LPDCollectionViewPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EF91DF157B8009E2496 /* LPDCollectionViewPhotoCell.m */; };
 		8E3F2F141DF157B8009E2496 /* LPDTableViewPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2EFB1DF157B8009E2496 /* LPDTableViewPostCell.m */; };
 		8E3F2F161DF157B8009E2496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F2EFD1DF157B8009E2496 /* Assets.xcassets */; };
+		8ED7E66D1E66CF7C00CC9AB2 /* CacheCleanerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7E66A1E66CF7C00CC9AB2 /* CacheCleanerPlugin.m */; };
+		8ED7E66E1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7E66C1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.m */; };
 		8EF42CFC1E498FFC00D93ECA /* MJRefreshLPDHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF42CFB1E498FFC00D93ECA /* MJRefreshLPDHeader.m */; };
 		BF9DF002A9898212ED06DADF /* Pods_LPDMvvmKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36915A153E4425F811245E4C /* Pods_LPDMvvmKit_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,10 @@
 		8E3F2EFA1DF157B8009E2496 /* LPDTableViewPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDTableViewPostCell.h; sourceTree = "<group>"; };
 		8E3F2EFB1DF157B8009E2496 /* LPDTableViewPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDTableViewPostCell.m; sourceTree = "<group>"; };
 		8E3F2EFD1DF157B8009E2496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8ED7E6691E66CF7C00CC9AB2 /* CacheCleanerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheCleanerPlugin.h; sourceTree = "<group>"; };
+		8ED7E66A1E66CF7C00CC9AB2 /* CacheCleanerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheCleanerPlugin.m; sourceTree = "<group>"; };
+		8ED7E66B1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
+		8ED7E66C1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
 		8EF42CFA1E498FFC00D93ECA /* MJRefreshLPDHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshLPDHeader.h; sourceTree = "<group>"; };
 		8EF42CFB1E498FFC00D93ECA /* MJRefreshLPDHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshLPDHeader.m; sourceTree = "<group>"; };
 		A18EE99E9E63348E567F5B3C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -208,6 +214,10 @@
 				8E3F2EFD1DF157B8009E2496 /* Assets.xcassets */,
 				6003F59C195388D20070C39A /* LPDAppDelegate.h */,
 				6003F59D195388D20070C39A /* LPDAppDelegate.m */,
+				8ED7E6691E66CF7C00CC9AB2 /* CacheCleanerPlugin.h */,
+				8ED7E66A1E66CF7C00CC9AB2 /* CacheCleanerPlugin.m */,
+				8ED7E66B1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.h */,
+				8ED7E66C1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.m */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = Example;
@@ -549,6 +559,7 @@
 				8E3F2F101DF157B8009E2496 /* LPDReactViewModel.m in Sources */,
 				8E3F2F131DF157B8009E2496 /* LPDCollectionViewPhotoCell.m in Sources */,
 				8E3F2F0E1DF157B8009E2496 /* LPDHomeViewModel.m in Sources */,
+				8ED7E66E1E66CF7C00CC9AB2 /* RetainCycleLoggerPlugin.m in Sources */,
 				8E3F2F0D1DF157B8009E2496 /* LPDExamTableViewModel.m in Sources */,
 				8E3F2F0C1DF157B8009E2496 /* LPDExamCollectionViewModel.m in Sources */,
 				8E3F2F071DF157B8009E2496 /* LPDReactViewController.m in Sources */,
@@ -557,6 +568,7 @@
 				8E3F2F051DF157B8009E2496 /* LPDHomeViewController.m in Sources */,
 				8E3F2F041DF157B8009E2496 /* LPDExamTableViewController.m in Sources */,
 				8E3F2F121DF157B8009E2496 /* LPDTablePostCellViewModel.m in Sources */,
+				8ED7E66D1E66CF7C00CC9AB2 /* CacheCleanerPlugin.m in Sources */,
 				8E3F2F111DF157B8009E2496 /* LPDRootTabBarViewModel.m in Sources */,
 				8E3F2F031DF157B8009E2496 /* LPDExamCollectionViewController.m in Sources */,
 				8E3F2F141DF157B8009E2496 /* LPDTableViewPostCell.m in Sources */,

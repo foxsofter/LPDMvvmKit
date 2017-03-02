@@ -82,7 +82,12 @@ NS_ASSUME_NONNULL_BEGIN
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
       @strongify(self);
-      [self synchronizeNavigationSignals];
+      [self subscribePushSignals];
+      [self subscribePopSignals];
+      [self subscribePopToViewSignals];
+      [self subscribePopToRootSignals];
+      [self subscribePresentSignals];
+      [self subscribeDismissSignals];
     }];
   }
   return self;
@@ -110,7 +115,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief  设置同步ViewModel的导航到ViewController的导航的信号
  */
-- (void)synchronizeNavigationSignals {
+- (void)subscribePushSignals {
   @weakify(self);
   [[self rac_signalForSelector:@selector(pushViewController:animated:)]
     subscribeNext:^(RACTuple *tuple) {
@@ -129,7 +134,10 @@ NS_ASSUME_NONNULL_BEGIN
         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:tuple.first];
       [self pushViewController:viewController animated:[tuple.second boolValue]];
     }];
+}
 
+- (void)subscribePopSignals {
+  @weakify(self);
   [[self rac_signalForSelector:@selector(popViewControllerAnimated:)] subscribeNext:^(id x) {
     @strongify(self);
     if (self.viewControllers.count == [self.viewModel viewModels].count - 1 &&
@@ -142,7 +150,10 @@ NS_ASSUME_NONNULL_BEGIN
       @strongify(self);
       [self popViewControllerAnimated:[tuple.first boolValue]];
     }];
-  
+}
+
+- (void)subscribePopToViewSignals {
+  @weakify(self);
   [[self rac_signalForSelector:@selector(popToViewController:animated:)] subscribeNext:^(RACTuple *tuple) {
     @strongify(self);
     if ([self.viewModel respondsToSelector:@selector(_popToViewModel:)]) {
@@ -153,12 +164,25 @@ NS_ASSUME_NONNULL_BEGIN
       }
     }
   }];
-  [[[self.viewModel rac_signalForSelector:@selector(popViewModelAnimated:)] deliverOnMainThread]
+  [[[self.viewModel rac_signalForSelector:@selector(popToViewModel:animated:)] deliverOnMainThread]
    subscribeNext:^(RACTuple *tuple) {
      @strongify(self);
-     [self popViewControllerAnimated:[tuple.first boolValue]];
+     id<LPDViewModelProtocol> viewModel = tuple.first;
+     id<LPDViewControllerProtocol> viewController = nil;
+     for (id<LPDViewControllerProtocol> vc in self.viewControllers) {
+       if (vc.viewModel == viewModel) {
+         viewController = vc;
+         break;
+       }
+     }
+     if (viewController) {
+       [self popToViewController:viewController animated:[tuple.second boolValue]];
+     }
    }];
+}
 
+- (void)subscribePopToRootSignals {
+  @weakify(self);
   [[self rac_signalForSelector:@selector(popToRootViewControllerAnimated:)]
     subscribeNext:^(id x) {
       @strongify(self);
@@ -172,7 +196,10 @@ NS_ASSUME_NONNULL_BEGIN
       [self popToRootViewControllerAnimated:[tuple.first boolValue]];
       NSLog(@"%@",self.navigationController.viewControllers);
     }];
+}
 
+- (void)subscribePresentSignals {
+  @weakify(self);
   [[self rac_signalForSelector:@selector(presentNavigationController:animated:completion:)]
    subscribeNext:^(id x) {
      @strongify(self);
@@ -189,7 +216,10 @@ NS_ASSUME_NONNULL_BEGIN
 
     [self presentNavigationController:viewController animated:[tuple.second boolValue] completion:tuple.third];
   }];
+}
 
+- (void)subscribeDismissSignals {
+  @weakify(self);
   [[self rac_signalForSelector:@selector(dismissNavigationControllerAnimated:completion:)]
    subscribeNext:^(id x) {
      @strongify(self);

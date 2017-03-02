@@ -14,10 +14,10 @@
 @property (nonatomic, copy) NSString *tabBarItemImage;
 @property (nonatomic, copy) NSString *tabBarItemSelectedImage;
 
-@property (nonatomic, strong, readonly) RACCommand *pushViewModelCommand;
-@property (nonatomic, strong, readonly) RACCommand *popViewModelCommand;
-@property (nonatomic, strong, readonly) RACCommand *popToRootViewModelCommand;
-@property (nonatomic, strong, readonly) RACCommand *presentViewModelCommand;
-@property (nonatomic, strong, readonly) RACCommand *dismissViewModelCommand;
+- (void)pushViewModel;
+- (void)popViewModel;
+- (void)popToRootViewModel;
+- (void)presentViewModel;
+- (void)dismissViewModel;
 
 @end

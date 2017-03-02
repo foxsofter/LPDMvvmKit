@@ -185,11 +185,11 @@
 
 #pragma mark - LPDViewToastProtocol
 
-+ (void)showSuccess:(NSString *_Nullable)status {
+- (void)showSuccess:(NSString *_Nullable)status {
   [LPDToastView show:status];
 }
 
-+ (void)showError:(NSString *_Nullable)status {
+- (void)showError:(NSString *_Nullable)status {
   [LPDToastView show:status];
 }
 

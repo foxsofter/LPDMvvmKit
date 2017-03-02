@@ -252,17 +252,20 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - subscribe toast signal
 
 - (void)subscribeSuccessSubject {
+  @weakify(self);
   [[[[self.viewModel.successSubject takeUntil:[self rac_willDeallocSignal]] deliverOnMainThread]
     map:^id(NSString *message) {
       return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
     }] subscribeNext:^(NSString *status) {
-    if ([self respondsToSelector:@selector(showSuccess:)]) {
-      [self showSuccess:status];
-    }
+      @strongify(self);
+      if ([self respondsToSelector:@selector(showSuccess:)]) {
+        [self showSuccess:status];
+      }
   }];
 }
 
 - (void)subscribeErrorSubject {
+  @weakify(self);
   [[[[[self.viewModel.errorSubject takeUntil:[self rac_willDeallocSignal]]
     deliverOnMainThread] map:^id(NSString *message) {
     NSLog(@"subscribeErrorSubject pre:%@", message);
@@ -280,6 +283,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     return message;
   }] subscribeNext:^(NSString *message) {
+    @strongify(self);
     if (message && message.length > 0) {
       NSLog(@"subscribeErrorSubject post:%@", message);
       if ([self respondsToSelector:@selector(showError:)]) {

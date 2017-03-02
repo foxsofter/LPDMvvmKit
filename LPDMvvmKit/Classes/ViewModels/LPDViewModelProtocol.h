@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief navigation view model
  */
-@property (nullable, nonatomic, strong) __kindof id<LPDNavigationViewModelProtocol> navigation;
+@property (nullable, nonatomic, weak) __kindof id<LPDNavigationViewModelProtocol> navigation;
 
 @end
 

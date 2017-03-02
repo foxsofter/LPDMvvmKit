@@ -2,7 +2,9 @@ use_frameworks!
 
 target 'LPDMvvmKit_Example' do
   pod 'LPDMvvmKit', :path => '../'
-  
+  pod 'FBAllocationTracker'
+  pod 'FBMemoryProfiler'
+
   target 'LPDMvvmKit_Tests' do
     inherit! :search_paths
 

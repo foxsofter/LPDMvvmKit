@@ -106,7 +106,7 @@
   pushViewModelButton.frame = CGRectMake(0, y += 45, 250, 35);
   pushViewModelButton.centerX = center.x;
   [scrollView addSubview:pushViewModelButton];
-  pushViewModelButton.rac_command = [[self viewModel] pushViewModelCommand];
+  [pushViewModelButton addTarget:self.viewModel action:@selector(pushViewModel) forControlEvents:UIControlEventTouchUpInside];
 
   UIButton *popViewModelButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [popViewModelButton setTitle:@"popViewModel" forState:UIControlStateNormal];
@@ -115,7 +115,7 @@
   popViewModelButton.frame = CGRectMake(0, y += 45, 250, 35);
   popViewModelButton.centerX = center.x;
   [scrollView addSubview:popViewModelButton];
-  popViewModelButton.rac_command = [[self viewModel] popViewModelCommand];
+  [popViewModelButton addTarget:self.viewModel action:@selector(popViewModel) forControlEvents:UIControlEventTouchUpInside];
 
   UIButton *popToRootViewModelButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [popToRootViewModelButton setTitle:@"popToRootViewModel" forState:UIControlStateNormal];
@@ -124,7 +124,7 @@
   popToRootViewModelButton.frame = CGRectMake(0, y += 45, 250, 35);
   popToRootViewModelButton.centerX = center.x;
   [scrollView addSubview:popToRootViewModelButton];
-  popToRootViewModelButton.rac_command = [[self viewModel] popToRootViewModelCommand];
+  [popToRootViewModelButton addTarget:self.viewModel action:@selector(popToRootViewModel) forControlEvents:UIControlEventTouchUpInside];
 
   UIButton *presentViewModelButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [presentViewModelButton setTitle:@"presentViewModel" forState:UIControlStateNormal];
@@ -133,7 +133,7 @@
   presentViewModelButton.frame = CGRectMake(0, y += 45, 250, 35);
   presentViewModelButton.centerX = center.x;
   [scrollView addSubview:presentViewModelButton];
-  presentViewModelButton.rac_command = [[self viewModel] presentViewModelCommand];
+  [presentViewModelButton addTarget:self.viewModel action:@selector(presentViewModel) forControlEvents:UIControlEventTouchUpInside];
 
   UIButton *dismissViewModelButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [dismissViewModelButton setTitle:@"dismissViewModel" forState:UIControlStateNormal];
@@ -142,7 +142,7 @@
   dismissViewModelButton.frame = CGRectMake(0, y += 45, 250, 35);
   dismissViewModelButton.centerX = center.x;
   [scrollView addSubview:dismissViewModelButton];
-  dismissViewModelButton.rac_command = [[self viewModel] dismissViewModelCommand];
+  [dismissViewModelButton addTarget:self.viewModel action:@selector(dismissViewModel) forControlEvents:UIControlEventTouchUpInside];
   
   scrollView.contentSize= CGSizeMake(UIScreen.width, y + 45);
   scrollView.userInteractionEnabled = YES;
@@ -168,8 +168,7 @@
 }
 
 - (void)popToRootViewController:(UIButton *)sender {
-  UINavigationController *navigation = self.navigationController;
-  [navigation popToRootViewControllerAnimated:YES];
+  [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
@@ -188,6 +187,10 @@
                                           completion:^{
 
                                           }];
+}
+
+- (void)dealloc {
+
 }
 
 @end

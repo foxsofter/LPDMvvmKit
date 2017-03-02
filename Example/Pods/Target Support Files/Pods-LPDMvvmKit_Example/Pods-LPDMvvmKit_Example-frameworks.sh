@@ -90,6 +90,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBAllocationTracker/FBAllocationTracker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBMemoryProfiler/FBMemoryProfiler.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBRetainCycleDetector/FBRetainCycleDetector.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"
@@ -104,6 +107,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBAllocationTracker/FBAllocationTracker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBMemoryProfiler/FBMemoryProfiler.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FBRetainCycleDetector/FBRetainCycleDetector.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"

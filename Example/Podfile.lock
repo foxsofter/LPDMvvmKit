@@ -14,6 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FBAllocationTracker (0.1.5)
+  - FBMemoryProfiler (0.1.3):
+    - FBAllocationTracker (~> 0.1)
+    - FBRetainCycleDetector (~> 0.1)
+  - FBRetainCycleDetector (0.1.3)
   - LPDAdditionsKit (0.1.2)
   - LPDCollectionViewKit (0.1.4):
     - ReactiveObjC
@@ -21,7 +26,7 @@ PODS:
     - LPDAdditionsKit
     - Masonry
     - SDVersion
-  - LPDMvvmKit (0.7.6):
+  - LPDMvvmKit (0.8.2):
     - LPDAdditionsKit
     - LPDCollectionViewKit
     - LPDControlsKit
@@ -42,6 +47,8 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - FBAllocationTracker
+  - FBMemoryProfiler
   - LPDMvvmKit (from `../`)
 
 EXTERNAL SOURCES:
@@ -50,10 +57,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
+  FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
+  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
   LPDCollectionViewKit: e028d170a004201418442f477e991666613c5da7
   LPDControlsKit: be6f2b6c14054a6e8e8ad80fbd990710e0a85876
-  LPDMvvmKit: 8a9ef93806077d5b155c806c1d4149f335edcbc4
+  LPDMvvmKit: 825da6136e1b664b7c52c7fdbd9e5b843901a715
   LPDNetworkingKit: fdf98eb195924666be2ac5a60a7d83e832ecb23f
   LPDTableViewKit: 3a8a179125efe317e757d626ee0727c93c30b107
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -62,6 +72,6 @@ SPEC CHECKSUMS:
   SDVersion: 43383b6ac05462c973c3fd92d9748c74e360aba5
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 3b480ebd1169d509227657f6e017ec4b3d7dc628
+PODFILE CHECKSUM: eb2d0c623dcd2f2f3834fb9388f33e59b4fe4c99
 
 COCOAPODS: 1.2.0

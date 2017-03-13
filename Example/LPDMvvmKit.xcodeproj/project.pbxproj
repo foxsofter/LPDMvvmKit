@@ -18,6 +18,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		8B51C2359444BCD0FA3DF9B2 /* Pods_LPDMvvmKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFC833C95EB3A2DA9E71547 /* Pods_LPDMvvmKit_Example.framework */; };
+		8E0D967B1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0D967A1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m */; };
 		8E1A779B1E4825AC0005159C /* LPDViewController+LPDExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A779A1E4825AC0005159C /* LPDViewController+LPDExam.m */; };
 		8E1A779E1E48272D0005159C /* LPDScrollViewController+LPDExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A779D1E48272D0005159C /* LPDScrollViewController+LPDExam.m */; };
 		8E3F2EFF1DF157B8009E2496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F2ECB1DF157B8009E2496 /* LaunchScreen.storyboard */; };
@@ -54,6 +55,13 @@
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = LPDMvvmKit;
 		};
+		8E0D967D1E6D6C4100300C02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = LPDMvvmKit_Example;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,9 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		66120129850928AA3192EE58 /* Pods-LPDMvvmKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDMvvmKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPDMvvmKit_Example/Pods-LPDMvvmKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		838E5FB0FAB1171F32DA7AB8 /* Pods-LPDMvvmKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDMvvmKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E0D96781E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPDMvvmKit_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E0D967A1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDMvvmKit_ExampleUITests.m; sourceTree = "<group>"; };
+		8E0D967C1E6D6C4100300C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1A77991E4825AC0005159C /* LPDViewController+LPDExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPDViewController+LPDExam.h"; sourceTree = "<group>"; };
 		8E1A779A1E4825AC0005159C /* LPDViewController+LPDExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPDViewController+LPDExam.m"; sourceTree = "<group>"; };
 		8E1A779C1E48272D0005159C /* LPDScrollViewController+LPDExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPDScrollViewController+LPDExam.h"; sourceTree = "<group>"; };
@@ -154,6 +165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E0D96751E6D6C4100300C02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -174,6 +192,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example */,
 				6003F5B5195388D20070C39A /* Tests */,
+				8E0D96791E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				1C2A57C50F9CED3BF447B12A /* Pods */,
@@ -185,6 +204,7 @@
 			children = (
 				6003F58A195388D20070C39A /* LPDMvvmKit_Example.app */,
 				6003F5AE195388D20070C39A /* LPDMvvmKit_Tests.xctest */,
+				8E0D96781E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,6 +281,15 @@
 				A18EE99E9E63348E567F5B3C /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		8E0D96791E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E0D967A1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m */,
+				8E0D967C1E6D6C4100300C02 /* Info.plist */,
+			);
+			path = LPDMvvmKit_ExampleUITests;
 			sourceTree = "<group>";
 		};
 		8E3F2ECA1DF157B8009E2496 /* Base.lproj */ = {
@@ -400,6 +429,24 @@
 			productReference = 6003F5AE195388D20070C39A /* LPDMvvmKit_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8E0D96771E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E0D96811E6D6C4100300C02 /* Build configuration list for PBXNativeTarget "LPDMvvmKit_ExampleUITests" */;
+			buildPhases = (
+				8E0D96741E6D6C4100300C02 /* Sources */,
+				8E0D96751E6D6C4100300C02 /* Frameworks */,
+				8E0D96761E6D6C4100300C02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E0D967E1E6D6C4100300C02 /* PBXTargetDependency */,
+			);
+			name = LPDMvvmKit_ExampleUITests;
+			productName = LPDMvvmKit_ExampleUITests;
+			productReference = 8E0D96781E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -414,6 +461,12 @@
 						DevelopmentTeam = K5992V3NHR;
 					};
 					6003F5AD195388D20070C39A = {
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+					8E0D96771E6D6C4100300C02 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K5992V3NHR;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -433,6 +486,7 @@
 			targets = (
 				6003F589195388D20070C39A /* LPDMvvmKit_Example */,
 				6003F5AD195388D20070C39A /* LPDMvvmKit_Tests */,
+				8E0D96771E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -452,6 +506,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E0D96761E6D6C4100300C02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +652,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E0D96741E6D6C4100300C02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0D967B1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -598,6 +667,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* LPDMvvmKit_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		8E0D967E1E6D6C4100300C02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* LPDMvvmKit_Example */;
+			targetProxy = 8E0D967D1E6D6C4100300C02 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -782,6 +856,41 @@
 			};
 			name = Release;
 		};
+		8E0D967F1E6D6C4100300C02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K5992V3NHR;
+				INFOPLIST_FILE = LPDMvvmKit_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "lpd.LPDMvvmKit-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LPDMvvmKit_Example;
+			};
+			name = Debug;
+		};
+		8E0D96801E6D6C4100300C02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K5992V3NHR;
+				INFOPLIST_FILE = LPDMvvmKit_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "lpd.LPDMvvmKit-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LPDMvvmKit_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -811,6 +920,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8E0D96811E6D6C4100300C02 /* Build configuration list for PBXNativeTarget "LPDMvvmKit_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E0D967F1E6D6C4100300C02 /* Debug */,
+				8E0D96801E6D6C4100300C02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

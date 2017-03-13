@@ -38,6 +38,16 @@
                ReferencedContainer = "container:LPDMvvmKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E0D96771E6D6C4100300C02"
+               BuildableName = "LPDMvvmKit_ExampleUITests.xctest"
+               BlueprintName = "LPDMvvmKit_ExampleUITests"
+               ReferencedContainer = "container:LPDMvvmKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -72,6 +82,11 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "RAC_DEBUG_SIGNAL_NAMES"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
          <EnvironmentVariable
             key = "CG_CONTEXT_SHOW_BACKTRACE"
             value = "YES"

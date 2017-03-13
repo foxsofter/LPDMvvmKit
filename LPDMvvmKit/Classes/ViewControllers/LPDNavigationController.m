@@ -77,8 +77,6 @@ NS_ASSUME_NONNULL_BEGIN
   if (self) {
     self.viewModel = viewModel;
 
-    LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:viewModel.topViewModel];
-    [self setViewControllers:@[ rootViewController ] animated:NO];
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
       @strongify(self);
@@ -88,6 +86,9 @@ NS_ASSUME_NONNULL_BEGIN
       [self subscribePopToRootSignals];
       [self subscribePresentSignals];
       [self subscribeDismissSignals];
+      
+      LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:self.viewModel.topViewModel];
+      [self setViewControllers:@[ rootViewController ] animated:NO];
     }];
   }
   return self;

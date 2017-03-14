@@ -192,7 +192,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example */,
 				6003F5B5195388D20070C39A /* Tests */,
-				8E0D96791E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */,
+				8E0D96791E6D6C4100300C02 /* ExampleUITests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				1C2A57C50F9CED3BF447B12A /* Pods */,
@@ -283,12 +283,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8E0D96791E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests */ = {
+		8E0D96791E6D6C4100300C02 /* ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
 				8E0D967A1E6D6C4100300C02 /* LPDMvvmKit_ExampleUITests.m */,
 				8E0D967C1E6D6C4100300C02 /* Info.plist */,
 			);
+			name = ExampleUITests;
 			path = LPDMvvmKit_ExampleUITests;
 			sourceTree = "<group>";
 		};
@@ -928,6 +929,7 @@
 				8E0D96801E6D6C4100300C02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

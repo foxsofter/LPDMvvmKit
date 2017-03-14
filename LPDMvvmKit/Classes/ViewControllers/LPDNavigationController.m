@@ -86,10 +86,9 @@ NS_ASSUME_NONNULL_BEGIN
       [self subscribePopToRootSignals];
       [self subscribePresentSignals];
       [self subscribeDismissSignals];
-      
-      LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:self.viewModel.topViewModel];
-      [self setViewControllers:@[ rootViewController ] animated:NO];
     }];
+    LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:self.viewModel.topViewModel];
+    [self setViewControllers:@[ rootViewController ] animated:NO];
   }
   return self;
 }

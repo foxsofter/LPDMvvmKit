@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)popViewModelAnimated:(BOOL)animated;
 
+- (void)popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel animated:(BOOL)animated;
+
 - (void)popToRootViewModelAnimated:(BOOL)animated;
 
 - (void)presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel

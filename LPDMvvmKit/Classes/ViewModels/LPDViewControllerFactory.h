@@ -33,6 +33,6 @@
  *
  *  @return ViewController
  */
-+ (UIViewController *)viewControllerForViewModel:(id<LPDViewModelProtocol>)viewModel;
++ (UIViewController *)viewControllerForViewModel:(id)viewModel;
 
 @end

@@ -37,8 +37,8 @@ static NSMutableDictionary *dictionaryOfMappings;
   [dictionaryOfMappings setObject:viewControllerClass forKey:viewModelClass];
 }
 
-+ (UIViewController *)viewControllerForViewModel:(id<LPDViewModelProtocol>)viewModel {
-  NSString *viewModelName = NSStringFromClass(((NSObject *)viewModel).class);
++ (UIViewController *)viewControllerForViewModel:(id)viewModel {
+  NSString *viewModelName = NSStringFromClass([viewModel class]);
   NSString *viewControllerName = [dictionaryOfMappings valueForKey:viewModelName];
 
   if (!viewControllerName) {
@@ -47,9 +47,8 @@ static NSMutableDictionary *dictionaryOfMappings;
                                                                      options:NSCaseInsensitiveSearch | NSBackwardsSearch
                                                                        range:NSMakeRange(viewModelName.length - 5, 5)];
   }
-  NSParameterAssert(viewControllerName);
-  NSParameterAssert([NSClassFromString(viewControllerName) instancesRespondToSelector:@selector(initWithViewModel:)]);
 
+  NSParameterAssert([NSClassFromString(viewControllerName) instancesRespondToSelector:@selector(initWithViewModel:)]);
   return [[NSClassFromString(viewControllerName) alloc] initWithViewModel:viewModel];
 }
 

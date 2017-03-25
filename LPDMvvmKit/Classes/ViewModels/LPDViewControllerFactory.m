@@ -47,9 +47,11 @@ static NSMutableDictionary *dictionaryOfMappings;
                                                                      options:NSCaseInsensitiveSearch | NSBackwardsSearch
                                                                        range:NSMakeRange(viewModelName.length - 5, 5)];
   }
-
-  NSParameterAssert([NSClassFromString(viewControllerName) instancesRespondToSelector:@selector(initWithViewModel:)]);
-  return [[NSClassFromString(viewControllerName) alloc] initWithViewModel:viewModel];
+  Class vccls = NSClassFromString(viewControllerName);
+  if ([vccls instancesRespondToSelector:@selector(initWithViewModel:)]) {
+    return [[vccls alloc] initWithViewModel:viewModel];
+  }
+  return nil;
 }
 
 @end

@@ -33,7 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
   self = [super initWithViewModel:viewModel];
   if (self) {
     NSParameterAssert([viewModel conformsToProtocol:@protocol(LPDScrollViewModelProtocol)]);
-
     [self subscribeNeedLoadingHeaderSignal];
     [self subscribeLoadingSignal];
     [self subscribeNeedLoadingFooterSignal];

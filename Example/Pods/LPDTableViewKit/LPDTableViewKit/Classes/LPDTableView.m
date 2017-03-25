@@ -7,6 +7,7 @@
 //
 
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <Objc/runtime.h>
 #import "LPDTableView.h"
 #import "LPDTableViewModel+Private.h"
 
@@ -158,6 +159,14 @@
       [self endUpdates];
     }
   }];
+}
+
+- (void)setDelegate:(id<UITableViewDelegate>)delegate {
+  [self.viewModel setScrollViewDelegate:delegate];
+}
+
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource {
+  // do nothing
 }
 
 @end

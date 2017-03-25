@@ -1,6 +1,0 @@
-framework module FBAllocationTracker {
-  umbrella header "FBAllocationTracker-umbrella.h"
-
-  export *
-  module * { export * }
-}

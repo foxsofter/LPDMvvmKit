@@ -18,19 +18,13 @@
 #import "LPDRootTabBarController.h"
 #import "LPDRootTabBarViewModel.h"
 #import <LPDMvvmKit/LPDMvvmKit.h>
-#import <FBMemoryProfiler/FBMemoryProfiler.h>
-#import "CacheCleanerPlugin.h"
-#import "RetainCycleLoggerPlugin.h"
 
 @interface LPDAppDelegate ()
 
 @end
 
-@implementation LPDAppDelegate {
-  FBMemoryProfiler *_memoryProfiler;
-}
-
-
+@implementation LPDAppDelegate
+  
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
   LPDHomeViewModel *homeVM = [[LPDHomeViewModel alloc] init];
@@ -54,10 +48,6 @@
   self.window.rootViewController = rootTabBarVC;
   [self.window makeKeyAndVisible];
   
-  _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
-                                                                [RetainCycleLoggerPlugin new]]
-                             retainCycleDetectorConfiguration:nil];
-  [_memoryProfiler enable];
 
   return YES;
 }

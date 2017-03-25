@@ -146,22 +146,26 @@
   starShapePath.miterLimit = 4;
 
   CGFloat frameWidth = frame.size.width;
+  
   CGRect rightRectOfStar = CGRectMake(frame.origin.x + progress * frameWidth, frame.origin.y,
                                       frameWidth - progress * frameWidth, frame.size.height);
-  UIBezierPath *clipPath = [UIBezierPath bezierPathWithRect:CGRectInfinite];
-  [clipPath appendPath:[UIBezierPath bezierPathWithRect:rightRectOfStar]];
-  clipPath.usesEvenOddFillRule = YES;
+  UIBezierPath *rightClipPath = [UIBezierPath bezierPathWithRect:CGRectInfinite];
+  [rightClipPath appendPath:[UIBezierPath bezierPathWithRect:rightRectOfStar]];
+  rightClipPath.usesEvenOddFillRule = YES;
 
-  CGContextSaveGState(UIGraphicsGetCurrentContext());
+  [_unselectedColor setFill];
+  [starShapePath fill];
+  
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextSaveGState(context);
   {
-    [clipPath addClip];
-    [tintColor setFill];
+    [rightClipPath addClip];
+    [_selectedColor setFill];
     [starShapePath fill];
   }
-  CGContextRestoreGState(UIGraphicsGetCurrentContext());
-
-  [tintColor setStroke];
+  CGContextRestoreGState(context);
   starShapePath.lineWidth = 1;
+  [_borderColor setStroke];
   [starShapePath stroke];
 }
 
@@ -212,7 +216,6 @@
     [self resignFirstResponder];
   }
   [self handleTouch:touch];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event {

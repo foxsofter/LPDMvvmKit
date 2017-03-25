@@ -70,10 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
   if (self) {
     self.viewModel = viewModel;
 
-    [self subscribeActiveSignal];
     [self subscribeDidLoadViewSignal];
-    [self subscribeDidUnloadViewSignal];
+    [self subscribeActiveSignal];
     [self subscribeDidLayoutSubviewsSignal];
+    [self subscribeDidUnloadViewSignal];
     [self subscribeSubmittingSignal];
     [self subscribeLoadingSignal];
     [self subscribeSuccessSubject];
@@ -142,7 +142,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)subscribeSubmittingSignal {
   @weakify(self);
-  [[RACObserve(self.viewModel, submitting) deliverOnMainThread] subscribeNext:^(NSNumber *submitting) {
+  [[[RACObserve(self.viewModel, submitting) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *submitting) {
     @strongify(self);
     if ([submitting boolValue]) {
       [self showSubmitting];
@@ -298,7 +298,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)subscribeNetworkStateSignal {
   @weakify(self);
-  [[RACObserve(self.viewModel, networkState) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
+  [[[RACObserve(self.viewModel, networkState) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
     @strongify(self);
     [self checkNetworkState];
   }];
@@ -333,7 +333,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)subscribeEmptySignal {
   @weakify(self);
-  [[RACObserve(self.viewModel, empty) deliverOnMainThread] subscribeNext:^(NSNumber *value) {
+  [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
     @strongify(self);
     BOOL empty = [value integerValue];
     [self showEmpty:empty withDescription:nil];

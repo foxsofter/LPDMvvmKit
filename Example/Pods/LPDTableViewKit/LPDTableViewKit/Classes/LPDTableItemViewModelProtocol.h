@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDTableViewModelProtocol;
 
-@protocol LPDTableItemViewModelProtocol
+@protocol LPDTableItemViewModelProtocol<NSObject>
 
 @required
 

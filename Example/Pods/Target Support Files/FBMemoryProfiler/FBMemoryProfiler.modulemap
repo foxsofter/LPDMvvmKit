@@ -1,6 +1,0 @@
-framework module FBMemoryProfiler {
-  umbrella header "FBMemoryProfiler-umbrella.h"
-
-  export *
-  module * { export * }
-}

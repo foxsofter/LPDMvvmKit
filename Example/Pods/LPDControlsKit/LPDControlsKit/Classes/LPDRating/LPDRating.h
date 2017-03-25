@@ -24,4 +24,8 @@ typedef NS_ENUM(NSUInteger, LPDRatingStarStyle) {
 @property (nonatomic) CGFloat spacing;
 @property (nonatomic) LPDRatingStarStyle starStyle;
 
+@property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, strong) UIColor *unselectedColor;
+@property (nonatomic, strong) UIColor *borderColor;
+
 @end

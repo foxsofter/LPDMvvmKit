@@ -88,7 +88,9 @@ NS_ASSUME_NONNULL_BEGIN
       [self subscribeDismissSignals];
     }];
     LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:self.viewModel.topViewModel];
+    NSLog(@"table view set before");
     [self setViewControllers:@[ rootViewController ] animated:NO];
+    NSLog(@"table view set end");
   }
   return self;
 }

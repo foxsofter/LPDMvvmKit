@@ -170,12 +170,26 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 + (nullable Class)getResponseClass:(NSString *)endpoint {
-  id cls = [[self dictionaryOfEndpointClasses] objectForKey:endpoint];
+  NSDictionary *endpointClasses = [self dictionaryOfEndpointClasses];
+  __block id cls = [endpointClasses objectForKey:endpoint];
   if (cls) {
     return cls;
   }
 
-  return nil;
+  [endpointClasses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, Class obj, BOOL * _Nonnull stop) {
+    if ([key containsString:@"%@"]) {
+      NSString *endpointPattern = [key stringByReplacingOccurrencesOfString:@"%@" withString:@"*"];
+      NSError *error = nil;
+      NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:endpointPattern options:NSRegularExpressionCaseInsensitive error:&error];
+      NSRange matchRange = [regex rangeOfFirstMatchInString:endpoint options:NSMatchingReportProgress range:NSMakeRange(0, endpoint.length)];
+      if (matchRange.location != NSNotFound) {
+        cls = obj;
+        stop = YES;
+      }
+    }
+  }];
+  
+  return cls;
 }
 + (void)setResponseClass:(Class)responseClass forEndpoint:(NSString *)endpoint {
   [[self dictionaryOfEndpointClasses] setObject:responseClass forKey:endpoint];

@@ -112,4 +112,12 @@
   }];
 }
 
+- (void)setDelegate:(id<UICollectionViewDelegate>)delegate {
+  [self.viewModel setScrollViewDelegate:delegate];
+}
+
+- (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {
+  // do nothing
+}
+
 @end

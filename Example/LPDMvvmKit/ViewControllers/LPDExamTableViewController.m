@@ -26,6 +26,7 @@
 
 - (instancetype)initWithViewModel:(id<LPDViewModelProtocol>)viewModel {
   self = [super initWithViewModel:viewModel];
+  NSLog(@"table view initWithViewModel");
   if (self) {
     LPDExamTableViewModel *selfViewModel = (LPDExamTableViewModel*)viewModel;
     if (selfViewModel.tabBarItemImage) {
@@ -34,6 +35,7 @@
                                     image:[UIImage imageNamed:selfViewModel.tabBarItemImage] tag:0];
     }
   }
+  NSLog(@"table view initWithViewModel end");
   return self;
 }
 
@@ -79,14 +81,16 @@
 
   UIBarButtonItem *removeCellsBarButtonItem =
   [[UIBarButtonItem alloc] initWithTitle:@"批量删除" style:UIBarButtonItemStylePlain target:selfViewModel action:@selector(removeCells)];
-
-  self.navigationController.toolbarHidden = NO;
+  
   [self setToolbarItems:@[
     insertCellBarButtonItem,
     insertCellsBarButtonItem,
     removeCellBarButtonItem,
     removeCellsBarButtonItem,
   ] animated:YES];
+  
+  self.navigationController.toolbarHidden = NO;
+  NSLog(@"table view viewDidLoad");
 }
 
 

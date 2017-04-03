@@ -17,10 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
 
-+ (instancetype) new NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
-- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
-
 /**
  *  @brief 禁用无关函数
  */

@@ -48,44 +48,34 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - life cycle
 
-- (void)loadView {
-  NSBundle *bundle = [NSBundle bundleForClass:self.class];
-  NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
-  if (xibPath && xibPath.length > 0) {
-    NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    if (views && views.count > 0) {
-      self.view = views.lastObject;
-      self.view.frame = UIScreen.bounds;
-    } else {
-      xibPath = nil;
-    }
-  }
-  if (!xibPath) {
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-  }
-}
-
 - (instancetype)initWithViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  self = [super init];
-  if (self) {
-    self.viewModel = viewModel;
-
-    [self subscribeDidLoadViewSignal];
-    [self subscribeActiveSignal];
-    [self subscribeDidLayoutSubviewsSignal];
-    [self subscribeDidUnloadViewSignal];
-    [self subscribeSubmittingSignal];
-    [self subscribeLoadingSignal];
-    [self subscribeSuccessSubject];
-    [self subscribeErrorSubject];
-    [self subscribeEmptySignal];
-    [self subscribeNetworkStateSignal];
-    [self subscribeAddChildViewModelSignal];
-    [self subscribeRemoveFromParentViewModelSignal];
-
-    RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
+  
+  NSString *classBundlePath = [[NSBundle bundleForClass:self.class] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (classBundlePath.length) {
+	 self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
+  } else {
+	 self = [super init];
   }
+  
+  if (self) {
+	 self.viewModel = viewModel;
+	 
+	 [self subscribeActiveSignal];
+	 [self subscribeDidLoadViewSignal];
+	 [self subscribeDidUnloadViewSignal];
+	 [self subscribeDidLayoutSubviewsSignal];
+	 [self subscribeSubmittingSignal];
+	 [self subscribeLoadingSignal];
+	 [self subscribeSuccessSubject];
+	 [self subscribeErrorSubject];
+	 [self subscribeEmptySignal];
+	 [self subscribeNetworkStateSignal];
+	 [self subscribeAddChildViewModelSignal];
+	 [self subscribeRemoveFromParentViewModelSignal];
+	 
+	 RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
+  }
+  
   return self;
 }
 
@@ -93,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
   [super viewDidLoad];
   self.edgesForExtendedLayout = UIRectEdgeNone;
   self.automaticallyAdjustsScrollViewInsets = NO;
-
+  
   [self loadChildViewControllers];
 }
 
@@ -102,13 +92,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeActiveSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
-    @strongify(self);
-    self.viewModel.active = YES;
+	 @strongify(self);
+	 self.viewModel.active = YES;
   }];
-
+  
   [[self rac_signalForSelector:@selector(viewWillDisappear:)] subscribeNext:^(id x) {
-    @strongify(self);
-    self.viewModel.active = NO;
+	 @strongify(self);
+	 self.viewModel.active = NO;
   }];
 }
 
@@ -117,16 +107,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeDidLoadViewSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
-    @strongify(self);
-    self.viewModel.didLoadView = YES;
+	 @strongify(self);
+	 self.viewModel.didLoadView = YES;
   }];
 }
 
 - (void)subscribeDidUnloadViewSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewDidUnload)] subscribeNext:^(id x) {
-    @strongify(self);
-    self.viewModel.didLoadView = NO;
+	 @strongify(self);
+	 self.viewModel.didLoadView = NO;
   }];
 }
 #pragma mark - subscribe didLayoutSubviews signal
@@ -134,8 +124,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeDidLayoutSubviewsSignal {
   @weakify(self);
   [[self rac_signalForSelector:@selector(viewDidLayoutSubviews)] subscribeNext:^(id x) {
-    @strongify(self);
-    self.viewModel.didLayoutSubviews = YES;
+	 @strongify(self);
+	 self.viewModel.didLayoutSubviews = YES;
   }];
 }
 
@@ -144,53 +134,53 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeSubmittingSignal {
   @weakify(self);
   [[[RACObserve(self.viewModel, submitting) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *submitting) {
-    @strongify(self);
-    if ([submitting boolValue]) {
-      [self showSubmitting];
-    } else {
-      [self hideSubmitting];
-    }
+	 @strongify(self);
+	 if ([submitting boolValue]) {
+		[self showSubmitting];
+	 } else {
+		[self hideSubmitting];
+	 }
   }];
 }
 
 - (void)showSubmitting {
   if (!_submittingOverlay) {
-    _submittingOverlay = [[UIView alloc] initWithFrame:UIScreen.bounds];
-    _submittingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
-    UIView *contentView = nil;
-    if ([self respondsToSelector:@selector(customSubmittingView)]) {
-      contentView = [self customSubmittingView];
-    } else {
-      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-      contentView.layer.cornerRadius = 10;
-      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-      
-      UIActivityIndicatorView *indicatorView =
-      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
-      indicatorView.tintColor = [UIColor whiteColor];
-      [contentView addSubview:indicatorView];
-      indicatorView.center = CGPointMake(50, 50);
-      // 添加自启动的动画
-      @weakify(indicatorView);
-      [[RACSignal merge:@[
-                          [indicatorView rac_signalForSelector:@selector(didMoveToWindow)],
-                          [indicatorView rac_signalForSelector:@selector(didMoveToSuperview)]
-                          ]] subscribeNext:^(id x) {
-        @strongify(indicatorView);
-        [indicatorView startAnimating];
-      }];
-    }
-    [_submittingOverlay addSubview:contentView];
-    contentView.center = _submittingOverlay.center;
+	 _submittingOverlay = [[UIView alloc] initWithFrame:UIScreen.bounds];
+	 _submittingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+	 UIView *contentView = nil;
+	 if ([self respondsToSelector:@selector(customSubmittingView)]) {
+		contentView = [self customSubmittingView];
+	 } else {
+		contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+		contentView.layer.cornerRadius = 10;
+		contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+		
+		UIActivityIndicatorView *indicatorView =
+		[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+		indicatorView.tintColor = [UIColor whiteColor];
+		[contentView addSubview:indicatorView];
+		indicatorView.center = CGPointMake(50, 50);
+		// 添加自启动的动画
+		@weakify(indicatorView);
+		[[RACSignal merge:@[
+								  [indicatorView rac_signalForSelector:@selector(didMoveToWindow)],
+								  [indicatorView rac_signalForSelector:@selector(didMoveToSuperview)]
+								  ]] subscribeNext:^(id x) {
+		  @strongify(indicatorView);
+		  [indicatorView startAnimating];
+		}];
+	 }
+	 [_submittingOverlay addSubview:contentView];
+	 contentView.center = _submittingOverlay.center;
   }
   if (!_submittingOverlay.superview) {
-    [[UIApplication sharedApplication].keyWindow addSubview:_submittingOverlay];
+	 [[UIApplication sharedApplication].keyWindow addSubview:_submittingOverlay];
   }
 }
 
 - (void)hideSubmitting {
   if (!_submittingOverlay || !_submittingOverlay.superview) {
-    return;
+	 return;
   }
   [_submittingOverlay removeFromSuperview];
 }
@@ -200,52 +190,52 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeLoadingSignal {
   @weakify(self);
   [[RACObserve(self.viewModel, loading) skip:1] subscribeNext:^(id x) {
-    @strongify(self);
-      if ([x boolValue]) {
-        [self showLoading];
-      } else {
-        [self hideLoading];
-      }
+	 @strongify(self);
+	 if ([x boolValue]) {
+		[self showLoading];
+	 } else {
+		[self hideLoading];
+	 }
   }];
 }
 
 - (void)showLoading {
   if (!_loadingOverlay) {
-    _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
-    _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
-    UIView *contentView = nil;
-    if ([self respondsToSelector:@selector(customLoadingView)]) {
-      contentView = [self customLoadingView];
-    } else {
-      contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-      contentView.layer.cornerRadius = 10;
-      contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-      
-      UIActivityIndicatorView *loadingView =
-      [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
-      loadingView.tintColor = [UIColor whiteColor];
-      [contentView addSubview:loadingView];
-      loadingView.center = CGPointMake(50, 50);
-      // 添加自启动的动画
-      @weakify(loadingView);
-      [[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
-                           [_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
-        takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
-        @strongify(loadingView);
-        [loadingView startAnimating];
-      }];
-    }
-    [_loadingOverlay addSubview:contentView];
-    contentView.center = _loadingOverlay.center;
+	 _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
+	 _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+	 UIView *contentView = nil;
+	 if ([self respondsToSelector:@selector(customLoadingView)]) {
+		contentView = [self customLoadingView];
+	 } else {
+		contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+		contentView.layer.cornerRadius = 10;
+		contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+		
+		UIActivityIndicatorView *loadingView =
+		[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+		loadingView.tintColor = [UIColor whiteColor];
+		[contentView addSubview:loadingView];
+		loadingView.center = CGPointMake(50, 50);
+		// 添加自启动的动画
+		@weakify(loadingView);
+		[[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
+									[_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
+		  takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
+		  @strongify(loadingView);
+		  [loadingView startAnimating];
+		}];
+	 }
+	 [_loadingOverlay addSubview:contentView];
+	 contentView.center = _loadingOverlay.center;
   }
   if (!_loadingOverlay.superview) {
-    [self.view addSubview:_loadingOverlay];
+	 [self.view addSubview:_loadingOverlay];
   }
 }
 
 - (void)hideLoading {
   if (!_loadingOverlay || !_loadingOverlay.superview) {
-    return;
+	 return;
   }
   [_loadingOverlay removeFromSuperview];
 }
@@ -255,42 +245,42 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeSuccessSubject {
   @weakify(self);
   [[[[self.viewModel.successSubject takeUntil:[self rac_willDeallocSignal]] deliverOnMainThread]
-    map:^id(NSString *message) {
-      return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
-    }] subscribeNext:^(NSString *status) {
-      @strongify(self);
-      if ([self respondsToSelector:@selector(showSuccess:)]) {
-        [self showSuccess:status];
-      }
+	 map:^id(NSString *message) {
+		return [message stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
+	 }] subscribeNext:^(NSString *status) {
+		@strongify(self);
+		if ([self respondsToSelector:@selector(showSuccess:)]) {
+		  [self showSuccess:status];
+		}
   }];
 }
 
 - (void)subscribeErrorSubject {
   @weakify(self);
   [[[[[self.viewModel.errorSubject takeUntil:[self rac_willDeallocSignal]]
-    deliverOnMainThread] map:^id(NSString *message) {
-    NSLog(@"subscribeErrorSubject pre:%@", message);
-    
-    if ([message containsString:@"未能读取数据"]) {
-      message = @"程序员GG正在抢修...";
-    }
-
-    return [[[message stringByReplacingOccurrencesOfString:@"Request failed: internal server error"
-                                                withString:@"系统异常"] stringByRemovingWithPattern:@"\\([^)]*\\)"]
-      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
+		deliverOnMainThread] map:^id(NSString *message) {
+	 NSLog(@"subscribeErrorSubject pre:%@", message);
+	 
+	 if ([message containsString:@"未能读取数据"]) {
+		message = @"程序员GG正在抢修...";
+	 }
+	 
+	 return [[[message stringByReplacingOccurrencesOfString:@"Request failed: internal server error"
+																withString:@"系统异常"] stringByRemovingWithPattern:@"\\([^)]*\\)"]
+				stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"。. "]];
   }] map:^id(NSString *message) {
-    if ([message containsString:@"has no available provider"]) {
-      return @"系统异常";
-    }
-    return message;
+	 if ([message containsString:@"has no available provider"]) {
+		return @"系统异常";
+	 }
+	 return message;
   }] subscribeNext:^(NSString *message) {
-    @strongify(self);
-    if (message && message.length > 0) {
-      NSLog(@"subscribeErrorSubject post:%@", message);
-      if ([self respondsToSelector:@selector(showError:)]) {
-        [self showError:message];
-      }
-    }
+	 @strongify(self);
+	 if (message && message.length > 0) {
+		NSLog(@"subscribeErrorSubject post:%@", message);
+		if ([self respondsToSelector:@selector(showError:)]) {
+		  [self showError:message];
+		}
+	 }
   }];
 }
 
@@ -300,33 +290,33 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeNetworkStateSignal {
   @weakify(self);
   [[[RACObserve(self.viewModel, networkState) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
-    @strongify(self);
-    [self checkNetworkState];
+	 @strongify(self);
+	 [self checkNetworkState];
   }];
   
   [self.viewModel.didBecomeActiveSignal subscribeNext:^(id x) {
-    @strongify(self);
-    [self checkNetworkState];
+	 @strongify(self);
+	 [self checkNetworkState];
   }];
   
   [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil]
-   subscribeNext:^(id x) {
-     @strongify(self);
-     if (self.viewModel.isActive) {
-       [self checkNetworkState];
-     }
-   }];
+	subscribeNext:^(id x) {
+	  @strongify(self);
+	  if (self.viewModel.isActive) {
+		 [self checkNetworkState];
+	  }
+	}];
 }
 
 - (void)checkNetworkState {
   if (self.viewModel.networkState == LPDNetworkStateNormal) {
-    if ([self respondsToSelector:@selector(showNetworkNormal)]) {
-      [self showNetworkNormal];
-    }
+	 if ([self respondsToSelector:@selector(showNetworkNormal)]) {
+		[self showNetworkNormal];
+	 }
   } else {
-    if ([self respondsToSelector:@selector(showNetworkDisable)]) {
-      [self showNetworkDisable];
-    }
+	 if ([self respondsToSelector:@selector(showNetworkDisable)]) {
+		[self showNetworkDisable];
+	 }
   }
 }
 
@@ -335,31 +325,31 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeEmptySignal {
   @weakify(self);
   [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
-    @strongify(self);
-    BOOL empty = [value integerValue];
-    [self showEmpty:empty withDescription:nil];
+	 @strongify(self);
+	 BOOL empty = [value integerValue];
+	 [self showEmpty:empty withDescription:nil];
   }];
   [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
-                                         fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
-   subscribeNext:^(RACTuple *tuple) {
-     @strongify(self);
-     [self showEmpty:YES withDescription:tuple.first];
-   }];
+									  fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
+	subscribeNext:^(RACTuple *tuple) {
+	  @strongify(self);
+	  [self showEmpty:YES withDescription:tuple.first];
+	}];
 }
 
 - (void)showEmpty:(BOOL)empty withDescription:(nullable NSString *)description {
   UIView *rootView = self.view;
   if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
-    rootView = [self valueForKey:@"scrollView"];
+	 rootView = [self valueForKey:@"scrollView"];
   }
   if (empty) {
-    if ([self respondsToSelector:@selector(showEmptyViewWithDescription:)]) {
-      [self showEmptyViewWithDescription:description];
-    }
+	 if ([self respondsToSelector:@selector(showEmptyViewWithDescription:)]) {
+		[self showEmptyViewWithDescription:description];
+	 }
   } else {
-    if ([self respondsToSelector:@selector(hideEmptyView)]) {
-      [self hideEmptyView];
-    }
+	 if ([self respondsToSelector:@selector(hideEmptyView)]) {
+		[self hideEmptyView];
+	 }
   }
 }
 
@@ -368,30 +358,30 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeAddChildViewModelSignal {
   @weakify(self);
   [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
-    subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
-      @strongify(self);
-      id<LPDViewControllerProtocol> childViewController =
-        (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self addChildViewController:childViewController];
-    }];
+	subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
+	  @strongify(self);
+	  id<LPDViewControllerProtocol> childViewController =
+	  (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+	  [self addChildViewController:childViewController];
+	}];
 }
 
 - (void)subscribeRemoveFromParentViewModelSignal {
   @weakify(self);
   [[(NSObject *)self.viewModel rac_signalForSelector:@selector(removeFromParentViewModel)] subscribeNext:^(id x) {
-    @strongify(self);
-    [self removeFromParentViewController];
+	 @strongify(self);
+	 [self removeFromParentViewController];
   }];
 }
 
 - (void)loadChildViewControllers {
   NSArray<id<LPDViewModelProtocol>> *childViewModels = self.viewModel.childViewModels;
   if (childViewModels && childViewModels.count > 0) {
-    for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
-      id<LPDViewControllerProtocol> childViewController =
-        [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [self addChildViewController:childViewController];
-    }
+	 for (id<LPDViewModelProtocol> childViewModel in childViewModels) {
+		id<LPDViewControllerProtocol> childViewController =
+		[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+		[self addChildViewController:childViewController];
+	 }
   }
 }
 

@@ -49,9 +49,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - life cycle
 
 - (void)loadView {
-  NSString *xibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  NSBundle *bundle = [NSBundle bundleForClass:self.class];
+  NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
   if (xibPath && xibPath.length > 0) {
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
     if (views && views.count > 0) {
       self.view = views.lastObject;
       self.view.frame = UIScreen.bounds;

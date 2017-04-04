@@ -48,44 +48,34 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - life cycle
 
-- (void)loadView {
-  NSBundle *bundle = [NSBundle bundleForClass:self.class];
-  NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
-  if (xibPath && xibPath.length > 0) {
-    NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    if (views && views.count > 0) {
-      self.view = views.lastObject;
-      self.view.frame = UIScreen.bounds;
-    } else {
-      xibPath = nil;
-    }
-  }
-  if (!xibPath) {
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-  }
-}
-
 - (instancetype)initWithViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  self = [super init];
-  if (self) {
-    self.viewModel = viewModel;
-
-    [self subscribeDidLoadViewSignal];
-    [self subscribeActiveSignal];
-    [self subscribeDidLayoutSubviewsSignal];
-    [self subscribeDidUnloadViewSignal];
-    [self subscribeSubmittingSignal];
-    [self subscribeLoadingSignal];
-    [self subscribeSuccessSubject];
-    [self subscribeErrorSubject];
-    [self subscribeEmptySignal];
-    [self subscribeNetworkStateSignal];
-    [self subscribeAddChildViewModelSignal];
-    [self subscribeRemoveFromParentViewModelSignal];
-
-    RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
+  
+  NSString *classBundlePath = [[NSBundle bundleForClass:self.class] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (classBundlePath.length) {
+	 self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
+  } else {
+	 self = [super init];
   }
+  
+  if (self) {
+	 self.viewModel = viewModel;
+	 
+	 [self subscribeActiveSignal];
+	 [self subscribeDidLoadViewSignal];
+	 [self subscribeDidUnloadViewSignal];
+	 [self subscribeDidLayoutSubviewsSignal];
+	 [self subscribeSubmittingSignal];
+	 [self subscribeLoadingSignal];
+	 [self subscribeSuccessSubject];
+	 [self subscribeErrorSubject];
+	 [self subscribeEmptySignal];
+	 [self subscribeNetworkStateSignal];
+	 [self subscribeAddChildViewModelSignal];
+	 [self subscribeRemoveFromParentViewModelSignal];
+	 
+	 RACChannelTo(self, title) = RACChannelTo(self.viewModel, title);
+  }
+  
   return self;
 }
 

@@ -22,7 +22,7 @@ PODS:
     - LPDAdditionsKit
     - Masonry
     - SDVersion
-  - LPDMvvmKit (0.8.8):
+  - LPDMvvmKit (0.9.0):
     - LPDAdditionsKit
     - LPDCollectionViewKit
     - LPDControlsKit
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
   LPDCollectionViewKit: a3b501eae7617f9cf67f5a9b358e32b1f31219ae
   LPDControlsKit: 85d97bb3ac1f84aa8ff74f33f838493f16e0ba8f
-  LPDMvvmKit: 68f3923939ba0107771e5bc824721ad09c4a0a67
+  LPDMvvmKit: dabf72d4928e6af038f0bcc631f3260bb78ee41c
   LPDNetworkingKit: afdec5c9ed7f410e5b3b4de9252b6c5c8f25fe07
   LPDTableViewKit: e082367c33e2983ff7c0c74ae368a341912bd632
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -70,4 +70,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: dcf0e6a3f5af9bcd24ee53bcc210346796fff583
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

@@ -98,28 +98,30 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  if (_weakViewModels.count > 1) {
-    // 耗时过久，需要异步执行
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-      NSUInteger i = _weakViewModels.count - 1;
-      for (; i > 0; i--) {
-        id<LPDViewModelProtocol> vm = _weakViewModels[i];
-        if (vm == viewModel) {
-          break;
-        }
-      }
-      if (i > 0 && i < _weakViewModels.count - 1) {
-        [_weakViewModels removeObjectsInRange:NSMakeRange(i + 1, _weakViewModels.count - i - 1)];
-      }
-    });
-  }
+    if (_weakViewModels.count > 1) {
+        // 耗时过久，需要异步执行
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSUInteger i = _weakViewModels.count - 1;
+            for (; i > 0; i--) {
+                id<LPDViewModelProtocol> vm = _weakViewModels[i];
+                if (vm == viewModel) {
+                    break;
+                }
+            }
+            if (i > 0 && i < _weakViewModels.count - 1) {
+                [_weakViewModels removeObjectsInRange:NSMakeRange(i + 1, _weakViewModels.count - i - 1)];
+            }
+        });
+    }
 }
 
 - (void)_popToRootViewModel {
   if (_weakViewModels.count > 1) {
     // 耗时过久，需要异步执行
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-      [_weakViewModels removeObjectsInRange:NSMakeRange(1, _weakViewModels.count - 1)];
+      if (_weakViewModels.count > 1) {
+          [_weakViewModels removeObjectsInRange:NSMakeRange(1, _weakViewModels.count - 1)];
+      }
     });
   }
 }

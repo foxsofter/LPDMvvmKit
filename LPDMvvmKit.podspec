@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
-  s.version      = "0.9.2"
+  s.version      = "0.9.3"
   s.summary      = "mvvm"
 
   s.description  = <<-DESC

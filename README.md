@@ -1,6 +1,6 @@
 # LPDMvvmKit
 
-[![CI Status](https://travis-ci.org/LPD-iOS/lpd-mvvm-kit.svg?branch=master)](https://travis-ci.org/LPD-iOS/lpd-mvvm-kit)
+[![CI Status](https://travis-ci.org/LPD-iOS/LPDMvvmKit.svg?branch=master)](https://travis-ci.org/LPD-iOS/LPDMvvmKit)
 [![Version](https://img.shields.io/cocoapods/v/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 [![License](https://img.shields.io/cocoapods/l/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
@@ -15,7 +15,7 @@ Elegant MVVM framework in Objective-C.
 或执行以下命令：
 
 ```bash
-git clone git@github.com:LPD-iOS/lpd-mvvm-kit.git; cd lpd-mvvm-kit/Example; open 'LPDMvvmKit.xcworkspace'
+git clone git@github.com:LPD-iOS/LPDMvvmKit.git; cd LPDMvvmKit/Example; open 'LPDMvvmKit.xcworkspace'
 ```
 
 ## 环境
@@ -66,14 +66,14 @@ LPDMvvmKit 对各层的定义
 
 要让 ViewController 廋下来的，就需要将对应的业务逻辑移到 ViewModel 层，要做到并不难，Invoke function、Subscribe RACSignal、Bind RACCommand 就可以了，那么问题来了，如何在移到 ViewModel 层中的业务逻辑中进行页面跳转呢？
 
-目前的做法是对导航做了精简，重写导航相关的接口，所有需要Push，Pop，Present，Dismiss 操作的接口都封装到 Navigation 相关的两个 Protocol：[LPDNavigationControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) ，[LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h) 中，当需要 Present 或者 Push 一个 ViewController，必须要嵌套在 NavigationViewController 中，同样的 Present 或者 Push 一个 ViewModel 时，必须要嵌套在 NavigationViewModel中，这样并不会带来更多的复杂性，但是在需要用 Navigation 时，不需要做任何改动。
+目前的做法是对导航做了精简，重写导航相关的接口，所有需要Push，Pop，Present，Dismiss 操作的接口都封装到 Navigation 相关的两个 Protocol：[LPDNavigationControllerProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) ，[LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h) 中，当需要 Present 或者 Push 一个 ViewController，必须要嵌套在 NavigationViewController 中，同样的 Present 或者 Push 一个 ViewModel 时，必须要嵌套在 NavigationViewModel中，这样并不会带来更多的复杂性，但是在需要用 Navigation 时，不需要做任何改动。
 
 | |ViewModel 与 ViewController 解藕存在的问题|解决方案对应的 Protocol
 |---|---|---
-|1|导航同步问题| [LPDNavigationControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) [LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h)
-|2|子ViewController问题|[LPDViewControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDViewControllerProtocol.h), [LPDViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDViewModelProtocol.h)
-|3|表单提交进度条|[LPDViewModelReactProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDViewModelReactProtocol.h)
-|4|加载进度条、下拉刷新、上拉加载更多|[LPDScrollViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDScrollViewModelProtocol.h), [LPDScrollViewControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDScrollViewControllerProtocol.h)
+|1|导航同步问题| [LPDNavigationControllerProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) [LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h)
+|2|子ViewController问题|[LPDViewControllerProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDViewControllerProtocol.h), [LPDViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDViewModelProtocol.h)
+|3|表单提交进度条|[LPDViewModelReactProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDViewModelReactProtocol.h)
+|4|加载进度条、下拉刷新、上拉加载更多|[LPDScrollViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDScrollViewModelProtocol.h), [LPDScrollViewControllerProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDScrollViewControllerProtocol.h)
 |5|toast|[LPDToastView](https://github.com/LPD-iOS/lpd-controls-kit/tree/master/LPDControlsKit/Classes/LPDToastView/LPDToastView.h)
 |6|alert|[LPDAlertView](https://github.com/LPD-iOS/lpd-controls-kit/tree/master/LPDControlsKit/Classes/LPDAlertView/LPDAlertView.h)
 
@@ -217,7 +217,7 @@ self.needLoadingMore = YES;
 
 数据绑定的对象有两种，Property，Collection，这两者的变更能发出通知是数据绑定的必须条件，相对应的在 Objective-C 中 Property 的变更可以通过 KVO 实现，当然用 RAC 的方式更简单了，这里不再阐述。然而 Collection 的变更并没有很好的方式能发出相应的通知，可以扩展相对应的类（如 NSMutableArray，NSMutableDictionary 等集合类）来达到这类目的。些集合最终是做为 UITableView 或者 UICollectionView 的数据源存在，系统框架现在的 UITableView和UICollectionView 都是通过委托来实现，相关的代码实在繁琐（应该不会只有我一个人这么认为）。
 
-我很希望能彻底解决这两个问题，所以有了[LPDTableViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDTableViewModelProtocol.h)，[LPDCollectionViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDCollectionViewModelProtocol.h) 等一系列的代码，主要是为了解决 UITableView 和 UICollectionView 的 ViewModel 的数据绑定并简化相关的代码，实现所需的代码量还是比较多的，有兴趣还是看代码更为直观。
+我很希望能彻底解决这两个问题，所以有了[LPDTableViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDTableViewModelProtocol.h)，[LPDCollectionViewModelProtocol](https://github.com/LPD-iOS/LPDMvvmKit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDCollectionViewModelProtocol.h) 等一系列的代码，主要是为了解决 UITableView 和 UICollectionView 的 ViewModel 的数据绑定并简化相关的代码，实现所需的代码量还是比较多的，有兴趣还是看代码更为直观。
 
 主要是的设计思路是这样的：将增删接口都通过 Protocol 的方式封装，避免每次都是通过 Delegate 去实现，只需要调用对应的接口就好了，另外对一些常用的操作如 DidSelect 等都从 Delegate Method 改成 RACSignal，通过这些改变，让代码可以聚合起来，相关的代码逻辑不需要在多个零散的函数中去添加代码。
 

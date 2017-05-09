@@ -5,4 +5,5 @@ OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking/
 OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "FBRetainCycleDetector" -framework "LPDAdditionsKit" -framework "LPDCollectionViewKit" -framework "LPDControlsKit" -framework "LPDMvvmKit" -framework "LPDNetworkingKit" -framework "LPDTableViewKit" -framework "MJRefresh" -framework "MLeaksFinder" -framework "Masonry" -framework "ReactiveObjC" -framework "SDVersion" -framework "YYModel"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods

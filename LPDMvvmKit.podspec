@@ -9,18 +9,13 @@
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
   s.version      = "0.9.3"
-  s.summary      = "mvvm"
+  s.summary      = "Elegant MVVM framework in Objective-C. "
 
   s.description  = <<-DESC
-  a framework of mvvm.
+  LPDMvvmKit - Elegant MVVM framework in Objective-C.
+                   DESC
 
-  * Think: Why did you write this? What is the focus? What does it do?
-  * CocoaPods will be using this to generate tags, and improve search results.
-  * Try to keep it short, snappy and to the point.
-  * Finally, don't worry about the indent, CocoaPods strips it!
-  DESC
-
-  s.homepage     = "https://github.com/LPD-iOS/lpd-mvvm-kit"
+  s.homepage     = "https://github.com/LPD-iOS/LPDMvvmKit"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author       = { "foxsofter" => "foxsofter@gmail.com" }
@@ -28,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.source = { :git => "https://github.com/LPD-iOS/lpd-mvvm-kit.git", :tag => s.version.to_s, :submodules => true }
+  s.source = { :git => "https://github.com/LPD-iOS/LPDMvvmKit.git", :tag => s.version.to_s }
 
   s.requires_arc = true
 

@@ -40,10 +40,10 @@
 		0D100B1F29E6EFCC58C7DDE3931238BA /* RACErrorSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3931E54EED6EE4F390CF53F7E587ECEE /* RACErrorSignal.m */; };
 		0D1FFD30267C0776FD3E88EFF51E312F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CA569A2C9B58D7C57B97D792124A2356 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DC1A8727F6A00A85AAE2E9B4DB9E5BC /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7F0DB8D28A4456E9504ECFB1D5C969 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E57AF333D50CEAAE6D92A241A47325D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC18F223AEF4479C13664CE6FA8E4C0 /* UIKit.framework */; };
 		0EB77F61CB002AE1AEE6FEA85694040C /* LPDCollectionViewKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70839FFA73969D30CAD2CEC313FAAA8 /* LPDCollectionViewKit.framework */; };
 		0EC33A6C1E658773C18CA456CCB818DA /* YYModel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47483A7BE5C247D191CC7F29F08AD525 /* YYModel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F1E47CA91A338FB55D73B3DDBA1B72E /* UIButton+RACCommandSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = B25F0C821D8707A4BF474B2B5248B14C /* UIButton+RACCommandSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F3FA436AE2EC855F4BDE8405879621B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A960D6645D3A0A30F9A34668C721D /* UIKit.framework */; };
 		0F4FE6B58ED816C0BAD3BDCC2CC4F2E2 /* UIRefreshControl+RACCommandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E121A50E19E0F15FEB75EF3DA6DA9 /* UIRefreshControl+RACCommandSupport.m */; };
 		103E32924235F50DAD06E3BF31906F58 /* RACEmptySequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E7802EF9B0A8AD37F95FB1B1368E8217 /* RACEmptySequence.m */; };
 		10BA86869B6F2405F7D0692D07752D63 /* FBRetainCycleDetector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D245E3B82D5D6E74A428FF407530A523 /* FBRetainCycleDetector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +59,8 @@
 		140F458AB7312414FC423FEED70A3733 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0664AD6EC4FED7E82C31B822E51710 /* UIActivityIndicatorView+AFNetworking.m */; };
 		14134B0110BCCDB0F4CF517FC6839FF6 /* NSObject+RACDeallocating.h in Headers */ = {isa = PBXBuildFile; fileRef = A4C3BD36388BBA8A9B950D614D16DC46 /* NSObject+RACDeallocating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1441916A882DE5E6329D8DD6C6312150 /* LPDCollectionViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 525AF12C0FCCC92F5F287C391606F2A5 /* LPDCollectionViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1550A7D7995F477A80A9FCC02A71C5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
+		158D0B72253B4F9B0C59B6BD0FDFBE90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F105E3623679D3386709EC6047BB00 /* CoreGraphics.framework */; };
 		15941AE0688E30AC0971574655AE9B08 /* RACEmptySignal.h in Headers */ = {isa = PBXBuildFile; fileRef = A8A3725ACE186BDFEF12673248D65B0B /* RACEmptySignal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		15E017610916704B84460EC1DACF4AF9 /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD9070F75C048407149F3DE282E7B13 /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		163CD15DFF4B009FF62A42F3B09FFD82 /* NSObject+RACDeallocating.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5595423BB36461DA555F720BA649E2 /* NSObject+RACDeallocating.m */; };
@@ -96,11 +98,10 @@
 		211C442DEEAD19CB8B6CE45403A8F777 /* NSObject+LPDAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EB0A964A5B485FE952C84B1EAFFDE /* NSObject+LPDAssociatedObject.m */; };
 		2139F3C7DEFFCAF458125FDC19DF345F /* NSString+LPDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8E0B713C6AEF25268598A96095BBC /* NSString+LPDAddition.m */; };
 		21728E954A12B8FB437A95FDBFB2477D /* RACQueueScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = F656D3FAE8D27BAB61702D660CB5170A /* RACQueueScheduler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21A16B9027F52D650472D1370B05D973 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1FAB09247DB7D987219D189522382B /* CoreFoundation.framework */; };
 		21CCEA3E82F031D78D4098B87C4A7D4E /* RACQueueScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6592DDE19EB1D6B5714DE4FA33FBA1DB /* RACQueueScheduler.m */; };
 		2349D88FFAD2DA020A51C1081AF198D8 /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC4432C4604359F296483B523991262F /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23EFB184AD12FB1014FFC765CE0D710A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC46252C2FD95C5CF6D3C17DD95F635 /* Security.framework */; };
 		2444212C2E3910EB635D585C7B036156 /* UITextField+LPDRACSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = AD724B3E52095CBEC8F6F013FDD54F2F /* UITextField+LPDRACSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2468E30E785A9D939CC7C6C88DE0AFFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC18F223AEF4479C13664CE6FA8E4C0 /* UIKit.framework */; };
 		24DCD7B4D0A17586013D02F28A846874 /* FBObjectiveCBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB47A3CE9BA0665624CE3F93D90C431 /* FBObjectiveCBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24E588931EE44E7C2E299786663527F6 /* RACSubscriptingAssignmentTrampoline.h in Headers */ = {isa = PBXBuildFile; fileRef = AF10D25BC066124430B9C3A249B23D63 /* RACSubscriptingAssignmentTrampoline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24EE3AE0606A93F632B2FA24BA5498EB /* NSDictionary+RACSequenceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F7EB0388ADDE74C1C9E84BA1D361803F /* NSDictionary+RACSequenceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,6 +111,7 @@
 		263793D3F5980D96002A85DB8CA91FBD /* UIStepper+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 597D9CFCF3F0EA06F495179314DB4319 /* UIStepper+RACSignalSupport.m */; };
 		267AB9176AE3871BF6DFA3EB9A642374 /* UIStepper+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E215328AB2CA592856E02BF68EBDBD /* UIStepper+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		268083E64584376D53EB0C5E03859152 /* LPDScrollViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8F5F4120F66051E919F66077161F29 /* LPDScrollViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		268DD34799DB267F1DC5E94E0953AC78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		27C1DFEA18A574B599F17B481E400F1E /* LPDTableViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E37C2ACD21D8CBDB61A59BAA34FABCE /* LPDTableViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27FE931260CED15001C52B86B631382B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C8130A3067131F82D8A0D583DB2AFEDB /* MASViewConstraint.m */; };
 		2802BC543FDE3C56C1B81BFF19D8C6EC /* NSMutableArray+LPDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F79C60CAF657C96702FB568B0C7C9 /* NSMutableArray+LPDQueue.m */; };
@@ -120,6 +122,7 @@
 		2A1BE0FED89F2C041CFA7EDDB255C5B8 /* LPDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 038729F98C1B94B1084313CABA93CDF0 /* LPDLabel.m */; };
 		2A8635ECD82E0FF8518ED7A6D6566D7C /* RACSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB3BEA0A5A5B8CE7BEB8937A9BCC58E /* RACSubscriber.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B0705CC26A4CBEE32A5A60284AED35B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0CC544CB4A99B09DA8DA894516C6B6 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B0C0BCE0F8A1C8E059D7C0566A142F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		2C7657DE12EF6159DCC17766FD271829 /* UISegmentedControl+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = E980E17455AD8A1CC4EDCC5868D0FEE2 /* UISegmentedControl+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C7F4665E164390F84179FE3A957BCF6 /* LPDViewControllerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C566F9CCC99D85473693047494CDDB6 /* LPDViewControllerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CEFB49FC814F6E1318672EB2BC9FB7D /* NSObject+RACLifting.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C1AF88BA64E7231CB4D17D081FCCA /* NSObject+RACLifting.m */; };
@@ -129,7 +132,9 @@
 		2EDBB3C2F4F93E2DDCBD47EB52C49216 /* UITextField+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1FC2725342807440FE94861006C7AC /* UITextField+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FE757B77ECD9FD1084211939BEFE186 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7109A1201DDF83A73A1A3A3D9AF047 /* MJRefreshNormalHeader.m */; };
 		3053E79872033C94CD5069139E9F419E /* SDiOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FC4A182E6CE35BA6ADF261822E3375 /* SDiOSVersion.m */; };
+		30648B48EDE156439C2B6613FE31D746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		307004BAFBF7FFF0AD9A9129D8308B0D /* LPDTableViewModel+React.h in Headers */ = {isa = PBXBuildFile; fileRef = 996216F2F1E5FFD3F97713790345CB51 /* LPDTableViewModel+React.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30F0BAE1DBB79BBB6CBD957EA8B89E4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC6EDC519CB7903A86BFD59FD01F60E /* MobileCoreServices.framework */; };
 		31370ECA89AA054814A04CAC3057E35A /* RACKVOProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3AF81F7226C3BDBAFCEBB2C7785CED /* RACKVOProxy.m */; };
 		31A62DD41812373E446A2FB59EFDF12E /* LPDViewModelEmptyProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 16BDF587190A5830EAC2FA1530BC741C /* LPDViewModelEmptyProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31BA7656717783A993DB948A431F01E6 /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD437300C56FF4284FC4786FEE47D7D /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,6 +155,7 @@
 		389526A4F6CC7F63188EA10D0240AB44 /* NSObject+LPDSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = E52F2BD1F476D3E93120EBE8E3FBA4F1 /* NSObject+LPDSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAA1929885ECAFC141704E5FD95A671 /* ReactiveObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = FD7ACAF7A691C235D56DC379F42560A1 /* ReactiveObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AE30DA0062D7713B49DEFF36EC54D12 /* LPDScrollViewControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B1150978E55D8E70F05C82C362F7F82 /* LPDScrollViewControllerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE7718348750608289A2FB0500DFD66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		3B29B4B2CD6CFBDE4D6458067720571E /* NSMutableArray+LPDWeak.m in Sources */ = {isa = PBXBuildFile; fileRef = E9788E17B4D21AB2C483A8FEA3441A13 /* NSMutableArray+LPDWeak.m */; };
 		3B52191286D3824E75E430568068E48B /* NSMutableArray+LPDStack.h in Headers */ = {isa = PBXBuildFile; fileRef = FB1FD5EFCCE362F20AC82A74D20C3B3D /* NSMutableArray+LPDStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B784C4571085669F931446D21844EC4 /* LPDSegmented.m in Sources */ = {isa = PBXBuildFile; fileRef = 004B174388641CD8057D471F10B432FE /* LPDSegmented.m */; };
@@ -173,6 +179,7 @@
 		4175C0A96841E61BFA39476DCC7CD26E /* LPDNavigationViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D9030595274DF2DFD8FA917D68F6888 /* LPDNavigationViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		417D058E8413A035134C1F35653EF57C /* NSObject+LPDThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A439A868D0EC9B130FDFB915FCBF7EE /* NSObject+LPDThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41CAE69A4548B82AACB26CB06EC0C3F3 /* RACDynamicSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = AD4F22BA3EED550B5A494D131FACF30D /* RACDynamicSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42AF1BB1ED090CC9E588A463441D09E3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E9858FA418FF105C6D3D3C71BFC280 /* SystemConfiguration.framework */; };
 		430D31B1D6639091FD287033DACC0820 /* LPDToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F8A47FAA83E0B9E0B252E1AF2C1BC /* LPDToastView.m */; };
 		4442D8453D210EFC13CFE2CAF862ED1D /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C016ACD153792376FD71C2CCB1C36866 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		445D726B8B46FDB91ABA470B846024CA /* UIView+LPDBorders.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3DC9B2D6D31EDA0BEEAAE33108110 /* UIView+LPDBorders.m */; };
@@ -187,10 +194,10 @@
 		47CA95A1EAF5C0D52EA1D1AB434BCB2B /* RACMulticastConnection+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 00979D5453B0610983E71CEE7DFDC94E /* RACMulticastConnection+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		47D90E20D1B36F1092FBC547FEA96898 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6464784F1D4A75CB19A05E8D1097D83 /* ReactiveObjC.framework */; };
 		47F04CBDF6C54B220F6AEECEF15264D5 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 258473F9A36AFE3596A95F388D7E25F4 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		483C60796A35DD084DF2A43770D0329F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		485ED7EE975C482AD01A8E46C666355F /* FBObjectiveCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 960C18C0C541C185AE4AB9D6CCB05503 /* FBObjectiveCBlock.m */; };
 		48FB13ABB11372852B1B81C43DB9D3A0 /* LPDViewEmptyProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B360C80F58EE17F4FB422CEC105BECB7 /* LPDViewEmptyProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492CC68EB9FDD5EAC1AC31CE1362F74D /* LPDTableViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D622910D924BC29EBCE471CBDDF94684 /* LPDTableViewFactory.m */; };
+		493D5B1C0320304298C8EADF88014EDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		49405FCB97459D9B4994360C959CB99C /* UITabBarController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1BCC6DFB8CCD14F1AE4F6F34A4E34A /* UITabBarController+MemoryLeak.m */; };
 		4959CD60545CD919862236E58B96894C /* RACmetamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9573F1192DE92905541CE00EFDE38A05 /* RACmetamacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		498F077C7B6B039927910B46ED2BC010 /* FBAssociationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 501B654D4218DCF47EBB8F616F1453E6 /* FBAssociationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,7 +215,6 @@
 		4EC09EFF406F7BDD611E160003CEBFF1 /* RACScopedDisposable.m in Sources */ = {isa = PBXBuildFile; fileRef = F979D2F81410C5DE85DFE08518F5208B /* RACScopedDisposable.m */; };
 		4ECB1DA12B2D57B3F9BFF53658F6040C /* LPDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8D1A6430BE1832BB2A98A1D38CB46 /* LPDViewController.m */; };
 		4EE1BCC7208EE306A19645A4A172C5E2 /* FBBlockStrongLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF34C1CF771C0B4D66B03CF3BBA89A5 /* FBBlockStrongLayout.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4F8603C0F908A74D18706FD4C916CE38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		4FCF628A8D81623F9E739A6F57C1C89A /* RACGroupedSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6ADA8CB0DE7C28EB3FFC80F1C52462 /* RACGroupedSignal.m */; };
 		5026F9D37614E1A52D84CEB393BD40CF /* FBObjectGraphConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E5DB5D5148DED834EDB8DCACACF0E7F8 /* FBObjectGraphConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		507D08D17231149CEA4D98231A1D398A /* LPDCollectionViewModel+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = BA14E67FC9412FD86FCC14CF10FAEE78 /* LPDCollectionViewModel+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -249,14 +255,11 @@
 		5EC7ED1C081BD7269FAC4F99DE45DECF /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEBEC3CEE2C23183BC24168B6FC1655 /* MJRefreshHeader.m */; };
 		5F0B414B6A8492F805A2959D58C71562 /* SDVersion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 965D62EE32B3C8ED8F8CD2183781E9ED /* SDVersion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F1E4452EE9C465748E087A57734AC85 /* LPDTableItemViewModel+React.h in Headers */ = {isa = PBXBuildFile; fileRef = E55A8310EE05266DC2ABBA5FDFFA982E /* LPDTableItemViewModel+React.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F3522901D1B863B519AB39B69AEA75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
-		62433D318759C30C934DE0F80899778B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		624B399F94943B7AF2416A138657EAD1 /* UINavigationItem+LPDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FCCE55AD6F3BCCF037695C064ED63D /* UINavigationItem+LPDAddition.m */; };
 		627ABE5BD1AE8C79DA0487FF83AF89D8 /* FBObjectiveCNSCFTimer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5B9E6D990BEFEB01CA483F32DCC57D2 /* FBObjectiveCNSCFTimer.mm */; };
 		627C97B5C9E5476BDAA1C0A8591B551E /* LPDPlusCrossBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A4513CB1D8A472C33C863B02AF6656 /* LPDPlusCrossBarButtonItem.m */; };
 		6311426BCF35DE5EABCED1311D5DFA00 /* UISplitViewController+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = D94DDC66D01F642141395DEF2D67ABC2 /* UISplitViewController+MemoryLeak.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6343FEE14FED2C637884334D2DB55BF1 /* LPDCollectionViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5325D4A995DF60332391FF23E89C0B7E /* LPDCollectionViewFooter.m */; };
-		634801970A4574FB800AEBBA09308B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		6467CAB935DC1227AECFCD3228BB2F22 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB5BEC4953254DDDDC1D731AB915644 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		647B637C3F50F371119C201C23FBA4CD /* RACImmediateScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = D881E3E58A42DE3F4F1407A09C22A1D6 /* RACImmediateScheduler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		649E78B5EA450FABDF5201E31F265FAB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6E0EBC1A81116F1F4EB89C74F30EE /* AFNetworkActivityIndicatorManager.m */; };
@@ -277,7 +280,6 @@
 		693AFBB6C684361F6EF78B8F097D3326 /* RACImmediateScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB5FE74978D0172D96E3A7316AEDA65 /* RACImmediateScheduler.m */; };
 		69744CA53CA8C5C6C51C175F8EEA8194 /* LPDTableViewKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BF7D2AE2E3B0C68302A8002256F12D /* LPDTableViewKit-dummy.m */; };
 		6979FB6C1E4152B09036D323D215BAFB /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA963DC6AD1BA5C3DC589AAE64E531D /* NSFileHandle+RACSupport.m */; };
-		6A926D7D984F12DCEC572D24148D79BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		6AE2FA81AB06D72E043F4338B9C6267A /* MLeaksFinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEF44A08294E19A2B78C2F33D260029 /* MLeaksFinder-dummy.m */; };
 		6AF8AAD6BA508B65AFDDBB253229D2CE /* RACTargetQueueScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC383EF84908F89D4A7D7FDDC90B7DDA /* RACTargetQueueScheduler.m */; };
 		6AFACFE216A74E22D97E84AB33BB7CD0 /* RACEXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E13F31FF2937663E9FE5917C93B91EA /* RACEXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -287,7 +289,6 @@
 		6C663FCFA479B297407771F355CFC05A /* RACReplaySubject.h in Headers */ = {isa = PBXBuildFile; fileRef = AD35AD090429AD44E05412B5ACC63C76 /* RACReplaySubject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C9F5A54CC55F00937EE688B79319B02 /* NSArray+RACSequenceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D55315B64AC772FE4F0FFF3A06D87BF6 /* NSArray+RACSequenceAdditions.m */; };
 		6CB228E860094B23357239DAB5ACA560 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6464784F1D4A75CB19A05E8D1097D83 /* ReactiveObjC.framework */; };
-		6D92546564B61B5CBAC68693571DBFFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		6D9303C748FAFD478A2530B80DA68DAF /* NSMutableArray+LPDWeak.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C59FEC70C3DB877070049EA7B41C18 /* NSMutableArray+LPDWeak.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DA2CE28578162BB3FF106E491966C49 /* SDVersion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8409C8D0AE18F146D67C9A7CE23200 /* SDVersion-dummy.m */; };
 		6DCE757B04EAFE6380107FE2C6111C4A /* RACCompoundDisposable.m in Sources */ = {isa = PBXBuildFile; fileRef = 07002D447DFC3037BAE4D7E3293E8D91 /* RACCompoundDisposable.m */; };
@@ -302,7 +303,6 @@
 		726561EC2250A918A04CCE3C7D82B1D1 /* KxMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = F2F2A83CB9FAB037D4ED89AC450D957F /* KxMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		728049FA0A5D64B3D52F040C0D8257E0 /* FBNodeEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4991A09FA5DC6959C85A7325481B2B77 /* FBNodeEnumerator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		72A8EFC53B2BE32338B663B83EB92813 /* UIGestureRecognizer+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 230BD92238CE7C3B03BA291DC98F10C2 /* UIGestureRecognizer+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72BE65E696A388D4CC0D75BE461FEF1B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D5A20E5D9E05DBF17EEF8C584B398 /* MobileCoreServices.framework */; };
 		72FCB6896726F08A2D23A246FAFBA469 /* RACSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C9675876CBFB3334EAC28DFF753D0A /* RACSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		737BA5581F93F814CA1AA1B115703036 /* LPDViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9481CDE11D3F2058403D9AC18607FF /* LPDViewControllerFactory.m */; };
 		740612513218AE079397C1469ECD2275 /* NSArray+LPDRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D0C6D2239EA974B4EE50F57F6D183D7 /* NSArray+LPDRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -313,6 +313,7 @@
 		76ECEBEBAEEBA21879DA8F250D68D592 /* FBObjectInStructReference.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C30AFA6EF37B6BA33EF79194C6E03A6 /* FBObjectInStructReference.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		77C14F751B51CF28EE51D9296C784BC9 /* NSIndexSet+RACSequenceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5418C8E4FC59FA0F054F34048830B55E /* NSIndexSet+RACSequenceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781A0A4BD8182782A523D74E469CAB1C /* NSSet+RACSequenceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3AA0A81562F495DF3DDC6B674B5ED7 /* NSSet+RACSequenceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		789D749690B308852115FF20CD982A69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F105E3623679D3386709EC6047BB00 /* CoreGraphics.framework */; };
 		795DF247A2A41F9C6B2BE5114634AAF1 /* LPDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6497D8051290A43256DCC796F719EBBD /* LPDViewModel.m */; };
 		79859BB43A31DCC6B3F3F2599A514A0F /* RACSerialDisposable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4896B7E649B1EDCC3664A592155B889F /* RACSerialDisposable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79BDF3DC50D5F1628F5039F973D38DBE /* UIViewController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A57A15BF612AF56585DF664637DF19 /* UIViewController+MemoryLeak.m */; };
@@ -321,6 +322,7 @@
 		7A636A10658A2BBF0C3C1F2DE75E0BD6 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = E6170AC5515A437F3B5219CF07140827 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A7E0AD6600837066BD17EDE79E8A31C /* UIGestureRecognizer+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0793E734F829A077CD07E5FABB028 /* UIGestureRecognizer+RACSignalSupport.m */; };
 		7AF640AED8A8FC0FBE12D899D43315F7 /* RACDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F17E39DF8BA78E27FD7955071A6 /* RACDelegateProxy.m */; };
+		7B70B57C4372FD4D8C67C493DBED7DA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		7B9E90E9926A2864FB4F539EE2EE0493 /* LPDCollectionHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A784E4E3AB70E7CCBF153E2969A4E035 /* LPDCollectionHeaderViewModel.m */; };
 		7BFFE488CAABAB85009153CE0C307268 /* LPDTabBarViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BDB17BE0529E2A91A4716550ABC1574 /* LPDTabBarViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C401F842903B17BB1A4193ED11B5E6A /* Pods-LPDMvvmKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3419D06EE3DACB7CF9901FC7E11B9A69 /* Pods-LPDMvvmKit_Tests-dummy.m */; };
@@ -329,7 +331,6 @@
 		7D7CD165C71535CD39490ABA7BB89536 /* RACSerialDisposable.m in Sources */ = {isa = PBXBuildFile; fileRef = D45BB30DD3D5F04EC66FFE8205AEC187 /* RACSerialDisposable.m */; };
 		7DBABF81CA4712030256AC08E9CDF03A /* RACArraySequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40A3D344FB4BFACF5271A79A6E62C4 /* RACArraySequence.m */; };
 		7E1377C565E9FAF37A6232B6BCF47D50 /* NSNumber+LPDMoneyAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 60806877B65173D0914E769397EA1D9F /* NSNumber+LPDMoneyAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E88C2A2A7041C863FCED1B1D619D023 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		7EC189D6340D1904BD734E639DD4E561 /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = C294FE69AE4A76EE7F5EE455F41A604F /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FB375A51B3E03D6C0046F4039468E0F /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFAFE543FCED0798D911F5BB5D68F12 /* NSArray+MASAdditions.m */; };
 		7FC62CD05127E542E253B7F7EB8A4D4A /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 77EDD4A0EB502242D7C7E2A9F29ECA90 /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -342,11 +343,11 @@
 		80821DEB021FF101B873DE032F126957 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB094C1C712A86DF3FD31E1E3BE55BC /* MJRefreshFooter.m */; };
 		80D1DA29C700A169A0317810B88AACAC /* RACSignal+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C88E6BFC7A6F1003C3047CD907DBC49 /* RACSignal+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		818B03BA46161CA8F8469375127EDE93 /* UIDevice+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC3C82DD0F1F1182E37F3BDEF2F72DC /* UIDevice+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		818C24E916F443C256A34BE2550798EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		81D1FCFCC3E0FE3997C327A3814CE536 /* RACScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82B3DDB081CC5775FDDAD7316C2E6E /* RACScheduler.m */; };
 		8233ACF8B318335EA0A6FF6F49888655 /* LPDTableItemViewModel+React.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DE138890487955B70045150544122A /* LPDTableItemViewModel+React.m */; };
 		827F8B2B525A9272D13E9CC5235C3EE2 /* NSString+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 027FE1ABA8E5DDEEB538C12A04156684 /* NSString+RACSupport.m */; };
 		82C2C7BACBCE4CE2D29DD93DC0CEA4B2 /* RACValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC1810E50130581D9A418BD03DFBB4 /* RACValueTransformer.m */; };
+		82D554EC9FB9A62D935B6555325F5898 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2176FD3FCCCC731F50F698D793D306A7 /* Security.framework */; };
 		83400396948EF7FA858C3CBD6F38D49B /* LPDControlsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA8D7A3E01159C60D73927E4B64741F /* LPDControlsKit.framework */; };
 		83D56CDB1C8D330F947320D538B0C5B4 /* LPDViewModelSubmittingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 767640647267435078566A427A1BDE3B /* LPDViewModelSubmittingProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8532B6EFA424B9864F11B900E8715F59 /* UIColor+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = F0287740B3B1966DFAB50552EDCA5FD8 /* UIColor+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -370,17 +371,16 @@
 		8C8DE3BD7DAE1B9BD50B91FFA5A6A1F9 /* RACBehaviorSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A8324BB260BF553C0965EA2C7690E /* RACBehaviorSubject.m */; };
 		8CA651E398462D440D021A5AF42E451E /* UINavigationItem+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 76CDE15C863950508276EC204BE08356 /* UINavigationItem+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DE46435E83006EED6E7A7253D0E30D7 /* ReactiveObjC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 108B48C445225B65CE47E7168E645EBA /* ReactiveObjC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E533D77D085628B5929D6BC9FD6C4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		8E5C6A9A803CB4ED5808442DC45835E9 /* LPDTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 579022F2586EEA5E54D689186ED0DBE7 /* LPDTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ED1441911F909822AA00CAC5CD04D34 /* LPDTableFooterViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 79218E4C23A555A21EA62E5FBE0ACEBC /* LPDTableFooterViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F31F8E2182C72BC8B47731E5522B44F /* RACArraySequence.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AD0EB3A8867D0C8524412C5F2E7FC0 /* RACArraySequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F786850C99C5D861C0FF931026B6044 /* NSObject+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CA6567D71E1B9AC329C11E673769D /* NSObject+MemoryLeak.m */; };
-		8FC9CE820958F14E21F8F7A2A394CE8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		906B8322C789AC08597301DDE97ADA27 /* NSObject+RACDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B8137A5446E760EEBF3FC173A20250B /* NSObject+RACDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		90728A4D26B379995A6F583FDDFCA535 /* FBObjectiveCGraphElement+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1F53DAAD27C1015D14AF750B6B1F01 /* FBObjectiveCGraphElement+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9105A11D3E5D7370CAD99C5D25C8204D /* FBBlockStrongRelationDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A6B91B614F46153E8F522432D3424 /* FBBlockStrongRelationDetector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9184B8715BF4DA823CBE238A8C6450CF /* NSObject+RACSelectorSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D2EF2D570AE4217DD248CDC71F4A23 /* NSObject+RACSelectorSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		919879BCA406648A4723E240236845D4 /* LPDApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 342C201C8A38D047FFB05DC094B69EA8 /* LPDApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92476EC90335E9D842CD05006315D794 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		9264BD69AFA8EE74F0D7F0EBD74F762F /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C0CE67784CD976A115DCFA13EC6E8A /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		931B1C03A0B525E1DD3339AC6ABBE7C3 /* FBObjectiveCNSCFTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA7863E9D0B7785748E993E99C10BA3 /* FBObjectiveCNSCFTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9322A6B16DEE94D2BEFB0E6DA1969A97 /* UITableViewHeaderFooterView+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D382A8E666B912908657D5874FF9FDC /* UITableViewHeaderFooterView+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -388,10 +388,10 @@
 		945E964B2F9BF5DB0D13E869AD130831 /* UITabBarController+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = CE10416D69342A9A5488C4A195EFF8AC /* UITabBarController+MemoryLeak.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		948458DC0A9308A2D8C018C37FB7BBDD /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 18459416961A7FF06A7A3F75665D6EF8 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94FBD1C5BD2AA25D69311142E4779AA8 /* LPDApiServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEC6CC0B41E7A56EF06A09F17E3481 /* LPDApiServer.m */; };
-		95C3069EFBFC19675E768EF1CD2F630C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		981F9565C30EA8CB0675A9E3060E3D96 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6464784F1D4A75CB19A05E8D1097D83 /* ReactiveObjC.framework */; };
 		986B24C6CFC4CEB2F5E921C77172BA0C /* LPDControlsKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A968F10836C866C678488346DCEAAA88 /* LPDControlsKit-dummy.m */; };
 		9958188EC57709A7BB89EC2689EA3DB4 /* RACDynamicSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = C72042C6C6169A1FB9D41885783DE234 /* RACDynamicSignal.m */; };
+		99B877D71CCE47BA3A3082CE00C34449 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		99BBFBC40A5F98167E9D0F14C7937A2C /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 999A0B0EF0CABEC778B7112DEC1A32BF /* NSBundle+MJRefresh.m */; };
 		99F5FF55B8A9F243A9C8CF5CFB41A986 /* LKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC63C37064DF71111392AE98692414DE /* LKKeyValueStore.m */; };
 		9A4794D3996ABAE5AAE45BDEE0796F29 /* RACErrorSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = BC715F099B0F135BC542F91EF3A2A495 /* RACErrorSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -412,6 +412,7 @@
 		A03B330DCA16B137E09D804A43E8766E /* NSNumber+LPDMoneyAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C21E0DF97A0F5A885ACD45AB9A136CB3 /* NSNumber+LPDMoneyAddition.m */; };
 		A0715963C3CC50A4232BE50E59E75D1C /* FBBlockStrongLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 46BDA9D4DE22DB21679C3DC409C60A4C /* FBBlockStrongLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A0905D7CD20B2B7A8E5BD1E3A5BA81E9 /* LPDPopupPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BDDBE24220385EE0055E4DC6F9EDA5 /* LPDPopupPickerView.m */; };
+		A0ABCA7A88A9F3ED605668607CE59310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		A1318396AFEBC024B2B02814F511F200 /* LPDCollectionViewKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5BEACF768A4E2D02ED5177BFD400C2 /* LPDCollectionViewKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A216B6E09732CF0DC4182A66A183A077 /* NSObject+RACLifting.h in Headers */ = {isa = PBXBuildFile; fileRef = D5DADAA87E4D69859282D74B06AF7DC0 /* NSObject+RACLifting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29EE591FDD6041191EAC841107DD765 /* UINavigationController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 906BC5273DFF12328957350715570A06 /* UINavigationController+MemoryLeak.m */; };
@@ -429,14 +430,17 @@
 		A6916D85C03CE8A3D1C90555C055A0A2 /* RACScopedDisposable.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6EFD7C2E6B4AD203A733465433D98C /* RACScopedDisposable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A76337B81D7902901E795C75AC514438 /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E2369916953222F8E099977609728C1 /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A86400C093A5E3276D1E0918B0A51C33 /* RACSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = A2FFE40C1B257F105DFC7938B3A0FE85 /* RACSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8C297643282E0CF5E7DF9CB6E23A0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		A8D7563B2EE3CCF34160AF7D502B235F /* LKKeyValueStore.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1FDE064228F7FD9BDD3E79B54F9D25 /* LKKeyValueStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9A91D200AEC411303CC81B098AD7BBA /* UIActionSheet+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D49B67DE4947EDE2DA03544EACDB3C /* UIActionSheet+RACSignalSupport.m */; };
 		AA94A1AE9BE7AE037E4CA0786657E4D0 /* UIImagePickerController+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BF3180455408CC692CD4A66B3BD81E /* UIImagePickerController+RACSignalSupport.m */; };
 		AABCF991C3C79DFA046420DEB493EC0B /* RACTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF758E813BCF29E8CCE4447AD3073E0 /* RACTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AACFB9835723325D20248150F296D769 /* LPDAdditionsKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0A4FA528837A3DB1B1F237603C0D813 /* LPDAdditionsKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0673A396CD5D68FFC8ED95614C815B /* LPDNetworkingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AD95F0CE0165DF3F7A990F379E8AC194 /* LPDNetworkingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB895E468CC4A03AA4092ED4AB16834E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		AC3AA1C3150451EA638E1726472DD6CD /* NSMutableArray+LPDStack.m in Sources */ = {isa = PBXBuildFile; fileRef = D81412DB2B964B674E47AC77F9324964 /* NSMutableArray+LPDStack.m */; };
 		AC730ABF9112290663B03BB7D44F4668 /* UIApplication+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE53520E89AE0AED50E90F46DA083FC /* UIApplication+MemoryLeak.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AC80D7447B8B827B3F69838EBF23D2CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		AD1EF58B456186BE8F29B01B8B0D80E2 /* NSObject+LPDThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5E0B379603BE6390DF832EBFCD0B7 /* NSObject+LPDThread.m */; };
 		AE17F559FB005A2989C474A6B5AA8F0E /* LPDCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 871BC3DBC73332A5F6C26F635158574F /* LPDCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2A9B184948A912D01C61DC0B9A198C /* RVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A9894FFB7707CCA1BA39605250A5C3A3 /* RVMViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -444,6 +448,7 @@
 		AE976B0E8E3DD81E4F49DBEF19D3C0AD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3E18CE334C734436AC1E69C070AB93 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF186B2D7B2A0E6E83659F48CE7FB85B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C41E261D47DF9A62FE3DFBB9F44F2F /* MASCompositeConstraint.m */; };
 		AF4AF3FF6295BB5D75594E05C92C5CD4 /* NSNotificationCenter+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B3F7E941FFE70793AD93C1D7925ED /* NSNotificationCenter+RACSupport.m */; };
+		AF6D8F5F9104F52B09B5427633F30581 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		AF8A630AB751B1B9A1D314C52DD20599 /* LPDNavigationControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F503EBE8FD846EAC48AE099BDE60244A /* LPDNavigationControllerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B006A5D7CE7252DB13189F6D340EA179 /* FBStandardGraphEdgeFilters.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F65D220B40E0F0A8D29729DDADE37C5 /* FBStandardGraphEdgeFilters.mm */; };
 		B03E53A25393FAF3F21F3A3DFC65FC9D /* NSObject+RACPropertySubscribing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8958DC1DC9A33E3C002C837A56F662 /* NSObject+RACPropertySubscribing.m */; };
@@ -451,7 +456,6 @@
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21143705634B0A7C8E218AFAEF99 /* UIRefreshControl+AFNetworking.m */; };
 		B1B7B268603C385D8752674F51F97D53 /* UICollectionReusableView+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F154CEF71E56D6C64BB8475F9C924305 /* UICollectionReusableView+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E2AD57B7CB4A8009583C77C20DB2D5 /* NSData+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D6FE0255DB9E818DE613B84ADABB8C /* NSData+RACSupport.m */; };
-		B1F9663988186046486310269A0AAB12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C002785C583ED1DBE71050565E82D /* CoreGraphics.framework */; };
 		B2101558F03EA16A228ED30E2470020A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE7E16F169A45DAC0D38973F81CF97A /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B34EA1EE5A0D2E4DFF95462F42F61049 /* RACEXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBC7D3D397CD8F849A2C3D42BD35588 /* RACEXTRuntimeExtensions.m */; };
 		B3790B70FA1A1D1952C4BAD07D0FA62D /* UIPageViewController+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = 0420C94B2ECB8541688B5BA715F7C621 /* UIPageViewController+MemoryLeak.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -470,10 +474,8 @@
 		B7FCC48DF40F868DE62D5C6BDED6ED01 /* NSInvocation+RACTypeParsing.h in Headers */ = {isa = PBXBuildFile; fileRef = F555C9275D04DA85DF708B52EC9B5DAD /* NSInvocation+RACTypeParsing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9753950EBA93B14CA55DBDDD037620B /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15703DF3F4AF2FB52D1595B61BCDE2A /* RVMViewModel.m */; };
 		B9D2EA24E864CF6B2A22222A92319244 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E0929FF9F6EAF34AB317B3F5F978B8F7 /* UIScrollView+MJRefresh.m */; };
-		BA2D29D9265012FAC7A88D9A8CCD9989 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C002785C583ED1DBE71050565E82D /* CoreGraphics.framework */; };
 		BA680A229626AFB9FA0DF62B9F06AE36 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 112CC8F2E66E72FF472EB6081EEC004D /* UITableViewHeaderFooterView+RACSignalSupport.m */; };
 		BAC373FC3D047448493B6417999529BA /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = F4970875500FABB3A7946C4E8411FEB4 /* MASConstraintMaker.m */; };
-		BC22E83FBE012D2A1B6B72B886832AF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		BC3FE4FFF6FE2955843237BA47E2D9FD /* NSArray+LPDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F43B00FD37F4DCA2E83BEE39CF9816B6 /* NSArray+LPDModel.m */; };
 		BC419D69F36F93C323E42473B224874E /* LPDLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C68034C27611D60FB1B725BB2E03F0DA /* LPDLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD3870A81FFC84EC8C56132DFA7DC676 /* NSObject+RACKVOWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421154EB54D9E259C92D37509A4DC7E /* NSObject+RACKVOWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -508,7 +510,6 @@
 		CA1DF9CFFA4A8D36FCAAF13EF2CD9938 /* LPDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 986C8CEFCE9630AB59386E6E55D83B77 /* LPDTableView.m */; };
 		CA50030BDF1C7942D47558434482DCAC /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D414DF931A0E29D96F521F88FB634BCB /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAD0D2B781763E1E1CE05BD843EDAFEA /* RACCompoundDisposableProvider.d in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1AD8DD34AEBB87123ABBB0E91D042 /* RACCompoundDisposableProvider.d */; };
-		CB0E198FF8F19ECFA53C483D8CBC21AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		CB192C22BC21DC93CB943804BC551C6A /* UISlider+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = B9710B35C8AF66D4FF7346FA2F97D241 /* UISlider+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB41219C77844E152B836FB4D49D533C /* UIScreen+LPDAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B747266371A93DC84DB1D560E7EBB211 /* UIScreen+LPDAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB8CFF13AE0152B8364364FB9787C83D /* RACBlockTrampoline.h in Headers */ = {isa = PBXBuildFile; fileRef = BD6BEE1D916AFACD82CE25D07153086D /* RACBlockTrampoline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -519,7 +520,6 @@
 		CD1E481E2CA7F96663F955FCBB299707 /* UIImage+LPDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 992BE69F61899505622B44A1749AF392 /* UIImage+LPDAddition.m */; };
 		CD35A02BF309B7F4FB30B8EE5A58113E /* UIButton+LPDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 62480A9CAF11ACA2E8789008E5A8B7C5 /* UIButton+LPDAddition.m */; };
 		CDBD031D8066E291307A0F9F92B578E9 /* LPDCollectionViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDC536E6FCB453E51F385829E446578 /* LPDCollectionViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE2EB8CE3176F8A1FAA78CC8786292CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E665F3616CE7EDAF5B491FFC26139BE5 /* SystemConfiguration.framework */; };
 		CE31791EAEBD1B96D75201EB6D3A581B /* LPDViewModelLoadingMoreProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 9016B3AD378A7CAEEB0E802930D1605F /* LPDViewModelLoadingMoreProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE85759DD3C0EF927286FB4C7B55A241 /* UIControl+RACSignalSupportPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C267CD1B23E5D088D8CBD3E6AA076755 /* UIControl+RACSignalSupportPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 977CF26349651F6642B0E4E094545813 /* AFSecurityPolicy.m */; };
@@ -529,7 +529,6 @@
 		CF33EFF80C0F9A9E17F646CA3A6C29CA /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 67751BABFDFB283D0F55ECAD156EF8EC /* UIControl+Block.m */; };
 		D08EFA1BEB1EA05E7B2054736DAF2863 /* UIView+LPDAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C2CC0542F3AC6A464591E372C1E36A /* UIView+LPDAccessor.m */; };
 		D0D6006743C56EB88C34CC258D47E5E7 /* LPDViewSubmittingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C63025363B0AE775A5601FC6E9DB24D /* LPDViewSubmittingProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0D8435216B9CEA0C151792497BCF905 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC18F223AEF4479C13664CE6FA8E4C0 /* UIKit.framework */; };
 		D10487BDD9339C497E1614D4C9F0171E /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6464784F1D4A75CB19A05E8D1097D83 /* ReactiveObjC.framework */; };
 		D24EA99EA32AB607EBDCA52C564485B9 /* RACTestScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = 60AD892785E567B1D8DBD7DFD7C87A1B /* RACTestScheduler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2BE62C736C8E2E56AAFB3C8AD45E54E /* RACReturnSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5204001DC2D5DB3D038D6AB76DE2F2B0 /* RACReturnSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -554,8 +553,8 @@
 		D8C27C876B4D1F30CF60C822B1A56F7C /* RACStringSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 999334544615D2144C3090C3C3187A42 /* RACStringSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D93BADBA38DAA0FF1571DBC9E08C15B9 /* LPDPlusCrossBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C39885DB00C25678FCAD51DECE06E7F /* LPDPlusCrossBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9AF46013051F37C5BD7BE6AB131490C /* UIView+LPDAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6266B5DECA197A539D6DB009E6390C9 /* UIView+LPDAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9DA01499F5A15E5948230FC39BD6CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		D9DD4C8FEF527C224A41CAE7E2727C75 /* RACPassthroughSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A66D7786C806B1165E8929D43BB9E0 /* RACPassthroughSubscriber.m */; };
+		D9DFDBC7DFEF8F1CDBEFF50492126610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A960D6645D3A0A30F9A34668C721D /* UIKit.framework */; };
 		DA1B3DCEED2F8F0449152830E6D106F8 /* LPDAdditionsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E609B08B247DADD04031C8A9716127AF /* LPDAdditionsKit.framework */; };
 		DB2EB13E58D3FD3642634FBCBF7C5BF2 /* UIImage+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 794FD934B66EDADB051275135C0389A3 /* UIImage+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB3E1BE37301CF1C6080D1E75493846D /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB4A846D99FBD1F8A386B007B81491 /* KxMenu.m */; };
@@ -579,6 +578,7 @@
 		E2042820BE6CA2F9D5B15B9C06755966 /* LPDCollectionViewModel+React.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D41D7CCAD492A8FEB38B62AF3F86010 /* LPDCollectionViewModel+React.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23B9A6F533461CB33C0FA6FB59E3AB2 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE9EE6613492BA1C9EE9E08278AF77C /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23E2C8FCA9DBB4674CD1A57A243EDD6 /* NSURLConnection+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D03D35D597B8472A1CBF42E26FA14 /* NSURLConnection+RACSupport.m */; };
+		E288459B09917D34DB0251CD5EDB23C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		E2E40138C2D9AB44746BFEEC2322050D /* RACEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCF8FCB36733106710785CA40B08E53 /* RACEvent.m */; };
 		E32AB1503CA96E1BDE327BFEC468D160 /* LPDControlsKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F94111F8407C522426C03D188584CFC /* LPDControlsKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E37D235D6C08D29641825905A058F407 /* LPDPopupActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5B9177DDBFE6489124973E11C939F /* LPDPopupActionSheet.m */; };
@@ -602,6 +602,7 @@
 		E8FAC63ACBA552147DF8806A9622CB9E /* UIControl+Block.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FFD780F3C2E22619CD145D0AFB7D780 /* UIControl+Block.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E927941468D6A0AB403C1952AAA5768E /* RACIndexSetSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = B11971AE5BA0834E302B3ADF613932C0 /* RACIndexSetSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9BDE8F2DD748D66AA8143641419F8C6 /* UIDatePicker+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A9F7ACC21DFC153ECEA8F86CC9A79F5 /* UIDatePicker+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA0B1B90BF6056B030F9AE4565A23ADA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */; };
 		EA35E6084465490161F65DE721ACB9AC /* LPDViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AB94F20876ACD795FA9B603A7AE43634 /* LPDViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAF16633DB3C992CF975BE4A2932D41C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C26450FAD561BB9C748B4FD1C251144 /* AFHTTPSessionManager.m */; };
 		EB8DB9129ACF5C168038B42AB31A9144 /* LPDTableViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C743B9BDCA0AD723F27313CEE9B60E7 /* LPDTableViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -619,7 +620,6 @@
 		F0CF981486970A60F9AB0BE1786C2443 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 51266356A8744E54EDF66C93B082F08C /* MASLayoutConstraint.m */; };
 		F0E41F5F23EE041D2FD7E15DEEF93229 /* Type.h in Headers */ = {isa = PBXBuildFile; fileRef = C925A3A621A80556E7544F3A9EE39F97 /* Type.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F12C5352F938C5547C92E9736422B01A /* MLeakedObjectProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3772AB4070B82B1130F4722A99747834 /* MLeakedObjectProxy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F14EBE8CE0E26DE99EAF23A9114FC6EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */; };
 		F16B230B36C6B5DAE2DF6FD387835543 /* RACEagerSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D2B1BF6CC305C5045C51E96DB9BDF /* RACEagerSequence.m */; };
 		F1BE179B138694F8F6AAD3ECA1184A15 /* NSInvocation+RACTypeParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5EFB115CFCD795B7B75E3481B9134 /* NSInvocation+RACTypeParsing.m */; };
 		F1CAA2EBDDFF558DEF98684F2479A7AF /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C1E8035FE229EAA27E182BF37FED87 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -640,7 +640,6 @@
 		F6E5D9B8B4EC8CE310A1A3D6486B2087 /* MLeakedObjectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66692E241249F1B1073680A5479385ED /* MLeakedObjectProxy.m */; };
 		F781B5A1F473EFF974AACA0A5AF406F5 /* LPDViewModelDidLoadViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7729E6E391F9E324ED55AE3ED829DC4E /* LPDViewModelDidLoadViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7C23E7389103FA1B0F9D79A65682BEE /* LPDTableSectionViewModel+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8C78645671477268FFB58E85F713F3 /* LPDTableSectionViewModel+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F84531E833F2B6B58A2A9931750C122C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF12F79738E7D1A3D445B6F45C79956 /* CoreFoundation.framework */; };
 		F84DD74BB7F612DE372F8C051420DF72 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFA4B21521C7D71EF1FD5853EEDDAAB /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8728C97053179DA3742484D3312BD28 /* MJRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6045421FFD88164AD93AE4154DE651 /* MJRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F99CA5324C7BBE922CDE7920F16DF16D /* NSString+LPDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = D84C32156F49D6E5A9ADFA562CC8DA6A /* NSString+LPDAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -652,6 +651,7 @@
 		FB320F03D7397967B4C21F2701085CBA /* UIBarButtonItem+RACCommandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931F171243E8B70C77CA523F023F9AD /* UIBarButtonItem+RACCommandSupport.m */; };
 		FC205AC0613D13860170A1DE5DA34394 /* NSObject+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E4BC9C5B10D0D7C67E99FCDF40F18B /* NSObject+MemoryLeak.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC2246032A29232A18B5E61C7D3E1CA9 /* LPDModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3D3A3F6FC90BC0D354C18017C26E11 /* LPDModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCBE9F0B46560D2E344C04774F4D4E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A960D6645D3A0A30F9A34668C721D /* UIKit.framework */; };
 		FCFAF51D45B956EA15F9DCECDB442580 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 7240245A96FFD9C8FFF08BF7205DE23A /* MJRefreshConst.m */; };
 		FD1E95277B8E0FB2345E3DB53DCEF8E2 /* LPDTableCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BA6E4D5B3542F3F83DE32673FC7419 /* LPDTableCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE0E3B9B01C2C2702332C1B8364B4ED0 /* NSObject+RACDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E4C29B4A321D7F18E8AEA80CC34D3 /* NSObject+RACDescription.m */; };
@@ -1000,7 +1000,8 @@
 		1F79863E1F83ECBED5009DDD4932CCE9 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Masonry.modulemap; sourceTree = "<group>"; };
 		20759913D8DA73750A0C154F0693FB9D /* LKPropertyHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKPropertyHook.h; path = LPDNetworkingKit/Classes/LKUserDefaults/LKPropertyHook.h; sourceTree = "<group>"; };
 		20BF6D4B3FA76A2C702BB6FEC65E85AE /* LPDViewModelDidLayoutSubviewsProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LPDViewModelDidLayoutSubviewsProtocol.h; sourceTree = "<group>"; };
-		218D5A20E5D9E05DBF17EEF8C584B398 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		20E9858FA418FF105C6D3D3C71BFC280 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		2176FD3FCCCC731F50F698D793D306A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		224B0F7E82A08A17793E9D85F287F1B2 /* LPDNetworkingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LPDNetworkingKit.framework; path = LPDNetworkingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CB997450FB19FDEB79E78A39588699 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
 		22D99BF9431B688069A521BDE408D6D1 /* LPDViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LPDViewController.h; sourceTree = "<group>"; };
@@ -1023,13 +1024,13 @@
 		28BF3180455408CC692CD4A66B3BD81E /* UIImagePickerController+RACSignalSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImagePickerController+RACSignalSupport.m"; path = "ReactiveObjC/UIImagePickerController+RACSignalSupport.m"; sourceTree = "<group>"; };
 		2906DC03232CD4BFCA58EC2CAAC62733 /* NSString+RACKeyPathUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+RACKeyPathUtilities.h"; path = "ReactiveObjC/NSString+RACKeyPathUtilities.h"; sourceTree = "<group>"; };
 		29E584181240091C43709993BCACA651 /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		2A6A960D6645D3A0A30F9A34668C721D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2A716A70C45D073635FBE2F9BE7DF1C3 /* LPDTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LPDTabBarController.m; sourceTree = "<group>"; };
 		2B712AAD8B0652D5D0F168DB6F8C498C /* RACSubscriptionScheduler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACSubscriptionScheduler.h; path = ReactiveObjC/RACSubscriptionScheduler.h; sourceTree = "<group>"; };
 		2C0AB5C8961349935C2E35432BCD4E7A /* UIScrollView+LPDAccessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+LPDAccessor.m"; path = "LPDAdditionsKit/Classes/UIScrollView+LPDAccessor.m"; sourceTree = "<group>"; };
 		2C39885DB00C25678FCAD51DECE06E7F /* LPDPlusCrossBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LPDPlusCrossBarButtonItem.h; path = LPDControlsKit/Classes/LPDPlusCrossBarButtonItem/LPDPlusCrossBarButtonItem.h; sourceTree = "<group>"; };
 		2C566AC455B4C83DBD3EB090FE2859F2 /* LPDTableViewKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LPDTableViewKit.framework; path = LPDTableViewKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD997DA7CE9902BBD460C8F36B07787 /* MLeaksFinder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLeaksFinder-prefix.pch"; sourceTree = "<group>"; };
-		2DC18F223AEF4479C13664CE6FA8E4C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2DC59D44360E4E573F7414E5384DDF71 /* NSSet+RACSequenceAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+RACSequenceAdditions.m"; path = "ReactiveObjC/NSSet+RACSequenceAdditions.m"; sourceTree = "<group>"; };
 		2E560C8DB031B1E9E33D918902521934 /* LPDNetworkingKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LPDNetworkingKit-umbrella.h"; sourceTree = "<group>"; };
 		2E7F0DB8D28A4456E9504ECFB1D5C969 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
@@ -1078,7 +1079,6 @@
 		45760FE474A1F4CE900F9BB79DA81A72 /* LPDAdditionsKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LPDAdditionsKit-dummy.m"; sourceTree = "<group>"; };
 		46BDA9D4DE22DB21679C3DC409C60A4C /* FBBlockStrongLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBBlockStrongLayout.h; path = FBRetainCycleDetector/Layout/Blocks/FBBlockStrongLayout.h; sourceTree = "<group>"; };
 		470F971698929D9A6383072CD5F7C095 /* FBNodeEnumerator.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = FBNodeEnumerator.mm; path = FBRetainCycleDetector/Detector/FBNodeEnumerator.mm; sourceTree = "<group>"; };
-		4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		47483A7BE5C247D191CC7F29F08AD525 /* YYModel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-umbrella.h"; sourceTree = "<group>"; };
 		479B35FD55D6878FE9218494D8AD90C3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48227F0CD485F54F101CAD11F2C860A0 /* RACKVOProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACKVOProxy.h; path = ReactiveObjC/RACKVOProxy.h; sourceTree = "<group>"; };
@@ -1158,7 +1158,6 @@
 		65553A9591CB28FA5B707A4432A6EFA4 /* LPDPopupPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LPDPopupPickerView.h; path = LPDControlsKit/Classes/LPDPopupView/LPDPopupPickerView.h; sourceTree = "<group>"; };
 		6592DDE19EB1D6B5714DE4FA33FBA1DB /* RACQueueScheduler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACQueueScheduler.m; path = ReactiveObjC/RACQueueScheduler.m; sourceTree = "<group>"; };
 		65DB238C4F8BDA2440AE7615B940B092 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		665C002785C583ED1DBE71050565E82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		66692E241249F1B1073680A5479385ED /* MLeakedObjectProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLeakedObjectProxy.m; path = MLeaksFinder/MLeakedObjectProxy.m; sourceTree = "<group>"; };
 		66A8D1A6430BE1832BB2A98A1D38CB46 /* LPDViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LPDViewController.m; sourceTree = "<group>"; };
 		66DD57D1A5CAA73598ABC30A6BA58385 /* NSDate+LPDNSDateRFC1123.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+LPDNSDateRFC1123.h"; path = "LPDAdditionsKit/Classes/NSDate+LPDNSDateRFC1123.h"; sourceTree = "<group>"; };
@@ -1245,7 +1244,6 @@
 		7D3D2B1BF6CC305C5045C51E96DB9BDF /* RACEagerSequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACEagerSequence.m; path = ReactiveObjC/RACEagerSequence.m; sourceTree = "<group>"; };
 		7D40A3D344FB4BFACF5271A79A6E62C4 /* RACArraySequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACArraySequence.m; path = ReactiveObjC/RACArraySequence.m; sourceTree = "<group>"; };
 		7D8AD2FD92FDD4A2962020B5643BEB76 /* MJRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MJRefresh.modulemap; sourceTree = "<group>"; };
-		7DC46252C2FD95C5CF6D3C17DD95F635 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7DDAAE01ECDC696AF5AB71394DFDC2E4 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		7DE53520E89AE0AED50E90F46DA083FC /* UIApplication+MemoryLeak.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+MemoryLeak.h"; path = "MLeaksFinder/UIApplication+MemoryLeak.h"; sourceTree = "<group>"; };
 		7E5E6B004E43827CB684D002A4D47E6F /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
@@ -1288,6 +1286,7 @@
 		8F41F0914A73126DE36771DCFEA60816 /* FBObjectiveCObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBObjectiveCObject.h; path = FBRetainCycleDetector/Graph/FBObjectiveCObject.h; sourceTree = "<group>"; };
 		8FA08E882A4D58F896B25E51E8BF7947 /* FBStandardGraphEdgeFilters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBStandardGraphEdgeFilters.h; path = FBRetainCycleDetector/Filtering/FBStandardGraphEdgeFilters.h; sourceTree = "<group>"; };
 		8FA963DC6AD1BA5C3DC589AAE64E531D /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileHandle+RACSupport.m"; path = "ReactiveObjC/NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
+		8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9016B3AD378A7CAEEB0E802930D1605F /* LPDViewModelLoadingMoreProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LPDViewModelLoadingMoreProtocol.h; sourceTree = "<group>"; };
 		906BC5273DFF12328957350715570A06 /* UINavigationController+MemoryLeak.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+MemoryLeak.m"; path = "MLeaksFinder/UINavigationController+MemoryLeak.m"; sourceTree = "<group>"; };
 		90DB3C2AFEAF950455E9AF0917377B2A /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
@@ -1296,6 +1295,7 @@
 		9277E7DDF174B9F26763592882FF4889 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		92A4103BF1AE41B382ECD12EC64DB41D /* LPDAdditionsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LPDAdditionsKit.framework; path = LPDAdditionsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B8D5A4F5264A0583611E788BA212C1 /* LPDCollectionSectionViewModelProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LPDCollectionSectionViewModelProtocol.h; path = LPDCollectionViewKit/Classes/LPDCollectionSectionViewModelProtocol.h; sourceTree = "<group>"; };
+		92F105E3623679D3386709EC6047BB00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93C65658883A9816AD07C5A5A55697C4 /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
 		93CCDD088CF82AF80B8337DFAA3AD5A9 /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
@@ -1480,7 +1480,6 @@
 		CE7BDFDE37781B1BFC050C80773A01AE /* FBObjectReference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBObjectReference.h; path = FBRetainCycleDetector/Layout/Classes/Reference/FBObjectReference.h; sourceTree = "<group>"; };
 		CEA861EB32932887D087BCF67E94FF06 /* LPDTableCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LPDTableCellViewModel.m; path = LPDTableViewKit/Classes/LPDTableCellViewModel.m; sourceTree = "<group>"; };
 		CEB981240DD647795D14F2BC80B12C6D /* NSOrderedSet+RACSequenceAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSOrderedSet+RACSequenceAdditions.h"; path = "ReactiveObjC/NSOrderedSet+RACSequenceAdditions.h"; sourceTree = "<group>"; };
-		CEF12F79738E7D1A3D445B6F45C79956 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		CF0482A1CB9131BD328257848EB4E1AB /* RACKVOTrampoline.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACKVOTrampoline.m; path = ReactiveObjC/RACKVOTrampoline.m; sourceTree = "<group>"; };
 		CF27BFB65E0744264DD4DBC805D99BA6 /* LPDViewModelLoadingProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LPDViewModelLoadingProtocol.h; sourceTree = "<group>"; };
 		CF32ADF63BD4BB7DB3BE9801E31D7430 /* LPDCollectionViewImageCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LPDCollectionViewImageCell.m; path = LPDCollectionViewKit/Classes/LPDCollectionViewImageCell.m; sourceTree = "<group>"; };
@@ -1535,7 +1534,6 @@
 		E5DB5D5148DED834EDB8DCACACF0E7F8 /* FBObjectGraphConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBObjectGraphConfiguration.h; path = FBRetainCycleDetector/Graph/FBObjectGraphConfiguration.h; sourceTree = "<group>"; };
 		E609B08B247DADD04031C8A9716127AF /* LPDAdditionsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LPDAdditionsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6170AC5515A437F3B5219CF07140827 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		E665F3616CE7EDAF5B491FFC26139BE5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		E7802EF9B0A8AD37F95FB1B1368E8217 /* RACEmptySequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACEmptySequence.m; path = ReactiveObjC/RACEmptySequence.m; sourceTree = "<group>"; };
 		E788D66D57F68DECF98B34AE8590A740 /* RSA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSA.h; path = LPDAdditionsKit/Classes/RSA.h; sourceTree = "<group>"; };
 		E7AAC9693AC674C9EE846C3214A30C5B /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1557,6 +1555,7 @@
 		ECEF44A08294E19A2B78C2F33D260029 /* MLeaksFinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLeaksFinder-dummy.m"; sourceTree = "<group>"; };
 		ECF758E813BCF29E8CCE4447AD3073E0 /* RACTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACTuple.h; path = ReactiveObjC/RACTuple.h; sourceTree = "<group>"; };
 		ED8C78645671477268FFB58E85F713F3 /* LPDTableSectionViewModel+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LPDTableSectionViewModel+Private.h"; path = "LPDTableViewKit/Classes/LPDTableSectionViewModel+Private.h"; sourceTree = "<group>"; };
+		EDC6EDC519CB7903A86BFD59FD01F60E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		EE4F60C44AE0A9D4A54536C3C9675757 /* LPDNetworkingKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LPDNetworkingKit.xcconfig; sourceTree = "<group>"; };
 		EE60200F93BF683EE69D64643AE556E0 /* RACStream+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RACStream+Private.h"; path = "ReactiveObjC/RACStream+Private.h"; sourceTree = "<group>"; };
 		EE6045421FFD88164AD93AE4154DE651 /* MJRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-umbrella.h"; sourceTree = "<group>"; };
@@ -1615,6 +1614,7 @@
 		FCEDBE0527A296C3457E4C96F498A46A /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		FCF9F36F5382C1EA287E510570764A0E /* FBRetainCycleDetector.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBRetainCycleDetector.xcconfig; sourceTree = "<group>"; };
 		FD099B1A48CD3B1712C455EA524FD039 /* UINavigationController+MemoryLeak.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+MemoryLeak.h"; path = "MLeaksFinder/UINavigationController+MemoryLeak.h"; sourceTree = "<group>"; };
+		FD1FAB09247DB7D987219D189522382B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FD33142544A655AE943200AA01E36F4E /* RACChannel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACChannel.h; path = ReactiveObjC/RACChannel.h; sourceTree = "<group>"; };
 		FD4B8A345608AF37DB64DFC6BE61E7AB /* LPDUserDefaultsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LPDUserDefaultsManager.h; path = LPDNetworkingKit/Classes/Services/LPDUserDefaultsManager.h; sourceTree = "<group>"; };
 		FD5595423BB36461DA555F720BA649E2 /* NSObject+RACDeallocating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RACDeallocating.m"; path = "ReactiveObjC/NSObject+RACDeallocating.m"; sourceTree = "<group>"; };
@@ -1633,8 +1633,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84531E833F2B6B58A2A9931750C122C /* CoreFoundation.framework in Frameworks */,
-				6D92546564B61B5CBAC68693571DBFFE /* Foundation.framework in Frameworks */,
+				21A16B9027F52D650472D1370B05D973 /* CoreFoundation.framework in Frameworks */,
+				99B877D71CCE47BA3A3082CE00C34449 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1642,8 +1642,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483C60796A35DD084DF2A43770D0329F /* Foundation.framework in Frameworks */,
-				0E57AF333D50CEAAE6D92A241A47325D /* UIKit.framework in Frameworks */,
+				2B0C0BCE0F8A1C8E059D7C0566A142F9 /* Foundation.framework in Frameworks */,
+				FCBE9F0B46560D2E344C04774F4D4E58 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,7 +1652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51608046A90D8FAC07C0123C64A6C307 /* FBRetainCycleDetector.framework in Frameworks */,
-				818C24E916F443C256A34BE2550798EE /* Foundation.framework in Frameworks */,
+				7B70B57C4372FD4D8C67C493DBED7DA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1660,7 +1660,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62433D318759C30C934DE0F80899778B /* Foundation.framework in Frameworks */,
+				AB895E468CC4A03AA4092ED4AB16834E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,11 +1668,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA2D29D9265012FAC7A88D9A8CCD9989 /* CoreGraphics.framework in Frameworks */,
-				BC22E83FBE012D2A1B6B72B886832AF4 /* Foundation.framework in Frameworks */,
-				72BE65E696A388D4CC0D75BE461FEF1B /* MobileCoreServices.framework in Frameworks */,
-				23EFB184AD12FB1014FFC765CE0D710A /* Security.framework in Frameworks */,
-				CE2EB8CE3176F8A1FAA78CC8786292CC /* SystemConfiguration.framework in Frameworks */,
+				789D749690B308852115FF20CD982A69 /* CoreGraphics.framework in Frameworks */,
+				A8C297643282E0CF5E7DF9CB6E23A0D4 /* Foundation.framework in Frameworks */,
+				30F0BAE1DBB79BBB6CBD957EA8B89E4B /* MobileCoreServices.framework in Frameworks */,
+				82D554EC9FB9A62D935B6555325F5898 /* Security.framework in Frameworks */,
+				42AF1BB1ED090CC9E588A463441D09E3 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1680,7 +1680,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F3522901D1B863B519AB39B69AEA75D /* Foundation.framework in Frameworks */,
+				A0ABCA7A88A9F3ED605668607CE59310 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1688,7 +1688,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F14EBE8CE0E26DE99EAF23A9114FC6EC /* Foundation.framework in Frameworks */,
+				AC80D7447B8B827B3F69838EBF23D2CD /* Foundation.framework in Frameworks */,
 				981F9565C30EA8CB0675A9E3060E3D96 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1697,7 +1697,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9DA01499F5A15E5948230FC39BD6CAF /* Foundation.framework in Frameworks */,
+				268DD34799DB267F1DC5E94E0953AC78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1705,11 +1705,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634801970A4574FB800AEBBA09308B20 /* Foundation.framework in Frameworks */,
+				30648B48EDE156439C2B6613FE31D746 /* Foundation.framework in Frameworks */,
 				DA1B3DCEED2F8F0449152830E6D106F8 /* LPDAdditionsKit.framework in Frameworks */,
 				353186B2B060096FAA09B355509A297C /* Masonry.framework in Frameworks */,
 				66464A863E5F5CB5A60A4428155EC48B /* SDVersion.framework in Frameworks */,
-				2468E30E785A9D939CC7C6C88DE0AFFE /* UIKit.framework in Frameworks */,
+				D9DFDBC7DFEF8F1CDBEFF50492126610 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1717,9 +1717,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1F9663988186046486310269A0AAB12 /* CoreGraphics.framework in Frameworks */,
-				8E533D77D085628B5929D6BC9FD6C4AD /* Foundation.framework in Frameworks */,
-				D0D8435216B9CEA0C151792497BCF905 /* UIKit.framework in Frameworks */,
+				158D0B72253B4F9B0C59B6BD0FDFBE90 /* CoreGraphics.framework in Frameworks */,
+				1550A7D7995F477A80A9FCC02A71C5B9 /* Foundation.framework in Frameworks */,
+				0F3FA436AE2EC855F4BDE8405879621B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,7 +1727,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB0E198FF8F19ECFA53C483D8CBC21AF /* Foundation.framework in Frameworks */,
+				EA0B1B90BF6056B030F9AE4565A23ADA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1735,7 +1735,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E88C2A2A7041C863FCED1B1D619D023 /* Foundation.framework in Frameworks */,
+				3AE7718348750608289A2FB0500DFD66 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1743,7 +1743,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC9CE820958F14E21F8F7A2A394CE8D /* Foundation.framework in Frameworks */,
+				493D5B1C0320304298C8EADF88014EDF /* Foundation.framework in Frameworks */,
 				47D90E20D1B36F1092FBC547FEA96898 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1752,7 +1752,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A926D7D984F12DCEC572D24148D79BE /* Foundation.framework in Frameworks */,
+				E288459B09917D34DB0251CD5EDB23C7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1761,7 +1761,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB19CD6643BCB984ECBF0DF6A0FF909 /* AFNetworking.framework in Frameworks */,
-				95C3069EFBFC19675E768EF1CD2F630C /* Foundation.framework in Frameworks */,
+				92476EC90335E9D842CD05006315D794 /* Foundation.framework in Frameworks */,
 				D713D834157242623E7163BE4F0D8F12 /* LPDAdditionsKit.framework in Frameworks */,
 				0EB77F61CB002AE1AEE6FEA85694040C /* LPDCollectionViewKit.framework in Frameworks */,
 				83400396948EF7FA858C3CBD6F38D49B /* LPDControlsKit.framework in Frameworks */,
@@ -1780,7 +1780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4AA94DF035383D409F91AC6DEE8DC97 /* AFNetworking.framework in Frameworks */,
-				4F8603C0F908A74D18706FD4C916CE38 /* Foundation.framework in Frameworks */,
+				AF6D8F5F9104F52B09B5427633F30581 /* Foundation.framework in Frameworks */,
 				D10487BDD9339C497E1614D4C9F0171E /* ReactiveObjC.framework in Frameworks */,
 				4D31E9B416D07EB74D05E57030F0DEDB /* YYModel.framework in Frameworks */,
 			);
@@ -1789,6 +1789,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01583A23C5EA51B02DC8634F42207B1E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FD1FAB09247DB7D987219D189522382B /* CoreFoundation.framework */,
+				92F105E3623679D3386709EC6047BB00 /* CoreGraphics.framework */,
+				8FF5D072E5A94FEF0FC83DBBA3A018DF /* Foundation.framework */,
+				EDC6EDC519CB7903A86BFD59FD01F60E /* MobileCoreServices.framework */,
+				2176FD3FCCCC731F50F698D793D306A7 /* Security.framework */,
+				20E9858FA418FF105C6D3D3C71BFC280 /* SystemConfiguration.framework */,
+				2A6A960D6645D3A0A30F9A34668C721D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		0B75E9271597BC278D14961DEC3906E7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1957,23 +1971,9 @@
 				B6464784F1D4A75CB19A05E8D1097D83 /* ReactiveObjC.framework */,
 				69C8EC8226376A1048BA371D4AB2CF2E /* SDVersion.framework */,
 				94056EAAAD5A2CCE7210A3CF8EE89FE6 /* YYModel.framework */,
-				56B86E824C33DB4FA5E744B2E8A0C3E0 /* iOS */,
+				01583A23C5EA51B02DC8634F42207B1E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		56B86E824C33DB4FA5E744B2E8A0C3E0 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEF12F79738E7D1A3D445B6F45C79956 /* CoreFoundation.framework */,
-				665C002785C583ED1DBE71050565E82D /* CoreGraphics.framework */,
-				4714ABAC4789F38141BD2F262F3E5981 /* Foundation.framework */,
-				218D5A20E5D9E05DBF17EEF8C584B398 /* MobileCoreServices.framework */,
-				7DC46252C2FD95C5CF6D3C17DD95F635 /* Security.framework */,
-				E665F3616CE7EDAF5B491FFC26139BE5 /* SystemConfiguration.framework */,
-				2DC18F223AEF4479C13664CE6FA8E4C0 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		57CA090C20095B51A2D22BF09739FA5B /* Support Files */ = {
@@ -3696,7 +3696,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -4335,11 +4335,144 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+		0156C4505B60E05E1527929EA681E727 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D071F37658A876F3F05A6D0FDE5E2A /* LPDAdditionsKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDAdditionsKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDAdditionsKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		027CC9FE6A75A717AD565FC2A9430FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B95C57E6ADBCE27B19FF52545359081 /* Pods-LPDMvvmKit_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LPDMvvmKit_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		132270651B32606B13425507A9010DE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 439FB8C9D983F374B5CCFD0E4BA3227C /* LPDTableViewKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDTableViewKit/LPDTableViewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDTableViewKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDTableViewKit/LPDTableViewKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LPDTableViewKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		347F9B1B5C1CAADD1AC0E0F96226A522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7570E022ED1CC7496AB7AE80AC0F44A9 /* YYModel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -4347,10 +4480,737 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3737A6176CA464BAB46BCD7512F25D3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4F60C44AE0A9D4A54536C3C9675757 /* LPDNetworkingKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDNetworkingKit/LPDNetworkingKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDNetworkingKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDNetworkingKit/LPDNetworkingKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDNetworkingKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		38B55E22EF4549F5AC89B0BA6A0769AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E833160F305DDFCA49B542BB818C7A8D /* LPDControlsKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDControlsKit/LPDControlsKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDControlsKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDControlsKit/LPDControlsKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDControlsKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		429ACD56DB924F20C6662F9EC29B6387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F77F595836BFBB8F5868230B633B093 /* Pods-LPDMvvmKit_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LPDMvvmKit_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4550DE54FB040233305AF49518883FDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1119F48DC3F41F6E375FD043183D956 /* MJRefresh.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MJRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		455329FB32B71146B107E910A2B6634C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED7066FB7BDCD16C682F8D5FE549AAB /* AFNetworking.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C6201B68D66202CE4AF1BA390E3349A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1119F48DC3F41F6E375FD043183D956 /* MJRefresh.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MJRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4DBBE47FB1F6525985AB5C486449FCF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED7066FB7BDCD16C682F8D5FE549AAB /* AFNetworking.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56803A4EE5E52BA405DBB2D4B152B189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEE91CE899B2F45E56C55413B0E897C0 /* Pods-LPDMvvmKit_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Example/Pods-LPDMvvmKit_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LPDMvvmKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		574E0AB9D445D86EFC390CA2660C462C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E0D5971AC5FE3ED6523537DCA34DAB /* SDVersion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDVersion/SDVersion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDVersion/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDVersion/SDVersion.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SDVersion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AE92978F0ECB5332C5EEF029F58FFBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDF3CCC0EA885F7E913000FB82D20068 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		652F4EAABE1E859BA3E4F5EDA52B963C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E833160F305DDFCA49B542BB818C7A8D /* LPDControlsKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDControlsKit/LPDControlsKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDControlsKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDControlsKit/LPDControlsKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LPDControlsKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65FF3F35600E84AD46FB1EACE0857B2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5563377F7E32D7229B84C7A6091F935A /* LPDMvvmKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDMvvmKit/LPDMvvmKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDMvvmKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDMvvmKit/LPDMvvmKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDMvvmKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A16E63BFCDB40EE0F440716C9DC2C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E7E92C4C48F9E707007EFF913B28CDB /* MLeaksFinder.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MLeaksFinder/MLeaksFinder-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLeaksFinder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLeaksFinder/MLeaksFinder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MLeaksFinder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7120FEAD6F0DE3FA6150BD59321027C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 782831B9ACF0F188538D3EEAE7F4C7EE /* ReactiveObjC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveObjC/ReactiveObjC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveObjC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactiveObjC/ReactiveObjC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ReactiveObjC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		81AEB5709B020EF911C34B8ED9FC106A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 782831B9ACF0F188538D3EEAE7F4C7EE /* ReactiveObjC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveObjC/ReactiveObjC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveObjC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactiveObjC/ReactiveObjC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ReactiveObjC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		826F889990E2B6442DDFE6584D450996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D071F37658A876F3F05A6D0FDE5E2A /* LPDAdditionsKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDAdditionsKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LPDAdditionsKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		86E5AC0B361888A0173B39FE8F39B4F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319C03703DC90D86C6F6FA042CA3673C /* LPDCollectionViewKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDCollectionViewKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LPDCollectionViewKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8A7FD5B08FBFA75A54221054F3D9311F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E0D5971AC5FE3ED6523537DCA34DAB /* SDVersion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDVersion/SDVersion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDVersion/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDVersion/SDVersion.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SDVersion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BD477ED352616EFB88AE2107CC2F085 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7570E022ED1CC7496AB7AE80AC0F44A9 /* YYModel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9A78F7B1C7EA98F57E55BFB983818144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319C03703DC90D86C6F6FA042CA3673C /* LPDCollectionViewKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDCollectionViewKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDCollectionViewKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4E0CC3AEBBCE4A59CD7CFB4C7E4B158 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF9F36F5382C1EA287E510570764A0E /* FBRetainCycleDetector.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBRetainCycleDetector/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FBRetainCycleDetector;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -4379,72 +5239,43 @@
 			};
 			name = Debug;
 		};
-		02CF68E21570E064E1568251E5358D84 /* Release */ = {
+		CDC8D2BB66F3B0561A3D2542209FD570 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35E0D5971AC5FE3ED6523537DCA34DAB /* SDVersion.xcconfig */;
+			baseConfigurationReference = 439FB8C9D983F374B5CCFD0E4BA3227C /* LPDTableViewKit.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SDVersion/SDVersion-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SDVersion/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/LPDTableViewKit/LPDTableViewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LPDTableViewKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SDVersion/SDVersion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SDVersion;
+				MODULEMAP_FILE = "Target Support Files/LPDTableViewKit/LPDTableViewKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LPDTableViewKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		0E3E02A06EABACB5951D5724DB8EF455 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 319C03703DC90D86C6F6FA042CA3673C /* LPDCollectionViewKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDCollectionViewKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LPDCollectionViewKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		0F199F5775521DB274CED02B29936598 /* Release */ = {
+		D534C660DF0D2958F70136205CDC4E42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE4F60C44AE0A9D4A54536C3C9675757 /* LPDNetworkingKit.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -4472,430 +5303,11 @@
 			};
 			name = Release;
 		};
-		1356732AD9303F3204ED2ABE6FB49BA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 782831B9ACF0F188538D3EEAE7F4C7EE /* ReactiveObjC.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReactiveObjC/ReactiveObjC-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReactiveObjC/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReactiveObjC/ReactiveObjC.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReactiveObjC;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		13685E3C6C8F1812273ACB6726556C85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 319C03703DC90D86C6F6FA042CA3673C /* LPDCollectionViewKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDCollectionViewKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDCollectionViewKit/LPDCollectionViewKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDCollectionViewKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1374136FD77E1F5042EC064BD287F63C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1119F48DC3F41F6E375FD043183D956 /* MJRefresh.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MJRefresh/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MJRefresh;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1654D7C078C0E3A943950721DE21395C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52D071F37658A876F3F05A6D0FDE5E2A /* LPDAdditionsKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDAdditionsKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDAdditionsKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		20689C41CDF5C5043A57EDF23B85C354 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEE91CE899B2F45E56C55413B0E897C0 /* Pods-LPDMvvmKit_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Example/Pods-LPDMvvmKit_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LPDMvvmKit_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		23EE1185920CE32AD88312326E155BC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCF9F36F5382C1EA287E510570764A0E /* FBRetainCycleDetector.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FBRetainCycleDetector/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FBRetainCycleDetector;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3E8F246FC7E46EC56C3524D1892C39CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B95C57E6ADBCE27B19FF52545359081 /* Pods-LPDMvvmKit_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LPDMvvmKit_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3F141466F4C7FCE4B1AC9580073A569C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 782831B9ACF0F188538D3EEAE7F4C7EE /* ReactiveObjC.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReactiveObjC/ReactiveObjC-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReactiveObjC/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReactiveObjC/ReactiveObjC.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReactiveObjC;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3F1606173F52EABFEB3DDF9D4C8547CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDF3CCC0EA885F7E913000FB82D20068 /* Masonry.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		552B10D0684907A2F13A8B8803F4B8F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E7E92C4C48F9E707007EFF913B28CDB /* MLeaksFinder.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MLeaksFinder/MLeaksFinder-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MLeaksFinder/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MLeaksFinder/MLeaksFinder.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MLeaksFinder;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		570877A1EEEF39C1B130CCEEB53C7B51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ED7066FB7BDCD16C682F8D5FE549AAB /* AFNetworking.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		61014913F1B169F8C307230BCA94AAB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E833160F305DDFCA49B542BB818C7A8D /* LPDControlsKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDControlsKit/LPDControlsKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDControlsKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDControlsKit/LPDControlsKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LPDControlsKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		75B0BE319F505605F8658493C2C17F69 /* Debug */ = {
+		EE07BFF67E3EFAA1731B0685CE23ED5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B8132BEAC4BF85C874E1C5159F668F0 /* Pods-LPDMvvmKit_Example.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -4927,227 +5339,11 @@
 			};
 			name = Debug;
 		};
-		84D3D8BC8BDEADB271E5DD391FAF68B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7570E022ED1CC7496AB7AE80AC0F44A9 /* YYModel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = YYModel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8633C1CC2BFA64A31C95A3593409F183 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 439FB8C9D983F374B5CCFD0E4BA3227C /* LPDTableViewKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDTableViewKit/LPDTableViewKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDTableViewKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDTableViewKit/LPDTableViewKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LPDTableViewKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8A8A7CD706BDE0CECB004C8943DC0BAA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1119F48DC3F41F6E375FD043183D956 /* MJRefresh.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MJRefresh/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MJRefresh;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9196622806F4071148E931450FE5D2A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52D071F37658A876F3F05A6D0FDE5E2A /* LPDAdditionsKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDAdditionsKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDAdditionsKit/LPDAdditionsKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LPDAdditionsKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9211BF59AA4CF2FE672EA7F3F62911D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7570E022ED1CC7496AB7AE80AC0F44A9 /* YYModel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = YYModel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		96DBDA60C4AA700D36DF2F60688300E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5563377F7E32D7229B84C7A6091F935A /* LPDMvvmKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDMvvmKit/LPDMvvmKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDMvvmKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDMvvmKit/LPDMvvmKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDMvvmKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9A3FCD5403ACE29069141EE8C10D2F18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCF9F36F5382C1EA287E510570764A0E /* FBRetainCycleDetector.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FBRetainCycleDetector/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FBRetainCycleDetector;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AB6B13BEDC6AA5FA1DFECA41FBE0691D /* Release */ = {
+		EFF1C7C6C8F1626465862E834FE99CB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E7E92C4C48F9E707007EFF913B28CDB /* MLeaksFinder.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -5175,10 +5371,11 @@
 			};
 			name = Release;
 		};
-		B87F953D34B9AED0E4DA30FCDF9B9D81 /* Debug */ = {
+		F377EB36B9CC7D6004B5915229848F41 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 439FB8C9D983F374B5CCFD0E4BA3227C /* LPDTableViewKit.xcconfig */;
+			baseConfigurationReference = FCF9F36F5382C1EA287E510570764A0E /* FBRetainCycleDetector.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -5190,14 +5387,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDTableViewKit/LPDTableViewKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDTableViewKit/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBRetainCycleDetector/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDTableViewKit/LPDTableViewKit.modulemap";
+				MODULEMAP_FILE = "Target Support Files/FBRetainCycleDetector/FBRetainCycleDetector.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDTableViewKit;
+				PRODUCT_NAME = FBRetainCycleDetector;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -5206,76 +5403,11 @@
 			};
 			name = Debug;
 		};
-		B9C8D9E133C904397EF2666092AAD596 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE4F60C44AE0A9D4A54536C3C9675757 /* LPDNetworkingKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDNetworkingKit/LPDNetworkingKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDNetworkingKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDNetworkingKit/LPDNetworkingKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDNetworkingKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BA9809D296C36E47606E60954DC5C350 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F77F595836BFBB8F5868230B633B093 /* Pods-LPDMvvmKit_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LPDMvvmKit_Tests/Pods-LPDMvvmKit_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LPDMvvmKit_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E29C3F7AD0C3E12E46CE56689C9F4BC9 /* Release */ = {
+		FA802E671ECAA77027BDA50C0E716670 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDF3CCC0EA885F7E913000FB82D20068 /* Masonry.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -5303,10 +5435,11 @@
 			};
 			name = Release;
 		};
-		E2CC1318837835366D38A714912B4E19 /* Release */ = {
+		FE04A90B9F5F9EFF85B967464B8C2BA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5563377F7E32D7229B84C7A6091F935A /* LPDMvvmKit.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -5333,99 +5466,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		EC3EE9EBDDF7444FC52168CE82FF000C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ED7066FB7BDCD16C682F8D5FE549AAB /* AFNetworking.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F6813CA21F15B199F1994D822680235F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35E0D5971AC5FE3ED6523537DCA34DAB /* SDVersion.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SDVersion/SDVersion-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SDVersion/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SDVersion/SDVersion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SDVersion;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FD585698DADE94F2E9A153784DF9273E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E833160F305DDFCA49B542BB818C7A8D /* LPDControlsKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LPDControlsKit/LPDControlsKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LPDControlsKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LPDControlsKit/LPDControlsKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LPDControlsKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -5433,8 +5473,8 @@
 		1D6EAB086139092093C6F4D7459F2AD9 /* Build configuration list for PBXNativeTarget "LPDMvvmKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				96DBDA60C4AA700D36DF2F60688300E1 /* Debug */,
-				E2CC1318837835366D38A714912B4E19 /* Release */,
+				65FF3F35600E84AD46FB1EACE0857B2D /* Debug */,
+				FE04A90B9F5F9EFF85B967464B8C2BA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5442,8 +5482,8 @@
 		20933A40AFC90DAACE01FF981479DBC8 /* Build configuration list for PBXNativeTarget "Pods-LPDMvvmKit_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA9809D296C36E47606E60954DC5C350 /* Debug */,
-				3E8F246FC7E46EC56C3524D1892C39CF /* Release */,
+				429ACD56DB924F20C6662F9EC29B6387 /* Debug */,
+				027CC9FE6A75A717AD565FC2A9430FDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5451,8 +5491,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
-				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+				C104F7F091290C3D1E248192F07FE689 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5460,8 +5500,8 @@
 		31E01BC98C827BD8A78F94173CDCC418 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC3EE9EBDDF7444FC52168CE82FF000C /* Debug */,
-				570877A1EEEF39C1B130CCEEB53C7B51 /* Release */,
+				4DBBE47FB1F6525985AB5C486449FCF3 /* Debug */,
+				455329FB32B71146B107E910A2B6634C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5469,8 +5509,8 @@
 		36AD28BA210A74F0D2A9F13F8DC605CC /* Build configuration list for PBXNativeTarget "MLeaksFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				552B10D0684907A2F13A8B8803F4B8F1 /* Debug */,
-				AB6B13BEDC6AA5FA1DFECA41FBE0691D /* Release */,
+				6A16E63BFCDB40EE0F440716C9DC2C0F /* Debug */,
+				EFF1C7C6C8F1626465862E834FE99CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5478,8 +5518,8 @@
 		5C06CA160C4A22F7B4BA5F58A12A3A7B /* Build configuration list for PBXNativeTarget "LPDCollectionViewKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				13685E3C6C8F1812273ACB6726556C85 /* Debug */,
-				0E3E02A06EABACB5951D5724DB8EF455 /* Release */,
+				9A78F7B1C7EA98F57E55BFB983818144 /* Debug */,
+				86E5AC0B361888A0173B39FE8F39B4F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5487,8 +5527,8 @@
 		70B2F746C0BAAB026227E2D8A2CDCC4F /* Build configuration list for PBXNativeTarget "YYModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9211BF59AA4CF2FE672EA7F3F62911D0 /* Debug */,
-				84D3D8BC8BDEADB271E5DD391FAF68B6 /* Release */,
+				347F9B1B5C1CAADD1AC0E0F96226A522 /* Debug */,
+				8BD477ED352616EFB88AE2107CC2F085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5496,8 +5536,8 @@
 		75C6EF1BFCA5E16BDB6135ABA45289BC /* Build configuration list for PBXNativeTarget "Pods-LPDMvvmKit_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75B0BE319F505605F8658493C2C17F69 /* Debug */,
-				20689C41CDF5C5043A57EDF23B85C354 /* Release */,
+				EE07BFF67E3EFAA1731B0685CE23ED5A /* Debug */,
+				56803A4EE5E52BA405DBB2D4B152B189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5505,8 +5545,8 @@
 		859F90628A8D97D645ABAF56FBA90F1C /* Build configuration list for PBXNativeTarget "FBRetainCycleDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23EE1185920CE32AD88312326E155BC2 /* Debug */,
-				9A3FCD5403ACE29069141EE8C10D2F18 /* Release */,
+				F377EB36B9CC7D6004B5915229848F41 /* Debug */,
+				A4E0CC3AEBBCE4A59CD7CFB4C7E4B158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5514,8 +5554,8 @@
 		87C959EA41F5EDAD8398E841583F1F32 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F1606173F52EABFEB3DDF9D4C8547CE /* Debug */,
-				E29C3F7AD0C3E12E46CE56689C9F4BC9 /* Release */,
+				5AE92978F0ECB5332C5EEF029F58FFBA /* Debug */,
+				FA802E671ECAA77027BDA50C0E716670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5523,8 +5563,8 @@
 		8F05205938C5F4A86A2CD1A7CDB6F508 /* Build configuration list for PBXNativeTarget "MJRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A8A7CD706BDE0CECB004C8943DC0BAA /* Debug */,
-				1374136FD77E1F5042EC064BD287F63C /* Release */,
+				4550DE54FB040233305AF49518883FDA /* Debug */,
+				4C6201B68D66202CE4AF1BA390E3349A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5532,8 +5572,8 @@
 		B56EE1A578574C0C18DF561D3549F3C9 /* Build configuration list for PBXNativeTarget "LPDNetworkingKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B9C8D9E133C904397EF2666092AAD596 /* Debug */,
-				0F199F5775521DB274CED02B29936598 /* Release */,
+				3737A6176CA464BAB46BCD7512F25D3F /* Debug */,
+				D534C660DF0D2958F70136205CDC4E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5541,8 +5581,8 @@
 		BBBBC9F060C4B54A60BA6B5E40728A6D /* Build configuration list for PBXNativeTarget "ReactiveObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F141466F4C7FCE4B1AC9580073A569C /* Debug */,
-				1356732AD9303F3204ED2ABE6FB49BA0 /* Release */,
+				81AEB5709B020EF911C34B8ED9FC106A /* Debug */,
+				7120FEAD6F0DE3FA6150BD59321027C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5550,8 +5590,8 @@
 		BCB7733D32EF1958E14F327DE7BC904C /* Build configuration list for PBXNativeTarget "SDVersion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F6813CA21F15B199F1994D822680235F /* Debug */,
-				02CF68E21570E064E1568251E5358D84 /* Release */,
+				8A7FD5B08FBFA75A54221054F3D9311F /* Debug */,
+				574E0AB9D445D86EFC390CA2660C462C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5559,8 +5599,8 @@
 		CC19D4A9D74BAEBAC5B746EBA45E2DEE /* Build configuration list for PBXNativeTarget "LPDAdditionsKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1654D7C078C0E3A943950721DE21395C /* Debug */,
-				9196622806F4071148E931450FE5D2A0 /* Release */,
+				0156C4505B60E05E1527929EA681E727 /* Debug */,
+				826F889990E2B6442DDFE6584D450996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5568,8 +5608,8 @@
 		D11091B7B3E451AA8607DA72C9AD7624 /* Build configuration list for PBXNativeTarget "LPDTableViewKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B87F953D34B9AED0E4DA30FCDF9B9D81 /* Debug */,
-				8633C1CC2BFA64A31C95A3593409F183 /* Release */,
+				CDC8D2BB66F3B0561A3D2542209FD570 /* Debug */,
+				132270651B32606B13425507A9010DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5577,8 +5617,8 @@
 		E14B9FFA43FAC5D00334979FE5023479 /* Build configuration list for PBXNativeTarget "LPDControlsKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD585698DADE94F2E9A153784DF9273E /* Debug */,
-				61014913F1B169F8C307230BCA94AAB5 /* Release */,
+				38B55E22EF4549F5AC89B0BA6A0769AE /* Debug */,
+				652F4EAABE1E859BA3E4F5EDA52B963C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -22,7 +22,7 @@ PODS:
     - LPDAdditionsKit
     - Masonry
     - SDVersion
-  - LPDMvvmKit (0.9.0):
+  - LPDMvvmKit (0.9.3):
     - LPDAdditionsKit
     - LPDCollectionViewKit
     - LPDControlsKit
@@ -50,7 +50,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   LPDMvvmKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -58,16 +58,16 @@ SPEC CHECKSUMS:
   LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
   LPDCollectionViewKit: a3b501eae7617f9cf67f5a9b358e32b1f31219ae
   LPDControlsKit: 85d97bb3ac1f84aa8ff74f33f838493f16e0ba8f
-  LPDMvvmKit: dabf72d4928e6af038f0bcc631f3260bb78ee41c
+  LPDMvvmKit: 649e509f70ceb0ad1ca00c2803438e331b8d2623
   LPDNetworkingKit: afdec5c9ed7f410e5b3b4de9252b6c5c8f25fe07
   LPDTableViewKit: e082367c33e2983ff7c0c74ae368a341912bd632
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
+  MLeaksFinder: '0850e2f2abc7227adc4d4e2d1992b431264eb4d5'
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   SDVersion: 6afaf76a7e71d620cc2039f96d4bff3064c129ec
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: dcf0e6a3f5af9bcd24ee53bcc210346796fff583
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

@@ -5,38 +5,45 @@
 [![License](https://img.shields.io/cocoapods/l/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 
-## Example
+Elegant MVVM framework in Objective-C.
 
-To run the example project, clone the repo, and run.
+## 示例
 
-## Requirements
+1. 利用 `git clone` 命令下载本仓库, `Example` 目录包含了示例程序；
+2. 用 XCode 打开对应项目编译即可。
 
-iOS 8.0 or later
+或执行以下命令：
 
-## Installation
+```bash
+git clone git@github.com:LPD-iOS/lpd-mvvm-kit.git; cd lpd-mvvm-kit/Example; open 'LPDMvvmKit.xcworkspace'
+```
 
-LPDMvvmKit is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## 环境
+
+- XCode 8.0+
+- iOS 8.0+
+
+## 安装
+
+EFQRCode 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
 
 ```ruby
 pod "LPDMvvmKit"
 ```
 
-## Author
+然后，执行如下命令即可：
 
-foxsofter, foxsofter@gmail.com
+```bash
+$ pod install
+```
 
-## License
+## 目的
 
-LPDMvvmKit is available under the MIT license. See the LICENSE file for more info.
+LPDMvvmKit 提供了一些常用的工具类，还有一些很轻巧的控件，以及最主要的是提供了 MVVM 开发框架，一直比较喜欢采用 MVVM 的框架来开发前端产品，所以会希望在 iOS 下也能找到类似的框架可以采用，但是一直没有找到合适的，所以就自己造了个轮子，代码未充分测试，欢迎各种 Issue。
 
-# Goal
+### 1. ViewController 和 ViewModel 解耦
 
-LPDMvvmKit提供了一些常用的工具类，还有一些很轻巧的控件，以及最主要的是提供了MVVM开发框架，一直比较喜欢采用MVVM的框架来开发前端产品，所以会希望在iOS下也能找到类似的框架可以采用，但是一直没有找到合适的，所以就自己造了个轮子，代码未充分测试，欢迎各种issue。
-
-# view controller和view model解耦
-
-目前在github上能搜到的与MVVM相关的Objective-c库有下面几个：
+目前在 GitHub 上能搜到的与 MVVM 相关的 Objective-C 库有下面几个：
 
 [lizelu/MVVM](https://github.com/lizelu/MVVM)
 
@@ -46,20 +53,20 @@ LPDMvvmKit提供了一些常用的工具类，还有一些很轻巧的控件，�
 
 [lovemo/MVVMFramework](https://github.com/lovemo/MVVMFramework)
 
-这些库都不错，都可以了解下，以上这些库各有各的使用场景，因为这些场景未能满足LPDMvvmKit对各层的定义，以及各层之间的分界线，所以这个轮子还得造。
+这些库都不错，都可以了解下，以上这些库各有各的使用场景，因为这些场景未能满足 LPDMvvmKit 对各层的定义，以及各层之间的分界线，所以这个轮子还得造。
 
-LPDMvvmKit对各层的定义
+LPDMvvmKit 对各层的定义
 
-|#|层|定义|
+| |层|定义|
 |---|---|----
 |1|Model|[POCO model](http://stackoverflow.com/questions/725348/poco-vs-dto)
-|2|View|View 或者 ViewController，一般情况下在ViewController中进行View与ViewModel之间的数据绑定，如果View是UITableViewCell和UICollectionViewCell等，也会在View中进行数据绑定
-|3|ViewModel| 维护数据属性（持有Model），维护状态属性，响应用户操作的逻辑（function，RACSignal、RACCommand）
+|2|View|View 或者 ViewController，一般情况下在 ViewController 中进行 View 与 ViewModel 之间的数据绑定，如果 View 是 UITableViewCell 和 UICollectionViewCell 等，也会在 View 中进行数据绑定
+|3|ViewModel| 维护数据属性（持有 Model），维护状态属性，响应用户操作的逻辑（Function、RACSignal、RACCommand）
 |4|Service|这一层提供系统依赖的外部接口，如网络调用层、系统定位等
 
-要让ViewController廋下来的，就需要将对应的业务逻辑移到ViewModel层，要做到并不难，invoke function、subscribe RACSignal、bind RACCommand就可以了，那么问题来了，如何在移到ViewModel层中的业务逻辑中进行页面跳转呢？目前的做法是对导航做了精简，重写导航相关的接口，所有需要push，pop，present，dismiss操作的接口都封装到navigation相关的两个protocol [LPDNavigationControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) ，[LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h) 中，当需要present或者push一个view controller，必须要嵌套在navigation view controller中，同样的present或者push一个view model时，必须要嵌套在navigation view model中，这样并不会带来更多的复杂性，但是在需要用navigation时，不需要做任何改动。
+要让 ViewController 廋下来的，就需要将对应的业务逻辑移到 ViewModel 层，要做到并不难，Invoke function、Subscribe RACSignal、Bind RACCommand 就可以了，那么问题来了，如何在移到 ViewModel 层中的业务逻辑中进行页面跳转呢？目前的做法是对导航做了精简，重写导航相关的接口，所有需要Push，Pop，Present，Dismiss 操作的接口都封装到 Navigation 相关的两个 Protocol：[LPDNavigationControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) ，[LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h) 中，当需要 Present 或者 Push 一个 ViewController，必须要嵌套在 NavigationViewController 中，同样的 Present 或者 Push 一个 ViewModel 时，必须要嵌套在 NavigationViewModel中，这样并不会带来更多的复杂性，但是在需要用 Navigation 时，不需要做任何改动。
 
-|#|ViewModel与ViewController解藕存在的问题|解决方案对应的protocol
+| |ViewModel 与 ViewController 解藕存在的问题|解决方案对应的 Protocol
 |---|---|---
 |1|导航同步问题| [LPDNavigationControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDNavigationControllerProtocol.h) [LPDNavigationViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDNavigationViewModelProtocol.h)
 |2|子ViewController问题|[LPDViewControllerProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewControllers/LPDViewControllerProtocol.h), [LPDViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDViewModelProtocol.h)
@@ -68,9 +75,10 @@ LPDMvvmKit对各层的定义
 |5|toast|[LPDToastView](https://github.com/LPD-iOS/lpd-controls-kit/tree/master/LPDControlsKit/Classes/LPDToastView/LPDToastView.h)
 |6|alert|[LPDAlertView](https://github.com/LPD-iOS/lpd-controls-kit/tree/master/LPDControlsKit/Classes/LPDAlertView/LPDAlertView.h)
 
-更多细节请参考源码，可能不是最好的解决方案，欢迎issue
+更多细节请参考源码，可能不是最好的解决方案，欢迎 Issue。
 
-###导航一一对应的例子
+#### (1) 导航一一对应的例子
+
 ```Objective-c
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   LPDHomeViewController *vc = [[LPDHomeViewController alloc] initWithViewModel:vm];
@@ -108,8 +116,9 @@ LPDMvvmKit对各层的定义
   [self.navigation dismissViewModelAnimated:YES completion:nil];
 ```
 
-###子ViewController的例子
-要实现子ViewController，现在可以这么做了
+#### (2) 子 ViewController 的例子
+
+要实现子 ViewController，现在可以这么做了：
 
 ```Objective-c
 	LPDWaybillsViewModel *waybillsViewModel = [[LPDWaybillsViewModel alloc] init];
@@ -122,8 +131,9 @@ LPDMvvmKit对各层的定义
 	[self addChildViewModel:waybillsViewModel];
 ```
 
-###表单提交的进度条的例子
-更简单了,一行代码
+#### (3) 表单提交的进度条的例子
+
+更简单了，一行代码：
 
 ```Objective-c
   self.submitting = YES;  // Show
@@ -131,8 +141,9 @@ LPDMvvmKit对各层的定义
   self.submitting = NO;  // hide
 ```
 
-###加载的进度条的例子
-需要设置beginLoadingBlock和endLoadingBlock来实现显示和取消加载进度条，然后不需要做其它事情了，剩下的交给框架来实现就好了，后面会说到tableview和collectionview加载的实现
+#### (4) 加载的进度条的例子
+
+需要设置 BeginLoadingBlock 和 EndLoadingBlock 来实现显示和取消加载进度条，然后不需要做其它事情了，剩下的交给框架来实现就好了，后面会说到 Tableview 和 Collectionview 加载的实现：
 
 ```Objective-c
     [self beginLoadingBlock:^(UIView *_Nonnull view) {
@@ -180,29 +191,32 @@ LPDMvvmKit对各层的定义
     }];
 ```
 
-###下拉刷新的例子
-下拉刷新默认使用MJRefresh，可以扩展然后通过initHeaderBlock来定制自己的下拉刷新效果，要实现下拉刷新不要太简单了，在LPDScrollViewController的子类中添加两行代码，在对应的ViewModel中实现loadingSignal
+#### (5) 下拉刷新的例子
+
+下拉刷新默认使用 MJRefresh，可以扩展然后通过 InitHeaderBlock 来定制自己的下拉刷新效果，要实现下拉刷新不要太简单了，在LPDScrollViewController 的子类中添加两行代码，在对应的 ViewModel 中实现 LoadingSignal：
 
 ```Objective-c
   self.scrollView = self.tableView;
   self.needLoading = YES;
 ```
 
-###上拉加载更多的例子
-上拉加载更多默认使用MJRefresh，目前暂时不支持定制，上拉加载更多的实现也很简单，在LPDScrollViewController的子类中添加一行代码，剩下的就是在对应的ViewModel中实现loadingMoreSignal
+#### (6) 上拉加载更多的例子
+
+上拉加载更多默认使用 MJRefresh，目前暂时不支持定制，上拉加载更多的实现也很简单，在 LPDScrollViewController 的子类中添加一行代码，剩下的就是在对应的 ViewModel 中实现 LoadingMoreSignal：
 
 ```Objective-c
   self.needLoadingMore = YES;
 ```
-更多细节请参考demo
 
+更多细节请参考 Demo。
 
-#data binding
+### 2. 数据绑定
 
-数据绑定是MVVM解藕的根本，前面提到的解决view model和view controller耦合的问题，也是通过ReactiveCocoa的信号流来做到导航同步等。数据绑定的对象有两种，property，collection，这两者的变更能发出通知是数据绑定的必须条件，相对应的在Objective-C中property的变更可以通过KVO实现，当然用RAC的方式更简单了，这里不再阐述。然而collection的变更并没有很好的方式能发出相应的通知，可以扩展相对应的类（如NSMutableArray，NSMutableDictionary等集合类）来达到这类目的。些集合最终是做为UITableView或者UICollectionView的数据源存在，系统框架现在的UITableView和UICollectionView都是通过委托来实现，相关的代码实在繁琐（应该不会只有我一个人这么认为）。我很希望能彻底解决这两个问题，所以有了[LPDTableViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDTableViewModelProtocol.h)，[LPDCollectionViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDCollectionViewModelProtocol.h) 等一系列的代码，主要是为了解决UITableView和UICollectionView的ViewModel的数据绑定并简化相关的代码，实现所需的代码量还是比较多的，有兴趣还是看代码更为直观。
-主要是的设计思路是这样的：将增删接口都通过protocol的方式封装，避免每次都是通过delegate去实现，只需要调用对应的接口就好了，另外对一些常用的操作如 didSelect 等都从delegate method改成RACSignal，通过这些改变，让代码可以聚合起来，相关的代码逻辑不需要在多个零散的函数中去添加代码。
+数据绑定是 MVVM 解藕的根本，前面提到的解决 ViewModel 和 ViewController 耦合的问题，也是通过 ReactiveCocoa 的信号流来做到导航同步等。数据绑定的对象有两种，Property，Collection，这两者的变更能发出通知是数据绑定的必须条件，相对应的在 Objective-C 中 Property 的变更可以通过 KVO 实现，当然用 RAC 的方式更简单了，这里不再阐述。然而 Collection 的变更并没有很好的方式能发出相应的通知，可以扩展相对应的类（如 NSMutableArray，NSMutableDictionary 等集合类）来达到这类目的。些集合最终是做为 UITableView 或者 UICollectionView 的数据源存在，系统框架现在的 UITableView和UICollectionView 都是通过委托来实现，相关的代码实在繁琐（应该不会只有我一个人这么认为）。我很希望能彻底解决这两个问题，所以有了[LPDTableViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDTableViewModelProtocol.h)，[LPDCollectionViewModelProtocol](https://github.com/LPD-iOS/lpd-mvvm-kit/blob/master/LPDMvvmKit/Classes/ViewModels/LPDCollectionViewModelProtocol.h) 等一系列的代码，主要是为了解决 UITableView 和 UICollectionView 的 ViewModel 的数据绑定并简化相关的代码，实现所需的代码量还是比较多的，有兴趣还是看代码更为直观。
 
-###demo中的一些例子，加载tableview的数据
+主要是的设计思路是这样的：将增删接口都通过 Protocol 的方式封装，避免每次都是通过 Delegate 去实现，只需要调用对应的接口就好了，另外对一些常用的操作如 DidSelect 等都从 Delegate Method 改成 RACSignal，通过这些改变，让代码可以聚合起来，相关的代码逻辑不需要在多个零散的函数中去添加代码。
+
+#### (1) Demo 中的一些例子，加载 Tableview 的数据
 
 ```Objective-c
 -(void)reloadTable {
@@ -218,10 +232,9 @@ LPDMvvmKit对各层的定义
     [self.tableViewModel removeAllSections];
   }
 }
-
 ```
 
-###添加一个cell
+#### (2) 添加一个 Cell
 
 ```Objective-c
         LPDPostModel *model = [[LPDPostModel alloc]init];
@@ -235,7 +248,8 @@ LPDMvvmKit对各层的定义
 
 ```
 
-###批量添加cell
+#### (3) 批量添加 Cell
+
 ```Objective-c
         NSMutableArray *cellViewModels = [NSMutableArray array];
         LPDTableDefaultCellViewModel *cellViewModel1 =
@@ -265,12 +279,14 @@ LPDMvvmKit对各层的定义
         [self.tableViewModel insertCellViewModels:cellViewModels atIndex:0 withRowAnimation:UITableViewRowAnimationLeft];
 ```
 
-###删除一个cell
+#### (4) 删除一个 Cell
+
 ```Objective-c
         [self.tableViewModel removeCellViewModelAtIndex:0 withRowAnimation:UITableViewRowAnimationRight];
 ```
 
-###cell的didSelect
+#### (5) Cell 的 DidSelect
+
 ```Objective-c
       [[[self.waybillsTableViewModel.didSelectRowAtIndexPathSignal deliverOnMainThread]
         takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *tuple) {
@@ -285,7 +301,8 @@ LPDMvvmKit对各层的定义
       }];
 ```
 
-###目前支持的操作
+#### (6) 目前支持的操作
+
 ```Objective-c
 @property (nonatomic, strong, readonly) RACSignal *willDisplayCellSignal;
 @property (nonatomic, strong, readonly) RACSignal *willDisplayHeaderViewSignal;
@@ -301,7 +318,10 @@ LPDMvvmKit对各层的定义
 @property (nonatomic, strong, readonly) RACSignal *didEndEditingRowAtIndexPathSignal;
 ```
 
+## 作者
 
-## License
+foxsofter, foxsofter@gmail.com
 
-MIT
+## 协议
+
+LPDMvvmKit 基于 MIT 协议进行分发和使用，更多信息参见协议文件。

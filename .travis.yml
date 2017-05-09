@@ -1,10 +1,16 @@
-osx_image: xcode8.3.1
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+osx_image: xcode8.3
+branches:
+  only:
+    - master
+before_install:
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 script:
-- xctool -workspace Example/LPDMvvmKit.xcworkspace -scheme LPDMvvmKit-Example -sdk iphonesimulator
-#- pod lib lint --allow-warnings
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  - pod lib lint --allow-warnings
+
+after_success:
+  - sleep 3

@@ -90,7 +90,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FBRetainCycleDetector/FBRetainCycleDetector.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"
@@ -98,7 +97,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/LPDNetworkingKit/LPDNetworkingKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDTableViewKit/LPDTableViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MLeaksFinder/MLeaksFinder.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDVersion/SDVersion.framework"
@@ -106,7 +104,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FBRetainCycleDetector/FBRetainCycleDetector.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDAdditionsKit/LPDAdditionsKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDCollectionViewKit/LPDCollectionViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDControlsKit/LPDControlsKit.framework"
@@ -114,7 +111,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/LPDNetworkingKit/LPDNetworkingKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LPDTableViewKit/LPDTableViewKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MLeaksFinder/MLeaksFinder.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDVersion/SDVersion.framework"

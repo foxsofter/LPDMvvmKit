@@ -8,7 +8,6 @@
 
 #import "LPDHomeViewModel.h"
 #import <LPDMvvmKit/LPDMvvmKit.h>
-#import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 
 @implementation LPDHomeViewModel
 

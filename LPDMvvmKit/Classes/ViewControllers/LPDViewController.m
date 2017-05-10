@@ -359,8 +359,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subscribeAddChildViewModelSignal {
     @weakify(self);
     [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
-     subscribeNext:^(id<LPDViewModelProtocol> childViewModel) {
+     subscribeNext:^(RACTuple * _Nullable x) {
          @strongify(self);
+         id<LPDViewModelProtocol> childViewModel = x.first;
          id<LPDViewControllerProtocol> childViewController =
          (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
          [self addChildViewController:childViewController];

@@ -61,7 +61,9 @@ SDVersion supports iOS, watchOS, tvOS, and macOS. Browse through the implementat
 ```
 
 <p align="center">
- <img src="https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5479ce82e4b028a16123006d/1417268866072/Apple_Swift_Logo.png" alt="SDVersion Swift" width="40" height="40"/><br>
+ <a href="#how-it-works">
+        	<img src="https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5479ce82e4b028a16123006d/1417268866072/Apple_Swift_Logo.png" alt="SDVersion Swift" width="40" height="40"/><br>
+	</a>
 Swift Version:
 </p>
   
@@ -151,6 +153,7 @@ CocoaPods is a dependency manager for Objective-C, which automates and simplifie
     iPadMini4
     iPadPro9Dot7Inch
     iPadPro12Dot9Inch
+    iPad5
 
 	iPodTouch1Gen
     iPodTouch2Gen
@@ -199,6 +202,10 @@ Or in Swift:
 ### Targetable models
 	Apple Watch 38mm
     Apple Watch 42mm
+    Apple Watch 38mm Series 1
+    Apple Watch 42mm Series 1
+    Apple Watch 38mm Series 2
+    Apple Watch 42mm Series 2
 
     Simulator
 
@@ -321,7 +328,7 @@ Or in Swift:
 ```
 ### Helpers
 ```objective-c
-	  NSLog(@"%@", [SDVersion deviceSizeName:[SDVersion deviceSize]]);
+      NSLog(@"%@", [SDVersion deviceSizeName:[SDVersion deviceSize]]);
       /* e.g: Outputs '15 inch' */
 
       NSLog(@"%@",[SDVersion deviceScreenResolutionName:[SDVersion deviceScreenResolution]])

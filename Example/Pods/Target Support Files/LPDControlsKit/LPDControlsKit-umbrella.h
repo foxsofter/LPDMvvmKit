@@ -12,6 +12,8 @@
 
 #import "KxMenu.h"
 #import "LPDAlertView.h"
+#import "LPDSystemAlertView.h"
+#import "NSMutableAttributedString+LPDCheck.h"
 #import "LPDPlusCrossBarButtonItem.h"
 #import "LPDPopupActionSheet.h"
 #import "LPDPopupPickerView.h"

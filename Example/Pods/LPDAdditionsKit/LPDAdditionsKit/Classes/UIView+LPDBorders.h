@@ -70,4 +70,6 @@ typedef NS_OPTIONS(NSUInteger, LPDUIViewBorderPosition) {
    borderPosition:(LPDUIViewBorderPosition)borderPosition
        borderType:(LPDUIViewBorderType)borderType;
 
+- (void)setLineDashPattern:(NSArray<NSNumber *> *)lineDashPattern;
+
 @end

@@ -27,9 +27,11 @@
   (__kindof id<LPDCollectionItemViewModelProtocol>)viewModel
                                                  collectionView:(UICollectionView *)collectionView
                                                     atIndexPath:(NSIndexPath *)indexPath {
-  NSString *xibPath = [[NSBundle mainBundle] pathForResource:viewModel.reuseViewClass ofType:@"nib"];
+  Class viewClass = NSClassFromString(viewModel.reuseViewClass);
+  NSBundle *bundle = [NSBundle bundleForClass:viewClass];
+  NSString *xibPath = [bundle pathForResource:viewModel.reuseViewClass ofType:@"nib"];
   if (xibPath && xibPath.length > 0) {
-    [collectionView registerNib:[UINib nibWithNibName:viewModel.reuseViewClass bundle:nil]
+    [collectionView registerNib:[UINib nibWithNibName:viewModel.reuseViewClass bundle:bundle]
       forCellWithReuseIdentifier:viewModel.reuseIdentifier];
   } else {
     [collectionView registerClass:NSClassFromString(viewModel.reuseViewClass) forCellWithReuseIdentifier:viewModel.reuseIdentifier];

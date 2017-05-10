@@ -19,6 +19,7 @@
 @property (assign) CGFloat borderWidth;
 @property (assign) LPDUIViewBorderPosition borderPosition;
 @property (assign) LPDUIViewBorderType borderType;
+@property (nonatomic, copy) NSArray <NSNumber *> *lineDashPattern;
 
 @property (nonatomic, strong) CAShapeLayer *borderLayer;
 
@@ -151,11 +152,11 @@
   self.borderLayer.strokeColor = self.borderColor.CGColor;
   if (self.borderType == LPDUIViewBorderTypeDashed) {
     [self.borderLayer setLineCap:kCALineCapSquare];
-    [self.borderLayer setLineDashPattern:@[@(2 * self.borderWidth), @(4 * self.borderWidth)]];
+	 [self.borderLayer setLineDashPattern:self.lineDashPattern?:@[@(2 * self.borderWidth), @(4 * self.borderWidth)]];
     [self.borderLayer setLineDashPhase:0.0f];
   } else if (self.borderType == LPDUIViewBorderTypeDoted) {
     [self.borderLayer setLineCap:kCALineCapRound];
-    [self.borderLayer setLineDashPattern:@[@(self.borderWidth / 4), @(2 * self.borderWidth)]];
+	 [self.borderLayer setLineDashPattern:self.lineDashPattern?:@[@(self.borderWidth / 4), @(2 * self.borderWidth)]];
     [self.borderLayer setLineDashPhase:0.0f];
   }
 
@@ -228,6 +229,14 @@
 
 - (void)setBorderLayer:(CAShapeLayer *)borderLayer {
   [self setRetainNonatomicObject:borderLayer withKey:@selector(setBorderLayer:)];
+}
+
+- (void)setLineDashPattern:(NSArray<NSNumber *> *)lineDashPattern {
+  [self setCopyNonatomicObject:lineDashPattern withKey:@selector(setLineDashPattern:)];
+}
+
+- (NSArray<NSNumber *> *)lineDashPattern {
+  [self object:@selector(setLineDashPattern:)];
 }
 
 @end

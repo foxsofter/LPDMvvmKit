@@ -32,6 +32,7 @@
 #import "NSString+RACSupport.h"
 #import "NSURLConnection+RACSupport.h"
 #import "NSUserDefaults+RACSupport.h"
+#import "RACAnnotations.h"
 #import "RACArraySequence.h"
 #import "RACBehaviorSubject.h"
 #import "RACBlockTrampoline.h"

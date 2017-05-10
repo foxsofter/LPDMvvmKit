@@ -25,9 +25,10 @@
 - (__kindof id<LPDTableViewItemProtocol>)cellWithViewModel:(__kindof id<LPDTableItemViewModelProtocol>)viewModel
                                                     tableView:(UITableView *)tableView {
   Class viewClass = NSClassFromString(viewModel.reuseViewClass);
-  NSString *xibPath = [[NSBundle mainBundle] pathForResource:viewModel.reuseViewClass ofType:@"nib"];
+  NSBundle *bundle = [NSBundle bundleForClass:viewClass];
+  NSString *xibPath = [bundle pathForResource:viewModel.reuseViewClass ofType:@"nib"];
   if (xibPath && xibPath.length > 0) {
-    [tableView registerNib:[UINib nibWithNibName:viewModel.reuseViewClass bundle:nil]
+    [tableView registerNib:[UINib nibWithNibName:viewModel.reuseViewClass bundle:bundle]
       forCellReuseIdentifier:viewModel.reuseIdentifier];
   } else {
     [tableView registerClass:viewClass forCellReuseIdentifier:viewModel.reuseIdentifier];

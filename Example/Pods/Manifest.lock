@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - LPDAdditionsKit (0.1.2)
-  - LPDCollectionViewKit (0.1.7):
+  - LPDAdditionsKit (0.1.3)
+  - LPDCollectionViewKit (0.1.8):
     - ReactiveObjC
-  - LPDControlsKit (0.1.4):
+  - LPDControlsKit (0.1.9):
     - LPDAdditionsKit
     - Masonry
     - SDVersion
-  - LPDMvvmKit (0.9.3):
+  - LPDMvvmKit (0.9.4):
     - LPDAdditionsKit
     - LPDCollectionViewKit
     - LPDControlsKit
@@ -33,12 +33,12 @@ PODS:
     - AFNetworking
     - ReactiveObjC
     - YYModel
-  - LPDTableViewKit (0.2.6):
+  - LPDTableViewKit (0.2.8):
     - ReactiveObjC
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
-  - ReactiveObjC (2.1.2)
-  - SDVersion (4.0.1)
+  - ReactiveObjC (3.0.0)
+  - SDVersion (4.0.2)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -50,16 +50,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  LPDAdditionsKit: 68234d5791daf8d4272ccd4c06eaf22ab09b2809
-  LPDCollectionViewKit: a3b501eae7617f9cf67f5a9b358e32b1f31219ae
-  LPDControlsKit: 85d97bb3ac1f84aa8ff74f33f838493f16e0ba8f
-  LPDMvvmKit: bed9ca65e0f567b646e3702f5fc3d8b62e9cfa0e
+  LPDAdditionsKit: 68d721bbe5eda0e4dd0704ecf12ef838e7c452e6
+  LPDCollectionViewKit: 3dd9cef6c6066e2017d07a6985d9ee6f948d1f96
+  LPDControlsKit: 60a4614aaff5ad82530d848f253da14a99c0d035
+  LPDMvvmKit: 1144a4309ba3974bd58557f8d07540707002d895
   LPDNetworkingKit: afdec5c9ed7f410e5b3b4de9252b6c5c8f25fe07
-  LPDTableViewKit: e082367c33e2983ff7c0c74ae368a341912bd632
+  LPDTableViewKit: 99a4dc55930e0aa8ebf8b6689a77bda010ded2e8
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
-  SDVersion: 6afaf76a7e71d620cc2039f96d4bff3064c129ec
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SDVersion: 7b472a749907c29fcba04dadb8ecb4eb9a9aeeab
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: f4ad78fdaccb36fa5ee95cef0afd968bd3433c30

@@ -1,6 +1,6 @@
 {
   "name": "LPDMvvmKit",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "summary": "Elegant MVVM framework in Objective-C.",
   "description": "LPDMvvmKit - Elegant MVVM framework in Objective-C.",
   "homepage": "https://github.com/LPD-iOS/LPDMvvmKit",
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/LPD-iOS/LPDMvvmKit.git",
-    "tag": "0.9.3"
+    "tag": "0.9.4"
   },
   "requires_arc": true,
   "source_files": "LPDMvvmKit/Classes/**/*",

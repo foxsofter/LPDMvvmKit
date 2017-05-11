@@ -357,14 +357,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)subscribeAddChildViewModelSignal {
-//    @weakify(self);
-//    [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
-//     subscribeNext:^(id childViewModel) {
-//         @strongify(self);
-//         id<LPDViewControllerProtocol> childViewController =
-//         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-//         [self addChildViewController:childViewController];
-//     }];
+    @weakify(self);
+    [[(NSObject *)self.viewModel rac_signalForSelector:@selector(addChildViewModel:)]
+     subscribeNext:^(id childViewModel) {
+         @strongify(self);
+         id<LPDViewControllerProtocol> childViewController =
+         (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+         [self addChildViewController:childViewController];
+     }];
 }
 
 - (void)subscribeRemoveFromParentViewModelSignal {

@@ -56,28 +56,18 @@ NS_ASSUME_NONNULL_BEGIN
   });
 }
 
-- (void)loadView {
-  NSBundle *bundle = [NSBundle bundleForClass:self.class];
-  NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
-  if (xibPath && xibPath.length > 0) {
-    NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    if (views && views.count > 0) {
-      self.view = views.lastObject;
-      self.view.frame = UIScreen.bounds;
-    } else {
-      xibPath = nil;
-    }
-  }
-  if (!xibPath) {
-    [super loadView];
-  }
-}
-
 - (instancetype)initWithViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel {
-  self = [super init];
+    
+  NSString *classBundlePath = [[NSBundle bundleForClass:self.class] pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+  if (classBundlePath.length) {
+      self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
+  } else {
+      self = [super init];
+  }
+
   if (self) {
     self.viewModel = viewModel;
-
+      
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
       @strongify(self);

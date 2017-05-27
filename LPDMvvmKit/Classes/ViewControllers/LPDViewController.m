@@ -174,7 +174,7 @@ NS_ASSUME_NONNULL_BEGIN
 	 contentView.center = _submittingOverlay.center;
   }
   if (!_submittingOverlay.superview) {
-	 [[UIApplication sharedApplication].keyWindow addSubview:_submittingOverlay];
+	 [[UIApplication sharedApplication].delegate.window addSubview:_submittingOverlay];
   }
 }
 

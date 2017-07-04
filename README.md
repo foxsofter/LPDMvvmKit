@@ -25,7 +25,7 @@ git clone git@github.com:LPD-iOS/LPDMvvmKit.git; cd LPDMvvmKit/Example; open 'LP
 
 ## 安装
 
-EFQRCode 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
+LPDMvvmKit 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
 
 ```ruby
 pod "LPDMvvmKit"

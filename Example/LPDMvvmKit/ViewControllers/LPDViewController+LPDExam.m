@@ -10,12 +10,19 @@
 #import <LPDAdditionsKit/LPDAdditionsKit.h>
 #import <LPDControlsKit/LPDAlertView.h>
 #import <LPDControlsKit/LPDToastView.h>
+#import <objc/message.h>
+
 
 @implementation LPDViewController (LPDExam)
 
 #pragma mark - LPDViewEmptyProtocol
 
 - (void)hideEmptyView {
+    UIView *customEmptyView = [self customEmptyView];
+    if (customEmptyView) {
+        [customEmptyView removeFromSuperview];
+        return;
+    }
   UIView *prevView = [self.view viewWithTag:888888];
   if (prevView) {
     [prevView removeFromSuperview];
@@ -30,7 +37,11 @@
   if (prevView) {
     return;
   }
-  
+    UIView *customEmptyView = [self customEmptyView];
+    if (customEmptyView) {
+        [self.view insertSubview:customEmptyView atIndex:0];
+        return;
+    }
   UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 170)];
   emptyView.tag = 888888;
   emptyView.backgroundColor = [UIColor clearColor];
@@ -95,6 +106,28 @@
     emptyView.center = CGPointMake(self.view.width / 2, self.view.height /2);
 }
 
+- (void)setCustomEmptyView:(UIView *)customEmptyView {
+    objc_setAssociatedObject(self, @"lpdCustomEmptyView", customEmptyView, OBJC_ASSOCIATION_RETAIN);
+    UIView *prevView = [self customEmptyView];
+    if (prevView) {
+        [prevView removeFromSuperview];
+        [self.view insertSubview:customEmptyView atIndex:0];
+        return;
+    }
+    prevView = [self.view viewWithTag:888888];
+    if (prevView) {
+        [prevView removeFromSuperview];
+        [self.view insertSubview:customEmptyView atIndex:0];
+    }
+}
+
+- (UIView *)customEmptyView {
+    id customEmptyView = objc_getAssociatedObject(self, @"lpdCustomEmptyView");
+    if (customEmptyView && [customEmptyView isKindOfClass:[UIView class]]) {
+        return customEmptyView;
+    }
+    return nil;
+}
 
 #pragma mark - LPDViewLoadingProtocol
 
@@ -135,7 +168,7 @@
   }
 }
 
-- (void)showRetryView {
+- (void)showRetryView :(UIImage* )image{
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }

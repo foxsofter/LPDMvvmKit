@@ -240,6 +240,30 @@ NS_ASSUME_NONNULL_BEGIN
   [_loadingOverlay removeFromSuperview];
 }
 
+#pragma mark - subscribe retry signal
+
+- (void)subscribeRetryLoadingSignal {
+    @weakify(self);
+    [[[RACObserve(self.viewModel, needRetryLoading) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *needRetryLoading) {
+        @strongify(self);
+        if ([needRetryLoading boolValue]) {
+            [self showRetryView];
+        } else {
+            [self hideRetryView];
+        }
+    }];
+    
+}
+
+- (void)showRetryView: (UIImage *)image{
+    
+}
+
+- (void)hideRetryView {
+    
+}
+
+
 #pragma mark - subscribe toast signal
 
 - (void)subscribeSuccessSubject {
@@ -327,7 +351,9 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
 	 @strongify(self);
 	 BOOL empty = [value integerValue];
-	 [self showEmpty:empty withDescription:nil];
+//	 [self showEmpty:empty withDescription:nil];
+      [self showEmptyViewWithImage:nil title:nil subTitle:nil button:nil actionBlock:nil];
+      
   }];
   [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
 									  fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
@@ -352,6 +378,25 @@ NS_ASSUME_NONNULL_BEGIN
 	 }
   }
 }
+
+- (void)showEmpty:(BOOL)empty WithImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subtitle button:(UIButton *_Nullable)button actionBlock:(void(^_Nullable)())actionBlock{
+    UIView *rootView = self.view;
+    if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
+        rootView = [self valueForKey:@"scrollView"];
+    }
+    if (empty) {
+        if ([self respondsToSelector:@selector(showEmptyViewWithImage:title:subTitle:button:actionBlock:)]) {
+            [self showEmptyViewWithImage:image title:title subTitle:subtitle button:button actionBlock:actionBlock];
+        }
+    } else {
+        if ([self respondsToSelector:@selector(hideEmptyView)]) {
+            [self hideEmptyView];
+        }
+    }
+
+}
+
+
 
 #pragma mark - subscribe child ViewModel signal
 

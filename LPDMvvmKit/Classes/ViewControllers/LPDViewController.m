@@ -351,8 +351,7 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
 	 @strongify(self);
 	 BOOL empty = [value integerValue];
-//	 [self showEmpty:empty withDescription:nil];
-      [self showEmptyViewWithImage:nil title:nil subTitle:nil button:nil actionBlock:nil];
+	 [self showEmpty:empty withDescription:nil];
       
   }];
   [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
@@ -379,27 +378,7 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
-- (void)showEmpty:(BOOL)empty WithImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subtitle button:(UIButton *_Nullable)button actionBlock:(void(^_Nullable)())actionBlock{
-    UIView *rootView = self.view;
-    if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
-        rootView = [self valueForKey:@"scrollView"];
-    }
-    if (empty) {
-        if ([self respondsToSelector:@selector(showEmptyViewWithImage:title:subTitle:button:actionBlock:)]) {
-            [self showEmptyViewWithImage:image title:title subTitle:subtitle button:button actionBlock:actionBlock];
-        }
-    } else {
-        if ([self respondsToSelector:@selector(hideEmptyView)]) {
-            [self hideEmptyView];
-        }
-    }
-
-}
-
-
-
 #pragma mark - subscribe child ViewModel signal
-
 
 - (void)subscribeAddChildViewModelSignal {
     @weakify(self);

@@ -10,19 +10,12 @@
 #import <LPDAdditionsKit/LPDAdditionsKit.h>
 #import <LPDControlsKit/LPDAlertView.h>
 #import <LPDControlsKit/LPDToastView.h>
-#import <objc/message.h>
-
 
 @implementation LPDViewController (LPDExam)
 
 #pragma mark - LPDViewEmptyProtocol
 
 - (void)hideEmptyView {
-    UIView *customEmptyView = [self customEmptyView];
-    if (customEmptyView) {
-        [customEmptyView removeFromSuperview];
-        return;
-    }
   UIView *prevView = [self.view viewWithTag:888888];
   if (prevView) {
     [prevView removeFromSuperview];
@@ -37,11 +30,6 @@
   if (prevView) {
     return;
   }
-    UIView *customEmptyView = [self customEmptyView];
-    if (customEmptyView) {
-        [self.view insertSubview:customEmptyView atIndex:0];
-        return;
-    }
   UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 170)];
   emptyView.tag = 888888;
   emptyView.backgroundColor = [UIColor clearColor];
@@ -59,74 +47,6 @@
   }
   [self.view insertSubview:emptyView atIndex:0];
   emptyView.center = CGPointMake(self.view.width / 2, self.view.height /2);
-}
-
-- (void)showEmptyViewWithImage:(UIImage *)image title:(NSString *)title subTitle:(NSString *)subtitle button:(UIButton *)button actionBlock:(void(^)())actionBlock{
-    if (self.view.width < 1 || self.view.height < 1) {
-        return;
-    }
-    UIView *prevView = [self.view viewWithTag:888888];
-    if (prevView) {
-        return;
-    }
-    UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 210)];
-    emptyView.tag = 888888;
-    emptyView.backgroundColor = [UIColor clearColor];
-    if(image){
-        UIImageView *iconView = [[UIImageView alloc] initWithImage:image];
-        [emptyView addSubview:iconView];
-        iconView.frame = CGRectMake(0, 0, 150, 150);
-    }
-   if (title && title.length > 0) {
-        UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.text = title;
-        titleLabel.textColor = [UIColor lightGrayColor];
-        titleLabel.font = [UIFont systemFontOfSize:16];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        [emptyView addSubview:titleLabel];
-        titleLabel.frame = CGRectMake(0, 150, 150, 20);
-    }
-    if (subtitle && subtitle.length > 0) {
-        UILabel *subtitleLabel = [[UILabel alloc] init];
-        subtitleLabel.text = subtitle;
-        subtitleLabel.textColor = [UIColor lightGrayColor];
-        subtitleLabel.font = [UIFont systemFontOfSize:16];
-        subtitleLabel.textAlignment = NSTextAlignmentCenter;
-        [emptyView addSubview:subtitleLabel];
-        subtitleLabel.frame = CGRectMake(0, 170, 150, 20);
-    }
-    if(button){
-        [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:16];;
-        button.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [emptyView addSubview:button];
-        button.frame = CGRectMake(0, 190, 150, 20);
-    }
-    [self.view insertSubview:emptyView atIndex:0];
-    emptyView.center = CGPointMake(self.view.width / 2, self.view.height /2);
-}
-
-- (void)setCustomEmptyView:(UIView *)customEmptyView {
-    objc_setAssociatedObject(self, @"lpdCustomEmptyView", customEmptyView, OBJC_ASSOCIATION_RETAIN);
-    UIView *prevView = [self customEmptyView];
-    if (prevView) {
-        [prevView removeFromSuperview];
-        [self.view insertSubview:customEmptyView atIndex:0];
-        return;
-    }
-    prevView = [self.view viewWithTag:888888];
-    if (prevView) {
-        [prevView removeFromSuperview];
-        [self.view insertSubview:customEmptyView atIndex:0];
-    }
-}
-
-- (UIView *)customEmptyView {
-    id customEmptyView = objc_getAssociatedObject(self, @"lpdCustomEmptyView");
-    if (customEmptyView && [customEmptyView isKindOfClass:[UIView class]]) {
-        return customEmptyView;
-    }
-    return nil;
 }
 
 #pragma mark - LPDViewLoadingProtocol
@@ -168,7 +88,7 @@
   }
 }
 
-- (void)showRetryView :(UIImage* )image{
+- (void)showRetryView :{
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }

@@ -88,7 +88,7 @@
   }
 }
 
-- (void)showRetryView :{
+- (void)showRetryView {
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }

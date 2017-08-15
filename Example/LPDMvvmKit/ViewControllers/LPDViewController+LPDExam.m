@@ -39,7 +39,7 @@
   
   UIImageView *emptyImageView = [[UIImageView alloc] init];
   emptyImageView.frame = CGRectMake((200 - 150)/2, 20, 150, 150);
-  emptyImageView.image = [UIImage imageNamed:@"image_default_order"];
+  emptyImageView.image = image;
   [emptyView addSubview:emptyImageView];
   
   UILabel *titleLabel = [[UILabel alloc] init];
@@ -118,7 +118,7 @@
   
   UIImageView *retryImageView = [[UIImageView alloc] init];
   retryImageView.frame = CGRectMake((200 - 150)/2, 20, 150, 150);
-  retryImageView.image = [UIImage imageNamed:@"image_default_order"];
+  retryImageView.image = [UIImage imageNamed:@"image_default_network"];
   [retryView addSubview:retryImageView];
   
   UILabel *titleLabel = [[UILabel alloc] init];

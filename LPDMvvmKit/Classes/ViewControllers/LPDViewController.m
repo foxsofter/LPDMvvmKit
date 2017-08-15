@@ -66,6 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 	 [self subscribeDidLayoutSubviewsSignal];
 	 [self subscribeSubmittingSignal];
 	 [self subscribeLoadingSignal];
+   [self subscribeRetryLoadingSignal];
 	 [self subscribeSuccessSubject];
 	 [self subscribeErrorSubject];
 	 [self subscribeEmptySignal];
@@ -238,6 +239,28 @@ NS_ASSUME_NONNULL_BEGIN
 	 return;
   }
   [_loadingOverlay removeFromSuperview];
+}
+
+#pragma mark - subscribe retry signal
+
+- (void)subscribeRetryLoadingSignal {
+  @weakify(self);
+  [[[RACObserve(self.viewModel, needRetryLoading) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *needRetryLoading) {
+    @strongify(self);
+    if ([needRetryLoading boolValue]) {
+      [self showRetryView];
+    } else {
+      [self hideRetryView];
+    }
+  }];
+}
+
+- (void)showRetryView {
+  
+}
+
+- (void)hideRetryView {
+  
 }
 
 #pragma mark - subscribe toast signal

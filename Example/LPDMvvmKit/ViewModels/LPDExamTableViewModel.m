@@ -34,7 +34,9 @@
       @strongify(self);
 //      self.datas = [NSMutableArray arrayWithArray:tuple.first];
 //      [self reloadTable];
-      [self setEmptyImage:[UIImage imageNamed:@"image_default_order"] title:@"暂无订单" subTitle:@"孤单，是因为兜里没有单"];
+//      [self setEmptyImage:[UIImage imageNamed:@"image_default_order"] title:@"暂无订单" subTitle:@"孤单，是因为兜里没有单"];
+      
+      self.needRetryLoading = YES;
     }];
     [[self.didLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
       @strongify(self);

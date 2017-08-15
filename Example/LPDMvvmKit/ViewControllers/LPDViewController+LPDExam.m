@@ -110,29 +110,44 @@
     return;
   }
   
-  UIView *retryView = [[UIView alloc] initWithFrame:CGRectMake(UIScreen.width - 15, 0, UIScreen.width - 30, 220)];
+  UIView *retryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
   retryView.tag = 999999;
   retryView.backgroundColor = [UIColor clearColor];
-  UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"缺省页－网络异常"]];
-  [retryView addSubview:iconView];
-  iconView.frame = CGRectMake((UIScreen.width - 180) / 2, 0, 150, 150);
-  UILabel *messageLabel = [[UILabel alloc] init];
-  messageLabel.text = @"当前网络环境较差";
-  messageLabel.textColor = [UIColor lightGrayColor];
-  messageLabel.font = [UIFont systemFontOfSize:16];
-  messageLabel.textAlignment = NSTextAlignmentCenter;
-  [retryView addSubview:messageLabel];
-  messageLabel.frame = CGRectMake(0, 150, UIScreen.width - 30, 20);
-  UIButton *retryButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  [retryButton setTitle:@"重试一下" forState:UIControlStateNormal];
-  [retryButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-  retryButton.layer.cornerRadius = 4;
-  retryButton.layer.borderWidth = 1;
-  retryButton.layer.borderColor = [UIColor blueColor].CGColor;
-  retryButton.frame = CGRectMake((UIScreen.width - 200) / 2, 176, 170, 44);
-  [retryView addSubview:retryButton];
-  [self.view insertSubview:retryView atIndex:0];
+  [self.view addSubview:retryView];
   retryView.center = CGPointMake(self.view.width / 2, self.view.height /2);
+  
+  UIImageView *retryImageView = [[UIImageView alloc] init];
+  retryImageView.frame = CGRectMake((200 - 150)/2, 20, 150, 150);
+  retryImageView.image = [UIImage imageNamed:@"image_default_order"];
+  [retryView addSubview:retryImageView];
+  
+  UILabel *titleLabel = [[UILabel alloc] init];
+  titleLabel.numberOfLines = 1;
+  titleLabel.text = @"网络较差";
+  titleLabel.textColor = [UIColor colorWithHexString:@"#666666"];
+  titleLabel.font = [UIFont systemFontOfSize:15];
+  titleLabel.frame = CGRectMake(0, 178, 200, 18);
+  titleLabel.textAlignment = NSTextAlignmentCenter;
+  [retryView addSubview:titleLabel];
+  
+  UILabel *subTitleLabel = [[UILabel alloc] init];
+  subTitleLabel.numberOfLines = 1;
+  subTitleLabel.text = @"哔！与总部失去联络";
+  subTitleLabel.textColor = [UIColor colorWithHexString:@"#A4A4A4"];
+  subTitleLabel.font = [UIFont systemFontOfSize:12];
+  subTitleLabel.frame = CGRectMake(0, 202, 200, 15);
+  subTitleLabel.textAlignment = NSTextAlignmentCenter;
+  [retryView addSubview:subTitleLabel];
+  
+  UIButton *retryButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [retryButton setTitle:@"重新加载" forState:UIControlStateNormal];
+  [retryButton setTitleColor:[UIColor colorWithHexString:@"#008AF1"] forState:UIControlStateNormal];
+  retryButton.layer.borderWidth = 0.5f;
+  retryButton.layer.borderColor = [UIColor colorWithHexString:@"#008AF1"].CGColor;
+  retryButton.layer.cornerRadius = 4;
+  retryButton.layer.masksToBounds = YES;
+  retryButton.frame = CGRectMake((200 - 140) / 2, 247, 140, 40);
+  [retryView addSubview:retryButton];
   @weakify(self);
   [retryButton touchUpInside:^{
     @strongify(self);

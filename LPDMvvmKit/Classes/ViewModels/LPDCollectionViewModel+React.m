@@ -99,8 +99,8 @@
   [self.viewModel setEmpty:empty];
 }
 
-- (void)setEmptyWithDescription:(NSString *)description {
-  [self.viewModel setEmptyWithDescription:description];
+- (void)setEmptyImage:(UIImage *)emptyImage title:(NSString *)title subTitle:(NSString *)subTitle {
+  [self.viewModel setEmptyImage:emptyImage title:title subTitle:subTitle];
 }
 
 - (LPDNetworkState)networkState {

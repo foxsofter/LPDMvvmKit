@@ -22,7 +22,7 @@
   }
 }
 
-- (void)showEmptyViewWithDescriptionWithDescription:(NSString *_Nullable)description {
+- (void)showEmptyViewWithImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subTitle {
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }
@@ -31,23 +31,34 @@
     return;
   }
   
-  UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 170)];
+  UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 250)];
   emptyView.tag = 888888;
   emptyView.backgroundColor = [UIColor clearColor];
-  UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"缺省页－空状态"]];
-  [emptyView addSubview:iconView];
-  iconView.frame = CGRectMake(0, 0, 150, 150);
-  if (description && description.length > 0) {
-    UILabel *messageLabel = [[UILabel alloc] init];
-    messageLabel.text = description;
-    messageLabel.textColor = [UIColor lightGrayColor];
-    messageLabel.font = [UIFont systemFontOfSize:16];
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    [emptyView addSubview:messageLabel];
-    messageLabel.frame = CGRectMake(0, 150, 150, 20);
-  }
-  [self.view insertSubview:emptyView atIndex:0];
+  [self.view addSubview:emptyView];
   emptyView.center = CGPointMake(self.view.width / 2, self.view.height /2);
+  
+  UIImageView *emptyImageView = [[UIImageView alloc] init];
+  emptyImageView.frame = CGRectMake((200 - 150)/2, 20, 150, 150);
+  emptyImageView.image = [UIImage imageNamed:@"image_default_order"];
+  [emptyView addSubview:emptyImageView];
+  
+  UILabel *titleLabel = [[UILabel alloc] init];
+  titleLabel.numberOfLines = 1;
+  titleLabel.text = title;
+  titleLabel.textColor = [UIColor colorWithHexString:@"#666666"];
+  titleLabel.font = [UIFont systemFontOfSize:15];
+  titleLabel.frame = CGRectMake(0, 178, 200, 18);
+  titleLabel.textAlignment = NSTextAlignmentCenter;
+  [emptyView addSubview:titleLabel];
+  
+  UILabel *subTitleLabel = [[UILabel alloc] init];
+  subTitleLabel.numberOfLines = 1;
+  subTitleLabel.text = subTitle;
+  subTitleLabel.textColor = [UIColor colorWithHexString:@"#A4A4A4"];
+  subTitleLabel.font = [UIFont systemFontOfSize:12];
+  subTitleLabel.frame = CGRectMake(0, 202, 200, 15);
+  subTitleLabel.textAlignment = NSTextAlignmentCenter;
+  [emptyView addSubview:subTitleLabel];
 }
 
 #pragma mark - LPDViewLoadingProtocol

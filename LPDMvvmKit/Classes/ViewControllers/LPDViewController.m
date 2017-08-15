@@ -327,24 +327,24 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
 	 @strongify(self);
 	 BOOL empty = [value integerValue];
-	 [self showEmpty:empty withDescription:nil];
+    [self showEmpty:empty withImage:nil title:nil subTitle:nil];
   }];
-  [[[self.viewModel rac_signalForSelector:@selector(setEmptyWithDescription:)
+  [[[self.viewModel rac_signalForSelector:@selector(setEmptyImage:title:subTitle:)
 									  fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
 	subscribeNext:^(RACTuple *tuple) {
 	  @strongify(self);
-	  [self showEmpty:YES withDescription:tuple.first];
+    [self showEmpty:YES withImage:tuple.first title:tuple.second subTitle:tuple.third];
 	}];
 }
 
-- (void)showEmpty:(BOOL)empty withDescription:(nullable NSString *)description {
+- (void)showEmpty:(BOOL)empty withImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subTitle {
   UIView *rootView = self.view;
   if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
 	 rootView = [self valueForKey:@"scrollView"];
   }
   if (empty) {
-	 if ([self respondsToSelector:@selector(showEmptyViewWithDescription:)]) {
-		[self showEmptyViewWithDescription:description];
+	 if ([self respondsToSelector:@selector(showEmptyViewWithImage:title:subTitle:)]) {
+     [self showEmptyViewWithImage:image title:title subTitle:subTitle];
 	 }
   } else {
 	 if ([self respondsToSelector:@selector(hideEmptyView)]) {

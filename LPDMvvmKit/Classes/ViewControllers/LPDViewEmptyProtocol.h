@@ -14,6 +14,6 @@
 
 - (void)hideEmptyView;
 
-- (void)showEmptyViewWithDescription:(NSString *_Nullable)description;
+- (void)showEmptyViewWithImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subTitle;
 
 @end

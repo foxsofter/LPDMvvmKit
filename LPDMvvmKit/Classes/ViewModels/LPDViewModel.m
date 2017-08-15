@@ -135,7 +135,7 @@
 
 #pragma mark - LPDViewModelEmptyProtocol
 
-- (void)setEmptyWithDescription:(NSString *)description {
+- (void)setEmptyImage:(UIImage *)emptyImage title:(NSString *)title subTitle:(NSString *)subTitle {
   _empty = YES;
 }
 

@@ -32,8 +32,11 @@
     @weakify(self);
     self.loadingSignal = [[[LPDAppApiClient sharedInstance] rac_GET:kLPDApiEndpointPosts parameters:nil] doNext:^(RACTuple *tuple){
       @strongify(self);
-      self.datas = [NSMutableArray arrayWithArray:tuple.first];
-      [self reloadTable];
+//      self.datas = [NSMutableArray arrayWithArray:tuple.first];
+//      [self reloadTable];
+//      [self setEmptyImage:[UIImage imageNamed:@"image_default_order"] title:@"暂无订单" subTitle:@"孤单，是因为兜里没有单"];
+      
+      self.needRetryLoading = YES;
     }];
     [[self.didLayoutSubviewsSignal take:1] subscribeNext:^(id x) {
       @strongify(self);

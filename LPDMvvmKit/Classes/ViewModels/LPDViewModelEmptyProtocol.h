@@ -19,6 +19,6 @@
 /**
  *  @brief  Set empty=YES, shows the empty view with description.
  */
-- (void)setEmptyWithDescription:(NSString *)description;
+- (void)setEmptyImage:(UIImage *_Nullable)emptyImage title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subTitle;
 
 @end

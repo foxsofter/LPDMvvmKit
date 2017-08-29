@@ -112,11 +112,7 @@
     }] doError:^(NSError *error) {
       @strongify(self);
       self.loading = NO;
-      if (error.code == -1001 || error.code == -1004) { // 超时重试
-        self.needRetryLoading = YES;
-      } else {
         [self.errorSubject sendNext:error.localizedDescription];
-      }
     }];
   } else {
     _loadingSignal = nil;

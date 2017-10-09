@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 	 [self subscribeDidLayoutSubviewsSignal];
 	 [self subscribeSubmittingSignal];
 	 [self subscribeLoadingSignal];
-   [self subscribeRetryLoadingSignal];
+     [self subscribeRetryLoadingSignal];
 	 [self subscribeSuccessSubject];
 	 [self subscribeErrorSubject];
 	 [self subscribeEmptySignal];
@@ -202,7 +202,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showLoading {
   if (!_loadingOverlay) {
-	 _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
+	 _loadingOverlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen width], [UIScreen height])];
 	 _loadingOverlay.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
 	 UIView *contentView = nil;
 	 if ([self respondsToSelector:@selector(customLoadingView)]) {

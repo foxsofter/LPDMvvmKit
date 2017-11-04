@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
-- (void)popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
+- (void)_popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
     if (_weakViewModels.count > 1) {
         // 耗时过久，需要异步执行
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

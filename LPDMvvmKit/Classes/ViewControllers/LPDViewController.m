@@ -199,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
 	 }
   }];
 }
-
+//qs:submitting和loading的区别在哪儿
 - (void)showLoading {
   if (!_loadingOverlay) {
 	 _loadingOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -218,9 +218,9 @@ NS_ASSUME_NONNULL_BEGIN
 		[contentView addSubview:loadingView];
 		loadingView.center = CGPointMake(50, 50);
 		// 添加自启动的动画
-		@weakify(loadingView);
+		@weakify(loadingView);//didMoveToWindow和didMoveToWindow这两个方法从哪儿监听
 		[[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
-									[_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
+									[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)]]]
 		  takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
 		  @strongify(loadingView);
 		  [loadingView startAnimating];
@@ -350,7 +350,7 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, empty) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *value) {
 	 @strongify(self);
 	 BOOL empty = [value integerValue];
-    [self showEmpty:empty withImage:nil title:nil subTitle:nil];
+    [self showEmpty:empty withImage:nil title:nil subTitle:nil];//qs这里有什么意义
   }];
   [[[self.viewModel rac_signalForSelector:@selector(setEmptyImage:title:subTitle:)
 									  fromProtocol:@protocol(LPDViewModelEmptyProtocol)] deliverOnMainThread]
@@ -361,6 +361,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)showEmpty:(BOOL)empty withImage:(UIImage *_Nullable)image title:(NSString *_Nullable)title subTitle:(NSString *_Nullable)subTitle {
+  //qs这里是什么意思
   UIView *rootView = self.view;
   if ([self conformsToProtocol:NSProtocolFromString(@"LPDScrollViewControllerProtocol")]) {
 	 rootView = [self valueForKey:@"scrollView"];

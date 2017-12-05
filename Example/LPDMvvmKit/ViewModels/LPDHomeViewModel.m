@@ -34,6 +34,18 @@
   [self.navigation popToRootViewModelAnimated:YES];
 }
 
+- (void)popToViewModel {
+    NSInteger count = self.navigation.viewModels.count;
+    NSInteger num = 0;
+    if (count > 1) {
+        num = 1;
+        LPDHomeViewModel *vm = self.navigation.viewModels[num];
+        [self.navigation popToViewModel:vm animated:YES];
+    } else {
+        return;
+    }
+    
+}
 - (void)presentViewModel {
   LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
   [self.navigation presentNavigationViewModel:[[LPDNavigationViewModel alloc] initWithRootViewModel:vm]

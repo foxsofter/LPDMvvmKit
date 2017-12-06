@@ -60,6 +60,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion {
 }
 
+- (void)setViewModels:(NSMutableArray <id<LPDViewModelProtocol>> *)viewModels animated:(BOOL)animated {
+}
+
 #pragma mark - properties
 
 - (_Nullable __kindof id<LPDViewModelProtocol>)topViewModel {
@@ -141,6 +144,18 @@ NS_ASSUME_NONNULL_BEGIN
   } else {
     _presentingViewModel.presentedViewModel = nil;
   }
+}
+
+- (void)_setViewModels:(NSMutableArray <id<LPDViewModelProtocol>> *)viewModels {
+    if (_weakViewModels != viewModels) {
+        _weakViewModels = viewModels;
+    }
+    for (id<LPDViewModelProtocol> viewModel in viewModels) {
+        viewModel.navigation = self;
+        for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
+            childViewModel.navigation = self;
+        }
+    }
 }
 @end
 

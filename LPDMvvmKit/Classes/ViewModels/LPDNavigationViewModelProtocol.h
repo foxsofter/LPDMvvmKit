@@ -48,6 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion;
 
+- (void)setViewModels:(NSMutableArray <id<LPDViewModelProtocol>> *)viewModels animated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END

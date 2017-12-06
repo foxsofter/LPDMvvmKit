@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIButton *popToViewControllerButton;
 @property (nonatomic, strong) UIButton *presentViewControllerButton;
 @property (nonatomic, strong) UIButton *dismissViewControllerButton;
+@property (nonatomic, strong) UIButton *setViewControllersButton;
 
 @end
 
@@ -94,7 +95,6 @@
                                        action:@selector(popToViewController:)
                              forControlEvents:UIControlEventTouchUpInside];
 
-
   _presentViewControllerButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [_presentViewControllerButton setTitle:@"presentViewController" forState:UIControlStateNormal];
   [_presentViewControllerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -116,6 +116,18 @@
   [_dismissViewControllerButton addTarget:self
                                    action:@selector(dismissViewController:)
                          forControlEvents:UIControlEventTouchUpInside];
+    
+    _setViewControllersButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_setViewControllersButton setTitle:@"setViewControllers" forState:UIControlStateNormal];
+    [_setViewControllersButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _setViewControllersButton.backgroundColor = [UIColor lightGrayColor];
+    _setViewControllersButton.frame = CGRectMake(0, y += 45, 250, 35);
+    _setViewControllersButton.centerX = center.x;
+    [scrollView addSubview:_setViewControllersButton];
+    [_setViewControllersButton addTarget:self
+                                     action:@selector(setViewControllers:)
+                           forControlEvents:UIControlEventTouchUpInside];
+
 
   UIButton *pushViewModelButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [pushViewModelButton setTitle:@"pushViewModel" forState:UIControlStateNormal];
@@ -170,6 +182,16 @@
   dismissViewModelButton.centerX = center.x;
   [scrollView addSubview:dismissViewModelButton];
   [dismissViewModelButton addTarget:self.viewModel action:@selector(dismissViewModel) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *setViewModelsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [setViewModelsButton setTitle:@"setViewModels" forState:UIControlStateNormal];
+    [setViewModelsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    setViewModelsButton.backgroundColor = [UIColor grayColor];
+    setViewModelsButton.frame = CGRectMake(0, y += 45, 250, 35);
+    setViewModelsButton.centerX = center.x;
+    [scrollView addSubview:setViewModelsButton];
+    [setViewModelsButton addTarget:self.viewModel action:@selector(setViewModels) forControlEvents:UIControlEventTouchUpInside];
+
   
   scrollView.contentSize= CGSizeMake(UIScreen.width, y + 45);
   scrollView.userInteractionEnabled = YES;
@@ -225,6 +247,22 @@
                                           completion:^{
 
                                           }];
+}
+
+- (void)setViewControllers:(UIButton *)sender {
+    NSArray *vcs = [[NSMutableArray alloc] init];
+    
+    LPDHomeViewModel *vm1 = [[LPDHomeViewModel alloc] init];
+    LPDHomeViewController *vc1 = [[LPDHomeViewController alloc] initWithViewModel:vm1];
+    vc1.view.backgroundColor = [UIColor redColor];
+    LPDHomeViewModel *vm2 = [[LPDHomeViewModel alloc] init];
+    LPDHomeViewController *vc2 = [[LPDHomeViewController alloc] initWithViewModel:vm2];
+    vc2.view.backgroundColor = [UIColor yellowColor];
+    LPDHomeViewModel *vm3 = [[LPDHomeViewModel alloc] init];
+    LPDHomeViewController *vc3 = [[LPDHomeViewController alloc] initWithViewModel:vm3];
+    vc3.view.backgroundColor = [UIColor blueColor];
+    vcs = @[vc1,vc2,vc3];
+    [self.navigationController setViewControllers:vcs animated:YES];
 }
 
 - (void)dealloc {

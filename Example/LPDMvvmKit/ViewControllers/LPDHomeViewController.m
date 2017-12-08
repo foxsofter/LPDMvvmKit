@@ -252,8 +252,9 @@
 - (void)setViewControllers:(UIButton *)sender {
     NSArray *vcs = [[NSMutableArray alloc] init];
     
-    LPDHomeViewModel *vm1 = [[LPDHomeViewModel alloc] init];
-    LPDHomeViewController *vc1 = [[LPDHomeViewController alloc] initWithViewModel:vm1];
+//    LPDHomeViewModel *vm1 = [[LPDHomeViewModel alloc] init];
+//    LPDHomeViewController *vc1 = [[LPDHomeViewController alloc] initWithViewModel:vm1];
+    UIViewController *vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor redColor];
     LPDHomeViewModel *vm2 = [[LPDHomeViewModel alloc] init];
     LPDHomeViewController *vc2 = [[LPDHomeViewController alloc] initWithViewModel:vm2];

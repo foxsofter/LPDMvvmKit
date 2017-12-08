@@ -262,6 +262,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
     for (LPDViewController *vc in viewControllers) {
         if (![vc isKindOfClass:LPDViewController.class] || ![vc respondsToSelector:@selector(viewModel)] || ![self.viewModel respondsToSelector:@selector(_setViewModels:)]) {
+            NSLog(@"setViewControllers error!!");
             return;
         }
     }

@@ -253,7 +253,7 @@ NS_ASSUME_NONNULL_BEGIN
              (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:viewModel];
              [viewControllers addObject:viewController];
          }
-         [self setViewControllers:viewControllers animated:tuple.second];
+         [self setViewControllers:viewControllers animated:[tuple.second boolValue]];
      }];
     
 }

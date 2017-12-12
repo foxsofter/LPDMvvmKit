@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readonly) __kindof id<LPDViewModelProtocol> topViewModel;
 
 @property (nullable, nonatomic, strong, readonly) __kindof id<LPDViewModelProtocol> visibleViewModel;
-//qs:这里的presentedViewModel／presentingViewModel／topViewModel／visibleViewModel分别代表什么
+
 @property (nullable, nonatomic, strong) __kindof id<LPDNavigationViewModelProtocol> presentedViewModel;
 
 @property (nullable, nonatomic, strong) __kindof id<LPDNavigationViewModelProtocol> presentingViewModel;

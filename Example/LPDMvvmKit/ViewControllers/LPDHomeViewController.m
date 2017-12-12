@@ -252,10 +252,10 @@
 - (void)setViewControllers:(UIButton *)sender {
     NSArray *vcs = [[NSMutableArray alloc] init];
     
-//    LPDHomeViewModel *vm1 = [[LPDHomeViewModel alloc] init];
-//    LPDHomeViewController *vc1 = [[LPDHomeViewController alloc] initWithViewModel:vm1];
-    UIViewController *vc1 = [[UIViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor redColor];
+    LPDHomeViewModel *vm1 = [[LPDHomeViewModel alloc] init];
+    LPDHomeViewController *vc1 = [[LPDHomeViewController alloc] initWithViewModel:vm1];
+//    UIViewController *vc1 = [[UIViewController alloc] init];
+//    vc1.view.backgroundColor = [UIColor redColor];
     LPDHomeViewModel *vm2 = [[LPDHomeViewModel alloc] init];
     LPDHomeViewController *vc2 = [[LPDHomeViewController alloc] initWithViewModel:vm2];
     vc2.view.backgroundColor = [UIColor yellowColor];
@@ -263,7 +263,7 @@
     LPDHomeViewController *vc3 = [[LPDHomeViewController alloc] initWithViewModel:vm3];
     vc3.view.backgroundColor = [UIColor blueColor];
     vcs = @[vc1,vc2,vc3];
-    [self.navigationController setViewControllers:vcs animated:YES];
+    [self.navigationController setViewControllers:vcs animated:NO];
 }
 
 - (void)dealloc {

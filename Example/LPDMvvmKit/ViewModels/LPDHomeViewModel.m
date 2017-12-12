@@ -72,7 +72,7 @@
     [vms addObject:vm1];
     [vms addObject:vm2];
     [vms addObject:vm3];
-    [self.navigation setViewModels:vms animated:YES];
+    [self.navigation setViewModels:vms animated:NO];
 }
 
 - (void)dealloc {

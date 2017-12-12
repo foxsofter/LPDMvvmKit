@@ -88,6 +88,15 @@ NS_ASSUME_NONNULL_BEGIN
   [self loadChildViewControllers];
 }
 
+- (void)viewDidLayoutSubviews {
+    if (self->_previewOverlay) {
+        self->_previewOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
+    }
+    if (self->_retryOverlay) {
+        self->_retryOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
+    }
+}
+
 #pragma mark - subscribe active signal
 
 - (void)subscribeActiveSignal {
@@ -248,19 +257,15 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, needRetryLoading) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *needRetryLoading) {
     @strongify(self);
     if ([needRetryLoading boolValue]) {
-      [self showRetryView];
+        if ([self respondsToSelector:@selector(showRetryView)]) {
+            [self showRetryView];
+        }
     } else {
-      [self hideRetryView];
+        if ([self respondsToSelector:@selector(hideRetryView)]) {
+            [self hideRetryView];
+        }
     }
   }];
-}
-
-- (void)showRetryView {
-  
-}
-
-- (void)hideRetryView {
-  
 }
 
 #pragma mark - subscribe toast signal

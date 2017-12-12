@@ -16,7 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
-
+{
+@private
+    UIView *_previewOverlay;
+    UIView *_retryOverlay;
+}
 /**
  *  @brief 禁用无关函数
  */

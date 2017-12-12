@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
 {
 @private
-    UIView *_previewOverlay;
+    UIView *_emptyOverlay;
     UIView *_retryOverlay;
 }
 /**

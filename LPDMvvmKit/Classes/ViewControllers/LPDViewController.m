@@ -89,8 +89,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)viewDidLayoutSubviews {
-    if (self->_previewOverlay) {
-        self->_previewOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
+    if (self->_emptyOverlay) {
+        self->_emptyOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
     }
     if (self->_retryOverlay) {
         self->_retryOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);

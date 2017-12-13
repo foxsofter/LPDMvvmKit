@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated;
 
+- (void)setViewControllers:(NSMutableArray <UIViewController *> *)viewControllers animated:(BOOL)animated;
+
 @property(nullable, nonatomic,readonly,strong) UIViewController *topViewController;
 
 @property(nullable, nonatomic,readonly,strong) UIViewController *visibleViewController;

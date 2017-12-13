@@ -88,6 +88,15 @@ NS_ASSUME_NONNULL_BEGIN
   [self loadChildViewControllers];
 }
 
+- (void)viewDidLayoutSubviews {
+    if (self->_emptyOverlay) {
+        self->_emptyOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
+    }
+    if (self->_retryOverlay) {
+        self->_retryOverlay.center = CGPointMake(self.view.width / 2, self.view.height /2 - 50);
+    }
+}
+
 #pragma mark - subscribe active signal
 
 - (void)subscribeActiveSignal {
@@ -218,9 +227,9 @@ NS_ASSUME_NONNULL_BEGIN
 		[contentView addSubview:loadingView];
 		loadingView.center = CGPointMake(50, 50);
 		// 添加自启动的动画
-		@weakify(loadingView);
+		@weakify(loadingView);//didMoveToWindow和didMoveToWindow这两个方法从哪儿监听
 		[[[RACSignal merge:@[[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)],
-									[_loadingOverlay rac_signalForSelector:@selector(didMoveToSuperview)]]]
+									[_loadingOverlay rac_signalForSelector:@selector(didMoveToWindow)]]]
 		  takeUntil:[_loadingOverlay rac_willDeallocSignal]] subscribeNext:^(id x) {
 		  @strongify(loadingView);
 		  [loadingView startAnimating];
@@ -248,19 +257,15 @@ NS_ASSUME_NONNULL_BEGIN
   [[[RACObserve(self.viewModel, needRetryLoading) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *needRetryLoading) {
     @strongify(self);
     if ([needRetryLoading boolValue]) {
-      [self showRetryView];
+        if ([self respondsToSelector:@selector(showRetryView)]) {
+            [self showRetryView];
+        }
     } else {
-      [self hideRetryView];
+        if ([self respondsToSelector:@selector(hideRetryView)]) {
+            [self hideRetryView];
+        }
     }
   }];
-}
-
-- (void)showRetryView {
-  
-}
-
-- (void)hideRetryView {
-  
 }
 
 #pragma mark - subscribe toast signal

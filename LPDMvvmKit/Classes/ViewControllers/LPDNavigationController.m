@@ -77,6 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
       [self subscribePopToRootSignals];
       [self subscribePresentSignals];
       [self subscribeDismissSignals];
+      [self subscribeSetViewControllersSignals];
     }];
     LPDViewController *rootViewController = [LPDViewControllerFactory viewControllerForViewModel:self.viewModel.topViewModel];
     NSLog(@"table view set before");
@@ -227,8 +228,46 @@ NS_ASSUME_NONNULL_BEGIN
   }];
 }
 
+- (void)subscribeSetViewControllersSignals {
+    @weakify(self);
+    [[self rac_signalForSelector:@selector(setViewControllers:animated:)]
+     subscribeNext:^(RACTuple *tuple) {
+         @strongify(self);
+         NSMutableArray <UIViewController *> *viewControllers = tuple.first;
+         NSMutableArray <id<LPDViewModelProtocol>> *viewModels = [[NSMutableArray alloc] init];
+         for (LPDViewController *vc in viewControllers) {
+             if ([vc isKindOfClass:LPDViewController.class] && [vc respondsToSelector:@selector(viewModel)] && [self.viewModel respondsToSelector:@selector(_setViewModels:)]) {
+                 [viewModels addObject:vc.viewModel];
+             }
+         }
+         [self.viewModel performSelector:@selector(_setViewModels:) withObject:viewModels];
+     }];
+    
+    [[[self.viewModel rac_signalForSelector:@selector(setViewModels:animated:)] deliverOnMainThread]
+     subscribeNext:^(RACTuple *tuple) {
+         @strongify(self);
+         NSMutableArray <id<LPDViewModelProtocol>> *viewModels = tuple.first;
+         NSMutableArray <UIViewController *> *viewControllers = [[NSMutableArray alloc] init];
+         for (id<LPDViewModelProtocol> viewModel in viewModels) {
+             id<LPDViewControllerProtocol> viewController =
+             (id<LPDViewControllerProtocol>)[LPDViewControllerFactory viewControllerForViewModel:viewModel];
+             [viewControllers addObject:viewController];
+         }
+         [self setViewControllers:viewControllers animated:[tuple.second boolValue]];
+     }];
+    
+}
 #pragma clang diagnostic pop
-
+//重写该方法是为了防止出现viewControllers数组中有不符合要求的viewController,就会产生错乱(即数组必须严格符合vc-vm)
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
+    for (LPDViewController *vc in viewControllers) {
+        if (![vc isKindOfClass:LPDViewController.class] || ![vc respondsToSelector:@selector(viewModel)] || ![self.viewModel respondsToSelector:@selector(_setViewModels:)]) {
+            NSLog(@"setViewControllers error!!");
+            return;
+        }
+    }
+    [super setViewControllers:viewControllers animated:animated];
+}
 
 @end
 

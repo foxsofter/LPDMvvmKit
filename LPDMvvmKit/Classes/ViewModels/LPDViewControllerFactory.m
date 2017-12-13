@@ -40,7 +40,6 @@ static NSMutableDictionary *dictionaryOfMappings;
 + (UIViewController *)viewControllerForViewModel:(id)viewModel {
   NSString *viewModelName = NSStringFromClass([viewModel class]);
   NSString *viewControllerName = [dictionaryOfMappings valueForKey:viewModelName];
-
   if (!viewControllerName) {
     viewControllerName = [viewModelName stringByReplacingOccurrencesOfString:@"Model"
                                                                   withString:@"Controller"

@@ -104,7 +104,7 @@
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }
-  [self hideEmptyView];
+//  [self hideEmptyView];
   UIView *prevView = [self.view viewWithTag:999999];
   if (prevView) {
     return;
@@ -178,7 +178,7 @@
 }
 
 #pragma mark - LPDViewSubmittingProtocol
-
+//这跟loadingView有什么区别
 - (UIView *)customSubmittingView {
   UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
   contentView.layer.cornerRadius = 10;

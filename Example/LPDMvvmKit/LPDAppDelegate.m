@@ -30,14 +30,14 @@
   LPDHomeViewModel *homeVM = [[LPDHomeViewModel alloc] init];
   LPDExamTableViewModel *tableVM = [[LPDExamTableViewModel alloc] init];
   LPDExamCollectionViewModel *collectionVM = [[LPDExamCollectionViewModel alloc] init];
-//  LPDReactViewModel *reactVM = [[LPDReactViewModel alloc] init];
+  LPDReactViewModel *reactVM = [[LPDReactViewModel alloc] init];
 
   LPDRootTabBarViewModel *rootTabBarVM =
   [[LPDRootTabBarViewModel alloc] initWithViewModels:@[
         [[LPDNavigationViewModel alloc] initWithRootViewModel:homeVM],
         [[LPDNavigationViewModel alloc] initWithRootViewModel:tableVM],
         [[LPDNavigationViewModel alloc] initWithRootViewModel:collectionVM],
-//        [[LPDNavigationViewModel alloc] initWithRootViewModel:reactVM],
+        [[LPDNavigationViewModel alloc] initWithRootViewModel:reactVM],
         ]];
   
   LPDRootTabBarController *rootTabBarVC = [[LPDRootTabBarController alloc] initWithViewModel:rootTabBarVM];
@@ -46,6 +46,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
   self.window.rootViewController = rootTabBarVC;
+//  self.window.rootViewController = rootVC;
   [self.window makeKeyAndVisible];
   
 

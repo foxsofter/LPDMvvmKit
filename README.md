@@ -1,6 +1,7 @@
 # LPDMvvmKit
 
 [![CI Status](https://travis-ci.org/LPD-iOS/LPDMvvmKit.svg?branch=master)](https://travis-ci.org/LPD-iOS/LPDMvvmKit)
+[![Codebeat](https://codebeat.co/badges/b12f2343-e848-4d18-83dd-de2d77e94c16)](https://codebeat.co/projects/github-com-lpd-ios-lpdmvvmkit-master-7da2b829-78b8-4c79-96c1-fc457830ce15)
 [![Version](https://img.shields.io/cocoapods/v/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 [![License](https://img.shields.io/cocoapods/l/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDMvvmKit.svg?style=flat)](http://cocoapods.org/pods/LPDMvvmKit)
@@ -324,5 +325,7 @@ cellViewModel4.image = [UIImage imageNamed:@"03"];
 foxsofter, foxsofter@gmail.com
 
 ## 协议
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png)
 
 LPDMvvmKit 基于 MIT 协议进行分发和使用，更多信息参见协议文件。

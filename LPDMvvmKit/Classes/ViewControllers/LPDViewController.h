@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
+//todo 需要以后改为私有
 {
-@private
+@public
     UIView *_emptyOverlay;
     UIView *_retryOverlay;
 }

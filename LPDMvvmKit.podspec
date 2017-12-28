@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "LPDMvvmKit"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Elegant MVVM framework in Objective-C. "
 
   s.description  = <<-DESC

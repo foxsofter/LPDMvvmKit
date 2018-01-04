@@ -251,7 +251,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 #pragma mark - subscribe retry signal
-
+//网络较差重试页面
 - (void)subscribeRetryLoadingSignal {
   @weakify(self);
   [[[RACObserve(self.viewModel, needRetryLoading) skip:1] deliverOnMainThread] subscribeNext:^(NSNumber *needRetryLoading) {

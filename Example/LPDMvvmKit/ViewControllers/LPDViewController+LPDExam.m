@@ -104,7 +104,7 @@
   if (self.view.width < 1 || self.view.height < 1) {
     return;
   }
-//  [self hideEmptyView];
+  [self hideEmptyView];
   UIView *prevView = [self.view viewWithTag:999999];
   if (prevView) {
     return;

@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readwrite) id<LPDNavigationViewModelProtocol> viewModel;
 
 @end
-
+//这个分类是干嘛的
 @implementation UINavigationController (LPDNavigationController)
 
 - (nullable __kindof id<LPDNavigationViewModelProtocol>)viewModel {

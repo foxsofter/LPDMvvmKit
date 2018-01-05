@@ -25,6 +25,11 @@
 @synthesize loading = _loading;
 @synthesize loadingSignal = _loadingSignal;
 @synthesize needRetryLoading = _needRetryLoading;
+
+@synthesize active = _active;
+@synthesize didBecomeActiveSignal = _didBecomeActiveSignal;
+@synthesize didBecomeInactiveSignal = _didBecomeInactiveSignal;
+
 @synthesize didLoadView = _didLoadView;
 @synthesize didLoadViewSignal = _didLoadViewSignal;
 @synthesize didUnloadViewSignal = _didUnloadViewSignal;
@@ -37,6 +42,32 @@
 @synthesize navigation = _navigation;
 
 #pragma mark - LPDViewModelDidLoadViewProtocol
+//增加active的两个方法
+- (RACSignal *)didBecomeActiveSignal {
+    if (_didBecomeActiveSignal == nil) {
+        @weakify(self);
+        _didBecomeActiveSignal = [[[RACObserve(self, active) filter:^(NSNumber *active) {
+            return active.boolValue;
+        }] map:^(id _) {
+            @strongify(self);
+            return self;
+        }] setNameWithFormat:@"%@ -didBecomeActiveSignal", self];
+    }
+    return _didBecomeActiveSignal;
+}
+
+- (RACSignal *)didBecomeInactiveSignal {
+    if (_didBecomeInactiveSignal == nil) {
+        @weakify(self);
+        _didBecomeInactiveSignal = [[[RACObserve(self, active) filter:^(NSNumber *active) {
+            return (BOOL)(active.boolValue == NO);
+        }] map:^(id _) {
+            @strongify(self);
+            return self;
+        }] setNameWithFormat:@"%@ -didBecomeInactiveSignal", self];
+    }
+    return _didBecomeInactiveSignal;
+}
 
 - (RACSignal *)didLoadViewSignal {
   if (_didLoadViewSignal == nil) {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
  */
 @interface NSNumber (LPDMoneyAddition)
@@ -19,3 +20,5 @@
 - (NSString *)traditionalMoneyString;
 
 @end
+
+NS_ASSUME_NONNULL_END

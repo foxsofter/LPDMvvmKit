@@ -21,7 +21,7 @@
   });
 }
 
-- (UIBarButtonItem *)ws_backBarButtonItem {
+- (UIBarButtonItem * _Nonnull)ws_backBarButtonItem {
   return [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
 }
 

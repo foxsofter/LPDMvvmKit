@@ -18,11 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - data signal
 
-@property (nullable, nonatomic, strong, readonly) RACSignal *reloadDataSignal;      // 请勿订阅此信号
-@property (nullable, nonatomic, strong, readonly) RACSignal *insertSectionsSignal;  // 请勿订阅此信号
-@property (nullable, nonatomic, strong, readonly) RACSignal *deleteSectionsSignal;  // 请勿订阅此信号
-@property (nullable, nonatomic, strong, readonly) RACSignal *replaceSectionsSignal; // 请勿订阅此信号
-@property (nullable, nonatomic, strong, readonly) RACSignal *reloadSectionsSignal;  // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *reloadDataSignal;                   // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *scrollToRowAtIndexPathSignal;       // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *scrollToNearestSelectedRowSignal;   // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *insertSectionsSignal;               // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *deleteSectionsSignal;               // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *replaceSectionsSignal;              // 请勿订阅此信号
+@property (nullable, nonatomic, strong, readonly) RACSignal *reloadSectionsSignal;               // 请勿订阅此信号
 
 @property (nullable, nonatomic, strong, readonly) RACSignal *insertRowsAtIndexPathsSignal;  // 请勿订阅此信号
 @property (nullable, nonatomic, strong, readonly) RACSignal *deleteRowsAtIndexPathsSignal;  // 请勿订阅此信号

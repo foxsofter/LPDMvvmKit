@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief accessor for frame & bounds
  */
@@ -82,6 +83,26 @@
  *
  *  @return CGFloat
  */
++ (CGFloat)scale;
+
 + (CGFloat)tabBarHeight;
 
++ (CGFloat)ceilPixelValue:(CGFloat)pixelValue;
+
++ (CGFloat)roundPixelValu:(CGFloat)pixelValue;
+
++ (CGFloat)floorPixelValue:(CGFloat)pixelValue;
+
++ (CGFloat)pixelResize:(CGFloat)value;
+
++ (CGRect)pixelFrameResize:(CGRect)value;
+
++ (CGPoint)pixelPointResize:(CGPoint)value;
+
++ (CGFloat)screenResizeScale;
+
++ (CGFloat)screenHeightResizeScale;
+
 @end
+
+NS_ASSUME_NONNULL_END

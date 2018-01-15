@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIButton (LPDAddition)
 
-- (void)setBackgroundColor:(nullable UIColor *)color forState:(UIControlState)state;
+- (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state;
+
++ (UIButton *)buttonWithBackgoundImageName:(NSString *)backgroundImageName;
+
++ (UIButton *)buttonWithImageName:(NSString *)imageName;
 
 @end
+
+NS_ASSUME_NONNULL_END

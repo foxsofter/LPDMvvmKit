@@ -46,4 +46,16 @@
   return range.length != 0;
 }
 
+- (NSString *)encryptedPhone {
+    if (!self || self.length < 8) {
+        return @"****";
+    }
+    NSString *pattern = @"(1)[0-9]{10}$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if ([pred evaluateWithObject:self]) {
+        return [self stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+    }
+    return self;
+}
+
 @end

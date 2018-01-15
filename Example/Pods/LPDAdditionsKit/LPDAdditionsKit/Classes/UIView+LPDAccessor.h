@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  @author foxsofter, 15-09-24 09:09:51
  *
@@ -122,3 +124,5 @@
 @property (nonatomic) CGFloat centerY;
 
 @end
+
+NS_ASSUME_NONNULL_END

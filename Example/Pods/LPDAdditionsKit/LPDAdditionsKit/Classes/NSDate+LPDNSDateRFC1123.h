@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSDate (LPDNSDateRFC1123)
 
 /**
@@ -15,44 +17,51 @@
  (http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1)
  into NSDate.
  */
-+ (NSDate *)dateFromRFC1123:(NSString *)value_;
++ (nullable NSDate *)dateFromRFC1123:(NSString * _Nullable)value_;
 
 /**
  Convert NSDate into a RFC1123 'Full-Date' string
  (http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1).
  */
-- (NSString *)rfc1123String;
+- (nullable NSString *)rfc1123String;
 
 /**
  Convert NSDate into a 'yyyyMMdd' string
  */
-- (NSString *)yyyyMMddString;
+- (nullable NSString *)yyyyMMddString;
+
+/**
+ Convert NSDate into a string with FormatString
+ */
+- (nullable NSString *)stringWithFormatString:(nonnull NSString *)formatString;
 
 /**
  *  @brief Convert to local time zone.
  */
-- (NSDate *)toLocalDate;
+- (nullable NSDate *)toLocalDate;
 
-- (NSDate *)toBeijingDate;
+- (nullable NSDate *)toBeijingDate;
 
 /**
  *  @brief Convert to gmt time zone.
  */
-- (NSDate *)toGlobalDate;
+- (nullable NSDate *)toGlobalDate;
 
 /**
  *  @brief 00:00:00
  */
-- (NSDate *)beginningOfDay;
+- (nullable NSDate *)beginningOfDay;
 
 /**
  *  @brief 23:59:59
  */
-- (NSDate *)endingOfDay;
+- (nullable NSDate *)endingOfDay;
 
 /**
  *  @brief MM月01日
  */
-- (NSString *)beginningOfMonth;
+- (nonnull NSString *)beginningOfMonth;
 
 @end
+
+NS_ASSUME_NONNULL_END

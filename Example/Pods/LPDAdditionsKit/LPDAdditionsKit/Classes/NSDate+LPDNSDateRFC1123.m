@@ -10,7 +10,7 @@
 
 @implementation NSDate (LPDNSDateRFC1123)
 
-+ (NSDate *)dateFromRFC1123:(NSString *)value {
++ (nullable NSDate *)dateFromRFC1123:(NSString *)value {
   if (value == nil)
     return nil;
   static NSDateFormatter *rfc1123 = nil;
@@ -45,7 +45,7 @@
   return [asctime dateFromString:value];
 }
 
-- (NSString *)rfc1123String {
+- (nullable NSString *)rfc1123String {
   static NSDateFormatter *df = nil;
   if (df == nil) {
     df = [[NSDateFormatter alloc] init];
@@ -67,7 +67,18 @@
   return [df stringFromDate:self];
 }
 
-- (NSDate *)toLocalDate {
+- (nullable NSString *)stringWithFormatString:(NSString *)formatString {
+    static NSDateFormatter *df = nil;
+    if (df == nil) {
+        df = [[NSDateFormatter alloc] init];
+        //    df.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        df.timeZone = [NSTimeZone localTimeZone];
+        df.dateFormat = formatString;
+    }
+    return [df stringFromDate:self];
+}
+
+- (nullable NSDate *)toLocalDate {
   NSInteger seconds = [[NSTimeZone defaultTimeZone] secondsFromGMTForDate:self];
   return [NSDate dateWithTimeInterval:seconds sinceDate:self];
 }
@@ -76,12 +87,12 @@
   return [NSDate dateWithTimeInterval:8 * 60 * 60 sinceDate:self];
 }
 
-- (NSDate *)toGlobalDate {
+- (nullable NSDate *)toGlobalDate {
   NSInteger seconds = [[NSTimeZone defaultTimeZone] secondsFromGMTForDate:self];
   return [NSDate dateWithTimeInterval:-seconds sinceDate:self];
 }
 
-- (NSDate *)beginningOfDay {
+- (nullable NSDate *)beginningOfDay {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
   [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -99,7 +110,7 @@
   return [dateFormatter dateFromString:[todayDate stringByAppendingString:@" 23:59:59"]];
 }
 
-- (NSString *)beginningOfMonth {
+- (nonnull NSString *)beginningOfMonth {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
   [dateFormatter setDateFormat:@"MM月"];

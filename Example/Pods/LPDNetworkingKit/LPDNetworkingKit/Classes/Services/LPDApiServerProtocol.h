@@ -23,6 +23,8 @@ typedef NS_ENUM(NSUInteger, LPDApiServerType) {
   LPDApiServerTypeAlpha,
   LPDApiServerTypeBeta,
   LPDApiServerTypeProduce,
+  LPDApiServerTypeMockable,
+  LPDApiServerTypeAlta,
 };
 
 @protocol LPDApiServerProtocol <NSObject>

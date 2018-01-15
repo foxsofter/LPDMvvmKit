@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
  *  @author foxsofter, 15-02-23 21:02:44
  *
@@ -26,3 +27,5 @@
 - (void)setCopyObject:(id)object withKey:(SEL)key;
 
 @end
+
+NS_ASSUME_NONNULL_END

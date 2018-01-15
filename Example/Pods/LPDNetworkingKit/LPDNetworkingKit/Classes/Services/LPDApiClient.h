@@ -11,7 +11,24 @@
 #import "LPDModelProtocol.h"
 #import <Foundation/Foundation.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  @brief ResponseResolveResult
+ */
+
+@interface LPDResponseResolveResult : NSObject
+
+@property (nonatomic, strong, nullable) NSObject *responseModel;
+
+@property (nonatomic, strong, nullable) NSError *error;
+
++ (instancetype)resultWithModel:(NSObject * _Nullable)responseModel error:(NSError *_Nullable)err;
+
+@end
+
+
 
 @interface LPDApiClient : NSObject
 
@@ -101,16 +118,27 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief deserialization response object to response model.
  *
- *  @param response       response
  *  @param endpoint       endpoint
  *  @param responseObject response object
  *
  *  @return response model
  */
-- (nullable NSObject *)resolveResponse:(NSHTTPURLResponse *)response
-                              endpoint:(NSString *)endpoint
-                        responseObject:(id)responseObject;
+- (NSObject *)modelWithResponseObject:(id)responseObject
+                             endpoint:(NSString *)endpoint;
+/**
+ *  @brief return synthetical response result
+ *
+ *  @param response       response
+ *  @param endpoint       endpoint(path)
+ *  @param responseObject response object
+ *  @param error network error
+ *  @return response model
+ */
 
+- (nullable LPDResponseResolveResult *)resolveResponse:(NSHTTPURLResponse *)response
+                              endpoint:(NSString *)endpoint
+                        responseObject:(id)responseObject
+                                 error:(NSError *)error;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,11 +11,12 @@
 #import "UIScreen+LPDAccessor.h"
 #import "UIView+LPDAccessor.h"
 
+
 @interface UIButton ()
 
-@property (nonatomic, strong) UIView *modalView;
-@property (nonatomic, strong) UIActivityIndicatorView *spinnerView;
-@property (nonatomic, strong) UILabel *spinnerTitleLabel;
+@property (nonatomic, strong, nullable) UIView *modalView;
+@property (nonatomic, strong, nullable) UIActivityIndicatorView *spinnerView;
+@property (nonatomic, strong, nullable) UILabel *spinnerTitleLabel;
 
 @end
 

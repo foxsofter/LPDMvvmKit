@@ -20,6 +20,7 @@
 #import "LPDPopupView.h"
 #import "LPDRating.h"
 #import "LPDSegmented.h"
+#import "LPDSliderView.h"
 #import "LPDToastView.h"
 
 FOUNDATION_EXPORT double LPDControlsKitVersionNumber;

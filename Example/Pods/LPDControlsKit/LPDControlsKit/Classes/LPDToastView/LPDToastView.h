@@ -72,4 +72,11 @@ tappedAction:(void (^)(LPDToastView *toastView))action;
      cornerRadius:(CGFloat)cornerRadius
      tappedAction:(void (^)(LPDToastView *toastView))action;
 
++ (void)show:(NSString *)title
+backgroundColor:(UIColor *)backgroundColor
+	textColor:(UIColor *)textColor
+hoverInterval:(NSInteger)hoverInterval
+cornerRadius:(CGFloat)cornerRadius
+tappedAction:(void (^)(LPDToastView *toastView))action isTopWindow:(BOOL)isTop;
+
 @end

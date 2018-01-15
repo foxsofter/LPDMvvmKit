@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  @author foxsofter, 15-09-24 10:09:49
  *
@@ -25,7 +27,7 @@
  *
  *  @param title 按钮上显示的文字
  */
-- (void)beginSubmitting:(NSString *)title;
+- (void)beginSubmitting:(NSString * _Nullable)title;
 
 /**
  *  @brief  按钮点击后，恢复按钮点击前的状态
@@ -38,3 +40,5 @@
 @property (nonatomic, readonly, getter=isSubmitting) BOOL submitting;
 
 @end
+
+NS_ASSUME_NONNULL_END

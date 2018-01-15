@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIControl (Block)
 
 - (void)touchDown:(void (^)(void))eventBlock;
@@ -39,3 +41,5 @@
 - (void)editingDidEndOnExit:(void (^)(void))eventBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

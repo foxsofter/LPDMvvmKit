@@ -17,6 +17,7 @@
 #import "LPDTableItemViewModelProtocol.h"
 #import "LPDTableSectionViewModel.h"
 #import "LPDTableSectionViewModelProtocol.h"
+#import "LPDTableStandardCellViewModel.h"
 #import "LPDTableView.h"
 #import "LPDTableViewCell.h"
 #import "LPDTableViewFactory.h"
@@ -27,6 +28,7 @@
 #import "LPDTableViewModel.h"
 #import "LPDTableViewModelProtocol.h"
 #import "LPDTableViewProtocol.h"
+#import "LPDTableViewStandardCell.h"
 
 FOUNDATION_EXPORT double LPDTableViewKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char LPDTableViewKitVersionString[];

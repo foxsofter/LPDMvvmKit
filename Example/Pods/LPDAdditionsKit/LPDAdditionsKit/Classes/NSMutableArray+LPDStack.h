@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSMutableArray (LPDStack)
 
 - (void)pushObject:(id)anObject;
 
-- (id)popObject;
+- (nullable id)popObject;
 
-- (id)peekObject;
+- (nullable id)peekObject;
 
 @end
+
+NS_ASSUME_NONNULL_END

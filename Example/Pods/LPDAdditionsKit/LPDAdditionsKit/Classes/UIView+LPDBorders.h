@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, LPDUIViewBorderType) {
   LPDUIViewBorderTypeSolid,
   LPDUIViewBorderTypeDashed,
@@ -73,3 +75,5 @@ typedef NS_OPTIONS(NSUInteger, LPDUIViewBorderPosition) {
 - (void)setLineDashPattern:(NSArray<NSNumber *> *)lineDashPattern;
 
 @end
+
+NS_ASSUME_NONNULL_END

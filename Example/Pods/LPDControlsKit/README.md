@@ -1,6 +1,6 @@
 # LPDControlsKit
 
-[![CI Status](http://img.shields.io/travis/LPD-iOS/lpd-controls-kit.svg)](https://travis-ci.org/LPD-iOS/lpd-controls-kit)
+[![CI Status](http://img.shields.io/travis/LPD-iOS/LPDControlsKit.svg)](https://travis-ci.org/LPD-iOS/LPDControlsKit)
 [![Version](https://img.shields.io/cocoapods/v/LPDControlsKit.svg?style=flat)](http://cocoapods.org/pods/LPDControlsKit)
 [![License](https://img.shields.io/cocoapods/l/LPDControlsKit.svg?style=flat)](http://cocoapods.org/pods/LPDControlsKit)
 [![Platform](https://img.shields.io/cocoapods/p/LPDControlsKit.svg?style=flat)](http://cocoapods.org/pods/LPDControlsKit)
@@ -17,7 +17,7 @@ LPDControlsKit is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "LPDControlsKit", '~> 0.1.8'
+pod "LPDControlsKit", '~> 0.2.2'
 ```
 
 ## Author

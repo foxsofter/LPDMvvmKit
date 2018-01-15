@@ -14,10 +14,10 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - LPDAdditionsKit (0.1.3)
+  - LPDAdditionsKit (0.2.5)
   - LPDCollectionViewKit (0.1.8):
     - ReactiveObjC
-  - LPDControlsKit (0.1.9):
+  - LPDControlsKit (0.3.3):
     - LPDAdditionsKit
     - Masonry
     - SDVersion
@@ -29,16 +29,18 @@ PODS:
     - LPDTableViewKit
     - MJRefresh
     - ReactiveObjC
-  - LPDNetworkingKit (0.2.4):
+  - LPDNetworkingKit (0.3.0):
     - AFNetworking
     - ReactiveObjC
     - YYModel
-  - LPDTableViewKit (0.2.8):
+  - LPDTableViewKit (0.3.5):
+    - LPDAdditionsKit
+    - Masonry
     - ReactiveObjC
-  - Masonry (1.0.2)
-  - MJRefresh (3.1.12)
-  - ReactiveObjC (3.0.0)
-  - SDVersion (4.0.2)
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.1)
+  - ReactiveObjC (3.1.0)
+  - SDVersion (4.3.2)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -50,16 +52,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  LPDAdditionsKit: 68d721bbe5eda0e4dd0704ecf12ef838e7c452e6
+  LPDAdditionsKit: fd4d959792d39427e33cc630fb9e2a25b9b03de4
   LPDCollectionViewKit: 3dd9cef6c6066e2017d07a6985d9ee6f948d1f96
-  LPDControlsKit: 60a4614aaff5ad82530d848f253da14a99c0d035
+  LPDControlsKit: 495eddc9d7204107866a8106ee9e97e1b837d4ea
   LPDMvvmKit: e66c3e676f0ff092a4104ec413cc32fe3cb5a175
-  LPDNetworkingKit: afdec5c9ed7f410e5b3b4de9252b6c5c8f25fe07
-  LPDTableViewKit: 99a4dc55930e0aa8ebf8b6689a77bda010ded2e8
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  SDVersion: 7b472a749907c29fcba04dadb8ecb4eb9a9aeeab
+  LPDNetworkingKit: 9320a02800a7a9b9d7d5bea0b75ec07a419fc72a
+  LPDTableViewKit: dfdf3587be7c8c417985f4a7de086c47feeba554
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: f4ad78fdaccb36fa5ee95cef0afd968bd3433c30

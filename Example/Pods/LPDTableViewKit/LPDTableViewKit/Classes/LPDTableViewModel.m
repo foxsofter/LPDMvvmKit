@@ -42,6 +42,8 @@
 @property (nonatomic, strong) LPDTableViewFactory *tableViewFactory;
 
 @property (nonatomic, strong) RACSubject *reloadDataSubject;
+@property (nonatomic, strong) RACSubject *scrollToRowAtIndexPathSubject;
+@property (nonatomic, strong) RACSubject *scrollToNearestSelectedRowSubject;
 
 @property (nonatomic, strong) RACSubject *insertSectionsSubject;
 @property (nonatomic, strong) RACSubject *deleteSectionsSubject;
@@ -82,6 +84,10 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
 @implementation LPDTableViewModel {
   id<UITableViewDelegate> _delegate;
   id<UITableViewDataSource> _dataSource;
+}
+
+- (NSArray *)getSections {
+    return [NSArray arrayWithArray:_sections];
 }
 
 - (instancetype)init {
@@ -182,6 +188,31 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
     return sectionViewModel.footerViewModel;
   }
   return nil;
+}
+
+- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated {
+    EnsureOneSectionExists;
+    BOOL isHave = NO;
+    for (NSUInteger section=0; section < self.sections.count; section++) {
+        LPDTableSectionViewModel *sectionViewModel = self.sections[section];
+        for (NSUInteger row=0; row < sectionViewModel.mutableRows.count; row++) {
+            NSIndexPath *indexPathItem = [NSIndexPath indexPathForRow:row inSection:section];
+            if (indexPathItem == indexPath) {
+                isHave = YES;
+            }
+        }
+    }
+    if (isHave) {
+        [self.scrollToRowAtIndexPathSubject sendNext:RACTuplePack(indexPath, @(scrollPosition),@(animated))];
+    } else {
+        NSLog(@"超过tableView indexPath范围！！");
+        return;
+    }
+}
+
+- (void)scrollToNearestSelectedCellAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated {
+    EnsureOneSectionExists;
+    [self.scrollToNearestSelectedRowSubject sendNext:RACTuplePack(@(scrollPosition),@(animated))];
 }
 
 - (void)addCellViewModel:(__kindof id<LPDTableItemViewModelProtocol>)cellViewModel {
@@ -816,6 +847,16 @@ static NSString *const kDefaultFooterReuseIdentifier = @"kDefaultFooterReuseIden
 
 - (RACSignal *)reloadDataSignal {
   return _reloadDataSubject ?: (_reloadDataSubject = [[RACSubject subject] setNameWithFormat:@"reloadDataSignal"]);
+}
+
+- (RACSignal *)scrollToRowAtIndexPathSignal {
+    return _scrollToRowAtIndexPathSubject
+           ?: (_scrollToRowAtIndexPathSubject = [[RACSubject subject] setNameWithFormat:@"scrollToRowAtIndexPathSignal"]);
+}
+
+- (RACSignal *)scrollToNearestSelectedRowSignal {
+    return _scrollToNearestSelectedRowSubject
+    ?: (_scrollToNearestSelectedRowSubject = [[RACSubject subject] setNameWithFormat:@"scrollToNearestSelectedRowSignal"]);
 }
 
 - (RACSignal *)insertSectionsSignal {

@@ -75,7 +75,7 @@
   [self drawBorders];
 }
 
-//  由于受限于CG的优化几只，在drawRect中实现并不会被调用，只能想其他办法了
+//  由于受限于CG的优化机制，在drawRect中实现并不会被调用，只能想其他办法了
 //- (void)_drawRect:(CGRect)rect {
 //  [self _drawRect:rect];
 //  if (self.borderWidth == 0 ||
@@ -236,7 +236,7 @@
 }
 
 - (NSArray<NSNumber *> *)lineDashPattern {
-  [self object:@selector(setLineDashPattern:)];
+  return [self object:@selector(setLineDashPattern:)];
 }
 
 @end

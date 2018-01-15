@@ -14,6 +14,7 @@
   NSString *_reuseViewClass;
 }
 @synthesize viewModel = _viewModel;
+@synthesize height = _height;
 
 #pragma mark - LPDTableItemViewModelProtocol
 

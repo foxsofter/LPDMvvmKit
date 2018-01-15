@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIDevice (LPDAddition)
 
 + (NSString *)platform;
@@ -16,4 +18,16 @@
 
 + (NSString *)platformString;
 
++ (BOOL)p35InchDisplay;
+
++ (BOOL)p4InchDisplay;
+
++ (BOOL)p47InchDisplay;
+
++ (BOOL)p55InchDiplay;
+
++ (NSString *)getIPAddress:(BOOL)preferIPv4;
+
 @end
+
+NS_ASSUME_NONNULL_END

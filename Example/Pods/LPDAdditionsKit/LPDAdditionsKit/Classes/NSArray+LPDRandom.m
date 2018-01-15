@@ -10,7 +10,7 @@
 
 @implementation NSArray (LPDRandom)
 
-- (NSArray *)randomCopy {
+- (nonnull NSArray *)randomCopy {
   NSMutableArray *mutableArray = [self mutableCopy];
   NSUInteger count = [mutableArray count];
   if (count > 1) {

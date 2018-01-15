@@ -31,6 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable __kindof id<LPDTableItemViewModelProtocol>)footerViewModelFromSection:(NSInteger)sectionIndex;
 
+#pragma mark - scrollToRow methods
+
+- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
+- (void)scrollToNearestSelectedCellAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
 #pragma mark - add cells methods
 
 /**
@@ -180,16 +186,16 @@ NS_ASSUME_NONNULL_BEGIN
                      atIndex:(NSUInteger)index
                    inSection:(NSUInteger)sectionIndex;
 
-/**
- *  @brief 插入cellViewModels到最后一个section，如果不存在section默认添加一个section
- *
- *  @param cellViewModels 同一个cellViewModel不可添加多次
- *  @param index          index
- *  @param animation      animation
- */
-- (void)insertCellViewModels:(NSArray<__kindof id<LPDTableItemViewModelProtocol>> *)cellViewModels
-                     atIndex:(NSUInteger)index
-               withAnimation:(UITableViewRowAnimation)animation;
+///**
+// *  @brief 插入cellViewModels到最后一个section，如果不存在section默认添加一个section
+// *
+// *  @param cellViewModels 同一个cellViewModel不可添加多次
+// *  @param index          index
+// *  @param animation      animation
+// */
+//- (void)insertCellViewModels:(NSArray<__kindof id<LPDTableItemViewModelProtocol>> *)cellViewModels
+//                     atIndex:(NSUInteger)index
+//               withAnimation:(UITableViewRowAnimation)animation;
 
 /**
  *  @brief 插入cellViewModels

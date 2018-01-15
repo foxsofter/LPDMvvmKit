@@ -19,6 +19,10 @@
 
 #define LPDSYSTEMALERTVIEW_MESSAGELABEL_TAG 2333
 
+@implementation LPDAttributedAlertAction
+
+@end
+
 @interface LPDSystemAlertView ()
 
 @property (nonatomic, strong) UIView *backgroundView;
@@ -40,14 +44,52 @@
 + (void)show:(NSString *)caption
      message:(NSString *)message
       action:(LPDAlertAction *)action {
-    [self show:caption message:message actions:@[action]];
+
+    NSAttributedString *attributedCaption = caption ? [[NSAttributedString alloc] initWithString:caption] : nil;
+    NSAttributedString *attributedMessage = message ? [[NSAttributedString alloc] initWithString:message] : nil;
+
+    LPDAttributedAlertAction *attributedAction = [[LPDAttributedAlertAction alloc] init];
+    attributedAction.actionType = action.actionType;
+    attributedAction.action = action.action;
+    attributedAction.attributedTitle = action.title ? [[NSAttributedString alloc] initWithString:action.title] : nil;
+
+    [self show:attributedCaption attributedMessage:attributedMessage attributedActions:@[attributedAction]];
 }
 
 + (void)show:(NSString *)caption
      message:(NSString *)message
      action1:(LPDAlertAction *)action1
      action2:(LPDAlertAction *)action2 {
-    [self show:caption message:message actions:@[action1, action2]];
+
+    NSAttributedString *attributedCaption = caption ? [[NSAttributedString alloc] initWithString:caption] : nil;
+    NSAttributedString *attributedMessage = message ? [[NSAttributedString alloc] initWithString:message] : nil;
+
+    LPDAttributedAlertAction *attributedAction1 = [[LPDAttributedAlertAction alloc] init];
+    attributedAction1.actionType = action1.actionType;
+    attributedAction1.action = action1.action;
+    attributedAction1.attributedTitle = action1.title ? [[NSAttributedString alloc] initWithString:action1.title] : nil;
+
+    LPDAttributedAlertAction *attributedAction2 = [[LPDAttributedAlertAction alloc] init];
+    attributedAction2.actionType = action2.actionType;
+    attributedAction2.action = action2.action;
+    attributedAction2.attributedTitle = action2.title ? [[NSAttributedString alloc] initWithString:action2.title] : nil;
+
+    [self show:attributedCaption attributedMessage:attributedMessage attributedActions:@[attributedAction1, attributedAction2]];
+}
+
+#pragma mark - show alert view with attributed string
+
++ (void)show:(NSAttributedString *)attributedCaption
+attributedMessage:(NSAttributedString *)attributedMessage
+attributedAction:(LPDAttributedAlertAction *)attributedAction {
+    [self show:attributedCaption attributedMessage:attributedMessage attributedActions:@[attributedAction]];
+}
+
++ (void)show:(NSAttributedString *)attributedCaption
+attributedMessage:(NSAttributedString *)attributedMessage
+attributedAction1:(LPDAttributedAlertAction *)attributedAction1
+attributedAction2:(LPDAttributedAlertAction *)attributedAction2 {
+    [self show:attributedCaption attributedMessage:attributedMessage attributedActions:@[attributedAction1, attributedAction2]];
 }
 
 #pragma mark - hide or exit.
@@ -99,23 +141,27 @@
     return alerts;
 }
 
-+ (void)show:(NSString *)caption
-     message:(NSString *)message
-     actions:(NSArray<LPDAlertAction *> *)actions {
++ (void)show:(NSAttributedString *)attributedCaption
+attributedMessage:(NSAttributedString *)attributedMessage
+attributedActions:(NSArray<LPDAttributedAlertAction *> *)attributedActions {
     @synchronized(self) {
         LPDSystemAlertView *alertView = [[self alertViews] peekObject];
         if (alertView) {
             [alertView hide];
         }
         alertView = [[LPDSystemAlertView alloc] init];
-        [alertView show:caption message:message action:actions];
+
+        NSMutableAttributedString *mutableAttributedCaption = attributedCaption ? [[NSMutableAttributedString alloc] initWithAttributedString:attributedCaption] : nil;
+        NSMutableAttributedString *mutableAttributedMessage = attributedMessage ? [[NSMutableAttributedString alloc] initWithAttributedString:attributedMessage] : nil;
+
+        [alertView show:mutableAttributedCaption attributedMessage:mutableAttributedMessage attributedActions:attributedActions];
         [[self alertViews] pushObject:alertView];
     }
 }
 
-- (void)show:(NSString *)caption
-     message:(NSString *)message
-      action:(NSArray<LPDAlertAction *> *)actions {
+- (void)show:(NSMutableAttributedString *)attributedCaption
+attributedMessage:(NSMutableAttributedString *)attributedMessage
+attributedActions:(NSArray<LPDAttributedAlertAction *> *)attributedActions {
 
     _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.width, UIScreen.height)];
 
@@ -139,11 +185,17 @@
     }];
 
     UILabel *captionLabel = nil;
-    if (caption && caption.length > 0) {
+    if (attributedCaption && attributedCaption.length > 0) {
         captionLabel = [[UILabel alloc] init];
-        captionLabel.text = caption;
-        captionLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-        captionLabel.font = [UIFont systemFontOfSize:17];
+        if (NO == [attributedCaption hasAttributes]) {
+            captionLabel.text = attributedCaption.string;
+            captionLabel.textColor = [UIColor colorWithHexString:@"#333333"];
+            captionLabel.font = [UIFont systemFontOfSize:17];
+        } else {
+            [attributedCaption addBaseAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],
+                                                   NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#333333"]}];
+            captionLabel.attributedText = attributedCaption;
+        }
         captionLabel.numberOfLines = 0;
         captionLabel.textAlignment = NSTextAlignmentCenter;
         [_contentView addSubview:captionLabel];
@@ -155,11 +207,17 @@
     }
 
     UILabel *messageLabel = nil;
-    if (message && message.length > 0) {
+    if (attributedMessage && attributedMessage.length > 0) {
         messageLabel = [[UILabel alloc] init];
-        messageLabel.text = message;
-        messageLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-        messageLabel.font = [UIFont systemFontOfSize:13];
+        if (NO == [attributedMessage hasAttributes]) {
+            messageLabel.text = attributedMessage.string;
+            messageLabel.textColor = [UIColor colorWithHexString:@"#333333"];
+            messageLabel.font = [UIFont systemFontOfSize:13];
+        } else {
+            [attributedMessage addBaseAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13],
+                                                   NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#333333"]}];
+            messageLabel.attributedText = attributedMessage;
+        }
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
         messageLabel.tag = LPDSYSTEMALERTVIEW_MESSAGELABEL_TAG;
@@ -167,7 +225,7 @@
         [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@20);
             make.right.equalTo(@(-20));
-            if (caption) {
+            if (attributedCaption) {
                 make.top.equalTo(captionLabel.mas_bottom).with.offset(4);
             } else {
                 make.top.equalTo(@20);
@@ -176,15 +234,23 @@
     }
 
     UIButton *button = nil;
-    CGFloat buttonWidth = UIScreen.width * 0.73 / actions.count;
+    CGFloat buttonWidth = UIScreen.width * 0.73 / attributedActions.count;
     CGFloat left = 0;
     _buttons = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < actions.count; i++) {
-        LPDAlertAction *action = [actions objectAtIndex:i];
+    for (NSInteger i = 0; i < attributedActions.count; i++) {
+        LPDAttributedAlertAction *action = [attributedActions objectAtIndex:i];
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, buttonWidth, 44);
-        [button setTitle:action.title forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:16];
+
+        NSMutableAttributedString *actionAttributedTitle = action.attributedTitle ? [[NSMutableAttributedString alloc] initWithAttributedString:action.attributedTitle] : nil;
+        if (NO == [actionAttributedTitle hasAttributes]) {
+            [button setTitle:actionAttributedTitle.string forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:16];
+        } else {
+            [attributedCaption addBaseAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+            [button setAttributedTitle:actionAttributedTitle forState:UIControlStateNormal];
+        }
+
         button.contentMode = UIViewContentModeCenter;
         button.userInteractionEnabled = NO;
         button.tag = i;
@@ -294,8 +360,8 @@
                   borderColor:[[UIColor blackColor] colorWithAlphaComponent:0.18]
                borderPosition:LPDUIViewBorderPositionTop];
             [_buttons[button.tag + 1] setBorder:0.5
-                  borderColor:[[UIColor blackColor] colorWithAlphaComponent:0.18]
-               borderPosition:LPDUIViewBorderPositionTop];
+                                    borderColor:[[UIColor blackColor] colorWithAlphaComponent:0.18]
+                                 borderPosition:LPDUIViewBorderPositionTop];
         }
     } else {
         if (button.tag == 0) {

@@ -10,6 +10,6 @@
 
 @interface NSArray (LPDRandom)
 
-- (NSArray *)randomCopy;
+- (nonnull NSArray *)randomCopy;
 
 @end

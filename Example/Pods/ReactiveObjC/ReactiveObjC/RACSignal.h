@@ -218,7 +218,7 @@ typedef RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, B
 ///               return value must be an object. This argument cannot be nil.
 ///
 /// Returns a new signal of reduced tuple values.
-- (RACSignal *)reduceEach:(id _Nullable (^)())reduceBlock RAC_WARN_UNUSED_RESULT;
+- (RACSignal *)reduceEach:(RACReduceBlock)reduceBlock RAC_WARN_UNUSED_RESULT;
 
 /// Returns a signal consisting of `value`, followed by the values in the
 /// receiver.
@@ -268,7 +268,7 @@ typedef RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, B
 ///
 /// Returns a new signal containing the results from each invocation of
 /// `reduceBlock`.
-+ (RACSignal<ValueType> *)zip:(id<NSFastEnumeration>)signals reduce:(id _Nullable (^)())reduceBlock RAC_WARN_UNUSED_RESULT;
++ (RACSignal<ValueType> *)zip:(id<NSFastEnumeration>)signals reduce:(RACGenericReduceBlock)reduceBlock RAC_WARN_UNUSED_RESULT;
 
 /// Returns a signal obtained by concatenating `signals` in order.
 + (RACSignal<ValueType> *)concat:(id<NSFastEnumeration>)signals RAC_WARN_UNUSED_RESULT;
@@ -447,6 +447,23 @@ typedef RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, B
 /// **These methods should never ship in production code.**
 @interface RACSignal<__covariant ValueType> (Testing)
 
+/// Spins the main run loop for a short while, waiting for the receiver to send a `next`
+/// or the provided timeout to elapse.
+///
+/// **Because this method executes the run loop recursively, it should only be used
+/// on the main thread, and only from a unit test.**
+///
+/// defaultValue - Returned if the receiver completes or errors before sending
+///                a `next`, or if the method times out. This argument may be
+///                nil.
+/// success      - If not NULL, set to whether the receiver completed
+///                successfully.
+/// error        - If not NULL, set to any error that occurred.
+///
+/// Returns the first value received, or `defaultValue` if no value is received
+/// before the signal finishes or the method times out.
+- (nullable ValueType)asynchronousFirstOrDefault:(nullable ValueType)defaultValue success:(nullable BOOL *)success error:(NSError * _Nullable * _Nullable)error timeout:(NSTimeInterval)timeout;
+
 /// Spins the main run loop for a short while, waiting for the receiver to send a `next`.
 ///
 /// **Because this method executes the run loop recursively, it should only be used
@@ -464,6 +481,18 @@ typedef RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, B
 - (nullable ValueType)asynchronousFirstOrDefault:(nullable ValueType)defaultValue success:(nullable BOOL *)success error:(NSError * _Nullable * _Nullable)error;
 
 /// Spins the main run loop for a short while, waiting for the receiver to complete.
+/// or the provided timeout to elapse.
+///
+/// **Because this method executes the run loop recursively, it should only be used
+/// on the main thread, and only from a unit test.**
+///
+/// error - If not NULL, set to any error that occurs.
+///
+/// Returns whether the signal completed successfully before timing out. If NO,
+/// `error` will be set to any error that occurred.
+- (BOOL)asynchronouslyWaitUntilCompleted:(NSError * _Nullable * _Nullable)error timeout:(NSTimeInterval)timeout;
+
+/// Spins the main run loop for a short while, waiting for the receiver to complete
 ///
 /// **Because this method executes the run loop recursively, it should only be used
 /// on the main thread, and only from a unit test.**

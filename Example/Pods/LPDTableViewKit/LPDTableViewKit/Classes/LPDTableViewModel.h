@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDTableViewModel : NSObject <LPDTableViewModelProtocol>
 
+@property (readonly, nonatomic, getter = getSections) NSArray *tableViewModelSections;
+
 + (instancetype) new NS_UNAVAILABLE;
 
 @end

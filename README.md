@@ -80,7 +80,7 @@ LPDMvvmKit 对各层的定义
 
 更多细节请参考源码，可能不是最好的解决方案，欢迎 Issue。
 
-#### (1) 导航一一对应的例子
+#### 1.1 导航一一对应的例子
 
 ```Objective-c
 LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
@@ -118,7 +118,7 @@ LPDHomeViewModel *vm = [[LPDHomeViewModel alloc] init];
 [self.navigation dismissViewModelAnimated:YES completion:nil];
 ```
 
-#### (2) 子 ViewController 的例子
+#### 1.2 子 ViewController 的例子
 
 要实现子 ViewController，现在可以这么做了：
 
@@ -133,7 +133,7 @@ waybillsViewModel.waybillStatus = LPDWaybillStatusDelivering;
 [self addChildViewModel:waybillsViewModel];
 ```
 
-#### (3) 表单提交的进度条的例子
+#### 1.3 表单提交的进度条的例子
 
 更简单了，一行代码：
 
@@ -143,7 +143,7 @@ self.submitting = YES;  // Show
 self.submitting = NO;  // hide
 ```
 
-#### (4) 加载的进度条的例子
+#### 1.4 加载的进度条的例子
 
 需要设置 BeginLoadingBlock 和 EndLoadingBlock 来实现显示和取消加载进度条，然后不需要做其它事情了，剩下的交给框架来实现就好了，后面会说到 Tableview 和 Collectionview 加载的实现：
 
@@ -193,7 +193,7 @@ self.submitting = NO;  // hide
 }];
 ```
 
-#### (5) 下拉刷新的例子
+#### 1.5 下拉刷新的例子
 
 下拉刷新默认使用 MJRefresh，可以扩展然后通过 InitHeaderBlock 来定制自己的下拉刷新效果，要实现下拉刷新不要太简单了，在LPDScrollViewController 的子类中添加两行代码，在对应的 ViewModel 中实现 LoadingSignal：
 
@@ -202,7 +202,7 @@ self.scrollView = self.tableView;
 self.needLoading = YES;
 ```
 
-#### (6) 上拉加载更多的例子
+#### 1.6 上拉加载更多的例子
 
 上拉加载更多默认使用 MJRefresh，目前暂时不支持定制，上拉加载更多的实现也很简单，在 LPDScrollViewController 的子类中添加一行代码，剩下的就是在对应的 ViewModel 中实现 LoadingMoreSignal：
 
@@ -222,7 +222,7 @@ self.needLoadingMore = YES;
 
 主要是的设计思路是这样的：将增删接口都通过 Protocol 的方式封装，避免每次都是通过 Delegate 去实现，只需要调用对应的接口就好了，另外对一些常用的操作如 DidSelect 等都从 Delegate Method 改成 RACSignal，通过这些改变，让代码可以聚合起来，相关的代码逻辑不需要在多个零散的函数中去添加代码。
 
-#### (1) Demo 中的一些例子，加载 Tableview 的数据
+#### 2.1 Demo 中的一些例子，加载 Tableview 的数据
 
 ```Objective-c
 -(void)reloadTable {
@@ -240,7 +240,7 @@ self.needLoadingMore = YES;
 }
 ```
 
-#### (2) 添加一个 Cell
+#### 2.2 添加一个 Cell
 
 ```Objective-c
 LPDPostModel *model = [[LPDPostModel alloc]init];
@@ -254,7 +254,7 @@ cellViewModel.model = model;
 
 ```
 
-#### (3) 批量添加 Cell
+#### 2.3 批量添加 Cell
 
 ```Objective-c
 NSMutableArray *cellViewModels = [NSMutableArray array];
@@ -281,13 +281,13 @@ cellViewModel4.image = [UIImage imageNamed:@"03"];
 [self.tableViewModel insertCellViewModels:cellViewModels atIndex:0 withRowAnimation:UITableViewRowAnimationLeft];
 ```
 
-#### (4) 删除一个 Cell
+#### 2.4 删除一个 Cell
 
 ```Objective-c
 [self.tableViewModel removeCellViewModelAtIndex:0 withRowAnimation:UITableViewRowAnimationRight];
 ```
 
-#### (5) Cell 的 DidSelect
+#### 2.5 Cell 的 DidSelect
 
 ```Objective-c
 [[[self.waybillsTableViewModel.didSelectRowAtIndexPathSignal deliverOnMainThread]
@@ -303,7 +303,7 @@ cellViewModel4.image = [UIImage imageNamed:@"03"];
 }];
 ```
 
-#### (6) 目前支持的操作
+#### 2.6 目前支持的操作
 
 ```Objective-c
 @property (nonatomic, strong, readonly) RACSignal *willDisplayCellSignal;

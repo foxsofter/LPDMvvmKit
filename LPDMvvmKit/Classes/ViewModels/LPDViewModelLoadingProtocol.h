@@ -14,7 +14,7 @@
 /**
  *  @brief  If YES, shows the loading view and triggers loading signal, default is NO.
  */
-@property (nonatomic, assign, getter=isLoading) BOOL loading;
+@property (nonatomic, assign, getter = isLoading) BOOL loading;
 
 /**
  *  @brief  The signal of loading current view.

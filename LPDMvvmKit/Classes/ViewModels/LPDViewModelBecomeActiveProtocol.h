@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LPDViewModelBecomeActiveProtocol <NSObject>
 
-@property (nonatomic, assign, getter=isActive) BOOL active;
+@property (nonatomic, assign, getter = isActive) BOOL active;
 
 @property (nonatomic, strong, readonly) RACSignal *didBecomeActiveSignal;
 

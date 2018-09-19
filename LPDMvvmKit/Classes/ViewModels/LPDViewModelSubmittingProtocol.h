@@ -10,7 +10,7 @@
 
 @protocol LPDViewModelSubmittingProtocol<NSObject>
 
-@property (nonatomic, assign, getter=isSubmitting) BOOL submitting;
+@property (nonatomic, assign, getter = isSubmitting) BOOL submitting;
 
 - (void)setSubmittingWithMessage:(NSString *)message;
 

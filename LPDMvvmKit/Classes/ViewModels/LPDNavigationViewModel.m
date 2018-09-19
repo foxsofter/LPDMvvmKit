@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LPDNavigationViewModel ()
 
-@property (nullable, nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol>> *weakViewModels;
+@property (nullable, nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol> > *weakViewModels;
 
 @end
 
@@ -25,82 +25,97 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - life cycle
 
-- (instancetype)initWithRootViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  self = [super init];
-  if (self) {
-    _weakViewModels = [NSMutableArray mutableArrayUsingWeakReferences];
-    [_weakViewModels addObject:viewModel];
-    viewModel.navigation = self;
-    for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
-      childViewModel.navigation = self;
+- (instancetype)initWithRootViewModel:(__kindof id<LPDViewModelProtocol>)viewModel
+{
+    self = [super init];
+    if (self) {
+        _weakViewModels = [NSMutableArray mutableArrayUsingWeakReferences];
+        [_weakViewModels addObject:viewModel];
+        viewModel.navigation = self;
+        for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
+            childViewModel.navigation = self;
+        }
     }
-  }
-  return self;
+    return self;
 }
 
 #pragma mark - navigation methods
 
-- (void)pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel animated:(BOOL)animated {
+- (void)pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel animated:(BOOL)animated
+{
 }
 
-- (void)popViewModelAnimated:(BOOL)animated {
+- (void)popViewModelAnimated:(BOOL)animated
+{
 }
 
-- (void)popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel animated:(BOOL)animated {
+- (void)popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel animated:(BOOL)animated
+{
 }
 
-- (void)popToRootViewModelAnimated:(BOOL)animated {
+- (void)popToRootViewModelAnimated:(BOOL)animated
+{
 }
 
 - (void)presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
                           animated:(BOOL)animated
-                        completion:(nullable void (^)())completion {
+                        completion:(nullable void (^)())completion
+{
 }
 
-- (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion {
+- (void)dismissNavigationViewModelAnimated:(BOOL)animated completion:(nullable void (^)())completion
+{
 }
 
-- (void)setViewModels:(NSMutableArray <id<LPDViewModelProtocol>> *)viewModels animated:(BOOL)animated {
+- (void)setViewModels:(NSMutableArray <id<LPDViewModelProtocol> > *)viewModels animated:(BOOL)animated
+{
 }
 
 #pragma mark - properties
 
-- (_Nullable __kindof id<LPDViewModelProtocol>)topViewModel {
-  return [_weakViewModels lastObject];
+- (_Nullable __kindof id<LPDViewModelProtocol>)topViewModel
+{
+    return [_weakViewModels lastObject];
 }
 
-- (_Nullable __kindof id<LPDViewModelProtocol>)visibleViewModel {
-  if (_presentedViewModel) {
-    return _presentedViewModel;
-  }
-  return [_weakViewModels lastObject];
+- (_Nullable __kindof id<LPDViewModelProtocol>)visibleViewModel
+{
+    if (_presentedViewModel) {
+        return _presentedViewModel;
+    }
+    return [_weakViewModels lastObject];
 }
 
-- (void)setPresentedViewModel:(__kindof id<LPDNavigationViewModelProtocol> _Nullable)presentedViewModel {
-  _presentedViewModel = presentedViewModel;
+- (void)setPresentedViewModel:(__kindof id<LPDNavigationViewModelProtocol> _Nullable)presentedViewModel
+{
+    _presentedViewModel = presentedViewModel;
 }
 
-- (NSArray<__kindof id<LPDViewModelProtocol>> *)viewModels {
-  return [_weakViewModels copy];
+- (NSArray<__kindof id<LPDViewModelProtocol> > *)viewModels
+{
+    return [_weakViewModels copy];
 }
 
 #pragma mark - reactive navigation methods
 
-- (void)_pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
-  [_weakViewModels addObject:viewModel];
-  viewModel.navigation = self;
-  for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
-    childViewModel.navigation = self;
-  }
+- (void)_pushViewModel:(__kindof id<LPDViewModelProtocol>)viewModel
+{
+    [_weakViewModels addObject:viewModel];
+    viewModel.navigation = self;
+    for (id<LPDViewModelProtocol> childViewModel in viewModel.childViewModels) {
+        childViewModel.navigation = self;
+    }
 }
 
-- (void)_popViewModel {
-  if (_weakViewModels.count > 1) {
-    [_weakViewModels removeLastObject];
-  }
+- (void)_popViewModel
+{
+    if (_weakViewModels.count > 1) {
+        [_weakViewModels removeLastObject];
+    }
 }
 
-- (void)_popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel {
+- (void)_popToViewModel:(__kindof id<LPDViewModelProtocol>)viewModel
+{
     if (_weakViewModels.count > 1) {
         // 耗时过久，需要异步执行
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -118,35 +133,39 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (void)_popToRootViewModel {
-  if (_weakViewModels.count > 1) {
-    // 耗时过久，需要异步执行
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-      if (_weakViewModels.count > 1) {
-          [_weakViewModels removeObjectsInRange:NSMakeRange(1, _weakViewModels.count - 1)];
-      }
-    });
-  }
+- (void)_popToRootViewModel
+{
+    if (_weakViewModels.count > 1) {
+        // 耗时过久，需要异步执行
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            if (_weakViewModels.count > 1) {
+                [_weakViewModels removeObjectsInRange:NSMakeRange(1, _weakViewModels.count - 1)];
+            }
+        });
+    }
 }
 
-- (void)_presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel {
-  _presentedViewModel = viewModel;
-  _presentedViewModel.presentingViewModel = self;
+- (void)_presentNavigationViewModel:(__kindof id<LPDNavigationViewModelProtocol>)viewModel
+{
+    _presentedViewModel = viewModel;
+    _presentedViewModel.presentingViewModel = self;
 }
 
-- (void)_dismissNavigationViewModel {
-  if (_presentedViewModel) {
-    [_presentedViewModel
-      dismissNavigationViewModelAnimated:NO
-                    completion:^{
-                      self.presentingViewModel = nil;
-                    }];
-  } else {
-    _presentingViewModel.presentedViewModel = nil;
-  }
+- (void)_dismissNavigationViewModel
+{
+    if (_presentedViewModel) {
+        [_presentedViewModel
+         dismissNavigationViewModelAnimated:NO
+                                 completion:^{
+            self.presentingViewModel = nil;
+        }];
+    } else {
+        _presentingViewModel.presentedViewModel = nil;
+    }
 }
 
-- (void)_setViewModels:(NSMutableArray <id<LPDViewModelProtocol>> *)viewModels {
+- (void)_setViewModels:(NSMutableArray <id<LPDViewModelProtocol> > *)viewModels
+{
     if (_weakViewModels != viewModels) {
         _weakViewModels = viewModels;
     }
@@ -157,6 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
 }
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, LPDLoadingMoreState) {
-  LPDLoadingMoreStateEnd,
-  LPDLoadingMoreStateBegin,
-  LPDLoadingMoreStateNoMore,
+typedef NS_ENUM (NSUInteger, LPDLoadingMoreState) {
+    LPDLoadingMoreStateEnd,
+    LPDLoadingMoreStateBegin,
+    LPDLoadingMoreStateNoMore,
 };
 
 @protocol LPDViewModelLoadingMoreProtocol <NSObject>

@@ -13,7 +13,7 @@
 /**
  *  @brief YES when viewDidLayoutSubviews.
  */
-@property (nonatomic, assign, getter=isDidLayoutSubviews) BOOL didLayoutSubviews;
+@property (nonatomic, assign, getter = isDidLayoutSubviews) BOOL didLayoutSubviews;
 
 /**
  *  @brief Triggers when viewDidLayoutSubviews equals YES.

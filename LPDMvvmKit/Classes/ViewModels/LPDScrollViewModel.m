@@ -22,33 +22,35 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - properties
 
-- (void)setLoadingMoreState:(LPDLoadingMoreState)loadingMoreState {
-  if (_loadingMoreState == loadingMoreState) {
-    return;
-  }
-  _loadingMoreState = loadingMoreState;
-  if (_loadingMoreState && _loadingMoreSignal) {
-    [[_loadingMoreSignal deliverOnMainThread] subscribeNext:^(id x){
-    }];
-  }
+- (void)setLoadingMoreState:(LPDLoadingMoreState)loadingMoreState
+{
+    if (_loadingMoreState == loadingMoreState) {
+        return;
+    }
+    _loadingMoreState = loadingMoreState;
+    if (_loadingMoreState && _loadingMoreSignal) {
+        [[_loadingMoreSignal deliverOnMainThread] subscribeNext:^(id x) {
+        }];
+    }
 }
 
-- (void)setLoadingMoreSignal:(nullable RACSignal *)loadingMoreSignal {
-  if (_loadingMoreSignal == loadingMoreSignal) {
-    return;
-  }
-  @weakify(self);
-  if (loadingMoreSignal) {
-    _loadingMoreSignal = [[loadingMoreSignal doCompleted:^{
-      @strongify(self);
-      self.loadingMoreState = LPDLoadingMoreStateEnd;
-    }] doError:^(NSError *error) {
-      @strongify(self);
-      [self.errorSubject sendNext:error.localizedDescription];
-    }];
-  } else {
-    _loadingMoreSignal = nil;
-  }
+- (void)setLoadingMoreSignal:(nullable RACSignal *)loadingMoreSignal
+{
+    if (_loadingMoreSignal == loadingMoreSignal) {
+        return;
+    }
+    @weakify(self);
+    if (loadingMoreSignal) {
+        _loadingMoreSignal = [[loadingMoreSignal doCompleted:^{
+            @strongify(self);
+            self.loadingMoreState = LPDLoadingMoreStateEnd;
+        }] doError:^(NSError *error) {
+            @strongify(self);
+            [self.errorSubject sendNext:error.localizedDescription];
+        }];
+    } else {
+        _loadingMoreSignal = nil;
+    }
 }
 
 @end

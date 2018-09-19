@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, LPDNetworkState) {
-  LPDNetworkStateNormal,
-  LPDNetworkStateDisable,
+typedef NS_ENUM (NSUInteger, LPDNetworkState) {
+    LPDNetworkStateNormal,
+    LPDNetworkStateDisable,
 };
 
 @protocol LPDViewModelNetworkStatusProtocol <NSObject>

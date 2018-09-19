@@ -21,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, strong, readonly) __kindof id<LPDNavigationViewModelProtocol> viewModel;
 
-- (void)presentNavigationController:(UINavigationController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;
+- (void)presentNavigationController:(UINavigationController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^__nullable)(void))completion;
 
-- (void)dismissNavigationControllerAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion;
+- (void)dismissNavigationControllerAnimated:(BOOL)flag completion:(void (^__nullable)(void))completion;
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 
@@ -35,11 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setViewControllers:(NSMutableArray <UIViewController *> *)viewControllers animated:(BOOL)animated;
 
-@property(nullable, nonatomic,readonly,strong) UIViewController *topViewController;
+@property (nullable, nonatomic, readonly, strong) UIViewController *topViewController;
 
-@property(nullable, nonatomic,readonly,strong) UIViewController *visibleViewController;
+@property (nullable, nonatomic, readonly, strong) UIViewController *visibleViewController;
 
-@property(nonatomic,copy) NSArray<__kindof UIViewController *> *viewControllers;
+@property (nonatomic, copy) NSArray<__kindof UIViewController *> *viewControllers;
 
 @end
 

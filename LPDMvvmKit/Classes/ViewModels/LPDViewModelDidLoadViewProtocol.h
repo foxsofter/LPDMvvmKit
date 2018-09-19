@@ -13,7 +13,7 @@
 /**
  *  @brief YES when viewDidLoad, NO when viewDidUnload
  */
-@property (nonatomic, assign, getter=isDidLoadView) BOOL didLoadView;
+@property (nonatomic, assign, getter = isDidLoadView) BOOL didLoadView;
 
 /**
  *  @brief Triggers when didLoadView equals YES.

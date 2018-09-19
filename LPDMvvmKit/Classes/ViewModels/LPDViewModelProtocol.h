@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @brief childViewModels，从对应viewController中的addChildViewController方法可以添加
  *  或者通过viewModel的addChildViewModel方法添加
  */
-@property (nonatomic, copy, readonly) NSArray<id<LPDViewModelProtocol>> *childViewModels;
+@property (nonatomic, copy, readonly) NSArray<id<LPDViewModelProtocol> > *childViewModels;
 
 @property (nonatomic, weak, readonly) id<LPDViewModelProtocol> parentViewModel;
 

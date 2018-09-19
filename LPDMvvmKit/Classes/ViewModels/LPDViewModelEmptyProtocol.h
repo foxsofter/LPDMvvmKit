@@ -14,7 +14,7 @@
 /**
  *  @brief  If YES, shows the empty view, default is NO.
  */
-@property (nonatomic, assign, getter=isEmpty) BOOL empty;
+@property (nonatomic, assign, getter = isEmpty) BOOL empty;
 
 /**
  *  @brief  Set empty=YES, shows the empty view with description.

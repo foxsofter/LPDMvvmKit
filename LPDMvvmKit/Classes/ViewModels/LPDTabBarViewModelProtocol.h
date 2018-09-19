@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDNavigationViewModelProtocol>> *)viewModels;
+- (instancetype)initWithViewModels:(NSArray<__kindof id<LPDNavigationViewModelProtocol> > *)viewModels;
 
 @property (nonatomic, readonly, strong) __kindof id<LPDNavigationViewModelProtocol> selectedViewModel;
 
 @property (nonatomic) NSUInteger selectedIndex;
 
-@property (nonatomic, readonly, strong) NSMutableArray<__kindof id<LPDNavigationViewModelProtocol>> *viewModels;
+@property (nonatomic, readonly, strong) NSMutableArray<__kindof id<LPDNavigationViewModelProtocol> > *viewModels;
 
 @end
 

@@ -18,14 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LPDViewController : UIViewController <LPDViewControllerProtocol>
 //todo 需要以后改为私有
 {
-@public
+    @public
     UIView *_emptyOverlay;
     UIView *_retryOverlay;
 }
 /**
  *  @brief 禁用无关函数
  */
-+ (instancetype) new NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 - (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil

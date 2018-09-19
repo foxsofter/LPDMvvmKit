@@ -17,14 +17,14 @@
 #import "LPDViewModelEmptyProtocol.h"
 #import "LPDViewModelNetworkStatusProtocol.h"
 
-@interface LPDCollectionItemViewModel(React)<LPDViewModelBecomeActiveProtocol,
-                                             LPDViewModelDidLoadViewProtocol,
-                                             LPDViewModelDidLayoutSubviewsProtocol,
-                                             LPDViewModelSubmittingProtocol,
-                                             LPDViewModelLoadingProtocol,
-                                             LPDViewModelLoadingMoreProtocol,
-                                             LPDViewModelToastProtocol,
-                                             LPDViewModelEmptyProtocol,
-                                             LPDViewModelNetworkStatusProtocol>
+@interface LPDCollectionItemViewModel (React)<LPDViewModelBecomeActiveProtocol,
+                                              LPDViewModelDidLoadViewProtocol,
+                                              LPDViewModelDidLayoutSubviewsProtocol,
+                                              LPDViewModelSubmittingProtocol,
+                                              LPDViewModelLoadingProtocol,
+                                              LPDViewModelLoadingMoreProtocol,
+                                              LPDViewModelToastProtocol,
+                                              LPDViewModelEmptyProtocol,
+                                              LPDViewModelNetworkStatusProtocol>
 
 @end

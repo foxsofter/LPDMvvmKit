@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak, readwrite) id<LPDViewModelProtocol> parentViewModel;
 
-@property (nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol>> *mutableChildViewModels;
+@property (nonatomic, strong) NSMutableArray<id<LPDViewModelProtocol> > *mutableChildViewModels;
 
 @end
 
@@ -38,140 +38,155 @@
 
 #pragma mark - LPDViewModelDidLoadViewProtocol
 
-- (RACSignal *)didLoadViewSignal {
-  if (_didLoadViewSignal == nil) {
-    @weakify(self);
-    _didLoadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
-      return didLoadView.boolValue;
-    }] map:^(id _) {
-      @strongify(self);
-      return self;
-    }] setNameWithFormat:@"%@ -didLoadViewSignal", self];
-  }
-  return _didLoadViewSignal;
+- (RACSignal *)didLoadViewSignal
+{
+    if (_didLoadViewSignal == nil) {
+        @weakify(self);
+        _didLoadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
+            return didLoadView.boolValue;
+        }] map:^(id _) {
+            @strongify(self);
+            return self;
+        }] setNameWithFormat:@"%@ -didLoadViewSignal", self];
+    }
+    return _didLoadViewSignal;
 }
 
-- (RACSignal *)didUnloadViewSignal {
-  if (_didUnloadViewSignal == nil) {
-    @weakify(self);
-    _didUnloadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
-      return (BOOL)(didLoadView.boolValue == NO);
-    }] map:^(id _) {
-      @strongify(self);
-      return self;
-    }] setNameWithFormat:@"%@ -didUnloadViewSignal", self];
-  }
-  return _didUnloadViewSignal;
+- (RACSignal *)didUnloadViewSignal
+{
+    if (_didUnloadViewSignal == nil) {
+        @weakify(self);
+        _didUnloadViewSignal = [[[RACObserve(self, didLoadView) filter:^(NSNumber *didLoadView) {
+            return (BOOL)(didLoadView.boolValue == NO);
+        }] map:^(id _) {
+            @strongify(self);
+            return self;
+        }] setNameWithFormat:@"%@ -didUnloadViewSignal", self];
+    }
+    return _didUnloadViewSignal;
 }
 
 #pragma mark - LPDViewModelDidLayoutSubviewsProtocol
 
-- (RACSignal *)didLayoutSubviewsSignal {
-  if (nil == _didLayoutSubviewsSignal) {
-    @weakify(self);
-    _didLayoutSubviewsSignal = [[[RACObserve(self, didLayoutSubviews) filter:^(NSNumber *didLayoutSubviews) {
-      return didLayoutSubviews.boolValue;
-    }] map:^(id _) {
-      @strongify(self);
-      return self;
-    }] setNameWithFormat:@"%@ -didLayoutSubviewsSignal", self];
-  }
-  return _didLayoutSubviewsSignal;
+- (RACSignal *)didLayoutSubviewsSignal
+{
+    if (nil == _didLayoutSubviewsSignal) {
+        @weakify(self);
+        _didLayoutSubviewsSignal = [[[RACObserve(self, didLayoutSubviews) filter:^(NSNumber *didLayoutSubviews) {
+            return didLayoutSubviews.boolValue;
+        }] map:^(id _) {
+            @strongify(self);
+            return self;
+        }] setNameWithFormat:@"%@ -didLayoutSubviewsSignal", self];
+    }
+    return _didLayoutSubviewsSignal;
 }
 
 #pragma mark - LPDViewModelSubmittingProtocol
 
-- (void)setSubmittingWithMessage:(NSString *)message {
-  _submitting = YES;
+- (void)setSubmittingWithMessage:(NSString *)message
+{
+    _submitting = YES;
 }
 
 #pragma mark - LPDViewModelLoadingProtocol
 
-- (void)setLoading:(BOOL)loading {
-  @synchronized(self) {
-    if (_loading == loading) {
-      return;
+- (void)setLoading:(BOOL)loading
+{
+    @synchronized(self) {
+        if (_loading == loading) {
+            return;
+        }
+        _loading = loading;
+        if (loading && _loadingSignal) {
+            [[_loadingSignal deliverOnMainThread] subscribeNext:^(id x) {
+            }];
+        }
     }
-    _loading = loading;
-    if (loading && _loadingSignal) {
-      [[_loadingSignal deliverOnMainThread] subscribeNext:^(id x){
-      }];
-    }
-  }
 }
 
-- (void)setLoadingSignal:(nullable RACSignal *)loadingSignal {
-  if (_loadingSignal == loadingSignal) {
-    return;
-  }
-  @weakify(self);
-  if (loadingSignal) {
-    _loadingSignal = [[loadingSignal doCompleted:^{
-      @strongify(self);
-      self.loading = NO;
-    }] doError:^(NSError *error) {
-      @strongify(self);
-      self.loading = NO;
-        [self.errorSubject sendNext:error.localizedDescription];
-    }];
-  } else {
-    _loadingSignal = nil;
-  }
+- (void)setLoadingSignal:(nullable RACSignal *)loadingSignal
+{
+    if (_loadingSignal == loadingSignal) {
+        return;
+    }
+    @weakify(self);
+    if (loadingSignal) {
+        _loadingSignal = [[loadingSignal doCompleted:^{
+            @strongify(self);
+            self.loading = NO;
+        }] doError:^(NSError *error) {
+            @strongify(self);
+            self.loading = NO;
+            [self.errorSubject sendNext:error.localizedDescription];
+        }];
+    } else {
+        _loadingSignal = nil;
+    }
 }
 
 #pragma mark - LPDViewModelToastProtocol
 
-- (RACSubject *)successSubject {
-  return _successSubject ?: (_successSubject = [RACSubject subject]);
+- (RACSubject *)successSubject
+{
+    return _successSubject ? : (_successSubject = [RACSubject subject]);
 }
 
-- (RACSubject *)errorSubject {
-  return _errorSubject ?: (_errorSubject = [RACSubject subject]);
+- (RACSubject *)errorSubject
+{
+    return _errorSubject ? : (_errorSubject = [RACSubject subject]);
 }
 
 #pragma mark - LPDViewModelEmptyProtocol
 
-- (void)setEmptyImage:(UIImage *)emptyImage title:(NSString *)title subTitle:(NSString *)subTitle {
-  _empty = YES;
+- (void)setEmptyImage:(UIImage *)emptyImage title:(NSString *)title subTitle:(NSString *)subTitle
+{
+    _empty = YES;
 }
 
 #pragma mark - LPDViewModelProtocol
 
-- (void)addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
-  [self _addChildViewModel:childViewModel];
+- (void)addChildViewModel:(id<LPDViewModelProtocol>)childViewModel
+{
+    [self _addChildViewModel:childViewModel];
 }
 
-- (void)removeFromParentViewModel {
+- (void)removeFromParentViewModel
+{
 }
 
-- (NSArray<id<LPDViewModelProtocol>> *)childViewModels {
-  return [_mutableChildViewModels copy];
+- (NSArray<id<LPDViewModelProtocol> > *)childViewModels
+{
+    return [_mutableChildViewModels copy];
 }
 
 #pragma mark - private methods
 
-- (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel {
-  if (!self.mutableChildViewModels) {
-    self.mutableChildViewModels = [NSMutableArray array];
-  }
-  if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
-    ((LPDViewModel *)childViewModel).parentViewModel = self;
-    if (self.navigation) {
-      ((LPDViewModel *)childViewModel).navigation = self.navigation;
+- (void)_addChildViewModel:(id<LPDViewModelProtocol>)childViewModel
+{
+    if (!self.mutableChildViewModels) {
+        self.mutableChildViewModels = [NSMutableArray array];
     }
-    [self.mutableChildViewModels addObject:childViewModel];
-  }
+    if (!childViewModel.parentViewModel && ![self.mutableChildViewModels containsObject:childViewModel]) {
+        ((LPDViewModel *)childViewModel).parentViewModel = self;
+        if (self.navigation) {
+            ((LPDViewModel *)childViewModel).navigation = self.navigation;
+        }
+        [self.mutableChildViewModels addObject:childViewModel];
+    }
 }
 
-- (void)_removeFromParentViewModel {
-  [((LPDViewModel *)self.parentViewModel).mutableChildViewModels removeObject:self];
-  self.parentViewModel = nil;
-  self.navigation = nil;
+- (void)_removeFromParentViewModel
+{
+    [((LPDViewModel *)self.parentViewModel).mutableChildViewModels removeObject:self];
+    self.parentViewModel = nil;
+    self.navigation = nil;
 }
 
-- (void)dealloc {
-  [_errorSubject sendCompleted];
-  [_successSubject sendCompleted];
+- (void)dealloc
+{
+    [_errorSubject sendCompleted];
+    [_successSubject sendCompleted];
 }
 
 @end

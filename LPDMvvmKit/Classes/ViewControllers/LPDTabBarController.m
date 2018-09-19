@@ -24,66 +24,72 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - life cycle
 
-+ (void)load {
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    [LPDViewControllerFactory setViewController:NSStringFromClass(LPDTabBarController.class)
-                                  forViewModel:NSStringFromClass(LPDTabBarViewModel.class)];
-  });
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [LPDViewControllerFactory setViewController:NSStringFromClass(LPDTabBarController.class)
+                                       forViewModel:NSStringFromClass(LPDTabBarViewModel.class)];
+    });
 }
 
-- (void)loadView {
-  NSBundle *bundle = [NSBundle bundleForClass:self.class];
-  NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
-  if (xibPath && xibPath.length > 0) {
-    NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    if (views && views.count > 0) {
-      self.view = views.lastObject;
-      self.view.frame = UIScreen.bounds;
-    } else {
-      xibPath = nil;
+- (void)loadView
+{
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSString *xibPath = [bundle pathForResource:NSStringFromClass(self.class) ofType:@"nib"];
+    if (xibPath && xibPath.length > 0) {
+        NSArray *views = [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+        if (views && views.count > 0) {
+            self.view = views.lastObject;
+            self.view.frame = UIScreen.bounds;
+        } else {
+            xibPath = nil;
+        }
     }
-  }
-  if (!xibPath) {
-    [super loadView];
-  }
-}
-
-
-- (instancetype)initWithViewModel:(__kindof id<LPDTabBarViewModelProtocol>)viewModel {
-  self = [super init];
-  if (self) {
-    self.viewModel = viewModel;
-
-    NSMutableArray *viewControllers = [NSMutableArray array];
-    for (id<LPDNavigationViewModelProtocol> childViewModel in self.viewModel.viewModels) {
-      UIViewController *viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
-      [viewControllers addObject:viewController];
+    if (!xibPath) {
+        [super loadView];
     }
-    self.viewControllers = viewControllers;
-
-    RAC(self, selectedIndex) = RACObserve(self.viewModel, selectedIndex);
-  }
-  return self;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  self.extendedLayoutIncludesOpaqueBars = YES;
+- (instancetype)initWithViewModel:(__kindof id<LPDTabBarViewModelProtocol>)viewModel
+{
+    self = [super init];
+    if (self) {
+        self.viewModel = viewModel;
+
+        NSMutableArray *viewControllers = [NSMutableArray array];
+        for (id<LPDNavigationViewModelProtocol> childViewModel in self.viewModel.viewModels) {
+            UIViewController *viewController = [LPDViewControllerFactory viewControllerForViewModel:childViewModel];
+            [viewControllers addObject:viewController];
+        }
+        self.viewControllers = viewControllers;
+
+        RAC(self, selectedIndex) = RACObserve(self.viewModel, selectedIndex);
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.extendedLayoutIncludesOpaqueBars = YES;
 }
 
 #pragma mark - screen style
 
-- (BOOL)shouldAutorotate {
-  return self.selectedViewController.shouldAutorotate;
+- (BOOL)shouldAutorotate
+{
+    return self.selectedViewController.shouldAutorotate;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-  return self.selectedViewController.supportedInterfaceOrientations;
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return self.selectedViewController.supportedInterfaceOrientations;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-  return self.selectedViewController.preferredStatusBarStyle;
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return self.selectedViewController.preferredStatusBarStyle;
 }
 
 @end
